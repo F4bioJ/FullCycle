@@ -1,0 +1,1037 @@
+{
+  "_leia": "Plano editado à mão (datas, ordem, textos). A skill upd-dashboard NÃO edita este arquivo: ela lê isto + acompanhamento.md + dados/plataforma.json (snapshot da plataforma) e gera doc/dados.js. fundGrupos liga ids locais às aulas da plataforma: a aula i do grupo é o conteúdo base+i. Condições de passos: {quiz:[ids ou 'a..b']} = quizz registrado; {vistas:[ids]} = aulas em 'vistas'; {manual:bool} = marca fixa.",
+  "inicio": "2026-10-05",
+  "fim": "2027-10-30",
+  "metaDesign": "2027-01-04",
+  "referenciaFund": "2026-11-29",
+  "vistas": [
+    "Introdução · 1",
+    "Introdução · 2",
+    "3.2",
+    "3.3",
+    "3.5",
+    "3.8",
+    "4.1",
+    "4.2",
+    "4.3",
+    "4.4",
+    "4.5",
+    "4.6",
+    "4.7",
+    "2.1.6",
+    "2.1.10",
+    "2.1.15",
+    "2.1.16",
+    "2.1.17",
+    "2.2.1",
+    "2.2.10"
+  ],
+  "vistas_nota": "vistas = aulas estudadas sem quizz (conta como estudada). Só 'visto' na plataforma, sem estudo, vira 'o' (só ouvida).",
+  "feitasExtra": [
+    "Revisando · aula 1",
+    "Revisando · aula 2",
+    "Revisando · aula 3",
+    "Revisando · aula 4",
+    "Revisando · aula 5"
+  ],
+  "fundGrupos": [
+    {
+      "nome": "Introdução",
+      "prefixo": "",
+      "ids": [
+        "Introdução · 1",
+        "Introdução · 2"
+      ],
+      "base": 16364
+    },
+    {
+      "nome": "Cap. 1 · Gen IA",
+      "prefixo": "Cap. 1 · ",
+      "ids": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "1.4",
+        "1.5",
+        "1.6"
+      ],
+      "base": 16366
+    },
+    {
+      "prefixo": "Cap. 2 · ",
+      "ids": [
+        "2.1",
+        "2.2",
+        "2.3",
+        "2.4",
+        "2.5",
+        "2.6",
+        "2.7",
+        "2.8",
+        "2.9",
+        "2.10",
+        "2.11"
+      ],
+      "base": 16372
+    },
+    {
+      "prefixo": "Cap. 2 · ",
+      "ids": [
+        "2.12",
+        "2.13",
+        "2.14",
+        "2.15",
+        "2.16",
+        "2.17",
+        "2.18",
+        "2.19"
+      ],
+      "base": 16383
+    },
+    {
+      "prefixo": "Cap. 2 · ",
+      "ids": [
+        "2.20",
+        "2.21",
+        "2.22"
+      ],
+      "base": 16391
+    },
+    {
+      "prefixo": "Hands on · ",
+      "ids": [
+        "3.1",
+        "3.2",
+        "3.3",
+        "3.4"
+      ],
+      "base": 16394
+    },
+    {
+      "prefixo": "Hands on · ",
+      "ids": [
+        "3.5",
+        "3.6",
+        "3.7",
+        "3.8",
+        "3.9",
+        "3.10",
+        "3.11"
+      ],
+      "base": 16398
+    },
+    {
+      "nome": "Quick Wins com IA",
+      "prefixo": "Quick Wins · ",
+      "ids": [
+        "4.1",
+        "4.2",
+        "4.3",
+        "4.4",
+        "4.5",
+        "4.6",
+        "4.7"
+      ],
+      "base": 16767
+    },
+    {
+      "nome": "Revisando",
+      "prefixo": "Revisando · ",
+      "ids": [
+        "Revisando · aula 1",
+        "Revisando · aula 2",
+        "Revisando · aula 3",
+        "Revisando · aula 4",
+        "Revisando · aula 5"
+      ],
+      "base": 16405
+    }
+  ],
+  "liberacoes": [
+    [
+      "2026-10-05",
+      "Fundamentos de IA Generativa"
+    ],
+    [
+      "2026-10-12",
+      "Bônus de nivelamento: GitHub Copilot, Claude Code, LangChain"
+    ],
+    [
+      "2026-11-02",
+      "Prompt Engineering"
+    ],
+    [
+      "2026-11-09",
+      "IA Labs · Skills (17 aulas, 4h46) + 2 desafios de LangChain",
+      "d"
+    ],
+    [
+      "2027-01-04",
+      "Design Docs com IA"
+    ],
+    [
+      "2027-01-11",
+      "Desafio: Design Docs gerados por IA",
+      "d"
+    ],
+    [
+      "2027-02-01",
+      "Desenvolvimento de Software e Aplicações com IA"
+    ],
+    [
+      "2027-02-08",
+      "Desafio: Continuando o StreamTube com IA",
+      "d"
+    ],
+    [
+      "2027-03-01",
+      "Desenvolvimento em Modo Agente"
+    ],
+    [
+      "2027-04-05",
+      "Protocolos de Comunicação"
+    ],
+    [
+      "2027-04-12",
+      "Desafio: A Ponte, um agente A2A com MCP",
+      "d"
+    ],
+    [
+      "2027-05-03",
+      "Arquitetura na Era da IA"
+    ],
+    [
+      "2027-05-10",
+      "Desafio: Skill de Auditoria e Refatoração",
+      "d"
+    ],
+    [
+      "2027-06-07",
+      "Desenvolvimento de Agentes"
+    ],
+    [
+      "2027-06-14",
+      "Desafio: Regra é regra, assistente do Residencial Aurora",
+      "d"
+    ],
+    [
+      "2027-08-02",
+      "DevOps e SRE com IA"
+    ],
+    [
+      "2027-09-06",
+      "Marketing Pessoal, Trabalho em Equipe e Empreendedorismo"
+    ]
+  ],
+  "novembro": [
+    [
+      "2026-10-31",
+      "2026-11-01",
+      "31/10–01/11",
+      "Aulas 2.12 a 2.22 no computador: resumo + quizz"
+    ],
+    [
+      "2026-11-07",
+      "2026-11-08",
+      "07–08/11",
+      "Prompt Engineering: aulas 2.1.3 a 2.1.14 (12 aulas, 101 min de vídeo)"
+    ],
+    [
+      "2026-11-10",
+      "2026-11-15",
+      "10–15/11",
+      "Nivelamento LangChain: Chains concluído em 11/11, Agentes e ReAct em 12/11 e Gerenciamento de memória em 13/11 (um dia adiantado). Falta RAG (9 aulas, 1h05 de vídeo, cerca de 2h45 a 2,5 vezes o vídeo) no fim de semana. Prompt Engineering 2.3.1 a 2.4.2 no que sobrar do fim de semana"
+    ],
+    [
+      "2026-11-16",
+      "2026-11-20",
+      "16–20/11",
+      "Prompt Engineering, 1h por noite: 2.4.3 a 2.5.4"
+    ],
+    [
+      "2026-11-21",
+      "2026-11-22",
+      "21–22/11",
+      "Desafio de ingestão e busca semântica"
+    ],
+    [
+      "2026-11-23",
+      "2026-11-29",
+      "23–29/11",
+      "Prompt Engineering: 2.5.5 a 2.8.12. Fim do módulo"
+    ],
+    [
+      "2026-11-30",
+      "2026-12-06",
+      "30/11–06/12",
+      "Desafio de prompts com LangChain/LangSmith"
+    ],
+    [
+      "2026-12-07",
+      "2026-12-13",
+      "07–13/12",
+      "IA Labs · Skills (17 aulas, 4h46)"
+    ],
+    [
+      "2026-12-14",
+      "2027-01-03",
+      "14/12–03/01",
+      "Folga para atrasos"
+    ]
+  ],
+  "agendaBase": [],
+  "peAulas": [
+    [
+      "2026-11-05",
+      "2.1.1",
+      "Introdução e overview da disciplina",
+      8
+    ],
+    [
+      "2026-11-06",
+      "2.1.2",
+      "O que realmente e prompt engineering",
+      5
+    ],
+    [
+      "2026-11-07",
+      "2.1.3",
+      "Outras aplicabilidades",
+      8
+    ],
+    [
+      "2026-11-07",
+      "2.1.4",
+      "Tipos e tecnicas e Prompts",
+      3
+    ],
+    [
+      "2026-11-07",
+      "2.1.5",
+      "Role Prompting",
+      7
+    ],
+    [
+      "2026-11-07",
+      "2.1.6",
+      "Role Prompting na prática",
+      9,
+      1
+    ],
+    [
+      "2026-11-07",
+      "2.1.7",
+      "Trabalhando com zero-shot em diversos modelos",
+      11
+    ],
+    [
+      "2026-11-07",
+      "2.1.8",
+      "One e Few-shot e situações críticas",
+      10
+    ],
+    [
+      "2026-11-08",
+      "2.1.9",
+      "Conceitos básicos de Chain of Thought",
+      6
+    ],
+    [
+      "2026-11-08",
+      "2.1.10",
+      "CoT na prática e seus conflitos",
+      9,
+      1
+    ],
+    [
+      "2026-11-08",
+      "2.1.11",
+      "CoT com Self-consistency",
+      9
+    ],
+    [
+      "2026-11-08",
+      "2.1.12",
+      "Explorando diversos caminhos com Tree of Thought",
+      12
+    ],
+    [
+      "2026-11-08",
+      "2.1.13",
+      "Skeleton of Thought e resultados incríveis",
+      13
+    ],
+    [
+      "2026-11-08",
+      "2.1.14",
+      "Conceitos básicos do ReAct",
+      4
+    ],
+    [
+      "2026-11-14",
+      "2.1.15",
+      "Identificando bugs na prática com ReAct",
+      6,
+      1
+    ],
+    [
+      "2026-11-09",
+      "2.1.16",
+      "Usando ReAct para análise de trade-offs",
+      8
+    ],
+    [
+      "2026-11-14",
+      "2.1.17",
+      "Prompt Channing na prática com LangChain",
+      12,
+      1
+    ],
+    [
+      "2026-11-10",
+      "2.1.18",
+      "Conclusões",
+      7
+    ],
+    [
+      "2026-11-10",
+      "2.2.1",
+      "Revisitando conceitos",
+      2
+    ],
+    [
+      "2026-11-11",
+      "2.2.2",
+      "Context Window para Prompt Engineering",
+      4
+    ],
+    [
+      "2026-11-11",
+      "2.2.3",
+      "Context Window vs memória, custo e latência",
+      6
+    ],
+    [
+      "2026-11-12",
+      "2.2.4",
+      "Janela de contexto vs parâmetros",
+      5
+    ],
+    [
+      "2026-11-12",
+      "2.2.5",
+      "Truncamento",
+      4
+    ],
+    [
+      "2026-11-13",
+      "2.2.6",
+      "Sumarização",
+      6
+    ],
+    [
+      "2026-11-13",
+      "2.2.7",
+      "Sliding window",
+      4
+    ],
+    [
+      "2026-11-14",
+      "2.2.8",
+      "Prompt Caching",
+      8
+    ],
+    [
+      "2026-11-09",
+      "2.2.9",
+      "Batch Prompting",
+      5
+    ],
+    [
+      "2026-11-14",
+      "2.2.10",
+      "Demonstração prática para batch prompting",
+      20,
+      1
+    ],
+    [
+      "2026-11-15",
+      "2.3.1",
+      "Estruturação de Prompts",
+      2
+    ],
+    [
+      "2026-11-15",
+      "2.3.2",
+      "Uma simples correção de Bug",
+      11
+    ],
+    [
+      "2026-11-15",
+      "2.3.3",
+      "Minha IA produziu um lixo",
+      16
+    ],
+    [
+      "2026-11-15",
+      "2.3.4",
+      "Prompts no processo de desenvolvimento",
+      8
+    ],
+    [
+      "2026-11-15",
+      "2.3.5",
+      "Utilização e larga escala",
+      4
+    ],
+    [
+      "2026-11-15",
+      "2.3.6",
+      "Guidelines e trade-offs",
+      7
+    ],
+    [
+      "2026-11-15",
+      "2.3.7",
+      "System vs User Prompt",
+      4
+    ],
+    [
+      "2026-11-15",
+      "2.3.8",
+      "Exemplo estruturado de prompts",
+      12,
+      1
+    ],
+    [
+      "2026-11-15",
+      "2.3.9",
+      "Finalizando com regras de ouro",
+      2
+    ],
+    [
+      "2026-11-15",
+      "2.4.1",
+      "Analisando estruturas de prompts",
+      2
+    ],
+    [
+      "2026-11-15",
+      "2.4.2",
+      "Dependency Auditor Agent Prompt",
+      24
+    ],
+    [
+      "2026-11-16",
+      "2.4.3",
+      "Resultado gerado pelo prompt",
+      8,
+      1
+    ],
+    [
+      "2026-11-16",
+      "2.4.4",
+      "Arquivo declarativo do Agent e Prompt como Metadados",
+      9
+    ],
+    [
+      "2026-11-16",
+      "2.4.5",
+      "Executando Agente na prática",
+      16,
+      1
+    ],
+    [
+      "2026-11-17",
+      "2.4.6",
+      "Estruturas especificas de prompts",
+      5
+    ],
+    [
+      "2026-11-17",
+      "2.4.7",
+      "Visão geral do workflow de um projeto",
+      13
+    ],
+    [
+      "2026-11-18",
+      "2.4.8",
+      "Analisando prompt especialista em analisar arquiteturas",
+      22
+    ],
+    [
+      "2026-11-18",
+      "2.4.9",
+      "Analisando prompt de analise de componentes",
+      8
+    ],
+    [
+      "2026-11-19",
+      "2.4.10",
+      "Workflow Specification Prompt",
+      22
+    ],
+    [
+      "2026-11-19",
+      "2.4.11",
+      "Role Specification como Orquestrador",
+      16
+    ],
+    [
+      "2026-11-20",
+      "2.5.1",
+      "Versionamento de prompts",
+      2
+    ],
+    [
+      "2026-11-20",
+      "2.5.2",
+      "Prompts para produtividade em equipe",
+      5
+    ],
+    [
+      "2026-11-20",
+      "2.5.3",
+      "Gestão e controle de versão",
+      7
+    ],
+    [
+      "2026-11-20",
+      "2.5.4",
+      "Documentação e categorização",
+      10
+    ],
+    [
+      "2026-11-23",
+      "2.5.5",
+      "Prompts utilizados por projetos de IA",
+      11
+    ],
+    [
+      "2026-11-23",
+      "2.5.6",
+      "Registry e estrutura de pastas",
+      4
+    ],
+    [
+      "2026-11-23",
+      "2.5.7",
+      "Visão geral com prompt.yaml",
+      4
+    ],
+    [
+      "2026-11-23",
+      "2.5.8",
+      "Executando testes automatizados",
+      9,
+      1
+    ],
+    [
+      "2026-11-23",
+      "2.5.9",
+      "Exemplo prático com Agent Code Reviewer",
+      5,
+      1
+    ],
+    [
+      "2026-11-23",
+      "2.5.10",
+      "Exemplo com PR e outras considerações",
+      3,
+      1
+    ],
+    [
+      "2026-11-24",
+      "2.5.11",
+      "Soluções de terceiros para gestão",
+      7
+    ],
+    [
+      "2026-11-24",
+      "2.5.12",
+      "Langsmith Prompt Hub",
+      4
+    ],
+    [
+      "2026-11-24",
+      "2.5.13",
+      "Entendendo Langsmith",
+      3
+    ],
+    [
+      "2026-11-24",
+      "2.5.14",
+      "Criando prompt via interface",
+      8,
+      1
+    ],
+    [
+      "2026-11-24",
+      "2.5.15",
+      "Fazendo push de um prompt",
+      7,
+      1
+    ],
+    [
+      "2026-11-25",
+      "2.5.16",
+      "Fazendo pull e controle de versão",
+      8,
+      1
+    ],
+    [
+      "2026-11-25",
+      "2.5.17",
+      "Concluindo",
+      4
+    ],
+    [
+      "2026-11-25",
+      "2.6.1",
+      "Introdução a Prompt Enrichement",
+      2
+    ],
+    [
+      "2026-11-25",
+      "2.6.2",
+      "Necessidades para reformulação e enriquecimento de prompts",
+      10
+    ],
+    [
+      "2026-11-25",
+      "2.6.3",
+      "Fluxo basico e considerações importantes",
+      6
+    ],
+    [
+      "2026-11-26",
+      "2.6.4",
+      "Query2Doc",
+      6
+    ],
+    [
+      "2026-11-26",
+      "2.6.5",
+      "Hyde vs Query2Doc",
+      12
+    ],
+    [
+      "2026-11-26",
+      "2.6.6",
+      "ITER-RETGEN",
+      5
+    ],
+    [
+      "2026-11-26",
+      "2.6.7",
+      "Resposta simples sem expansao na prtica",
+      4,
+      1
+    ],
+    [
+      "2026-11-27",
+      "2.6.8",
+      "ITER-RETGEN na prática - parte 1",
+      7,
+      1
+    ],
+    [
+      "2026-11-27",
+      "2.6.9",
+      "ITER-RETGEN na prática - parte 2",
+      12,
+      1
+    ],
+    [
+      "2026-11-27",
+      "2.6.10",
+      "Enriquecimento de queries na prática",
+      19,
+      1
+    ],
+    [
+      "2026-11-28",
+      "2.7.1",
+      "Introdução a Prompt Evaluation",
+      2
+    ],
+    [
+      "2026-11-28",
+      "2.7.2",
+      "O que devemos avaliar",
+      4
+    ],
+    [
+      "2026-11-28",
+      "2.7.3",
+      "Entendendo Objetivos",
+      10
+    ],
+    [
+      "2026-11-28",
+      "2.7.4",
+      "Métricas e tipos de avaliação",
+      10
+    ],
+    [
+      "2026-11-28",
+      "2.7.5",
+      "Evaluators",
+      10
+    ],
+    [
+      "2026-11-28",
+      "2.7.6",
+      "Datasets",
+      5
+    ],
+    [
+      "2026-11-28",
+      "2.7.7",
+      "Entendendo estrutura dos exemplos",
+      3
+    ],
+    [
+      "2026-11-28",
+      "2.7.8",
+      "Executando primeira avaliação",
+      14,
+      1
+    ],
+    [
+      "2026-11-28",
+      "2.7.9",
+      "Evaluators binarios",
+      9
+    ],
+    [
+      "2026-11-28",
+      "2.7.10",
+      "Score com range",
+      5
+    ],
+    [
+      "2026-11-28",
+      "2.7.11",
+      "Additional criteria",
+      9
+    ],
+    [
+      "2026-11-28",
+      "2.7.12",
+      "Embedding distance",
+      5
+    ],
+    [
+      "2026-11-28",
+      "2.7.13",
+      "Revisor otimista",
+      4
+    ],
+    [
+      "2026-11-28",
+      "2.7.14",
+      "Revisor verboso",
+      4
+    ],
+    [
+      "2026-11-28",
+      "2.7.15",
+      "Alucinação e sem utilidade",
+      5
+    ],
+    [
+      "2026-11-28",
+      "2.7.16",
+      "Cenas para os próximos capítulos",
+      5
+    ],
+    [
+      "2026-11-28",
+      "2.8.1",
+      "Precision",
+      5
+    ],
+    [
+      "2026-11-29",
+      "2.8.2",
+      "Recall",
+      6
+    ],
+    [
+      "2026-11-29",
+      "2.8.3",
+      "F1",
+      4
+    ],
+    [
+      "2026-11-29",
+      "2.8.4",
+      "Quando usar no mundo real",
+      5
+    ],
+    [
+      "2026-11-29",
+      "2.8.5",
+      "Entendendo 3 tipos de prompt",
+      5
+    ],
+    [
+      "2026-11-29",
+      "2.8.6",
+      "Calculando as métricas",
+      8,
+      1
+    ],
+    [
+      "2026-11-29",
+      "2.8.7",
+      "Comparação na prática",
+      9,
+      1
+    ],
+    [
+      "2026-11-29",
+      "2.8.8",
+      "Entendendo Pairwise Evaluator vs Evaluation",
+      3
+    ],
+    [
+      "2026-11-29",
+      "2.8.9",
+      "Contexto do nosso experimento",
+      5
+    ],
+    [
+      "2026-11-29",
+      "2.8.10",
+      "Executando Pairwise",
+      9,
+      1
+    ],
+    [
+      "2026-11-29",
+      "2.8.11",
+      "Refazendo evaluation com prompt otimizado",
+      5,
+      1
+    ],
+    [
+      "2026-11-29",
+      "2.8.12",
+      "Pairwise com justificativa do LLM-as-Judge",
+      12
+    ]
+  ],
+  "passos": [
+    [
+      "Abrir e assistir à aula 2.10 na plataforma (assistida)",
+      {
+        "quiz": [
+          "2.10"
+        ]
+      }
+    ],
+    [
+      "Rodar /next-class de 2.12 a 2.22, cada uma numa sessão limpa",
+      {
+        "quiz": [
+          "2.12..2.22"
+        ]
+      }
+    ],
+    [
+      "Fazer o quizz da aula 3.1 e refazer a q4: 9/10, q4 na 1ª refação",
+      {
+        "quiz": [
+          "3.1"
+        ]
+      }
+    ],
+    [
+      "Assistir às aulas 3.2 a 3.4 na plataforma",
+      {
+        "quiz": [
+          "3.4"
+        ],
+        "vistas": [
+          "3.2",
+          "3.3"
+        ]
+      }
+    ],
+    [
+      "Anotar nº de aulas e minutos do Prompt Engineering e recalcular a meta (103 aulas, 13h06)",
+      {
+        "manual": true
+      }
+    ],
+    [
+      "Decidir como serão os quizzes do Prompt Engineering e montar a agenda dele (um por aula, menor nas aulas curtas)",
+      {
+        "manual": true
+      }
+    ],
+    [
+      "Rodar /next-class 3.4 e fazer o quizz: 8/10, q4 e q10 passaram na 1ª refação (3.2 e 3.3 ficam sem quizz)",
+      {
+        "quiz": [
+          "3.4"
+        ]
+      }
+    ],
+    [
+      "Rodar /next-class 3.6 (Encoder-only) e 3.7 (Decoder-only)",
+      {
+        "quiz": [
+          "3.6",
+          "3.7"
+        ]
+      }
+    ],
+    [
+      "Rodar /next-class 3.9 (Explorando soluções), a próxima da agenda",
+      {
+        "quiz": [
+          "3.9"
+        ]
+      }
+    ],
+    [
+      "Concluir as aulas do Fundamentos (55 de 55 itens na plataforma, em 05/11)",
+      {
+        "manual": true
+      }
+    ],
+    [
+      "Rodar /next-class 2.1.1 (Introdução e overview da disciplina) e começar o Prompt Engineering",
+      {
+        "quiz": [
+          "2.1.1"
+        ]
+      }
+    ],
+    [
+      "Em 09/11, ver o tamanho do Lab Skills e dos 2 desafios: IA Labs · Skills tem 17 aulas (4h46) e os desafios são Ingestão e busca semântica e Pull, Otimização e Avaliação de Prompts",
+      {
+        "manual": true
+      }
+    ],
+    [
+      "Revisar o ritmo no fim de novembro",
+      {
+        "manual": false
+      }
+    ]
+  ],
+  "peCapitulos": {
+    "2.1": "Cap. 1 · Iniciando com Prompt Engineering",
+    "2.2": "Cap. 2",
+    "2.3": "Cap. 3",
+    "2.4": "Cap. 4",
+    "2.5": "Cap. 5",
+    "2.6": "Cap. 6",
+    "2.7": "Cap. 7",
+    "2.8": "Cap. 8"
+  }
+}

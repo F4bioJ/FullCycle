@@ -1,0 +1,5 @@
+# Verificação de tipos do Pyrefly (antes estava no modo "basic", que deixa passar muita coisa)
+preset = "default"
+project-includes = ["**/*.py"]
+project-excludes = ["venv/**", "0-fontes git/**"]
+python-interpreter-path = "venv/Scripts/python.exe"

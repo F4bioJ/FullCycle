@@ -1,0 +1,7 @@
+1 - python -m venv venv
+2 - ./venv/Scripts/Activate.ps1
+3 - pip install langchain langchain-openai langchain-google-genai python-dotenv beautifulsoup4 pypdf
+4 - pip freeze > requirements.txt
+5 - API Keys OpenAI e Google Cloud
+6 - 1-Fundamentos
+

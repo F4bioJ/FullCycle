@@ -1,0 +1,446 @@
+{
+  "modulo": "Fundamentos de IA Generativa",
+  "capturadoEm": "2026-11-05",
+  "itens": [
+    {
+      "id": "16417",
+      "titulo": "Slides",
+      "tipo": "link",
+      "seg": 7200,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16364",
+      "titulo": "Introdução",
+      "tipo": "video",
+      "seg": 318,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16365",
+      "titulo": "Nosso momento",
+      "tipo": "video",
+      "seg": 1131,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16366",
+      "titulo": "O que é Gen AI",
+      "tipo": "video",
+      "seg": 1141,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16367",
+      "titulo": "Introdução as diferenças de IA",
+      "tipo": "video",
+      "seg": 815,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16368",
+      "titulo": "Como a Gen AI aprende",
+      "tipo": "video",
+      "seg": 774,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16369",
+      "titulo": "História da IA, o início",
+      "tipo": "video",
+      "seg": 641,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16370",
+      "titulo": "O inverno da IA",
+      "tipo": "video",
+      "seg": 865,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16371",
+      "titulo": "Evolução dos modelos 2 gramas",
+      "tipo": "video",
+      "seg": 946,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16372",
+      "titulo": "Cadeias de Markov",
+      "tipo": "video",
+      "seg": 1084,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16373",
+      "titulo": "Redes neurais profundas",
+      "tipo": "video",
+      "seg": 924,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16374",
+      "titulo": "RNNs",
+      "tipo": "video",
+      "seg": 984,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16375",
+      "titulo": "Transformers",
+      "tipo": "video",
+      "seg": 974,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16376",
+      "titulo": "Tokens",
+      "tipo": "video",
+      "seg": 671,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16377",
+      "titulo": "LLMs",
+      "tipo": "video",
+      "seg": 959,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16378",
+      "titulo": "GANs",
+      "tipo": "video",
+      "seg": 389,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16379",
+      "titulo": "Aprofundando em LLM",
+      "tipo": "video",
+      "seg": 447,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16380",
+      "titulo": "Position Wise Layers",
+      "tipo": "video",
+      "seg": 637,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16381",
+      "titulo": "Positional encoding",
+      "tipo": "video",
+      "seg": 1151,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16382",
+      "titulo": "LayerNorm",
+      "tipo": "video",
+      "seg": 247,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16383",
+      "titulo": "Pré treinamento",
+      "tipo": "video",
+      "seg": 884,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16384",
+      "titulo": "MLM",
+      "tipo": "video",
+      "seg": 318,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16385",
+      "titulo": "Fine Tuning supervisionado",
+      "tipo": "video",
+      "seg": 914,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16386",
+      "titulo": "RLHF",
+      "tipo": "video",
+      "seg": 953,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16387",
+      "titulo": "Otimização para grandes modelos",
+      "tipo": "video",
+      "seg": 776,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16388",
+      "titulo": "Alucinação",
+      "tipo": "video",
+      "seg": 1092,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16389",
+      "titulo": "Estratégias alucinação",
+      "tipo": "video",
+      "seg": 886,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16390",
+      "titulo": "Context window",
+      "tipo": "video",
+      "seg": 556,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16391",
+      "titulo": "Raciocínio simbólico",
+      "tipo": "video",
+      "seg": 956,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16392",
+      "titulo": "Conhecimento em tempo real",
+      "tipo": "video",
+      "seg": 601,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16393",
+      "titulo": "Objetivos geração de respostas",
+      "tipo": "video",
+      "seg": 545,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16394",
+      "titulo": "Introdução a temperatura",
+      "tipo": "video",
+      "seg": 762,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16395",
+      "titulo": "Hands on - Temperatura",
+      "tipo": "video",
+      "seg": 1500,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16396",
+      "titulo": "Hands on - Janela tokens",
+      "tipo": "video",
+      "seg": 1117,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16397",
+      "titulo": "Top_K & Top_P",
+      "tipo": "video",
+      "seg": 618,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16398",
+      "titulo": "Hands on - Top_P",
+      "tipo": "video",
+      "seg": 335,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16399",
+      "titulo": "Encoder-only",
+      "tipo": "video",
+      "seg": 908,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16400",
+      "titulo": "Decoder-only",
+      "tipo": "video",
+      "seg": 836,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16401",
+      "titulo": "Hands on - Similaridade",
+      "tipo": "video",
+      "seg": 1218,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16402",
+      "titulo": "Explorando soluções",
+      "tipo": "video",
+      "seg": 727,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16403",
+      "titulo": "Engenharia de prompt",
+      "tipo": "video",
+      "seg": 1111,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16404",
+      "titulo": "Arquitetura RAG",
+      "tipo": "video",
+      "seg": 745,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "17299",
+      "titulo": "Material",
+      "tipo": "link",
+      "seg": 0,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16767",
+      "titulo": "Aula 01",
+      "tipo": "video",
+      "seg": 1092,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16768",
+      "titulo": "Aula 02",
+      "tipo": "video",
+      "seg": 355,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16769",
+      "titulo": "Aula 03",
+      "tipo": "video",
+      "seg": 1776,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16770",
+      "titulo": "Aula 04",
+      "tipo": "video",
+      "seg": 1575,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16771",
+      "titulo": "Aula 05",
+      "tipo": "video",
+      "seg": 1153,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16772",
+      "titulo": "Aula 06",
+      "tipo": "video",
+      "seg": 1390,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16773",
+      "titulo": "Aula 07",
+      "tipo": "video",
+      "seg": 1687,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16405",
+      "titulo": "Revisão pt.1",
+      "tipo": "video",
+      "seg": 533,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16406",
+      "titulo": "Revisão pt.2",
+      "tipo": "video",
+      "seg": 702,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16407",
+      "titulo": "Revisão pt.3",
+      "tipo": "video",
+      "seg": 289,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16408",
+      "titulo": "Revisão pt.4",
+      "tipo": "video",
+      "seg": 376,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16409",
+      "titulo": "Encerramento",
+      "tipo": "video",
+      "seg": 247,
+      "visto": true,
+      "iniciado": false
+    }
+  ]
+}

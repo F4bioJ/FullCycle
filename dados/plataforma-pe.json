@@ -1,0 +1,846 @@
+{
+  "modulo": "Fundamentos de IA Generativa",
+  "capturadoEm": "2026-11-09",
+  "itens": [
+    {
+      "id": "16585",
+      "titulo": "Código fonte",
+      "tipo": "link",
+      "seg": 12000,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "17132",
+      "titulo": "Material",
+      "tipo": "link",
+      "seg": 7200,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16567",
+      "titulo": "Introdução e overview da disciplina",
+      "tipo": "video",
+      "seg": 459,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16568",
+      "titulo": "O que realmente e prompt engineering",
+      "tipo": "video",
+      "seg": 298,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16569",
+      "titulo": "Outras aplicabilidades",
+      "tipo": "video",
+      "seg": 532,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16570",
+      "titulo": "Tipos e tecnicas e Prompts",
+      "tipo": "video",
+      "seg": 177,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16571",
+      "titulo": "Role Prompting",
+      "tipo": "video",
+      "seg": 421,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16572",
+      "titulo": "Role Prompting na prática",
+      "tipo": "video",
+      "seg": 505,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16573",
+      "titulo": "Trabalhando com zero-shot em diversos modelos",
+      "tipo": "video",
+      "seg": 650,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16574",
+      "titulo": "One e Few-shot e situações críticas",
+      "tipo": "video",
+      "seg": 624,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16575",
+      "titulo": "Conceitos básicos de Chain of Thought",
+      "tipo": "video",
+      "seg": 335,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16576",
+      "titulo": "CoT na prática e seus conflitos",
+      "tipo": "video",
+      "seg": 577,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16577",
+      "titulo": "CoT com Self-consistency",
+      "tipo": "video",
+      "seg": 548,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16578",
+      "titulo": "Explorando diversos caminhos com Tree of Thought",
+      "tipo": "video",
+      "seg": 669,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16579",
+      "titulo": "Skeleton of Thought e resultados incríveis",
+      "tipo": "video",
+      "seg": 807,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16580",
+      "titulo": "Conceitos básicos do ReAct",
+      "tipo": "video",
+      "seg": 216,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16581",
+      "titulo": "Identificando bugs na prática com ReAct",
+      "tipo": "video",
+      "seg": 405,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16582",
+      "titulo": "Usando ReAct para análise de trade-offs",
+      "tipo": "video",
+      "seg": 453,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16583",
+      "titulo": "Prompt Channing na prática com LangChain",
+      "tipo": "video",
+      "seg": 715,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16584",
+      "titulo": "Conclusões",
+      "tipo": "video",
+      "seg": 427,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16596",
+      "titulo": "Revisitando conceitos",
+      "tipo": "video",
+      "seg": 96,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16597",
+      "titulo": "Context Window para Prompt Engineering",
+      "tipo": "video",
+      "seg": 270,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16598",
+      "titulo": "Context Window vs memória, custo e latência",
+      "tipo": "video",
+      "seg": 367,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16599",
+      "titulo": "Janela de contexto vs parâmetros",
+      "tipo": "video",
+      "seg": 298,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16600",
+      "titulo": "Truncamento",
+      "tipo": "video",
+      "seg": 250,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16601",
+      "titulo": "Sumarização",
+      "tipo": "video",
+      "seg": 342,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16602",
+      "titulo": "Sliding window",
+      "tipo": "video",
+      "seg": 229,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16603",
+      "titulo": "Prompt Caching",
+      "tipo": "video",
+      "seg": 482,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16604",
+      "titulo": "Batch Prompting",
+      "tipo": "video",
+      "seg": 322,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16605",
+      "titulo": "Demonstração prática para batch prompting",
+      "tipo": "video",
+      "seg": 1179,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "16610",
+      "titulo": "Estruturação de Prompts",
+      "tipo": "video",
+      "seg": 118,
+      "visto": false,
+      "iniciado": true
+    },
+    {
+      "id": "16611",
+      "titulo": "Uma simples correção de Bug",
+      "tipo": "video",
+      "seg": 656,
+      "visto": false,
+      "iniciado": false
+    },
+    {
+      "id": "16612",
+      "titulo": "Minha IA produziu um lixo",
+      "tipo": "video",
+      "seg": 947,
+      "visto": false,
+      "iniciado": false
+    },
+    {
+      "id": "16613",
+      "titulo": "Prompts no processo de desenvolvimento",
+      "tipo": "video",
+      "seg": 511,
+      "visto": false,
+      "iniciado": false
+    },
+    {
+      "id": "16614",
+      "titulo": "Utilização e larga escala",
+      "tipo": "video",
+      "seg": 254,
+      "visto": false,
+      "iniciado": false
+    },
+    {
+      "id": "16615",
+      "titulo": "Guidelines e trade-offs",
+      "tipo": "video",
+      "seg": 417,
+      "visto": false,
+      "iniciado": false
+    },
+    {
+      "id": "16616",
+      "titulo": "System vs User Prompt",
+      "tipo": "video",
+      "seg": 250,
+      "visto": false,
+      "iniciado": false
+    },
+    {
+      "id": "16617",
+      "titulo": "Exemplo estruturado de prompts",
+      "tipo": "video",
+      "seg": 707,
+      "visto": false,
+      "iniciado": false
+    },
+    {
+      "id": "16618",
+      "titulo": "Finalizando com regras de ouro",
+      "tipo": "video",
+      "seg": 106,
+      "visto": false,
+      "iniciado": false
+    },
+    {
+      "id": "16619",
+      "titulo": "Analisando estruturas de prompts",
+      "tipo": "video",
+      "seg": 108,
+      "visto": false,
+      "iniciado": false
+    },
+    {
+      "id": "16620",
+      "titulo": "Dependency Auditor Agent Prompt",
+      "tipo": "video",
+      "seg": 1433,
+      "visto": false,
+      "iniciado": false
+    },
+    {
+      "id": "16621",
+      "titulo": "Resultado gerado pelo prompt",
+      "tipo": "video",
+      "seg": 471,
+      "visto": false,
+      "iniciado": false
+    },
+    {
+      "id": "16622",
+      "titulo": "Arquivo declarativo do Agent e Prompt como Metadados",
+      "tipo": "video",
+      "seg": 592,
+      "visto": false,
+      "iniciado": false
+    },
+    {
+      "id": "16623",
+      "titulo": "Executando Agente na prática",
+      "tipo": "video",
+      "seg": 914,
+      "visto": false,
+      "iniciado": false
+    },
+    {
+      "id": "16694",
+      "titulo": "Estruturas especificas de prompts",
+      "tipo": "video",
+      "seg": 311,
+      "visto": false,
+      "iniciado": false
+    },
+    {
+      "id": "16695",
+      "titulo": "Visão geral do workflow de um projeto",
+      "tipo": "video",
+      "seg": 776,
+      "visto": false,
+      "iniciado": false
+    },
+    {
+      "id": "16696",
+      "titulo": "Analisando prompt especialista em analisar arquiteturas",
+      "tipo": "video",
+      "seg": 1315,
+      "visto": false,
+      "iniciado": false
+    },
+    {
+      "id": "16697",
+      "titulo": "Analisando prompt de analise de componentes",
+      "tipo": "video",
+      "seg": 527,
+      "visto": false,
+      "iniciado": false
+    },
+    {
+      "id": "16698",
+      "titulo": "Workflow Specification Prompt",
+      "tipo": "video",
+      "seg": 1272,
+      "visto": false,
+      "iniciado": false
+    },
+    {
+      "id": "16699",
+      "titulo": "Role Specification como Orquestrador",
+      "tipo": "video",
+      "seg": 1007,
+      "visto": false,
+      "iniciado": false
+    },
+    {
+      "id": "16714",
+      "titulo": "Versionamento de prompts",
+      "tipo": "video",
+      "seg": 106,
+      "visto": false,
+      "iniciado": false
+    },
+    {
+      "id": "16715",
+      "titulo": "Prompts para produtividade em equipe",
+      "tipo": "video",
+      "seg": 283,
+      "visto": false,
+      "iniciado": false
+    },
+    {
+      "id": "16716",
+      "titulo": "Gestão e controle de versão",
+      "tipo": "video",
+      "seg": 424,
+      "visto": false,
+      "iniciado": false
+    },
+    {
+      "id": "16717",
+      "titulo": "Documentação e categorização",
+      "tipo": "video",
+      "seg": 591,
+      "visto": false,
+      "iniciado": false
+    },
+    {
+      "id": "16718",
+      "titulo": "Prompts utilizados por projetos de IA",
+      "tipo": "video",
+      "seg": 648,
+      "visto": false,
+      "iniciado": false
+    },
+    {
+      "id": "16719",
+      "titulo": "Registry e estrutura de pastas",
+      "tipo": "video",
+      "seg": 270,
+      "visto": false,
+      "iniciado": false
+    },
+    {
+      "id": "16721",
+      "titulo": "Visão geral com prompt.yaml",
+      "tipo": "video",
+      "seg": 233,
+      "visto": false,
+      "iniciado": false
+    },
+    {
+      "id": "16722",
+      "titulo": "Executando testes automatizados",
+      "tipo": "video",
+      "seg": 532,
+      "visto": false,
+      "iniciado": false
+    },
+    {
+      "id": "16723",
+      "titulo": "Exemplo prático com Agent Code Reviewer",
+      "tipo": "video",
+      "seg": 279,
+      "visto": false,
+      "iniciado": false
+    },
+    {
+      "id": "16724",
+      "titulo": "Exemplo com PR e outras considerações",
+      "tipo": "video",
+      "seg": 196,
+      "visto": false,
+      "iniciado": false
+    },
+    {
+      "id": "16725",
+      "titulo": "Soluções de terceiros para gestão",
+      "tipo": "video",
+      "seg": 436,
+      "visto": false,
+      "iniciado": false
+    },
+    {
+      "id": "16726",
+      "titulo": "Langsmith Prompt Hub",
+      "tipo": "video",
+      "seg": 263,
+      "visto": false,
+      "iniciado": false
+    },
+    {
+      "id": "16727",
+      "titulo": "Entendendo Langsmith",
+      "tipo": "video",
+      "seg": 175,
+      "visto": false,
+      "iniciado": false
+    },
+    {
+      "id": "16728",
+      "titulo": "Criando prompt via interface",
+      "tipo": "video",
+      "seg": 434,
+      "visto": false,
+      "iniciado": false
+    },
+    {
+      "id": "16729",
+      "titulo": "Fazendo push de um prompt",
+      "tipo": "video",
+      "seg": 470,
+      "visto": false,
+      "iniciado": false
+    },
+    {
+      "id": "16730",
+      "titulo": "Fazendo pull e controle de versão",
+      "tipo": "video",
+      "seg": 463,
+      "visto": false,
+      "iniciado": false
+    },
+    {
+      "id": "16731",
+      "titulo": "Concluindo",
+      "tipo": "video",
+      "seg": 203,
+      "visto": false,
+      "iniciado": false
+    },
+    {
+      "id": "16745",
+      "titulo": "Introdução a Prompt Enrichement",
+      "tipo": "video",
+      "seg": 144,
+      "visto": false,
+      "iniciado": false
+    },
+    {
+      "id": "16746",
+      "titulo": "Necessidades para reformulação e enriquecimento de prompts",
+      "tipo": "video",
+      "seg": 605,
+      "visto": false,
+      "iniciado": false
+    },
+    {
+      "id": "16747",
+      "titulo": "Fluxo basico e considerações importantes",
+      "tipo": "video",
+      "seg": 335,
+      "visto": false,
+      "iniciado": false
+    },
+    {
+      "id": "16748",
+      "titulo": "Query2Doc",
+      "tipo": "video",
+      "seg": 394,
+      "visto": false,
+      "iniciado": false
+    },
+    {
+      "id": "16749",
+      "titulo": "Hyde vs Query2Doc",
+      "tipo": "video",
+      "seg": 682,
+      "visto": false,
+      "iniciado": false
+    },
+    {
+      "id": "16750",
+      "titulo": "ITER-RETGEN",
+      "tipo": "video",
+      "seg": 349,
+      "visto": false,
+      "iniciado": false
+    },
+    {
+      "id": "16751",
+      "titulo": "Resposta simples sem expansao na prtica",
+      "tipo": "video",
+      "seg": 234,
+      "visto": false,
+      "iniciado": false
+    },
+    {
+      "id": "16752",
+      "titulo": "ITER-RETGEN na prática - parte 1",
+      "tipo": "video",
+      "seg": 416,
+      "visto": false,
+      "iniciado": false
+    },
+    {
+      "id": "16753",
+      "titulo": "ITER-RETGEN na prática - parte 2",
+      "tipo": "video",
+      "seg": 688,
+      "visto": false,
+      "iniciado": false
+    },
+    {
+      "id": "16754",
+      "titulo": "Enriquecimento de queries na prática",
+      "tipo": "video",
+      "seg": 1135,
+      "visto": false,
+      "iniciado": false
+    },
+    {
+      "id": "16856",
+      "titulo": "Introdução a Prompt Evaluation",
+      "tipo": "video",
+      "seg": 135,
+      "visto": false,
+      "iniciado": false
+    },
+    {
+      "id": "16857",
+      "titulo": "O que devemos avaliar",
+      "tipo": "video",
+      "seg": 275,
+      "visto": false,
+      "iniciado": false
+    },
+    {
+      "id": "16858",
+      "titulo": "Entendendo Objetivos",
+      "tipo": "video",
+      "seg": 585,
+      "visto": false,
+      "iniciado": false
+    },
+    {
+      "id": "16859",
+      "titulo": "Métricas e tipos de avaliação",
+      "tipo": "video",
+      "seg": 580,
+      "visto": false,
+      "iniciado": false
+    },
+    {
+      "id": "16860",
+      "titulo": "Evaluators",
+      "tipo": "video",
+      "seg": 614,
+      "visto": false,
+      "iniciado": false
+    },
+    {
+      "id": "16861",
+      "titulo": "Datasets",
+      "tipo": "video",
+      "seg": 325,
+      "visto": false,
+      "iniciado": false
+    },
+    {
+      "id": "16862",
+      "titulo": "Entendendo estrutura dos exemplos",
+      "tipo": "video",
+      "seg": 159,
+      "visto": false,
+      "iniciado": false
+    },
+    {
+      "id": "16863",
+      "titulo": "Executando primeira avaliação",
+      "tipo": "video",
+      "seg": 851,
+      "visto": false,
+      "iniciado": false
+    },
+    {
+      "id": "16864",
+      "titulo": "Evaluators binarios",
+      "tipo": "video",
+      "seg": 531,
+      "visto": false,
+      "iniciado": false
+    },
+    {
+      "id": "16865",
+      "titulo": "Score com range",
+      "tipo": "video",
+      "seg": 318,
+      "visto": false,
+      "iniciado": false
+    },
+    {
+      "id": "16866",
+      "titulo": "Additional criteria",
+      "tipo": "video",
+      "seg": 537,
+      "visto": false,
+      "iniciado": false
+    },
+    {
+      "id": "16867",
+      "titulo": "Embedding distance",
+      "tipo": "video",
+      "seg": 285,
+      "visto": false,
+      "iniciado": false
+    },
+    {
+      "id": "16868",
+      "titulo": "Revisor otimista",
+      "tipo": "video",
+      "seg": 261,
+      "visto": false,
+      "iniciado": false
+    },
+    {
+      "id": "16869",
+      "titulo": "Revisor verboso",
+      "tipo": "video",
+      "seg": 198,
+      "visto": false,
+      "iniciado": false
+    },
+    {
+      "id": "16870",
+      "titulo": "Alucinação e sem utilidade",
+      "tipo": "video",
+      "seg": 313,
+      "visto": false,
+      "iniciado": false
+    },
+    {
+      "id": "16871",
+      "titulo": "Cenas para os próximos capítulos",
+      "tipo": "video",
+      "seg": 272,
+      "visto": false,
+      "iniciado": false
+    },
+    {
+      "id": "16929",
+      "titulo": "Precision",
+      "tipo": "video",
+      "seg": 313,
+      "visto": false,
+      "iniciado": false
+    },
+    {
+      "id": "16930",
+      "titulo": "Recall",
+      "tipo": "video",
+      "seg": 400,
+      "visto": false,
+      "iniciado": false
+    },
+    {
+      "id": "16931",
+      "titulo": "F1",
+      "tipo": "video",
+      "seg": 230,
+      "visto": false,
+      "iniciado": false
+    },
+    {
+      "id": "16932",
+      "titulo": "Quando usar no mundo real",
+      "tipo": "video",
+      "seg": 295,
+      "visto": false,
+      "iniciado": false
+    },
+    {
+      "id": "16933",
+      "titulo": "Entendendo 3 tipos de prompt",
+      "tipo": "video",
+      "seg": 316,
+      "visto": false,
+      "iniciado": false
+    },
+    {
+      "id": "16934",
+      "titulo": "Calculando as métricas",
+      "tipo": "video",
+      "seg": 446,
+      "visto": false,
+      "iniciado": false
+    },
+    {
+      "id": "16935",
+      "titulo": "Comparação na prática",
+      "tipo": "video",
+      "seg": 522,
+      "visto": false,
+      "iniciado": false
+    },
+    {
+      "id": "16936",
+      "titulo": "Entendendo Pairwise Evaluator vs Evaluation",
+      "tipo": "video",
+      "seg": 188,
+      "visto": false,
+      "iniciado": false
+    },
+    {
+      "id": "16937",
+      "titulo": "Contexto do nosso experimento",
+      "tipo": "video",
+      "seg": 321,
+      "visto": false,
+      "iniciado": false
+    },
+    {
+      "id": "16938",
+      "titulo": "Executando Pairwise",
+      "tipo": "video",
+      "seg": 537,
+      "visto": false,
+      "iniciado": false
+    },
+    {
+      "id": "16939",
+      "titulo": "Refazendo evaluation com prompt otimizado",
+      "tipo": "video",
+      "seg": 288,
+      "visto": false,
+      "iniciado": false
+    },
+    {
+      "id": "16940",
+      "titulo": "Pairwise com justificativa do LLM-as-Judge",
+      "tipo": "video",
+      "seg": 722,
+      "visto": false,
+      "iniciado": false
+    }
+  ]
+}

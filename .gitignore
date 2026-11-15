@@ -1,0 +1,23 @@
+# Segredos (login da plataforma e chave do OpenRouter)
+.env
+.env.*
+
+# Dependências e ambientes
+node_modules/
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+# Caches e logs locais
+.langchain_cache.db
+.playwright-mcp/
+.claude/settings.local.json
+*.log
+
+# Sistema
+Thumbs.db
+Desktop.ini
+
+# Áudios das aulas (regeráveis com /get-audio)
+*.mp3
