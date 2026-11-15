@@ -24,7 +24,8 @@
     "2.1.16",
     "2.1.17",
     "2.2.1",
-    "2.2.10"
+    "2.2.10",
+    "2.3.1"
   ],
   "vistas_nota": "vistas = aulas estudadas sem quizz (conta como estudada). Só 'visto' na plataforma, sem estudo, vira 'o' (só ouvida).",
   "feitasExtra": [
@@ -240,7 +241,7 @@
       "2026-11-10",
       "2026-11-15",
       "10–15/11",
-      "Nivelamento LangChain: Chains concluído em 11/11, Agentes e ReAct em 12/11 e Gerenciamento de memória em 13/11 (um dia adiantado). Falta RAG (9 aulas, 1h05 de vídeo, cerca de 2h45 a 2,5 vezes o vídeo) no fim de semana. Prompt Engineering 2.3.1 a 2.4.2 no que sobrar do fim de semana"
+      "Nivelamento LangChain concluído em 15/11: Chains em 11/11, Agentes e ReAct em 12/11, Gerenciamento de memória em 13/11 e Data loading e RAG em 15/11. Prompt Engineering 2.3.1 a 2.4.2 no que sobrar do fim de semana"
     ],
     [
       "2026-11-16",

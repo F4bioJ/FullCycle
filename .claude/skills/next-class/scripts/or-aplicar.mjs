@@ -6,6 +6,7 @@ import { readFileSync, writeFileSync, existsSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import readline from 'node:readline/promises';
 import { chat, extrairJson, acharAula, RAIZ } from './or-lib.mjs';
+import { checarVicios, corrigir } from './or-revisao.mjs';
 
 const args = process.argv.slice(2);
 const id = args.find(a => /^\d+(\.\d+)+$/.test(a));
@@ -139,7 +140,16 @@ if (erradas.length && !args.includes('--sem-refacao')) {
           { role: 'user', content: `O aluno errou esta pergunta:\n${perguntas[i].enunciado}\nConceito: ${gabarito[i].conceito}\n\nCrie UMA pergunta NOVA (cenário diferente, sem repetir o texto da original) sobre o mesmo conceito, de múltipla escolha A–D, seguindo estas regras:\n${regras}\n\nREGRA DE ESCOPO (obrigatória): a pergunta e TODAS as alternativas só podem usar conceitos, termos e afirmações que a aula abaixo efetivamente ensina. É proibido usar termos ou mecanismos que a aula não menciona (ex.: KV cache, FLOPs, prefill, decoding, largura de banda, VRAM, quantização), mesmo que sejam corretos. A dificuldade vem do cenário e do raciocínio sobre o que a aula ensinou, nunca de jargão externo. Se um termo não aparece no texto da aula, não use. Também é proibido citar, comparar ou contrastar com temas de aulas POSTERIORES (o que o professor anuncia para o próximo vídeo); só vale a aula e o que as aulas anteriores ensinaram.\n\nBase de conteúdo (resumo gerado + transcrição da aula):\n${fonte}\n\nJSON: {"enunciado":"...","alternativas":{"A":"","B":"","C":"","D":""},"correta":"B","porque":"...","erradas":{"A":"...","C":"...","D":"..."}}`.replace(/\n{3,}/g, '\n\n') },
         ], { validar: t => { const o = extrairJson(t); if (!o.enunciado || ['A', 'B', 'C', 'D'].some(l => !o.alternativas?.[l]) || !'ABCD'.includes(o.correta)) throw new Error('JSON inválido'); return o; }, temperature: 0.7 });
       } catch (e) { console.log(`Não consegui gerar a refação da Q${i + 1}: ${e.message}`); break; }
-      const n = r.valor;
+      let n = r.valor;
+      // revisão programada: se a checagem por código achar vício que entrega a resposta, pede uma correção
+      const vicios = checarVicios(n);
+      if (vicios.length) {
+        try {
+          const lista = [n];
+          await corrigir(lista, vicios.map(problema => ({ pergunta: 1, problema })), fonte, { regras });
+          n = lista[0];
+        } catch { /* segue com a pergunta como veio */ }
+      }
       // embaralha para a correta cair numa letra aleatória
       const alvo = 'ABCD'[Math.floor(Math.random() * 4)];
       const outras = [...'ABCD'].filter(l => l !== n.correta).sort(() => Math.random() - 0.5);

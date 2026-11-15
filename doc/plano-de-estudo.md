@@ -1,6 +1,6 @@
 # Plano de estudo do MBA
 
-Levantado em 2026-10-31 e recalculado em 2026-11-05 e em 2026-11-09 (nivelamento atualizado em 2026-11-13), a partir da plataforma, do calendário acadêmico da Turma 8 e do histórico local de quizzes. Atualize as seções "Onde estou" e "Plano de novembro" conforme avançar.
+Levantado em 2026-10-31 e recalculado em 2026-11-05 e em 2026-11-09 (nivelamento concluído em 2026-11-15), a partir da plataforma, do calendário acadêmico da Turma 8 e do histórico local de quizzes. Atualize as seções "Onde estou" e "Plano de novembro" conforme avançar.
 
 ## Regras do curso
 
@@ -89,6 +89,7 @@ Curso à parte ("Nivelamento - MBA IA" → "Dev de aplicações com IA"), com **
 - **11/11/2026:** Chains e processamento concluído: aulas 5 a 9 (sumarização, map-reduce e pipeline de sumarização), 44 min de vídeo. Por conta própria, para fixar, o usuário criou dois scripts que não estão nas aulas: `5.1-sumarizacao-com-traducao.py` e `5.2-sumarizacao-com-traducao-sem-splitter.py`. Pelos horários dos arquivos, das 16h45 às 19h56, menos 1h fora e 40 min de configuração do Antigravity, segundo o usuário: cerca de **1h30, ou 2 vezes o vídeo**, já com os dois scripts extras.
 - **12/11/2026:** Desenvolvimento de agentes e ReAct concluído: 4 aulas, 48 min de vídeo. Scripts em `3-Agentes-e-tools` (`1-agentes-react-e-tools.py` e `2-agentes-react-usando-prompt-hub.py`, gravados entre 19h28 e 20h10). O usuário passou boa parte do tempo testando variações por conta própria (o `5-sumarizacao.py` também foi mexido de manhã) e achou que rendeu pouco. Mas o plano previa Agentes nas noites de 12 e 13/11: **ficou um dia adiantado**. Tempo informado pelo usuário: **2h, ou 2,5 vezes o vídeo**, já com os testes.
 - **13/11/2026:** Gerenciamento de memória concluído: 3 aulas, 44 min de vídeo. Scripts em `4-gerenciamento-de-memoria` (`1-armazenamento-de-historico.py` e `2-historico-baseado-em-sliding-window.py`; pasta criada às 17h13, último script gravado às 18h52). Tempo confirmado pelo usuário: **1h40, ou cerca de 2,3 vezes o vídeo**, dentro da conta de 2,5 vezes. O plano previa começar em 13/11 e terminar no sábado: **ficou um dia adiantado**.
+- **15/11/2026:** Data loading e RAG concluído: 9 aulas, 1h05 de vídeo. Scripts em `5-loaders-e-banco-de-dados-vetoriais` (`WebBaseLoader`, carregamento de PDF, ingestão no pgvector com o `docker-compose.yaml` e busca vetorial; gravados das 9h12 às 10h53). Tempo informado pelo usuário: **1h30, ou cerca de 1,4 vez o vídeo**, bem abaixo da conta de 2,5 vezes. **Nivelamento concluído**, dentro do plano. É a base do desafio de ingestão e busca semântica (21–22/11).
 
 Durações lidas da plataforma em 09/11:
 
@@ -99,9 +100,9 @@ Durações lidas da plataforma em 09/11:
 | Chains e processamento | 9 | 1h12 | aulas 1 a 4 vistas em 10/11 e 5 a 9 em 11/11: concluído |
 | Desenvolvimento de agentes e ReAct | 4 | 48 min | concluído em 12/11 |
 | Gerenciamento de memória | 3 | 44 min | concluído em 13/11 |
-| Data loading e RAG | 9 | 1h05 | — |
+| Data loading e RAG | 9 | 1h05 | concluído em 15/11 |
 
-**Em 13/11, falta só o RAG: 9 aulas e 1h05 de vídeo, cerca de 2h45 de estudo a 2,5 vezes o vídeo, no fim de semana.** Sobram de 4h15 a 5h15 do fim de semana para o Prompt Engineering 2.3.1 a 2.4.2.
+**Nivelamento concluído em 15/11, dentro do plano (10–15/11).** Histórico: **Em 13/11, faltava só o RAG: 9 aulas e 1h05 de vídeo, cerca de 2h45 de estudo a 2,5 vezes o vídeo, no fim de semana.** Sobram de 4h15 a 5h15 do fim de semana para o Prompt Engineering 2.3.1 a 2.4.2.
 
 Histórico: **Em 12/11, faltam 12 aulas e 1h49 de vídeo:** Memória (3 aulas, 44 min) e RAG (9 aulas, 1h05). **Testar e explorar fora do roteiro é o jeito de estudar do usuário**, e ele disse em 12/11 que sempre vai tender a isso. Então, nas aulas práticas, a conta passa a usar **2,5 vezes o vídeo**, medido em 12/11, em vez de 2: o resto do nivelamento dá **cerca de 4h30 de estudo**. Memória pede cerca de 1h50, mais do que 1 noite: começa em 13/11 (1h) e termina no sábado. RAG pede cerca de 2h45 no fim de semana. Somando, o fim de semana leva cerca de 3h35 de nivelamento e sobram de 3h30 a 4h30 para o Prompt Engineering. Se o RAG puxar mais testes, o Prompt Engineering 2.3.1 a 2.4.2 desliza para as noites de 16 a 20/11, sem mexer no desafio de ingestão (21–22/11), para o qual o RAG é a base.
 
@@ -145,7 +146,7 @@ Total: **cerca de 48h sem o Lab Skills, ou 57h com ele.** A cerca de 12h30 por s
 | Tipo de aula | Como |
 |---|---|
 | **Teórica** (teoria do Prompt Engineering e dos próximos módulos) | Assistir ao vídeo com atenção e fazer o quizz logo em seguida. O áudio é opcional, para revisar o que errou no quizz. |
-| **Prática** (Hands on, Quick Wins, labs, nivelamento) | No computador, acompanhando o código e testando variações por conta própria. Sem áudio nem quizz. Contar 2,5 vezes o vídeo (medido em 12/11). |
+| **Prática** (Hands on, Quick Wins, labs, nivelamento) | No computador, acompanhando o código e testando variações por conta própria. Sem áudio nem quizz. Contar cerca de 2 vezes o vídeo: no nivelamento, as medidas foram 2 (Chains), 2,5 (Agentes), 2,3 (Memória) e 1,4 (RAG). |
 | **Aulas curtas** | Vídeo de 10 min ou mais: 10 perguntas e resumo de 500 a 1.000 palavras. De 5 a menos de 10 min: 5 perguntas e 250 a 500 palavras. Menos de 5 min: 3 perguntas e 100 a 250 palavras. |
 | **Desafios** | No fim de semana. São o que vale nota. O bônus "Nivelamento - Introdução ao LangChain" ajuda nos dois desafios de 09/11. |
 
@@ -160,7 +161,7 @@ Capacidade: 1h por noite nos dias úteis (cerca de 30 min de vídeo com o quizz)
 | até 05/11 | **Fundamentos concluído em 05/11** | 4h45 |
 | 05–09/11 | Prompt Engineering: 2.1.1 a 2.2.10 (capítulos 1 e 2). Nivelamento: Introdução e Primeiros passos | 4h32 |
 | 10–13/11, à noite | Nivelamento: Chains (concluído em 11/11), Agentes (concluído em 12/11) e Memória (concluído em 13/11) | 2h44 |
-| 14–15/11 | Nivelamento: RAG (**nivelamento concluído**). Depois, Prompt Engineering 2.3.1 a 2.4.2 | 2h37 |
+| 14–15/11 | Nivelamento: RAG (**nivelamento concluído em 15/11**). Depois, Prompt Engineering 2.3.1 a 2.4.2 | 2h37 |
 | 16–20/11, à noite | Prompt Engineering: 2.4.3 a 2.5.4 | 2h23 |
 | 21–22/11 | **Desafio de ingestão e busca semântica** | — |
 | 23–27/11, à noite | Prompt Engineering: 2.5.5 a 2.6.10 | 2h40 |
@@ -168,6 +169,8 @@ Capacidade: 1h por noite nos dias úteis (cerca de 30 min de vídeo com o quizz)
 | 30/11–06/12 | **Desafio de prompts com LangChain/LangSmith** | — |
 | 07–13/12 | IA Labs · Skills (17 aulas, opcional, sem desafio) | 4h46 |
 | 14/12–03/01 | Folga para atrasos | — |
+
+**Revisão do ritmo em 15/11:** o capítulo 3 (2.3.2 a 2.3.9, 64 min de vídeo) foi das 12h20 às 14h36, mas o usuário saiu por 1h no meio (farmácia, mercado, posto). Sobra **cerca de 1h15 de estudo, ou 1,2 vez o vídeo**, com o quizz e as refações, nas aulas teóricas. Nas práticas do nivelamento, a medida foi de 1,4 a 2,5 vezes. Para a conta, uso **1,5 vez** no que falta, porque os capítulos 5 a 8 têm várias aulas práticas (LangSmith, evaluation). Faltam 2.3.1 (2 min, capturada e sem quizz) e 2.4.1 a 2.8.12: 66 aulas e 8h29 de vídeo, ou **cerca de 12h45 de estudo**. Até 29/11, tirando o desafio de 21–22/11, há 10 noites (cerca de 10h) e o fim de semana de 28–29/11 (7 a 8h), cerca de 17h no total. **A meta de 29/11 cabe com cerca de 4h de folga.** As datas ficam como estão: a folga cobre o desafio de ingestão, se ele passar de 22/11, e as aulas longas do capítulo 4 (2.4.2 tem 24 min, 2.4.8 e 2.4.10 têm 22). Não vale antecipar a meta com base numa única medição.
 
 As datas de cada aula estão no dashboard. Se o desafio de ingestão não couber em 21–22/11, ele continua nas noites seguintes e empurra o resto do Prompt Engineering alguns dias, sem afetar a meta.
 

@@ -1,6 +1,6 @@
 # Acompanhamento dos quizzes
 
-Atualizado em 2026-11-08.
+Atualizado em 2026-11-15.
 
 **Legenda:**
 
@@ -488,6 +488,55 @@ O id da aula é `capítulo.aula` no Fundamentos (ex.: 2.4) e `módulo.capítulo.
 | 2.2.9 | Batch Prompting | q1 | ✅ 1x | — |
 | 2.2.9 | Batch Prompting | q2 | ✅ | — |
 | 2.2.9 | Batch Prompting | q3 | ✅ | — |
+| 2.3.2 | Uma simples correção de Bug | q1 | ✅ | — |
+| 2.3.2 | Uma simples correção de Bug | q2 | ✅ | — |
+| 2.3.2 | Uma simples correção de Bug | q3 | ✅ | — |
+| 2.3.2 | Uma simples correção de Bug | q4 | ✅ | — |
+| 2.3.2 | Uma simples correção de Bug | q5 | ✅ | — |
+| 2.3.2 | Uma simples correção de Bug | q6 | ✅ | — |
+| 2.3.2 | Uma simples correção de Bug | q7 | ✅ | — |
+| 2.3.2 | Uma simples correção de Bug | q8 | ✅ | — |
+| 2.3.2 | Uma simples correção de Bug | q9 | ✅ | — |
+| 2.3.2 | Uma simples correção de Bug | q10 | ✅ | — |
+| 2.3.3 | Minha IA produziu um lixo | q1 | ✅ | — |
+| 2.3.3 | Minha IA produziu um lixo | q2 | ✅ 1x | — |
+| 2.3.3 | Minha IA produziu um lixo | q3 | ✅ 1x | — |
+| 2.3.3 | Minha IA produziu um lixo | q4 | ✅ | — |
+| 2.3.3 | Minha IA produziu um lixo | q5 | ✅ | — |
+| 2.3.3 | Minha IA produziu um lixo | q6 | ✅ | — |
+| 2.3.3 | Minha IA produziu um lixo | q7 | ✅ | — |
+| 2.3.3 | Minha IA produziu um lixo | q8 | ✅ | — |
+| 2.3.3 | Minha IA produziu um lixo | q9 | ✅ | — |
+| 2.3.3 | Minha IA produziu um lixo | q10 | ✅ | — |
+| 2.3.4 | Prompts no processo de desenvolvimento | q1 | ✅ | — |
+| 2.3.4 | Prompts no processo de desenvolvimento | q2 | ✅ 1x | — |
+| 2.3.4 | Prompts no processo de desenvolvimento | q3 | ✅ | — |
+| 2.3.4 | Prompts no processo de desenvolvimento | q4 | ✅ | — |
+| 2.3.4 | Prompts no processo de desenvolvimento | q5 | ✅ | — |
+| 2.3.5 | Utilização e larga escala | q1 | ✅ | — |
+| 2.3.5 | Utilização e larga escala | q2 | ✅ | — |
+| 2.3.5 | Utilização e larga escala | q3 | ✅ | — |
+| 2.3.6 | Guidelines e trade-offs | q1 | ✅ 1x | — |
+| 2.3.6 | Guidelines e trade-offs | q2 | ✅ | — |
+| 2.3.6 | Guidelines e trade-offs | q3 | ✅ | — |
+| 2.3.6 | Guidelines e trade-offs | q4 | ✅ | — |
+| 2.3.6 | Guidelines e trade-offs | q5 | ✅ | — |
+| 2.3.7 | System vs User Prompt | q1 | ✅ | — |
+| 2.3.7 | System vs User Prompt | q2 | ✅ 1x | — |
+| 2.3.7 | System vs User Prompt | q3 | ✅ | — |
+| 2.3.8 | Exemplo estruturado de prompts | q1 | ✅ | — |
+| 2.3.8 | Exemplo estruturado de prompts | q2 | ✅ | — |
+| 2.3.8 | Exemplo estruturado de prompts | q3 | ✅ | — |
+| 2.3.8 | Exemplo estruturado de prompts | q4 | ✅ | — |
+| 2.3.8 | Exemplo estruturado de prompts | q5 | ✅ | — |
+| 2.3.8 | Exemplo estruturado de prompts | q6 | ✅ | — |
+| 2.3.8 | Exemplo estruturado de prompts | q7 | ✅ | — |
+| 2.3.8 | Exemplo estruturado de prompts | q8 | ✅ | — |
+| 2.3.8 | Exemplo estruturado de prompts | q9 | ✅ | — |
+| 2.3.8 | Exemplo estruturado de prompts | q10 | ✅ | — |
+| 2.3.9 | Finalizando com regras de ouro | q1 | ✅ | — |
+| 2.3.9 | Finalizando com regras de ouro | q2 | ✅ 1x | — |
+| 2.3.9 | Finalizando com regras de ouro | q3 | ✅ | — |
 
 ## Observações
 
@@ -578,3 +627,13 @@ O id da aula é `capítulo.aula` no Fundamentos (ex.: 2.4) e `módulo.capítulo.
 - 2026-11-08: 2.2.8 (Prompt Caching) padrão q1 não passou na 2ª refação (❌ 2x). Cenário novo (equipe X na OpenAI × equipe Y no Gemini, mesmo manual fixo): inverteu os lados, atribuindo o cache por API com ID à OpenAI e o desconto automático por prefixo ao Gemini. Explicado com tabela comparativa (quem cria o cache, ID, TTL, cobrança extra, desconto); próxima refação em formato aberto.
 - 2026-11-08: 2.2.8 (Prompt Caching) padrão q1 não passou na 3ª refação (❌ 3x). Formato aberto (5 afirmações: OpenAI, Gemini ou os dois): acertou 4 de 5, separando bem o que é do Gemini (chamada de API, ID, TTL); errou o "desconto aparece sem nenhuma configuração sua", marcando os dois; no Gemini o desconto só vale para o conteúdo que a equipe mandou cachear.
 - 2026-11-08: 2.2.8 (Prompt Caching) padrão q1 passou na 4ª refação (✅ 4x). Cenário novo (fatura da OpenAI com desconto sem ação do time × fatura do Gemini sem desconto, com texto fixo e sem chamada de cache): entendeu que na OpenAI o reaproveitamento é automático e no Gemini o desconto depende do cache criado por API. A confusão de fundo foi atribuir ao provider errado quem age (registro, ID, ativação, TTL); vale rever o conceito em outra sessão. Sem pendências na aula 2.2.8.
+- 2026-11-15: 2.3.2 (Uma simples correção de Bug) padrão aplicado pelo terminal (or-aplicar): 10/10.
+- 2026-11-15: 2.3.3 (Minha IA produziu um lixo) padrão: 8/10. Errou q2 (marcou só informar a versão e proibir o resto; a guideline soma o par errado/certo e a consulta à documentação) e q3 (marcou que os limites valem só no chat do erro; é o contrário, viram guidelines acumuladas para os chats novos). As duas passaram na 1ª refação (✅ 1x); sem pendências na aula 2.3.3.
+- 2026-11-15: 2.3.4 (Prompts no processo de desenvolvimento) padrão aplicado pela primeira vez: 4/5 (aula curta, 5 questões). Errada: q2 (marcou que API e plano cobram os dois por token e só muda o preço do milhão; na API cada token vira fatura, no plano o consumo gasta cota de valor fixo, então a pressão por enxugar cai). Contestou com razão que o plano também mede uso em tokens; explicação de C no gabarito corrigida. Sem quizz avançado (pausado desde 2026-10-26).
+- 2026-11-15: 2.3.4 (Prompts no processo de desenvolvimento) padrão q2 passou na 1ª refação (✅ 1x). Cenário novo (dois devs, mesmos prompts enormes, API key × plano mensal): entendeu que na API a conta cresce por token e no plano o valor é fixo, no máximo batendo no limite. Sem pendências na aula 2.3.4.
+- 2026-11-15: 2.3.5 (Utilização e larga escala) padrão aplicado pela primeira vez: 3/3 (aula curta, 3 questões). Sem pendências na aula 2.3.5. Sem quizz avançado (pausado desde 2026-10-26).
+- 2026-11-15: 2.3.7 (System vs User Prompt) padrão aplicado pela primeira vez: 2/3 (aula curta, 3 questões). Errada: q2 (marcou que a mensagem do agente A para o agente B é system prompt, porque A "tem autoridade" sobre B; é user prompt, já que o usuário pode ser humano, software ou outro agente e o que conta é o papel de pedido da vez). Sem quizz avançado (pausado desde 2026-10-26).
+- 2026-11-15: 2.3.7 (System vs User Prompt) padrão q2 passou na 1ª refação (✅ 1x). Cenário novo (script agendado manda "resuma os erros dos logs" a um modelo configurado como analista que não sugere reiniciar servidores): entendeu que o pedido do script é user prompt mesmo sem pessoa na origem, e o papel com a restrição é o system. Sem pendências na aula 2.3.7.
+- 2026-11-15: 2.3.8 (Exemplo estruturado de prompts) padrão aplicado pela primeira vez: 10/10. Antes de aplicar, a q10 foi reescrita (as três erradas seguiam o molde "elogio + mas limitação" e entregavam a correta). Na q6 contestou que a B (menos tokens, revisão mais barata) também valia; a premissa procede, mas o custo da revisão é tempo do colega humano, não tokens. Sem pendências na aula 2.3.8. Sem quizz avançado (pausado desde 2026-10-26).
+- 2026-11-15: 2.3.9 (Finalizando com regras de ouro) padrão aplicado pela primeira vez: 2/3 (aula curta, 3 questões). Errada: q2 (marcou que em batch só as entradas crescem e a saída continua simples; a aula diz que as duas mudam: entradas "não tão mínimas" e saída "não tão simples", com o checklist como base). Sem quizz avançado (pausado desde 2026-10-26).
+- 2026-11-15: 2.3.9 (Finalizando com regras de ouro) padrão q2 passou na 1ª refação (✅ 1x). Cenário novo (prompt que classificava um chamado por vez passa a receber 200 de uma vez): entendeu que em lote mudam entrada e saída, com o checklist mantido como base. Sem pendências na aula 2.3.9.
