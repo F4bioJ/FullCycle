@@ -49,7 +49,7 @@ Escreva depois do material e antes da primeira validação. Se o material termin
 
 Leia `quiz.md` antes de escrever qualquer pergunta. **Quizz avançado** (`quizz.<título>.adv.md` + `quizz.<título>.adv.gabarito.md`): 10 perguntas baseadas no material avançado, sem repetir as do quizz da aula, com `**Seção:**` em cada questão do gabarito. Só entra pergunta que passa no filtro de relevância.
 
-**Geração e revisão:** vai ao validador junto com o material, na mesma rodada, conforme `revisao.md`. Um só validador por aula, acionado com `SendMessage` nas rodadas seguintes.
+**Geração e revisão:** rode antes o `lint-quizz.mjs` da `next-class` (veja `revisao.md`). Depois vai ao validador junto com o material, na mesma rodada, conforme `revisao.md`. Um só validador por aula, acionado com `SendMessage` nas rodadas seguintes.
 
 ## Ao terminar
 

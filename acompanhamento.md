@@ -1,6 +1,6 @@
 # Acompanhamento dos quizzes
 
-Atualizado em 2026-11-15.
+Atualizado em 2026-11-17.
 
 **Legenda:**
 
@@ -537,6 +537,75 @@ O id da aula é `capítulo.aula` no Fundamentos (ex.: 2.4) e `módulo.capítulo.
 | 2.3.9 | Finalizando com regras de ouro | q1 | ✅ | — |
 | 2.3.9 | Finalizando com regras de ouro | q2 | ✅ 1x | — |
 | 2.3.9 | Finalizando com regras de ouro | q3 | ✅ | — |
+| 2.4.2 | Dependency Auditor Agent Prompt | q1 | ✅ | — |
+| 2.4.2 | Dependency Auditor Agent Prompt | q2 | ✅ | — |
+| 2.4.2 | Dependency Auditor Agent Prompt | q3 | ✅ | — |
+| 2.4.2 | Dependency Auditor Agent Prompt | q4 | ✅ 1x | — |
+| 2.4.2 | Dependency Auditor Agent Prompt | q5 | ✅ | — |
+| 2.4.2 | Dependency Auditor Agent Prompt | q6 | ✅ | — |
+| 2.4.2 | Dependency Auditor Agent Prompt | q7 | ✅ | — |
+| 2.4.2 | Dependency Auditor Agent Prompt | q8 | ✅ 1x | — |
+| 2.4.2 | Dependency Auditor Agent Prompt | q9 | ✅ | — |
+| 2.4.2 | Dependency Auditor Agent Prompt | q10 | ✅ | — |
+| 2.4.3 | Resultado gerado pelo prompt | q1 | ✅ | — |
+| 2.4.3 | Resultado gerado pelo prompt | q2 | ✅ | — |
+| 2.4.3 | Resultado gerado pelo prompt | q3 | ✅ | — |
+| 2.4.3 | Resultado gerado pelo prompt | q4 | ✅ | — |
+| 2.4.4 | Arquivo declarativo do Agent e Prompt como Metadados | q1 | ✅ | — |
+| 2.4.4 | Arquivo declarativo do Agent e Prompt como Metadados | q2 | ✅ | — |
+| 2.4.4 | Arquivo declarativo do Agent e Prompt como Metadados | q3 | ✅ | — |
+| 2.4.4 | Arquivo declarativo do Agent e Prompt como Metadados | q4 | ✅ | — |
+| 2.4.4 | Arquivo declarativo do Agent e Prompt como Metadados | q5 | ✅ | — |
+| 2.4.6 | Estruturas especificas de prompts | q1 | ✅ | — |
+| 2.4.6 | Estruturas especificas de prompts | q2 | ✅ | — |
+| 2.4.6 | Estruturas especificas de prompts | q3 | ✅ | — |
+| 2.4.6 | Estruturas especificas de prompts | q4 | ✅ | — |
+| 2.4.6 | Estruturas especificas de prompts | q5 | ✅ | — |
+| 2.4.7 | Visão geral do workflow de um projeto | q1 | ✅ | — |
+| 2.4.7 | Visão geral do workflow de um projeto | q2 | ✅ | — |
+| 2.4.7 | Visão geral do workflow de um projeto | q3 | ✅ | — |
+| 2.4.7 | Visão geral do workflow de um projeto | q4 | ✅ | — |
+| 2.4.7 | Visão geral do workflow de um projeto | q5 | ✅ | — |
+| 2.4.7 | Visão geral do workflow de um projeto | q6 | ✅ 1x | — |
+| 2.4.7 | Visão geral do workflow de um projeto | q7 | ✅ | — |
+| 2.4.7 | Visão geral do workflow de um projeto | q8 | ✅ | — |
+| 2.4.7 | Visão geral do workflow de um projeto | q9 | ✅ | — |
+| 2.4.7 | Visão geral do workflow de um projeto | q10 | ✅ 1x | — |
+| 2.4.8 | Analisando prompt especialista em analisar arquiteturas | q1 | ✅ | — |
+| 2.4.8 | Analisando prompt especialista em analisar arquiteturas | q2 | ✅ | — |
+| 2.4.8 | Analisando prompt especialista em analisar arquiteturas | q3 | ✅ 1x | — |
+| 2.4.8 | Analisando prompt especialista em analisar arquiteturas | q4 | ✅ | — |
+| 2.4.8 | Analisando prompt especialista em analisar arquiteturas | q5 | ✅ | — |
+| 2.4.8 | Analisando prompt especialista em analisar arquiteturas | q6 | ✅ | — |
+| 2.4.8 | Analisando prompt especialista em analisar arquiteturas | q7 | ✅ | — |
+| 2.4.8 | Analisando prompt especialista em analisar arquiteturas | q8 | ✅ | — |
+| 2.4.8 | Analisando prompt especialista em analisar arquiteturas | q9 | ✅ | — |
+| 2.4.8 | Analisando prompt especialista em analisar arquiteturas | q10 | ✅ | — |
+| 2.4.9 | Analisando prompt de analise de componentes | q1 | ✅ | — |
+| 2.4.9 | Analisando prompt de analise de componentes | q2 | ✅ 1x | — |
+| 2.4.9 | Analisando prompt de analise de componentes | q3 | ✅ | — |
+| 2.4.9 | Analisando prompt de analise de componentes | q4 | ✅ | — |
+| 2.4.9 | Analisando prompt de analise de componentes | q5 | ✅ | — |
+| 2.4.10 | Workflow Specification Prompt | q1 | ✅ | — |
+| 2.4.10 | Workflow Specification Prompt | q2 | ✅ | — |
+| 2.4.10 | Workflow Specification Prompt | q3 | ✅ 1x | — |
+| 2.4.10 | Workflow Specification Prompt | q4 | ✅ | — |
+| 2.4.10 | Workflow Specification Prompt | q5 | ✅ | — |
+| 2.4.10 | Workflow Specification Prompt | q6 | ✅ | — |
+| 2.4.10 | Workflow Specification Prompt | q7 | ✅ 2x | — |
+| 2.4.10 | Workflow Specification Prompt | q8 | ✅ | — |
+| 2.4.10 | Workflow Specification Prompt | q9 | ✅ | — |
+| 2.4.10 | Workflow Specification Prompt | q10 | ✅ 1x | — |
+| 2.4.11 | Role Specification como Orquestrador | q1 | ✅ | — |
+| 2.4.11 | Role Specification como Orquestrador | q2 | ✅ | — |
+| 2.4.11 | Role Specification como Orquestrador | q3 | ✅ | — |
+| 2.4.11 | Role Specification como Orquestrador | q4 | ✅ | — |
+| 2.4.11 | Role Specification como Orquestrador | q5 | ✅ | — |
+| 2.4.11 | Role Specification como Orquestrador | q6 | ✅ | — |
+| 2.4.11 | Role Specification como Orquestrador | q7 | ✅ | — |
+| 2.4.11 | Role Specification como Orquestrador | q8 | ✅ | — |
+| 2.4.11 | Role Specification como Orquestrador | q9 | ✅ 1x | — |
+| 2.4.11 | Role Specification como Orquestrador | q10 | ✅ | — |
 
 ## Observações
 
@@ -637,3 +706,18 @@ O id da aula é `capítulo.aula` no Fundamentos (ex.: 2.4) e `módulo.capítulo.
 - 2026-11-15: 2.3.8 (Exemplo estruturado de prompts) padrão aplicado pela primeira vez: 10/10. Antes de aplicar, a q10 foi reescrita (as três erradas seguiam o molde "elogio + mas limitação" e entregavam a correta). Na q6 contestou que a B (menos tokens, revisão mais barata) também valia; a premissa procede, mas o custo da revisão é tempo do colega humano, não tokens. Sem pendências na aula 2.3.8. Sem quizz avançado (pausado desde 2026-10-26).
 - 2026-11-15: 2.3.9 (Finalizando com regras de ouro) padrão aplicado pela primeira vez: 2/3 (aula curta, 3 questões). Errada: q2 (marcou que em batch só as entradas crescem e a saída continua simples; a aula diz que as duas mudam: entradas "não tão mínimas" e saída "não tão simples", com o checklist como base). Sem quizz avançado (pausado desde 2026-10-26).
 - 2026-11-15: 2.3.9 (Finalizando com regras de ouro) padrão q2 passou na 1ª refação (✅ 1x). Cenário novo (prompt que classificava um chamado por vez passa a receber 200 de uma vez): entendeu que em lote mudam entrada e saída, com o checklist mantido como base. Sem pendências na aula 2.3.9.
+- 2026-11-16: 2.4.2 (Dependency Auditor Agent Prompt) padrão aplicado pela primeira vez: 8/10. Erradas: q4 (marcou story points para estimar o tempo das correções; a aula proíbe estimativa porque o modelo inventa o número, e só entraria se o prompt ensinasse como calcular) e q8 (marcou perguntar ao usuário qual pasta auditar; as premissas do prompt já decidem: sem pasta, audita o projeto inteiro, ecossistemas em separado, aviso de risco sem lockfile). Sem quizz avançado (pausado desde 2026-10-26).
+- 2026-11-16: 2.4.2 (Dependency Auditor Agent Prompt) padrão q4 e q8 passaram na 1ª refação (✅ 1x). q4: entendeu que, sem método de cálculo no prompt, o tempo estimado é número sem base, e faixas, confiança ou persona não resolvem. q8: entendeu que as premissas decidem sem perguntar (projeto inteiro, ecossistemas separados, aviso de risco sem lockfile). Sem pendências na aula 2.4.2.
+- 2026-11-16: 2.4.3 (Resultado gerado pelo prompt) padrão aplicado pela primeira vez: 4/4 (aula curta, 4 questões). Sem pendências na aula 2.4.3. Sem quizz avançado (pausado desde 2026-10-26).
+- 2026-11-16: 2.4.4 (Arquivo declarativo do Agent e Prompt como Metadados) padrão aplicado pela primeira vez: 5/5 (aula curta, 5 questões). Sem pendências na aula 2.4.4. Sem quizz avançado (pausado desde 2026-10-26).
+- 2026-11-16: 2.4.6 (Estruturas especificas de prompts) padrão aplicado pela primeira vez: 5/5 (aula curta, 5 questões). Sem pendências na aula 2.4.6. Sem quizz avançado (pausado desde 2026-10-26).
+- 2026-11-17: 2.4.7 (Visão geral do workflow de um projeto) padrão aplicado pela primeira vez: 8/10. Erradas: q6 (marcou que a análise de componentes espera o relatório de dependências; a lista de componentes sai do relatório de arquitetura) e q10 (marcou que o agente de arquitetura consolida o README; quem monta o README, como lista/índice dos relatórios, é o orquestrador no fechamento). Sem quizz avançado (pausado desde 2026-10-26).
+- 2026-11-17: 2.4.7 (Visão geral do workflow de um projeto) padrão q6 e q10 passaram na 1ª refação (✅ 1x). q6: entendeu que, sem o relatório de arquitetura, a análise de componentes fica sem a lista de entrada. q10: entendeu que o README é um índice dos relatórios, montado pelo orquestrador no fechamento, e que o detalhe fica em cada relatório. Sem pendências na aula 2.4.7.
+- 2026-11-17: 2.4.8 (Analisando prompt especialista em analisar arquiteturas) padrão aplicado pela primeira vez: 9/10. Errada: q3 (marcou que o agente procura uma pasta `components` e registra a ausência como limitação; o prompt deixa a IA inferir o que é componente pela organização real do projeto, como bundles no Symfony e packages no Go, guiada pelos exemplos). Sem quizz avançado (pausado desde 2026-10-26).
+- 2026-11-17: 2.4.8 (Analisando prompt especialista em analisar arquiteturas) padrão q3 passou na 1ª refação (✅ 1x). Entendeu que fixar "componente = classe" tira do agente a granularidade que se adapta ao projeto (domínios, bundles, packages); classe só serve em software feito só de classes. Sem pendências na aula 2.4.8.
+- 2026-11-17: 2.4.9 (Analisando prompt de analise de componentes) padrão aplicado pela primeira vez: 4/5. Errada: q2 (marcou acrescentar um workflow final ao prompt para um componente enorme que gerou relatório raso; a aula propõe rodar outro prompt que divide o componente em subcomponentes e analisar cada um em nível mais baixo). Sem quizz avançado (pausado desde 2026-10-26).
+- 2026-11-17: 2.4.9 (Analisando prompt de analise de componentes) padrão q2 passou na 1ª refação (✅ 1x). Entendeu que componente grande demais pede descer de nível com outro prompt (subcomponentes analisados à parte), e não mudar as instruções do mesmo prompt. Sem pendências na aula 2.4.9.
+- 2026-11-17: 2.4.10 (Workflow Specification Prompt) padrão aplicado pela primeira vez: 7/10. Erradas: q3 (marcou que a lista de componentes sai do relatório do Dependency Auditor; sai do de arquitetura, mesma troca da q6 da 2.4.7), q7 (marcou que o agente esperava o manifesto para saber o componente; a causa é a mensagem de invocação vaga, já que a janela do subagente é isolada) e q10 (marcou que o orquestrador redispara o agente na fase 4; quem valida que cada arquivo existe é o Claude Code na fase 5, e o orquestrador não dispara agentes). Sem quizz avançado (pausado desde 2026-10-26).
+- 2026-11-17: 2.4.10 (Workflow Specification Prompt) padrão q3 e q10 passaram na 1ª refação (✅ 1x); q7 passou na 2ª (✅ 2x). q3: entendeu que, sem o relatório de arquitetura, a fase 3 fica sem a lista de componentes, mesmo com o auditor pronto. q10: entendeu que é o Claude Code, na fase 5, que valida cada arquivo do manifesto antes de gravar o link. q7: na 1ª refação (duas invocações, uma rica e outra só com o nome) repetiu a ideia de que o agente busca no manifesto o caminho do componente; explicado que o manifesto é registro de saída (para o índice do README) e que o subagente, de janela isolada, só tem o prompt de base e a mensagem de invocação. Na 2ª (qual mudança no comando ataca os relatórios rasos) escolheu o coordenador montar a mensagem com componente, pastas, trecho da arquitetura e destino. Vale rever o papel do manifesto em outra sessão. Sem pendências na aula 2.4.10.
+- 2026-11-17: 2.4.11 (Role Specification como Orquestrador) padrão aplicado pela primeira vez: 9/10. Errada: q9 (marcou como INCORRETA "o manifesto guarda o estado e mostra de onde retomar", que é verdadeira; a incorreta era tratar o manifesto como entrega final com sumário executivo, quando a entrega é o README montado a partir dele). Mesma confusão sobre o papel do manifesto já vista na q7 da 2.4.10. Sem quizz avançado (pausado desde 2026-10-26).
+- 2026-11-17: 2.4.11 (Role Specification como Orquestrador) padrão q9 passou na 1ª refação (✅ 1x): diante de um manifesto só com registros (caminhos, agentes, timestamps), escolheu que ele é o estado do workflow e que as conclusões ficam nos relatórios, indexados pelo README final. Sem pendências na aula 2.4.11.

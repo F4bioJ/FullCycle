@@ -15,7 +15,7 @@ Não duplique regras. Leia só estas seções de `.claude/skills/next-class/SKIL
 
 - **Contexto atual** (URLs, módulo em estudo, pasta do módulo);
 - **Estrutura de arquivos** (pastas, id da aula, numeração de módulo, capítulo e aula);
-- **Qual aula processar** (sem argumento = próxima aula; com número ou id; `/noquizz`; `/noaudio`, que aqui é o padrão, veja abaixo);
+- **Qual aula processar** (sem argumento = próxima aula; com número ou id; `/noquizz`; o áudio também não é gerado aqui por padrão, veja abaixo);
 - **Quizz já tentado** (antes de gerar ou aplicar, confira o `acompanhamento.md`: sem tentativa, aplica do início; com incorretas pendentes, reaplica só as incorretas; sem pendentes, pergunta se quer refazer do início);
 - **Tarefa 1: capturar** (login, listar, abrir, capturar, salvar e gravar com os scripts do Playwright).
 

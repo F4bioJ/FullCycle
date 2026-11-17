@@ -54,7 +54,18 @@ validação 3 sem OK: vai para "Quando o artefato fica Pendente"
 
 ## Conferência própria do gerente
 
-Antes de mandar o artefato ao validador, o gerente confere por conta própria: refaz as contas, confere as fontes que levantam suspeita, resolve as questões sem olhar o gabarito, conta as letras corretas e compara o tamanho das alternativas. O validador é a segunda leitura, não a única.
+Antes de mandar o artefato ao validador, o gerente confere por conta própria: refaz as contas, confere as fontes que levantam suspeita e resolve as questões sem olhar o gabarito. O validador é a segunda leitura, não a única.
+
+**Lint obrigatório (2026-11-16):** os vícios mecânicos de `references/quiz.md` (correta mais longa, absolutos só nas erradas, letras concentradas, enunciado que repete palavra só da correta) passavam pelo gerente e pelo validador, porque lidos "a olho" parecem conteúdo (ex.: "sempre" ou "únicos" numa errada da 2.4.3). Por isso, antes de chamar o validador, rode:
+
+```
+node .claude/skills/next-class/scripts/lint-quizz.mjs "<quizz.título.md>" "<quizz.título.gabarito.md>"
+```
+
+- Cada alerta deve ser corrigido ou justificado: o absoluto pode ficar se também aparecer na correta, ou se a palavra for conteúdo e não ênfase (ex.: "só" no sentido de "apenas depois de X" pode ser legítimo, mas então ponha um absoluto equivalente em outra alternativa).
+- Rode de novo depois de corrigir. Só chame o validador com o lint limpo, ou com os alertas restantes justificados no pedido.
+- Isso vale também para o quizz avançado e para as perguntas novas da refação.
+- O validador deixa de contar absolutos, tamanhos e letras (critério 5 abaixo): ele confere o que exige leitura, ou seja, gabarito, escopo e relevância.
 
 ## Formato do retorno de problemas
 
@@ -95,7 +106,7 @@ Não reescreva o artefato. Não aponte preferência de estilo, só problemas que
 2. **Explicações:** a justificativa da correta e de cada errada está certa e coerente com a base.
 3. **Base:** cada pergunta é sustentada pela base certa (aula ou material avançado); o quizz avançado indica `**Seção:**` válida em cada questão e não repete o quizz da aula.
 4. **Filtro de relevância e nível** de `references/quiz.md`: nada de datas, autores, constantes ou contas longas; no máximo uma conta; perguntas que um aluno atento acertaria entre 5 e 8 de 10, não definições triviais.
-5. **Vícios que entregam a resposta:** correta mais longa, absolutos só nas erradas, letra concentrada numa posição, distrator absurdo, enunciado que repete palavras da correta. Contar as letras do gabarito.
+5. **Vícios que entregam a resposta:** o gerente já rodou o `lint-quizz.mjs` (correta mais longa, absolutos só nas erradas, letras concentradas, enunciado que repete a correta). O validador confere só o que o script não vê: distrator absurdo ou implausível, e absoluto que o lint justificou mas que ainda denuncia a errada. Um alerta do lint justificado de forma fraca conta como problema.
 6. **Formato:** 10 perguntas (ou menos em aula curta, conforme "Aulas curtas" na `SKILL.md`), quatro alternativas, arquivo de perguntas sem marca de resposta, campos do gabarito completos.
 
 ## Quando o artefato fica Pendente

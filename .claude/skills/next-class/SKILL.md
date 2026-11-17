@@ -1,6 +1,6 @@
 ---
 name: next-class
-description: Prepara a próxima aula do MBA em Engenharia de Software com IA (Full Cycle) - entra na plataforma, captura a transcrição e o resumo do professor, gera um resumo próprio (básico), o quizz da aula e o áudio, e depois aplica o quizz uma pergunta por vez. Aceita /noquizz e /noaudio para pular o quizz ou o áudio. O material e o quizz avançados ficam na skill next-class-adv. Use sempre que o usuário pedir "próxima aula", "next class", "captura a aula", "prepara a aula N", "quero estudar a próxima", "faz o quizz da aula", "refazer as que errei" ou mencionar aulas, transcrições, resumos ou quizzes do MBA / Full Cycle, mesmo sem citar a skill pelo nome.
+description: Prepara a próxima aula do MBA em Engenharia de Software com IA (Full Cycle) - entra na plataforma, captura a transcrição e o resumo do professor, gera um resumo próprio (básico) e o quizz da aula, e depois aplica o quizz uma pergunta por vez. O áudio só é gerado com /audio; /noquizz pula o quizz. O material e o quizz avançados ficam na skill next-class-adv. Use sempre que o usuário pedir "próxima aula", "next class", "captura a aula", "prepara a aula N", "quero estudar a próxima", "faz o quizz da aula", "refazer as que errei" ou mencionar aulas, transcrições, resumos ou quizzes do MBA / Full Cycle, mesmo sem citar a skill pelo nome.
 ---
 
 # next-class
@@ -47,7 +47,7 @@ A pasta `advanced/` e os arquivos `quizz.<título>.adv.*` só aparecem se o usu�
 
 O áudio fica fora da pasta da aula, em `<módulo>/<capítulo>/audio/<nº - título>.mp3` (mais o `.roteiro.md`), como define a skill `get-audio` (Tarefa 4).
 
-**Os 5 artefatos de cada aula:** 1) cópia da transcrição, 2) cópia do resumo do professor, 3) resumo gerado (bsc), 4) quizz da aula, 5) áudio. Os artefatos 1 e 2 são cópias do site; 3 e 4 são gerados e passam pela revisão de `references/revisao.md`.
+**Os 5 artefatos de cada aula:** 1) cópia da transcrição, 2) cópia do resumo do professor, 3) resumo gerado (bsc), 4) quizz da aula, 5) áudio (só com `/audio`, veja "Parâmetros"). Os artefatos 1 e 2 são cópias do site; 3 e 4 são gerados e passam pela revisão de `references/revisao.md`.
 
 **Aulas práticas:** têm só os artefatos 1, 2 e 3, sem quizz e sem áudio. Em 2026-11-01 o usuário concordou que, nessas aulas, o que importa é mexer na ferramenta: um quizz cobraria detalhes de tela ou repetiria a aula conceitual anterior, e o áudio depende da tela. Além disso, os quizzes não contam para a aprovação.
 
@@ -84,18 +84,20 @@ O número de perguntas é um teto nas duas faixas menores: se a aula não susten
 - Com um número (`/next-class 7`): essa aula do capítulo atual. Com o id (`/next-class 2.1.3`, ou `/next-class 1.3` para o Fundamentos): essa aula.
 - Com `quizz`: não captura nada, só aplica um quizz pendente (veja "Aplicar o quizz").
 
-**Parâmetros de corte** (podem vir sozinhos ou junto de uma aula, em qualquer ordem; ex.: `/next-class /noaudio /noquizz`, `/next-class 4.4 /noquizz`):
+**Parâmetros** (podem vir sozinhos ou junto de uma aula, em qualquer ordem; ex.: `/next-class /audio`, `/next-class 4.4 /noquizz`):
+
+Desde 2026-11-17, o áudio é opcional: sem `/audio`, a skill **não** gera áudio. Antes era o contrário (gerava sempre, e `/noaudio` cortava); o usuário pediu a inversão.
 
 | Parâmetro | Efeito |
 |---|---|
+| `/audio` | Roda a Tarefa 4: invoca a `get-audio` para a aula. Sem ele, a Tarefa 4 é pulada. |
 | `/noquizz` | Pula a Tarefa 3: não gera quizz, gabarito nem `acompanhamento.md`. O validador avalia só o resumo. No relatório, não oriente rodar a `/init`. |
-| `/noaudio` | Pula a Tarefa 4: não invoca a `get-audio`. |
 
-- Com os dois, a aula fica só com os artefatos 1, 2 e 3 (o mesmo que uma aula prática, sem a regra de identificar pela transcrição).
+- Sem parâmetros, a aula conceitual fica com os artefatos 1 a 4. Com `/noquizz`, fica só com 1, 2 e 3 (o mesmo que uma aula prática, sem a regra de identificar pela transcrição).
+- `/noaudio` deixou de ser necessário: se o usuário o passar, só confirme que o áudio não será gerado (já é o padrão).
 - Os parâmetros valem só para a execução em que foram passados, em todas as aulas dessa execução. Não os guarde como preferência.
-- Aula prática já corta quizz e áudio por conta própria; os parâmetros só importam nas aulas conceituais.
-- O que foi pulado não é "Pendente": no relatório, diga "quizz/áudio não gerado a pedido (`/noquizz`/`/noaudio`)". Se o usuário pedir depois, gere só o que falta (regra de "crie só o que falta").
-- `/noaudio` com `/noquizz` ausente: gere o quizz normalmente e peça o `/init` no relatório.
+- Aula prática e aula de abertura ficam sem quizz e sem áudio mesmo com `/audio`, a menos que o usuário peça aquela aula especificamente.
+- O que não foi gerado não é "Pendente": no relatório, diga "áudio não gerado (use `/audio` ou `/get-audio <id>` se quiser)" e, se for o caso, "quizz não gerado a pedido (`/noquizz`)". Se o usuário pedir depois, gere só o que falta (regra de "crie só o que falta").
 
 Se a próxima posição não existe no capítulo, o capítulo acabou: avise e pergunte se deve seguir para o próximo, sem avançar por conta própria.
 
@@ -144,7 +146,7 @@ Leia a transcrição e o resumo do professor e escreva `summary/<título>.resumo
 
 ## Tarefa 3: quizz da aula
 
-Pule esta tarefa se o usuário passou `/noquizz` (veja "Parâmetros de corte").
+Pule esta tarefa se o usuário passou `/noquizz` (veja "Parâmetros").
 
 Leia `references/quiz.md` antes de escrever qualquer pergunta. O arquivo traz o nível exigido, os vícios a evitar e o formato dos três arquivos de cada quizz.
 
@@ -152,11 +154,11 @@ Leia `references/quiz.md` antes de escrever qualquer pergunta. O arquivo traz o 
 
 O quizz tem o arquivo de perguntas (sem respostas, para poder ser refeito) e o gabarito em arquivo separado.
 
-**Geração e revisão:** o quizz (perguntas + gabarito) vai ao validador junto com o resumo, na mesma rodada, conforme `references/revisao.md`. O validador devolve "OK" ou aponta a questão e o problema, você corrige só o apontado, e o ciclo se repete no limite de validações de `revisao.md`. Quizz que não passar fica "Pendente".
+**Geração e revisão:** rode antes o `scripts/lint-quizz.mjs` (veja "Conferência própria" em `revisao.md`) e corrija os alertas. O quizz (perguntas + gabarito) vai ao validador junto com o resumo, na mesma rodada, conforme `references/revisao.md`. O validador devolve "OK" ou aponta a questão e o problema, você corrige só o apontado, e o ciclo se repete no limite de validações de `revisao.md`. Quizz que não passar fica "Pendente".
 
 ## Tarefa 4: áudio
 
-Pule esta tarefa se o usuário passou `/noaudio` (veja "Parâmetros de corte").
+Só rode esta tarefa se o usuário passou `/audio` (veja "Parâmetros"). Sem o parâmetro, pule-a.
 
 Depois do quizz (ou do resumo, com `/noquizz`), invoque a skill `get-audio` (`Skill`) para a aula recém-processada (pelo id). Ela escreve o roteiro e gera o MP3 em `<módulo>/<capítulo>/audio/`, usando o resumo gerado como fonte principal. O roteiro e o MP3 não passam pelo fluxo de revisão.
 
