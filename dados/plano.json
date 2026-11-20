@@ -27,7 +27,15 @@
     "2.2.10",
     "2.3.1",
     "2.4.1",
-    "2.4.5"
+    "2.4.5",
+    "2.5.1",
+    "2.5.8",
+    "2.5.9",
+    "2.5.10",
+    "2.5.13",
+    "2.5.14",
+    "2.5.15",
+    "2.5.16"
   ],
   "vistas_nota": "vistas = aulas estudadas sem quizz (conta como estudada). Só 'visto' na plataforma, sem estudo, vira 'o' (só ouvida).",
   "feitasExtra": [

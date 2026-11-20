@@ -1,6 +1,6 @@
 # Acompanhamento dos quizzes
 
-Atualizado em 2026-11-17.
+Atualizado em 2026-11-19.
 
 **Legenda:**
 
@@ -606,6 +606,46 @@ O id da aula é `capítulo.aula` no Fundamentos (ex.: 2.4) e `módulo.capítulo.
 | 2.4.11 | Role Specification como Orquestrador | q8 | ✅ | — |
 | 2.4.11 | Role Specification como Orquestrador | q9 | ✅ 1x | — |
 | 2.4.11 | Role Specification como Orquestrador | q10 | ✅ | — |
+| 2.5.2 | Prompts para produtividade em equipe | q1 | ✅ | — |
+| 2.5.2 | Prompts para produtividade em equipe | q2 | ✅ 1x | — |
+| 2.5.2 | Prompts para produtividade em equipe | q3 | ✅ | — |
+| 2.5.3 | Gestão e controle de versão | q1 | ✅ | — |
+| 2.5.3 | Gestão e controle de versão | q2 | ✅ 1x | — |
+| 2.5.3 | Gestão e controle de versão | q3 | ✅ | — |
+| 2.5.3 | Gestão e controle de versão | q4 | ✅ | — |
+| 2.5.3 | Gestão e controle de versão | q5 | ✅ 1x | — |
+| 2.5.4 | Documentação e categorização | q1 | ✅ | — |
+| 2.5.4 | Documentação e categorização | q2 | ✅ | — |
+| 2.5.4 | Documentação e categorização | q3 | ✅ | — |
+| 2.5.4 | Documentação e categorização | q4 | ✅ | — |
+| 2.5.4 | Documentação e categorização | q5 | ✅ | — |
+| 2.5.5 | Prompts utilizados por projetos de IA | q1 | ✅ | — |
+| 2.5.5 | Prompts utilizados por projetos de IA | q2 | ✅ | — |
+| 2.5.5 | Prompts utilizados por projetos de IA | q3 | ✅ | — |
+| 2.5.5 | Prompts utilizados por projetos de IA | q4 | ✅ | — |
+| 2.5.5 | Prompts utilizados por projetos de IA | q5 | ✅ | — |
+| 2.5.5 | Prompts utilizados por projetos de IA | q6 | ✅ | — |
+| 2.5.5 | Prompts utilizados por projetos de IA | q7 | ✅ | — |
+| 2.5.5 | Prompts utilizados por projetos de IA | q8 | ✅ | — |
+| 2.5.5 | Prompts utilizados por projetos de IA | q9 | ✅ | — |
+| 2.5.5 | Prompts utilizados por projetos de IA | q10 | ✅ | — |
+| 2.5.6 | Registry e estrutura de pastas | q1 | ✅ 1x | — |
+| 2.5.6 | Registry e estrutura de pastas | q2 | ✅ | — |
+| 2.5.6 | Registry e estrutura de pastas | q3 | ✅ | — |
+| 2.5.7 | Visão geral com prompt.yaml | q1 | ✅ | — |
+| 2.5.7 | Visão geral com prompt.yaml | q2 | ✅ | — |
+| 2.5.7 | Visão geral com prompt.yaml | q3 | ✅ | — |
+| 2.5.11 | Soluções de terceiros para gestão | q1 | ✅ 1x | — |
+| 2.5.11 | Soluções de terceiros para gestão | q2 | ✅ | — |
+| 2.5.11 | Soluções de terceiros para gestão | q3 | ✅ | — |
+| 2.5.11 | Soluções de terceiros para gestão | q4 | ✅ | — |
+| 2.5.11 | Soluções de terceiros para gestão | q5 | ✅ | — |
+| 2.5.12 | Langsmith Prompt Hub | q1 | ✅ | — |
+| 2.5.12 | Langsmith Prompt Hub | q2 | ✅ | — |
+| 2.5.12 | Langsmith Prompt Hub | q3 | ✅ | — |
+| 2.5.17 | Concluindo | q1 | ✅ | — |
+| 2.5.17 | Concluindo | q2 | ✅ | — |
+| 2.5.17 | Concluindo | q3 | ✅ | — |
 
 ## Observações
 
@@ -721,3 +761,11 @@ O id da aula é `capítulo.aula` no Fundamentos (ex.: 2.4) e `módulo.capítulo.
 - 2026-11-17: 2.4.10 (Workflow Specification Prompt) padrão q3 e q10 passaram na 1ª refação (✅ 1x); q7 passou na 2ª (✅ 2x). q3: entendeu que, sem o relatório de arquitetura, a fase 3 fica sem a lista de componentes, mesmo com o auditor pronto. q10: entendeu que é o Claude Code, na fase 5, que valida cada arquivo do manifesto antes de gravar o link. q7: na 1ª refação (duas invocações, uma rica e outra só com o nome) repetiu a ideia de que o agente busca no manifesto o caminho do componente; explicado que o manifesto é registro de saída (para o índice do README) e que o subagente, de janela isolada, só tem o prompt de base e a mensagem de invocação. Na 2ª (qual mudança no comando ataca os relatórios rasos) escolheu o coordenador montar a mensagem com componente, pastas, trecho da arquitetura e destino. Vale rever o papel do manifesto em outra sessão. Sem pendências na aula 2.4.10.
 - 2026-11-17: 2.4.11 (Role Specification como Orquestrador) padrão aplicado pela primeira vez: 9/10. Errada: q9 (marcou como INCORRETA "o manifesto guarda o estado e mostra de onde retomar", que é verdadeira; a incorreta era tratar o manifesto como entrega final com sumário executivo, quando a entrega é o README montado a partir dele). Mesma confusão sobre o papel do manifesto já vista na q7 da 2.4.10. Sem quizz avançado (pausado desde 2026-10-26).
 - 2026-11-17: 2.4.11 (Role Specification como Orquestrador) padrão q9 passou na 1ª refação (✅ 1x): diante de um manifesto só com registros (caminhos, agentes, timestamps), escolheu que ele é o estado do workflow e que as conclusões ficam nos relatórios, indexados pelo README final. Sem pendências na aula 2.4.11.
+- 2026-11-18: 2.5.3 (Gestão e controle de versão) padrão aplicado pela primeira vez: 3/5 (aula curta, 5 questões). Erradas: q2 (marcou o repositório geral com link simbólico para o `AGENTS.md` e os workflows próprios do projeto; esses ficam dentro do projeto, versionados com ele) e q5 (marcou dispensar o controle de versão nos prompts pessoais; o que se dispensa é o PR e o code review, e o repositório único continua sendo o centro). Sem quizz avançado (pausado desde 2026-10-26).
+- 2026-11-18: 2.5.4 (Documentação e categorização) padrão aplicado pela primeira vez: 5/5 (aula curta, 5 questões). Sem quizz avançado (pausado desde 2026-10-26).
+- 2026-11-18: 2.5.5 (Prompts utilizados por projetos de IA) padrão aplicado pela primeira vez: 10/10. Sem quizz avançado (pausado desde 2026-10-26).
+- 2026-11-18: 2.5.7 (Visão geral com prompt.yaml) padrão aplicado pela primeira vez: 3/3 (aula curta, 3 questões). Sem quizz avançado (pausado desde 2026-10-26).
+- 2026-11-19: 2.5.11 (Soluções de terceiros para gestão) padrão aplicado pela primeira vez: 4/5. Só a q1 errada: marcou PR e code review como o caminho para a prompt engineer; a aula diz que dar acesso ao Git costuma não fazer sentido para quem quer avaliar e melhorar o prompt, não lidar com repositório.
+- 2026-11-19: 2.5.11 (Soluções de terceiros para gestão) padrão q1 passou na 1ª refação (✅ 1x). Cenário novo (analista de qualidade que compara versões de um prompt de triagem e o custo de cada uma): entendeu que, para quem não é dev, a ferramenta de gestão com SDK atende melhor que Git, PR ou intermediação dos devs.
+- 2026-11-19: 2.5.12 (Langsmith Prompt Hub) padrão aplicado pela primeira vez: 3/3 (aula curta, 3 questões). A q2 foi reescrita durante a aplicação, a pedido do usuário: a versão original exigia lembrar a ordem dos exemplos anteriores do curso. Sem quizz avançado (pausado desde 2026-10-26).
+- 2026-11-19: 2.5.17 (Concluindo) padrão aplicado pela primeira vez: 3/3 (aula curta, 3 questões). Sem quizz avançado (pausado desde 2026-10-26).
