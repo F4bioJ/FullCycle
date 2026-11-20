@@ -9,6 +9,8 @@ Transforma uma aula da plataforma Full Cycle em material de estudo: captura o co
 
 Esta skill cobre só o conteúdo **básico**, o que a aula ensina. Desde 2026-10-26, o material avançado e o quizz avançado ficam na skill `next-class-adv`, que só roda quando o usuário pedir. O usuário estava atrasado no curso, e o avançado cobrava o que as aulas não cobram. Não gere nada do avançado aqui e não ofereça o avançado ao final.
 
+**Lotes de várias aulas:** desde 2026-11-20, para o resto de um capítulo ou um intervalo de 3 ou mais aulas conceituais, prefira a skill `next-episode`. Ela usa as regras desta skill, mas captura tudo na sessão principal e lança um agente Opus por aula, o que evita que o contexto acumulado de todas as aulas encareça cada passo. Se o usuário pedir várias aulas pela `next-class` ("faz até a 2.6.10"), sugira a `next-episode` numa linha antes de começar.
+
 ## Contexto atual
 
 | | |
