@@ -6,7 +6,19 @@ Ao alterar uma skill, acrescente uma entrada aqui com a data, o motivo e os arqu
 
 ## Pelo histórico do Git
 
-### 2026-11-20 · ainda não commitado
+### 2026-11-20 · get-audio alinhada e documentação das skills
+
+**`get-audio`** (`get-audio/SKILL.md`)
+
+- Aulas práticas e de abertura passam a ser identificadas pelas regras da `next-class`: título com "Hands on -", "na prática", "Demonstração" ou "Executando", ou aula que só abre o capítulo. Na dúvida, uma aula com resumo mas sem quizz costuma ser desse tipo.
+- **Motivo:** só "Hands on -" contava, e um `/get-audio 2.6.*` geraria áudio das demonstrações em código 2.6.7 a 2.6.10.
+
+**Documentação** (`doc/skill.<nome>.md`)
+
+- `doc/skill.nextClass.md` foi atualizado com o estado atual: tipos de aula, tamanhos pela duração, parâmetros, regras dos quizzes, lint, quizz já tentado e skills relacionadas.
+- Criados os documentos das demais skills: `skill.nextEpisode.md`, `skill.nextClassFree.md`, `skill.nextClassAdv.md`, `skill.init.md`, `skill.initAdv.md`, `skill.getAudio.md` e `skill.updDashboard.md`.
+
+### 2026-11-20 · `cbd1b49` Cria a skill next-episode e o registro de alterações das skills
 
 **Nova skill `next-episode`** (`next-episode/SKILL.md`)
 
