@@ -1,6 +1,6 @@
 # Acompanhamento dos quizzes
 
-Atualizado em 2026-11-19.
+Atualizado em 2026-11-21.
 
 **Legenda:**
 
@@ -646,8 +646,76 @@ O id da aula é `capítulo.aula` no Fundamentos (ex.: 2.4) e `módulo.capítulo.
 | 2.5.17 | Concluindo | q1 | ✅ | — |
 | 2.5.17 | Concluindo | q2 | ✅ | — |
 | 2.5.17 | Concluindo | q3 | ✅ | — |
+| 2.6.2 | Necessidades para reformulação e enriquecimento de prompts | q1 | ✅ | — |
+| 2.6.2 | Necessidades para reformulação e enriquecimento de prompts | q2 | ✅ | — |
+| 2.6.2 | Necessidades para reformulação e enriquecimento de prompts | q3 | ✅ | — |
+| 2.6.2 | Necessidades para reformulação e enriquecimento de prompts | q4 | ✅ | — |
+| 2.6.2 | Necessidades para reformulação e enriquecimento de prompts | q5 | ✅ | — |
+| 2.6.2 | Necessidades para reformulação e enriquecimento de prompts | q6 | ✅ | — |
+| 2.6.2 | Necessidades para reformulação e enriquecimento de prompts | q7 | ✅ 1x | — |
+| 2.6.2 | Necessidades para reformulação e enriquecimento de prompts | q8 | ✅ | — |
+| 2.6.2 | Necessidades para reformulação e enriquecimento de prompts | q9 | ✅ | — |
+| 2.6.2 | Necessidades para reformulação e enriquecimento de prompts | q10 | ✅ | — |
+| 2.6.3 | Fluxo basico e considerações importantes | q1 | ✅ | — |
+| 2.6.3 | Fluxo basico e considerações importantes | q2 | ✅ | — |
+| 2.6.3 | Fluxo basico e considerações importantes | q3 | ✅ | — |
+| 2.6.3 | Fluxo basico e considerações importantes | q4 | ✅ | — |
+| 2.6.3 | Fluxo basico e considerações importantes | q5 | ✅ | — |
+| 2.6.4 | Query2Doc | q1 | ✅ | — |
+| 2.6.4 | Query2Doc | q2 | ✅ | — |
+| 2.6.4 | Query2Doc | q3 | ✅ | — |
+| 2.6.4 | Query2Doc | q4 | ✅ | — |
+| 2.6.4 | Query2Doc | q5 | ✅ | — |
+| 2.6.5 | Hyde vs Query2Doc | q1 | ✅ | — |
+| 2.6.5 | Hyde vs Query2Doc | q2 | ✅ 1x | — |
+| 2.6.5 | Hyde vs Query2Doc | q3 | ✅ | — |
+| 2.6.5 | Hyde vs Query2Doc | q4 | ✅ | — |
+| 2.6.5 | Hyde vs Query2Doc | q5 | ✅ | — |
+| 2.6.5 | Hyde vs Query2Doc | q6 | ✅ | — |
+| 2.6.5 | Hyde vs Query2Doc | q7 | ✅ | — |
+| 2.6.5 | Hyde vs Query2Doc | q8 | ✅ | — |
+| 2.6.5 | Hyde vs Query2Doc | q9 | ✅ | — |
+| 2.6.5 | Hyde vs Query2Doc | q10 | ✅ | — |
+| 2.6.6 | ITER-RETGEN | q1 | ✅ | — |
+| 2.6.6 | ITER-RETGEN | q2 | ✅ | — |
+| 2.6.6 | ITER-RETGEN | q3 | ✅ | — |
+| 2.6.6 | ITER-RETGEN | q4 | ✅ | — |
+| 2.6.6 | ITER-RETGEN | q5 | ✅ 1x | — |
+| 2.7.2 | O que devemos avaliar | q1 | ✅ | — |
+| 2.7.2 | O que devemos avaliar | q2 | ✅ | — |
+| 2.7.2 | O que devemos avaliar | q3 | ✅ | — |
+| 2.7.3 | Entendendo Objetivos | q1 | ✅ 1x | — |
+| 2.7.3 | Entendendo Objetivos | q2 | ✅ | — |
+| 2.7.3 | Entendendo Objetivos | q3 | ✅ | — |
+| 2.7.3 | Entendendo Objetivos | q4 | ✅ | — |
+| 2.7.3 | Entendendo Objetivos | q5 | ✅ | — |
+| 2.7.4 | Métricas e tipos de avaliação | q1 | ✅ | — |
+| 2.7.4 | Métricas e tipos de avaliação | q2 | ✅ | — |
+| 2.7.4 | Métricas e tipos de avaliação | q3 | ✅ | — |
+| 2.7.4 | Métricas e tipos de avaliação | q4 | ✅ | — |
+| 2.7.4 | Métricas e tipos de avaliação | q5 | ✅ | — |
+| 2.7.5 | Evaluators | q1 | ✅ | — |
+| 2.7.5 | Evaluators | q2 | ✅ | — |
+| 2.7.5 | Evaluators | q3 | ✅ | — |
+| 2.7.5 | Evaluators | q4 | ✅ 1x | — |
+| 2.7.5 | Evaluators | q5 | ✅ | — |
+| 2.7.5 | Evaluators | q6 | ✅ | — |
+| 2.7.5 | Evaluators | q7 | ✅ | — |
+| 2.7.5 | Evaluators | q8 | ✅ 1x | — |
+| 2.7.5 | Evaluators | q9 | ✅ | — |
+| 2.7.5 | Evaluators | q10 | ✅ | — |
+| 2.7.6 | Datasets | q1 | ✅ | — |
+| 2.7.6 | Datasets | q2 | ✅ | — |
+| 2.7.6 | Datasets | q3 | ✅ | — |
+| 2.7.6 | Datasets | q4 | ✅ 1x | — |
+| 2.7.6 | Datasets | q5 | ✅ | — |
+| 2.7.7 | Entendendo estrutura dos exemplos | q1 | ✅ | — |
+| 2.7.7 | Entendendo estrutura dos exemplos | q2 | ✅ | — |
+| 2.7.7 | Entendendo estrutura dos exemplos | q3 | ✅ | — |
 
 ## Observações
+
+- 2026-11-21: 2.7.3 (Entendendo Objetivos) padrão aplicado pela primeira vez: 4/5. Só a q1 errada: tratou um valor desatualizado vindo do documento recuperado como alucinação; alucinar é trazer o que não está no contexto. Passou na 1ª refação (✅ 1x) com cenário novo (RH, férias de 20 x 30 dias): fiel e com base no documento, mas errada diante da referência. Sem pendências na aula 2.7.3.
 
 - 1.4 e 1.6 (padrão) e 2.1, 2.2 e 2.3 (padrão) só têm tentativa no formato antigo, sem registro por questão; a pontuação final foi usada para preencher a tabela.
 - 1.4 avançado q7 (regra de aprendizado do perceptron): acertou a 3ª e a 5ª rodadas e errou as outras quatro de múltipla escolha. Em 2026-10-16 a 7ª rodada virou pergunta aberta com tabela de passos (três entradas), e todas as linhas saíram certas.
@@ -769,3 +837,12 @@ O id da aula é `capítulo.aula` no Fundamentos (ex.: 2.4) e `módulo.capítulo.
 - 2026-11-19: 2.5.11 (Soluções de terceiros para gestão) padrão q1 passou na 1ª refação (✅ 1x). Cenário novo (analista de qualidade que compara versões de um prompt de triagem e o custo de cada uma): entendeu que, para quem não é dev, a ferramenta de gestão com SDK atende melhor que Git, PR ou intermediação dos devs.
 - 2026-11-19: 2.5.12 (Langsmith Prompt Hub) padrão aplicado pela primeira vez: 3/3 (aula curta, 3 questões). A q2 foi reescrita durante a aplicação, a pedido do usuário: a versão original exigia lembrar a ordem dos exemplos anteriores do curso. Sem quizz avançado (pausado desde 2026-10-26).
 - 2026-11-19: 2.5.17 (Concluindo) padrão aplicado pela primeira vez: 3/3 (aula curta, 3 questões). Sem quizz avançado (pausado desde 2026-10-26).
+- 2026-11-20: 2.6.2 (Necessidades para reformulação e enriquecimento de prompts) padrão aplicado pela primeira vez: 9/10. Só a q7 errada: marcou que corrigir a ortografia ("serto" → "certo") seria a afirmação incorreta; a incorreta era enxugar a pergunta para a busca semântica (a aula pede mais termos, não menos).
+- 2026-11-20: 2.6.2 (Necessidades para reformulação e enriquecimento de prompts) padrão q7 passou na 1ª refação (✅ 1x). Cenário novo (equipe que reduz as consultas a palavras-chave e passa a receber documentos menos relevantes): entendeu que menos termos dão à busca menos base para achar relevância. Sem pendências na aula 2.6.2.
+- 2026-11-20: 2.6.3 (Fluxo basico e considerações importantes) padrão aplicado pela primeira vez: 5/5 (aula curta, 5 questões). Sem quizz avançado (pausado desde 2026-10-26).
+- 2026-11-20: 2.6.5 (Hyde vs Query2Doc) padrão aplicado pela primeira vez: 9/10. Só a q2 errada: achou que fatos errados do documento hipotético não comprometem a resposta porque a vetorização perde os detalhes factuais; o motivo é que o documento só serve para a busca e a resposta vem dos trechos do banco (fonte da verdade).
+- 2026-11-20: 2.6.5 (Hyde vs Query2Doc) padrão q2 passou na 1ª refação (✅ 1x). Cenário novo (HyDE gera "30 dias" de férias e a política no banco diz "20"): entendeu que o funcionário recebe o valor do banco, porque o documento hipotético só serve para a busca. Sem pendências na aula 2.6.5.
+- 2026-11-20: 2.6.6 (ITER-RETGEN) padrão aplicado pela primeira vez: 4/5 (aula curta, 5 questões). Só a q5 errada: acertou que o loop traz muita informação para pergunta vaga, mas achou que o preço seria a resposta trazer dados hipotéticos; o preço são mais chamadas ao modelo (custo e latência), e as lacunas vêm da busca.
+- 2026-11-20: 2.6.6 (ITER-RETGEN) padrão q5 passou na 1ª refação (✅ 1x). Cenário novo (chatbot de suporte com respostas completas porém lentas): entendeu que cada rodada soma chamadas ao modelo e buscas, e que as lacunas são preenchidas pelos trechos recuperados. Sem pendências na aula 2.6.6.
+- 2026-11-21: 2.7.6 (Datasets) padrão aplicado pela primeira vez: 4/5 (aula curta, 5 questões). Só a q4 errada: marcou que o campo `output` do exemplo guarda o score do evaluator; é a resposta esperada (ground truth), a referência da comparação, e o score só existe depois que o evaluator roda. Sem quizz avançado (pausado desde 2026-10-26).
+- 2026-11-21: 2.7.6 (Datasets) padrão q4 passou na 1ª refação (✅ 1x). Cenário novo (prompt novo devolve severidade diferente da registrada no exemplo): entendeu que o `output` é a resposta esperada e que a diferença aparece ao comparar a saída gerada com ela. Sem pendências na aula 2.7.6.
