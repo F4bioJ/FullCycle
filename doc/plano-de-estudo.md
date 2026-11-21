@@ -162,19 +162,22 @@ Capacidade: 1h por noite nos dias úteis (cerca de 30 min de vídeo com o quizz)
 | 05–09/11 | Prompt Engineering: 2.1.1 a 2.2.10 (capítulos 1 e 2). Nivelamento: Introdução e Primeiros passos | 4h32 |
 | 10–13/11, à noite | Nivelamento: Chains (concluído em 11/11), Agentes (concluído em 12/11) e Memória (concluído em 13/11) | 2h44 |
 | 14–15/11 | Nivelamento: RAG (**nivelamento concluído em 15/11**). Depois, Prompt Engineering 2.3.1 a 2.4.2 | 2h37 |
-| 16–20/11, à noite | Prompt Engineering: 2.4.3 a 2.5.4 | 2h23 |
-| 21–22/11 | **Desafio de ingestão e busca semântica** | — |
-| 23–27/11, à noite | Prompt Engineering: 2.5.5 a 2.6.10 | 2h40 |
-| 28–29/11 | Prompt Engineering: capítulos 7 e 8. **Prompt Engineering concluído em 29/11** | 3h00 |
-| 30/11–06/12 | **Desafio de prompts com LangChain/LangSmith** | — |
-| 07–13/12 | IA Labs · Skills (17 aulas, opcional, sem desafio) | 4h46 |
+| 16–20/11, à noite | Prompt Engineering: 2.4.3 a 2.6.10 (**feito até 20/11**, adiantado) | 5h03 |
+| 21–24/11 | Prompt Engineering: 2.7.8 a 2.8.12 (2.7.1 a 2.7.7 já feitas em 21/11). **Prompt Engineering concluído em 24/11** | 2h16 |
+| 25/11–01/12 | IA Labs · Skills (17 aulas, sem desafio próprio; dá base para o desafio de ingestão) | 4h46 |
+| 02–08/12 | **Desafio de ingestão e busca semântica com LangChain e Postgres** (cerca de 8h; único entregável liberado em 2026) | — |
+| 09–13/12 | Folga. Se o desafio de prompts liberar a entrega ("Iniciar") ao fechar o Prompt Engineering, fazê-lo aqui | — |
 | 14/12–03/01 | Folga para atrasos | — |
 
 **Revisão do ritmo em 15/11:** o capítulo 3 (2.3.2 a 2.3.9, 64 min de vídeo) foi das 12h20 às 14h36, mas o usuário saiu por 1h no meio (farmácia, mercado, posto). Sobra **cerca de 1h15 de estudo, ou 1,2 vez o vídeo**, com o quizz e as refações, nas aulas teóricas. Nas práticas do nivelamento, a medida foi de 1,4 a 2,5 vezes. Para a conta, uso **1,5 vez** no que falta, porque os capítulos 5 a 8 têm várias aulas práticas (LangSmith, evaluation). Faltam 2.3.1 (2 min, capturada e sem quizz) e 2.4.1 a 2.8.12: 66 aulas e 8h29 de vídeo, ou **cerca de 12h45 de estudo**. Até 29/11, tirando o desafio de 21–22/11, há 10 noites (cerca de 10h) e o fim de semana de 28–29/11 (7 a 8h), cerca de 17h no total. **A meta de 29/11 cabe com cerca de 4h de folga.** As datas ficam como estão: a folga cobre o desafio de ingestão, se ele passar de 22/11, e as aulas longas do capítulo 4 (2.4.2 tem 24 min, 2.4.8 e 2.4.10 têm 22). Não vale antecipar a meta com base numa única medição.
 
-As datas de cada aula estão no dashboard. Se o desafio de ingestão não couber em 21–22/11, ele continua nas noites seguintes e empurra o resto do Prompt Engineering alguns dias, sem afetar a meta.
+**20/11:** **1h40 de estudo líquido** no capítulo 6, segundo o usuário (ele tinha dito 2h, mas esqueceu de descontar uma pausa). Nesse dia ele fechou o capítulo inteiro: 10 aulas e 83 min de vídeo, com quizz da 2.6.2 à 2.6.6, e as aulas 2.6.1 e 2.6.7 a 2.6.10 marcadas como vistas. A proporção é de **cerca de 1,2 vez o vídeo**, igual à do capítulo 3 em 15/11, mesmo com quatro aulas práticas (42 min) no capítulo. **Adiantado em cerca de uma semana:** o plano previa 2.5.5 a 2.6.10 para 23 a 27/11. Faltam os capítulos 7 e 8, 28 aulas e 3h00 de vídeo (cinco aulas práticas, 45 min), ou **de 3h40 a 4h30 de estudo** (1,2 a 1,5 vez o vídeo). Isso cabe no fim de semana de 21–22/11, e o desafio de ingestão passa para 23–29/11 (ver 21/11).
 
-**Meta:** chegar a **04/01/2027** (Design Docs) com o Fundamentos, o Prompt Engineering, o nivelamento de LangChain e os 2 desafios de 09/11 concluídos. Pela agenda, o Prompt Engineering termina em 29/11 (antes era 12/12), o desafio de prompts sai de 13–20/12 para 30/11–06/12, e o Lab Skills cabe antes do Natal.
+**21/11 (cálculo refeito):** o desafio de ingestão só começa depois do Prompt Engineering. Em 21/11 já foram 2.7.1 a 2.7.7 (44 min de vídeo). Faltam 2.7.8 a 2.8.12: 21 aulas e **2h16 de vídeo** (2.7.8 a 2.7.16, 60 min; capítulo 8, 76 min; práticas: 2.7.8, 2.8.6, 2.8.7, 2.8.10 e 2.8.11, 45 min). Com 1,2 a 1,5 vez o vídeo, são **de 2h45 a 3h25 de estudo**, que cabem em 21–22/11 (7 a 8h no fim de semana). O desafio de ingestão (cerca de 8h) fica em 23–29/11, com 5 noites e o fim de semana de 28–29/11, cerca de 13h de capacidade, e o desafio de prompts continua em 30/11–06/12. A meta de 04/01 não muda.
+
+**Meta:** chegar a **04/01/2027** (Design Docs) com o Fundamentos, o Prompt Engineering, o nivelamento de LangChain, o IA Labs · Skills e o desafio de ingestão concluídos.
+
+**21/11 (ordem corrigida):** conferido na plataforma, só o desafio de ingestão tem "Iniciar" (área de entrega). O de prompts ("Pull, Otimização e Avaliação de Prompts com LangChain e LangSmith", do módulo Prompt Engineering) aparece na lista de Desafios, mas sem "Iniciar"; não se sabe se a entrega abre ao concluir o módulo (hoje em 80%) ou se a data do calendário (09/11) mudou. Os de 2027 abrem nas datas do calendário. Nova ordem, definida pelo usuário: terminar o Prompt Engineering (até 24/11, ajuste do usuário), depois o IA Labs · Skills (25/11–01/12, que dá base ao desafio), depois o desafio de ingestão (02–08/12). O desafio de prompts fica condicional: ao fechar o Prompt Engineering, conferir se o "Iniciar" aparece; se aparecer, fazê-lo em 09–13/12 (cerca de 12h, tamanho real desconhecido). As linhas de 21/11 acima que citam o desafio de ingestão em 23–29/11 e o de prompts em 30/11–06/12 (e as datas 21–22/11 do fim do Prompt Engineering) estão superadas por esta ordem.
 
 **Depois disso:** de 14/12 a 04/01 não há conteúdo novo liberado. A folga serve para atrasos, para refazer as questões erradas e para descansar.
 

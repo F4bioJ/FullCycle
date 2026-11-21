@@ -1,10 +1,10 @@
 /* GERADO por .claude/skills/upd-dashboard/scripts/update.mjs a partir de acompanhamento.md + dados/plano.json + dados/plataforma.json. Não edite. */
-const ATUALIZADO = new Date(2026, 10, 19);
+const ATUALIZADO = new Date(2026, 10, 21);
 const INICIO = new Date(2026, 9, 5), FIM = new Date(2027, 9, 30), META_DESIGN = new Date(2027, 0, 4);
 const REFERENCIA_FUND = new Date(2026, 10, 29);
 const FUND_TOTAL_MIN = 744;
-const RITMO_MEDIDO = 28.2;
-const RITMO_PERIODO = "05/10 a 19/11";
+const RITMO_MEDIDO = 29.7;
+const RITMO_PERIODO = "05/10 a 21/11";
 const PLATAFORMA = {"pct":100,"feitos":55,"itens":55,"aulasVistas":53,"aulas":53,"em":"2026-11-05"};
 const PLATAFORMA_PCT = 100;
 const BLOCOS = [
@@ -41,11 +41,11 @@ const NOVEMBRO = [
   ["2026-10-31","2026-11-01","31/10–01/11","Aulas 2.12 a 2.22 no computador: resumo + quizz"],
   ["2026-11-07","2026-11-08","07–08/11","Prompt Engineering: aulas 2.1.3 a 2.1.14 (12 aulas, 101 min de vídeo)"],
   ["2026-11-10","2026-11-15","10–15/11","Nivelamento LangChain concluído em 15/11: Chains em 11/11, Agentes e ReAct em 12/11, Gerenciamento de memória em 13/11 e Data loading e RAG em 15/11. Prompt Engineering 2.3.1 a 2.4.2 no que sobrar do fim de semana"],
-  ["2026-11-16","2026-11-20","16–20/11","Prompt Engineering, 1h por noite: 2.4.3 a 2.5.4"],
-  ["2026-11-21","2026-11-22","21–22/11","Desafio de ingestão e busca semântica"],
-  ["2026-11-23","2026-11-29","23–29/11","Prompt Engineering: 2.5.5 a 2.8.12. Fim do módulo"],
-  ["2026-11-30","2026-12-06","30/11–06/12","Desafio de prompts com LangChain/LangSmith"],
-  ["2026-12-07","2026-12-13","07–13/12","IA Labs · Skills (17 aulas, 4h46)"],
+  ["2026-11-16","2026-11-20","16–20/11","Prompt Engineering, 1h por noite: 2.4.3 a 2.6.10 (capítulos 5 e 6 concluídos em 20/11)"],
+  ["2026-11-21","2026-11-24","21–24/11","Prompt Engineering: 2.7.8 a 2.8.12 (2.7.1 a 2.7.7 já feitas em 21/11). Fim do módulo em 24/11"],
+  ["2026-11-25","2026-12-01","25/11–01/12","IA Labs · Skills (17 aulas, 4h46; base do desafio de ingestão)"],
+  ["2026-12-02","2026-12-08","02–08/12","Desafio de ingestão e busca semântica com LangChain e Postgres (cerca de 8h; único entregável liberado em 2026)"],
+  ["2026-12-09","2026-12-13","09–13/12","Folga. Se o desafio de prompts liberar a entrega (\"Iniciar\") ao fechar o Prompt Engineering, fazê-lo aqui"],
   ["2026-12-14","2027-01-03","14/12–03/01","Folga para atrasos"]
 ];
 const PE_AULAS = [
@@ -124,44 +124,44 @@ const PE_AULAS = [
   ["2026-11-27","2.6.8","ITER-RETGEN na prática - parte 1",7,1],
   ["2026-11-27","2.6.9","ITER-RETGEN na prática - parte 2",12,1],
   ["2026-11-27","2.6.10","Enriquecimento de queries na prática",19,1],
-  ["2026-11-28","2.7.1","Introdução a Prompt Evaluation",2],
-  ["2026-11-28","2.7.2","O que devemos avaliar",4],
-  ["2026-11-28","2.7.3","Entendendo Objetivos",10],
-  ["2026-11-28","2.7.4","Métricas e tipos de avaliação",10],
-  ["2026-11-28","2.7.5","Evaluators",10],
-  ["2026-11-28","2.7.6","Datasets",5],
-  ["2026-11-28","2.7.7","Entendendo estrutura dos exemplos",3],
-  ["2026-11-28","2.7.8","Executando primeira avaliação",14,1],
-  ["2026-11-28","2.7.9","Evaluators binarios",9],
-  ["2026-11-28","2.7.10","Score com range",5],
-  ["2026-11-28","2.7.11","Additional criteria",9],
-  ["2026-11-28","2.7.12","Embedding distance",5],
-  ["2026-11-28","2.7.13","Revisor otimista",4],
-  ["2026-11-28","2.7.14","Revisor verboso",4],
-  ["2026-11-28","2.7.15","Alucinação e sem utilidade",5],
-  ["2026-11-28","2.7.16","Cenas para os próximos capítulos",5],
-  ["2026-11-28","2.8.1","Precision",5],
-  ["2026-11-29","2.8.2","Recall",6],
-  ["2026-11-29","2.8.3","F1",4],
-  ["2026-11-29","2.8.4","Quando usar no mundo real",5],
-  ["2026-11-29","2.8.5","Entendendo 3 tipos de prompt",5],
-  ["2026-11-29","2.8.6","Calculando as métricas",8,1],
-  ["2026-11-29","2.8.7","Comparação na prática",9,1],
-  ["2026-11-29","2.8.8","Entendendo Pairwise Evaluator vs Evaluation",3],
-  ["2026-11-29","2.8.9","Contexto do nosso experimento",5],
-  ["2026-11-29","2.8.10","Executando Pairwise",9,1],
-  ["2026-11-29","2.8.11","Refazendo evaluation com prompt otimizado",5,1],
-  ["2026-11-29","2.8.12","Pairwise com justificativa do LLM-as-Judge",12]
+  ["2026-11-21","2.7.1","Introdução a Prompt Evaluation",2],
+  ["2026-11-21","2.7.2","O que devemos avaliar",4],
+  ["2026-11-21","2.7.3","Entendendo Objetivos",10],
+  ["2026-11-21","2.7.4","Métricas e tipos de avaliação",10],
+  ["2026-11-21","2.7.5","Evaluators",10],
+  ["2026-11-21","2.7.6","Datasets",5],
+  ["2026-11-21","2.7.7","Entendendo estrutura dos exemplos",3],
+  ["2026-11-21","2.7.8","Executando primeira avaliação",14,1],
+  ["2026-11-21","2.7.9","Evaluators binarios",9],
+  ["2026-11-21","2.7.10","Score com range",5],
+  ["2026-11-21","2.7.11","Additional criteria",9],
+  ["2026-11-21","2.7.12","Embedding distance",5],
+  ["2026-11-21","2.7.13","Revisor otimista",4],
+  ["2026-11-21","2.7.14","Revisor verboso",4],
+  ["2026-11-21","2.7.15","Alucinação e sem utilidade",5],
+  ["2026-11-21","2.7.16","Cenas para os próximos capítulos",5],
+  ["2026-11-23","2.8.1","Precision",5],
+  ["2026-11-23","2.8.2","Recall",6],
+  ["2026-11-23","2.8.3","F1",4],
+  ["2026-11-23","2.8.4","Quando usar no mundo real",5],
+  ["2026-11-23","2.8.5","Entendendo 3 tipos de prompt",5],
+  ["2026-11-24","2.8.6","Calculando as métricas",8,1],
+  ["2026-11-24","2.8.7","Comparação na prática",9,1],
+  ["2026-11-24","2.8.8","Entendendo Pairwise Evaluator vs Evaluation",3],
+  ["2026-11-24","2.8.9","Contexto do nosso experimento",5],
+  ["2026-11-24","2.8.10","Executando Pairwise",9,1],
+  ["2026-11-24","2.8.11","Refazendo evaluation com prompt otimizado",5,1],
+  ["2026-11-24","2.8.12","Pairwise com justificativa do LLM-as-Judge",12]
 ];
-const PE_FEITAS = ["2.1.1","2.1.2","2.1.3","2.1.4","2.1.5","2.1.6","2.1.7","2.1.8","2.1.9","2.1.10","2.1.11","2.1.12","2.1.13","2.1.14","2.1.15","2.1.16","2.1.17","2.1.18","2.2.1","2.2.2","2.2.3","2.2.4","2.2.5","2.2.6","2.2.7","2.2.8","2.2.9","2.2.10","2.3.1","2.3.2","2.3.3","2.3.4","2.3.5","2.3.6","2.3.7","2.3.8","2.3.9","2.4.1","2.4.2","2.4.3","2.4.4","2.4.5","2.4.6","2.4.7","2.4.8","2.4.9","2.4.10","2.4.11","2.5.1","2.5.2","2.5.3","2.5.4","2.5.5","2.5.6","2.5.7","2.5.8","2.5.9","2.5.10","2.5.11","2.5.12","2.5.13","2.5.14","2.5.15","2.5.16","2.5.17"];
+const PE_FEITAS = ["2.1.1","2.1.2","2.1.3","2.1.4","2.1.5","2.1.6","2.1.7","2.1.8","2.1.9","2.1.10","2.1.11","2.1.12","2.1.13","2.1.14","2.1.15","2.1.16","2.1.17","2.1.18","2.2.1","2.2.2","2.2.3","2.2.4","2.2.5","2.2.6","2.2.7","2.2.8","2.2.9","2.2.10","2.3.1","2.3.2","2.3.3","2.3.4","2.3.5","2.3.6","2.3.7","2.3.8","2.3.9","2.4.1","2.4.2","2.4.3","2.4.4","2.4.5","2.4.6","2.4.7","2.4.8","2.4.9","2.4.10","2.4.11","2.5.1","2.5.2","2.5.3","2.5.4","2.5.5","2.5.6","2.5.7","2.5.8","2.5.9","2.5.10","2.5.11","2.5.12","2.5.13","2.5.14","2.5.15","2.5.16","2.5.17","2.6.1","2.6.2","2.6.3","2.6.4","2.6.5","2.6.6","2.6.7","2.6.8","2.6.9","2.6.10","2.7.1","2.7.2","2.7.3","2.7.4","2.7.5","2.7.6","2.7.7"];
 const PE_BLOCOS = [
   {"n":"Cap. 1 · Iniciando com Prompt Engineering","aulas":18,"min":147,"feitas":18,"minFeitas":147},
   {"n":"Cap. 2","aulas":10,"min":64,"feitas":10,"minFeitas":64},
   {"n":"Cap. 3","aulas":9,"min":66,"feitas":9,"minFeitas":66},
   {"n":"Cap. 4","aulas":11,"min":145,"feitas":11,"minFeitas":145},
   {"n":"Cap. 5","aulas":17,"min":101,"feitas":17,"minFeitas":101},
-  {"n":"Cap. 6","aulas":10,"min":83,"feitas":0,"minFeitas":0},
-  {"n":"Cap. 7","aulas":16,"min":104,"feitas":0,"minFeitas":0},
+  {"n":"Cap. 6","aulas":10,"min":83,"feitas":10,"minFeitas":83},
+  {"n":"Cap. 7","aulas":16,"min":104,"feitas":7,"minFeitas":44},
   {"n":"Cap. 8","aulas":12,"min":76,"feitas":0,"minFeitas":0}
 ];
 const AGENDA = [
@@ -222,31 +222,31 @@ const AGENDA = [
   ["2026-11-26","2.6.4","Query2Doc",6],
   ["2026-11-26","2.6.5","Hyde vs Query2Doc",12],
   ["2026-11-26","2.6.6","ITER-RETGEN",5],
-  ["2026-11-28","2.7.1","Introdução a Prompt Evaluation",2],
-  ["2026-11-28","2.7.2","O que devemos avaliar",4],
-  ["2026-11-28","2.7.3","Entendendo Objetivos",10],
-  ["2026-11-28","2.7.4","Métricas e tipos de avaliação",10],
-  ["2026-11-28","2.7.5","Evaluators",10],
-  ["2026-11-28","2.7.6","Datasets",5],
-  ["2026-11-28","2.7.7","Entendendo estrutura dos exemplos",3],
-  ["2026-11-28","2.7.9","Evaluators binarios",9],
-  ["2026-11-28","2.7.10","Score com range",5],
-  ["2026-11-28","2.7.11","Additional criteria",9],
-  ["2026-11-28","2.7.12","Embedding distance",5],
-  ["2026-11-28","2.7.13","Revisor otimista",4],
-  ["2026-11-28","2.7.14","Revisor verboso",4],
-  ["2026-11-28","2.7.15","Alucinação e sem utilidade",5],
-  ["2026-11-28","2.7.16","Cenas para os próximos capítulos",5],
-  ["2026-11-28","2.8.1","Precision",5],
-  ["2026-11-29","2.8.2","Recall",6],
-  ["2026-11-29","2.8.3","F1",4],
-  ["2026-11-29","2.8.4","Quando usar no mundo real",5],
-  ["2026-11-29","2.8.5","Entendendo 3 tipos de prompt",5],
-  ["2026-11-29","2.8.8","Entendendo Pairwise Evaluator vs Evaluation",3],
-  ["2026-11-29","2.8.9","Contexto do nosso experimento",5],
-  ["2026-11-29","2.8.12","Pairwise com justificativa do LLM-as-Judge",12]
+  ["2026-11-21","2.7.1","Introdução a Prompt Evaluation",2],
+  ["2026-11-21","2.7.2","O que devemos avaliar",4],
+  ["2026-11-21","2.7.3","Entendendo Objetivos",10],
+  ["2026-11-21","2.7.4","Métricas e tipos de avaliação",10],
+  ["2026-11-21","2.7.5","Evaluators",10],
+  ["2026-11-21","2.7.6","Datasets",5],
+  ["2026-11-21","2.7.7","Entendendo estrutura dos exemplos",3],
+  ["2026-11-21","2.7.9","Evaluators binarios",9],
+  ["2026-11-21","2.7.10","Score com range",5],
+  ["2026-11-21","2.7.11","Additional criteria",9],
+  ["2026-11-21","2.7.12","Embedding distance",5],
+  ["2026-11-21","2.7.13","Revisor otimista",4],
+  ["2026-11-21","2.7.14","Revisor verboso",4],
+  ["2026-11-21","2.7.15","Alucinação e sem utilidade",5],
+  ["2026-11-21","2.7.16","Cenas para os próximos capítulos",5],
+  ["2026-11-23","2.8.1","Precision",5],
+  ["2026-11-23","2.8.2","Recall",6],
+  ["2026-11-23","2.8.3","F1",4],
+  ["2026-11-23","2.8.4","Quando usar no mundo real",5],
+  ["2026-11-23","2.8.5","Entendendo 3 tipos de prompt",5],
+  ["2026-11-24","2.8.8","Entendendo Pairwise Evaluator vs Evaluation",3],
+  ["2026-11-24","2.8.9","Contexto do nosso experimento",5],
+  ["2026-11-24","2.8.12","Pairwise com justificativa do LLM-as-Judge",12]
 ];
-const FEITAS_EXTRA = ["Introdução · 1","Introdução · 2","3.2","3.3","3.5","3.8","4.1","4.2","4.3","4.4","4.5","4.6","4.7","2.1.6","2.1.10","2.1.15","2.1.16","2.1.17","2.2.1","2.2.10","2.3.1","2.4.1","2.4.5","2.5.1","2.5.8","2.5.9","2.5.10","2.5.13","2.5.14","2.5.15","2.5.16","Revisando · aula 1","Revisando · aula 2","Revisando · aula 3","Revisando · aula 4","Revisando · aula 5"];
+const FEITAS_EXTRA = ["Introdução · 1","Introdução · 2","3.2","3.3","3.5","3.8","4.1","4.2","4.3","4.4","4.5","4.6","4.7","2.1.6","2.1.10","2.1.15","2.1.16","2.1.17","2.2.1","2.2.10","2.3.1","2.4.1","2.4.5","2.5.1","2.5.8","2.5.9","2.5.10","2.5.13","2.5.14","2.5.15","2.5.16","2.6.1","2.6.7","2.6.8","2.6.9","2.6.10","2.7.1","Revisando · aula 1","Revisando · aula 2","Revisando · aula 3","Revisando · aula 4","Revisando · aula 5"];
 const PASSOS = [
   ["Abrir e assistir à aula 2.10 na plataforma (assistida)",true],
   ["Rodar /next-class de 2.12 a 2.22, cada uma numa sessão limpa",true],
@@ -262,4 +262,4 @@ const PASSOS = [
   ["Em 09/11, ver o tamanho do Lab Skills e dos 2 desafios: IA Labs · Skills tem 17 aulas (4h46) e os desafios são Ingestão e busca semântica e Pull, Otimização e Avaliação de Prompts",true],
   ["Revisar o ritmo no fim de novembro",false]
 ];
-const QUIZ = [{"id":"1.1","nome":"O que é Gen AI","b":[0,0,3,0,0,0,0,0,0,0],"a":[0,0,0,0,0,0,2,0,0,0],"m":"fund"},{"id":"1.2","nome":"Introdução as diferenças de IA","b":[0,0,0,0,0,0,0,0,0,0],"a":[0,1,0,0,0,2,0,0,1,2],"m":"fund"},{"id":"1.3","nome":"Como a Gen IA aprende","b":[0,0,0,0,0,1,1,0,0,0],"a":[0,2,0,0,0,0,0,0,0,0],"m":"fund"},{"id":"1.4","nome":"História da IA, o início","b":[0,0,0,0,0,0,0,0,0,0],"a":[0,0,0,0,0,0,7,0,0,0],"m":"fund"},{"id":"1.5","nome":"O inverno da IA","b":[0,0,0,2,0,0,1,0,1,1],"a":[1,0,0,1,0,0,0,0,0,1],"m":"fund"},{"id":"1.6","nome":"Evolução dos modelos 2 gramas","b":[0,0,0,2,0,0,0,0,0,1],"a":[3,0,0,0,1,0,0,0,0,0],"m":"fund"},{"id":"2.1","nome":"Cadeias de Markov","b":[0,0,0,0,0,0,0,0,0,0],"a":[0,0,0,1,0,0,0,1,0,1],"m":"fund"},{"id":"2.2","nome":"Redes neurais profundas","b":[0,0,0,0,0,0,0,0,0,0],"a":[0,0,0,0,0,1,1,0,2,1],"m":"fund"},{"id":"2.3","nome":"Redes Neurais Recorrentes - RRNs","b":[0,0,0,0,0,0,0,0,0,0],"a":[0,0,0,0,0,0,0,0,0,1],"m":"fund"},{"id":"2.1–2.3","nome":"Revisão - Aulas 1 a 3","b":[0,1,5,0,0,0,1,0,0,0],"a":[0,1,0,0,0,0,0,0,0,0],"m":"fund"},{"id":"2.4","nome":"Transformers","b":[0,0,0,2,1,0,0,0,1,1],"a":[1,0,0,0,0,0,1,1,0,0],"m":"fund"},{"id":"2.5","nome":"Tokens","b":[0,1,0,0,3,0,1,0,0,0],"a":[0,1,1,3,0,0,0,0,0,1],"m":"fund"},{"id":"2.6","nome":"LLMs","b":[0,0,1,0,1,0,0,1,0,0],"a":null,"m":"fund"},{"id":"2.7","nome":"GANs","b":[0,0,0,0,0,1,0,0,0,1],"a":null,"m":"fund"},{"id":"2.8","nome":"Aprofundando em LLM","b":[1,0,0,0,0,0,0,0,0,0],"a":null,"m":"fund"},{"id":"2.9","nome":"Position Wise Layers","b":[0,1,0,1,1,0,0,0,0,1],"a":null,"m":"fund"},{"id":"2.10","nome":"Positional encoding","b":[0,0,0,0,0,0,0,0,0,0],"a":null,"m":"fund"},{"id":"2.11","nome":"LayerNorm","b":[0,0,0,0,0,0,0,0,0,0],"a":null,"m":"fund"},{"id":"2.12","nome":"Pré treinamento","b":[0,0,0,0,0,0,1,0,0,0],"a":null,"m":"fund"},{"id":"2.13","nome":"MLM","b":[0,0,0,0,0,0,0,0,0,1],"a":null,"m":"fund"},{"id":"2.14","nome":"Fine Tuning supervisionado","b":[0,2,0,0,1,1,0,0,0,0],"a":null,"m":"fund"},{"id":"2.15","nome":"RLHF","b":[0,0,0,2,0,0,1,0,2,0],"a":null,"m":"fund"},{"id":"2.16","nome":"Otimização para grandes modelos","b":[0,0,0,1,0,0,0,0,0,0],"a":null,"m":"fund"},{"id":"2.17","nome":"Alucinação","b":[0,0,0,1,1,0,0,0,0,1],"a":null,"m":"fund"},{"id":"2.18","nome":"Estratégias alucinação","b":[0,0,0,0,0,1,0,0,0,0],"a":null,"m":"fund"},{"id":"2.19","nome":"Context window","b":[1,0,0,0,0,0,1,0,1,1],"a":null,"m":"fund"},{"id":"2.20","nome":"Raciocínio simbólico","b":[0,0,1,0,0,0,0,1,0,1],"a":null,"m":"fund"},{"id":"2.21","nome":"Conhecimento em tempo real","b":[0,0,1,0,0,0,0,0,0,0],"a":null,"m":"fund"},{"id":"2.22","nome":"Objetivos geração de respostas","b":[1,0,0,0,0,0,3,0,1,0],"a":null,"m":"fund"},{"id":"3.1","nome":"Introdução a temperatura","b":[0,0,0,1,0,0,0,0,0,0],"a":null,"m":"fund"},{"id":"3.4","nome":"Top_K & Top_P","b":[0,0,0,1,0,0,0,0,0,1],"a":null,"m":"fund"},{"id":"3.6","nome":"Encoder-only","b":[0,0,0,0,0,0,0,0,1,0],"a":null,"m":"fund"},{"id":"3.7","nome":"Decoder-only","b":[0,0,0,0,0,0,0,0,0,0],"a":null,"m":"fund"},{"id":"3.9","nome":"Explorando soluções","b":[0,0,0,0,0,0,0,0,0,1],"a":null,"m":"fund"},{"id":"3.10","nome":"Engenharia de prompt","b":[1,0,0,0,0,0,1,0,0,0],"a":null,"m":"fund"},{"id":"3.11","nome":"Arquitetura RAG","b":[0,0,1,0,0,0,1,2,2,0],"a":null,"m":"fund"},{"id":"2.1.1","nome":"Introdução e overview da disciplina","b":[0,0,0,0,1],"a":null,"m":"pe"},{"id":"2.1.2","nome":"O que realmente e prompt engineering","b":[0,0,0],"a":null,"m":"pe"},{"id":"2.1.3","nome":"Outras aplicabilidades","b":[0,0,0,0,1],"a":null,"m":"pe"},{"id":"2.1.4","nome":"Tipos e tecnicas e Prompts","b":[0,0,0],"a":null,"m":"pe"},{"id":"2.1.5","nome":"Role Prompting","b":[0,0,0,0,0],"a":null,"m":"pe"},{"id":"2.1.7","nome":"Trabalhando com zero-shot em diversos modelos","b":[0,0,0,0,0,0,0,0,0,1],"a":null,"m":"pe"},{"id":"2.1.8","nome":"One e Few-shot e situações críticas","b":[0,1,0,0,0,1,1,0,0,0],"a":null,"m":"pe"},{"id":"2.1.9","nome":"Conceitos básicos de Chain of Thought","b":[0,0,0,0,0],"a":null,"m":"pe"},{"id":"2.1.11","nome":"CoT com Self-consistency","b":[0,1,0,0,0],"a":null,"m":"pe"},{"id":"2.1.12","nome":"Explorando diversos caminhos com Tree of Thought","b":[0,0,0,1,0,0,1,0,0,0],"a":null,"m":"pe"},{"id":"2.1.13","nome":"Skeleton of Thought e resultados incríveis","b":[0,1,1,0,0,1,1,0,1,0],"a":null,"m":"pe"},{"id":"2.1.14","nome":"Conceitos básicos do ReAct","b":[0,0,0],"a":null,"m":"pe"},{"id":"2.1.18","nome":"Conclusões","b":[0,1,1,2,0],"a":null,"m":"pe"},{"id":"2.2.2","nome":"Context Window para Prompt Engineering","b":[0,0,0],"a":null,"m":"pe"},{"id":"2.2.3","nome":"Context Window vs memória, custo e latência","b":[0,0,1,0,1],"a":null,"m":"pe"},{"id":"2.2.4","nome":"Janela de contexto vs parâmetros","b":[0,0,0,0,0],"a":null,"m":"pe"},{"id":"2.2.5","nome":"Truncamento","b":[0,0,0],"a":null,"m":"pe"},{"id":"2.2.6","nome":"Sumarização","b":[0,0,0,1,1],"a":null,"m":"pe"},{"id":"2.2.7","nome":"Sliding window","b":[1,0,0],"a":null,"m":"pe"},{"id":"2.2.8","nome":"Prompt Caching","b":[4,0,0,0,0],"a":null,"m":"pe"},{"id":"2.2.9","nome":"Batch Prompting","b":[1,0,0],"a":null,"m":"pe"},{"id":"2.3.2","nome":"Uma simples correção de Bug","b":[0,0,0,0,0,0,0,0,0,0],"a":null,"m":"pe"},{"id":"2.3.3","nome":"Minha IA produziu um lixo","b":[0,1,1,0,0,0,0,0,0,0],"a":null,"m":"pe"},{"id":"2.3.4","nome":"Prompts no processo de desenvolvimento","b":[0,1,0,0,0],"a":null,"m":"pe"},{"id":"2.3.5","nome":"Utilização e larga escala","b":[0,0,0],"a":null,"m":"pe"},{"id":"2.3.6","nome":"Guidelines e trade-offs","b":[1,0,0,0,0],"a":null,"m":"pe"},{"id":"2.3.7","nome":"System vs User Prompt","b":[0,1,0],"a":null,"m":"pe"},{"id":"2.3.8","nome":"Exemplo estruturado de prompts","b":[0,0,0,0,0,0,0,0,0,0],"a":null,"m":"pe"},{"id":"2.3.9","nome":"Finalizando com regras de ouro","b":[0,1,0],"a":null,"m":"pe"},{"id":"2.4.2","nome":"Dependency Auditor Agent Prompt","b":[0,0,0,1,0,0,0,1,0,0],"a":null,"m":"pe"},{"id":"2.4.3","nome":"Resultado gerado pelo prompt","b":[0,0,0,0],"a":null,"m":"pe"},{"id":"2.4.4","nome":"Arquivo declarativo do Agent e Prompt como Metadados","b":[0,0,0,0,0],"a":null,"m":"pe"},{"id":"2.4.6","nome":"Estruturas especificas de prompts","b":[0,0,0,0,0],"a":null,"m":"pe"},{"id":"2.4.7","nome":"Visão geral do workflow de um projeto","b":[0,0,0,0,0,1,0,0,0,1],"a":null,"m":"pe"},{"id":"2.4.8","nome":"Analisando prompt especialista em analisar arquiteturas","b":[0,0,1,0,0,0,0,0,0,0],"a":null,"m":"pe"},{"id":"2.4.9","nome":"Analisando prompt de analise de componentes","b":[0,1,0,0,0],"a":null,"m":"pe"},{"id":"2.4.10","nome":"Workflow Specification Prompt","b":[0,0,1,0,0,0,2,0,0,1],"a":null,"m":"pe"},{"id":"2.4.11","nome":"Role Specification como Orquestrador","b":[0,0,0,0,0,0,0,0,1,0],"a":null,"m":"pe"},{"id":"2.5.2","nome":"Prompts para produtividade em equipe","b":[0,1,0],"a":null,"m":"pe"},{"id":"2.5.3","nome":"Gestão e controle de versão","b":[0,1,0,0,1],"a":null,"m":"pe"},{"id":"2.5.4","nome":"Documentação e categorização","b":[0,0,0,0,0],"a":null,"m":"pe"},{"id":"2.5.5","nome":"Prompts utilizados por projetos de IA","b":[0,0,0,0,0,0,0,0,0,0],"a":null,"m":"pe"},{"id":"2.5.6","nome":"Registry e estrutura de pastas","b":[1,0,0],"a":null,"m":"pe"},{"id":"2.5.7","nome":"Visão geral com prompt.yaml","b":[0,0,0],"a":null,"m":"pe"},{"id":"2.5.11","nome":"Soluções de terceiros para gestão","b":[1,0,0,0,0],"a":null,"m":"pe"},{"id":"2.5.12","nome":"Langsmith Prompt Hub","b":[0,0,0],"a":null,"m":"pe"},{"id":"2.5.17","nome":"Concluindo","b":[0,0,0],"a":null,"m":"pe"}];
+const QUIZ = [{"id":"1.1","nome":"O que é Gen AI","b":[0,0,3,0,0,0,0,0,0,0],"a":[0,0,0,0,0,0,2,0,0,0],"m":"fund"},{"id":"1.2","nome":"Introdução as diferenças de IA","b":[0,0,0,0,0,0,0,0,0,0],"a":[0,1,0,0,0,2,0,0,1,2],"m":"fund"},{"id":"1.3","nome":"Como a Gen IA aprende","b":[0,0,0,0,0,1,1,0,0,0],"a":[0,2,0,0,0,0,0,0,0,0],"m":"fund"},{"id":"1.4","nome":"História da IA, o início","b":[0,0,0,0,0,0,0,0,0,0],"a":[0,0,0,0,0,0,7,0,0,0],"m":"fund"},{"id":"1.5","nome":"O inverno da IA","b":[0,0,0,2,0,0,1,0,1,1],"a":[1,0,0,1,0,0,0,0,0,1],"m":"fund"},{"id":"1.6","nome":"Evolução dos modelos 2 gramas","b":[0,0,0,2,0,0,0,0,0,1],"a":[3,0,0,0,1,0,0,0,0,0],"m":"fund"},{"id":"2.1","nome":"Cadeias de Markov","b":[0,0,0,0,0,0,0,0,0,0],"a":[0,0,0,1,0,0,0,1,0,1],"m":"fund"},{"id":"2.2","nome":"Redes neurais profundas","b":[0,0,0,0,0,0,0,0,0,0],"a":[0,0,0,0,0,1,1,0,2,1],"m":"fund"},{"id":"2.3","nome":"Redes Neurais Recorrentes - RRNs","b":[0,0,0,0,0,0,0,0,0,0],"a":[0,0,0,0,0,0,0,0,0,1],"m":"fund"},{"id":"2.1–2.3","nome":"Revisão - Aulas 1 a 3","b":[0,1,5,0,0,0,1,0,0,0],"a":[0,1,0,0,0,0,0,0,0,0],"m":"fund"},{"id":"2.4","nome":"Transformers","b":[0,0,0,2,1,0,0,0,1,1],"a":[1,0,0,0,0,0,1,1,0,0],"m":"fund"},{"id":"2.5","nome":"Tokens","b":[0,1,0,0,3,0,1,0,0,0],"a":[0,1,1,3,0,0,0,0,0,1],"m":"fund"},{"id":"2.6","nome":"LLMs","b":[0,0,1,0,1,0,0,1,0,0],"a":null,"m":"fund"},{"id":"2.7","nome":"GANs","b":[0,0,0,0,0,1,0,0,0,1],"a":null,"m":"fund"},{"id":"2.8","nome":"Aprofundando em LLM","b":[1,0,0,0,0,0,0,0,0,0],"a":null,"m":"fund"},{"id":"2.9","nome":"Position Wise Layers","b":[0,1,0,1,1,0,0,0,0,1],"a":null,"m":"fund"},{"id":"2.10","nome":"Positional encoding","b":[0,0,0,0,0,0,0,0,0,0],"a":null,"m":"fund"},{"id":"2.11","nome":"LayerNorm","b":[0,0,0,0,0,0,0,0,0,0],"a":null,"m":"fund"},{"id":"2.12","nome":"Pré treinamento","b":[0,0,0,0,0,0,1,0,0,0],"a":null,"m":"fund"},{"id":"2.13","nome":"MLM","b":[0,0,0,0,0,0,0,0,0,1],"a":null,"m":"fund"},{"id":"2.14","nome":"Fine Tuning supervisionado","b":[0,2,0,0,1,1,0,0,0,0],"a":null,"m":"fund"},{"id":"2.15","nome":"RLHF","b":[0,0,0,2,0,0,1,0,2,0],"a":null,"m":"fund"},{"id":"2.16","nome":"Otimização para grandes modelos","b":[0,0,0,1,0,0,0,0,0,0],"a":null,"m":"fund"},{"id":"2.17","nome":"Alucinação","b":[0,0,0,1,1,0,0,0,0,1],"a":null,"m":"fund"},{"id":"2.18","nome":"Estratégias alucinação","b":[0,0,0,0,0,1,0,0,0,0],"a":null,"m":"fund"},{"id":"2.19","nome":"Context window","b":[1,0,0,0,0,0,1,0,1,1],"a":null,"m":"fund"},{"id":"2.20","nome":"Raciocínio simbólico","b":[0,0,1,0,0,0,0,1,0,1],"a":null,"m":"fund"},{"id":"2.21","nome":"Conhecimento em tempo real","b":[0,0,1,0,0,0,0,0,0,0],"a":null,"m":"fund"},{"id":"2.22","nome":"Objetivos geração de respostas","b":[1,0,0,0,0,0,3,0,1,0],"a":null,"m":"fund"},{"id":"3.1","nome":"Introdução a temperatura","b":[0,0,0,1,0,0,0,0,0,0],"a":null,"m":"fund"},{"id":"3.4","nome":"Top_K & Top_P","b":[0,0,0,1,0,0,0,0,0,1],"a":null,"m":"fund"},{"id":"3.6","nome":"Encoder-only","b":[0,0,0,0,0,0,0,0,1,0],"a":null,"m":"fund"},{"id":"3.7","nome":"Decoder-only","b":[0,0,0,0,0,0,0,0,0,0],"a":null,"m":"fund"},{"id":"3.9","nome":"Explorando soluções","b":[0,0,0,0,0,0,0,0,0,1],"a":null,"m":"fund"},{"id":"3.10","nome":"Engenharia de prompt","b":[1,0,0,0,0,0,1,0,0,0],"a":null,"m":"fund"},{"id":"3.11","nome":"Arquitetura RAG","b":[0,0,1,0,0,0,1,2,2,0],"a":null,"m":"fund"},{"id":"2.1.1","nome":"Introdução e overview da disciplina","b":[0,0,0,0,1],"a":null,"m":"pe"},{"id":"2.1.2","nome":"O que realmente e prompt engineering","b":[0,0,0],"a":null,"m":"pe"},{"id":"2.1.3","nome":"Outras aplicabilidades","b":[0,0,0,0,1],"a":null,"m":"pe"},{"id":"2.1.4","nome":"Tipos e tecnicas e Prompts","b":[0,0,0],"a":null,"m":"pe"},{"id":"2.1.5","nome":"Role Prompting","b":[0,0,0,0,0],"a":null,"m":"pe"},{"id":"2.1.7","nome":"Trabalhando com zero-shot em diversos modelos","b":[0,0,0,0,0,0,0,0,0,1],"a":null,"m":"pe"},{"id":"2.1.8","nome":"One e Few-shot e situações críticas","b":[0,1,0,0,0,1,1,0,0,0],"a":null,"m":"pe"},{"id":"2.1.9","nome":"Conceitos básicos de Chain of Thought","b":[0,0,0,0,0],"a":null,"m":"pe"},{"id":"2.1.11","nome":"CoT com Self-consistency","b":[0,1,0,0,0],"a":null,"m":"pe"},{"id":"2.1.12","nome":"Explorando diversos caminhos com Tree of Thought","b":[0,0,0,1,0,0,1,0,0,0],"a":null,"m":"pe"},{"id":"2.1.13","nome":"Skeleton of Thought e resultados incríveis","b":[0,1,1,0,0,1,1,0,1,0],"a":null,"m":"pe"},{"id":"2.1.14","nome":"Conceitos básicos do ReAct","b":[0,0,0],"a":null,"m":"pe"},{"id":"2.1.18","nome":"Conclusões","b":[0,1,1,2,0],"a":null,"m":"pe"},{"id":"2.2.2","nome":"Context Window para Prompt Engineering","b":[0,0,0],"a":null,"m":"pe"},{"id":"2.2.3","nome":"Context Window vs memória, custo e latência","b":[0,0,1,0,1],"a":null,"m":"pe"},{"id":"2.2.4","nome":"Janela de contexto vs parâmetros","b":[0,0,0,0,0],"a":null,"m":"pe"},{"id":"2.2.5","nome":"Truncamento","b":[0,0,0],"a":null,"m":"pe"},{"id":"2.2.6","nome":"Sumarização","b":[0,0,0,1,1],"a":null,"m":"pe"},{"id":"2.2.7","nome":"Sliding window","b":[1,0,0],"a":null,"m":"pe"},{"id":"2.2.8","nome":"Prompt Caching","b":[4,0,0,0,0],"a":null,"m":"pe"},{"id":"2.2.9","nome":"Batch Prompting","b":[1,0,0],"a":null,"m":"pe"},{"id":"2.3.2","nome":"Uma simples correção de Bug","b":[0,0,0,0,0,0,0,0,0,0],"a":null,"m":"pe"},{"id":"2.3.3","nome":"Minha IA produziu um lixo","b":[0,1,1,0,0,0,0,0,0,0],"a":null,"m":"pe"},{"id":"2.3.4","nome":"Prompts no processo de desenvolvimento","b":[0,1,0,0,0],"a":null,"m":"pe"},{"id":"2.3.5","nome":"Utilização e larga escala","b":[0,0,0],"a":null,"m":"pe"},{"id":"2.3.6","nome":"Guidelines e trade-offs","b":[1,0,0,0,0],"a":null,"m":"pe"},{"id":"2.3.7","nome":"System vs User Prompt","b":[0,1,0],"a":null,"m":"pe"},{"id":"2.3.8","nome":"Exemplo estruturado de prompts","b":[0,0,0,0,0,0,0,0,0,0],"a":null,"m":"pe"},{"id":"2.3.9","nome":"Finalizando com regras de ouro","b":[0,1,0],"a":null,"m":"pe"},{"id":"2.4.2","nome":"Dependency Auditor Agent Prompt","b":[0,0,0,1,0,0,0,1,0,0],"a":null,"m":"pe"},{"id":"2.4.3","nome":"Resultado gerado pelo prompt","b":[0,0,0,0],"a":null,"m":"pe"},{"id":"2.4.4","nome":"Arquivo declarativo do Agent e Prompt como Metadados","b":[0,0,0,0,0],"a":null,"m":"pe"},{"id":"2.4.6","nome":"Estruturas especificas de prompts","b":[0,0,0,0,0],"a":null,"m":"pe"},{"id":"2.4.7","nome":"Visão geral do workflow de um projeto","b":[0,0,0,0,0,1,0,0,0,1],"a":null,"m":"pe"},{"id":"2.4.8","nome":"Analisando prompt especialista em analisar arquiteturas","b":[0,0,1,0,0,0,0,0,0,0],"a":null,"m":"pe"},{"id":"2.4.9","nome":"Analisando prompt de analise de componentes","b":[0,1,0,0,0],"a":null,"m":"pe"},{"id":"2.4.10","nome":"Workflow Specification Prompt","b":[0,0,1,0,0,0,2,0,0,1],"a":null,"m":"pe"},{"id":"2.4.11","nome":"Role Specification como Orquestrador","b":[0,0,0,0,0,0,0,0,1,0],"a":null,"m":"pe"},{"id":"2.5.2","nome":"Prompts para produtividade em equipe","b":[0,1,0],"a":null,"m":"pe"},{"id":"2.5.3","nome":"Gestão e controle de versão","b":[0,1,0,0,1],"a":null,"m":"pe"},{"id":"2.5.4","nome":"Documentação e categorização","b":[0,0,0,0,0],"a":null,"m":"pe"},{"id":"2.5.5","nome":"Prompts utilizados por projetos de IA","b":[0,0,0,0,0,0,0,0,0,0],"a":null,"m":"pe"},{"id":"2.5.6","nome":"Registry e estrutura de pastas","b":[1,0,0],"a":null,"m":"pe"},{"id":"2.5.7","nome":"Visão geral com prompt.yaml","b":[0,0,0],"a":null,"m":"pe"},{"id":"2.5.11","nome":"Soluções de terceiros para gestão","b":[1,0,0,0,0],"a":null,"m":"pe"},{"id":"2.5.12","nome":"Langsmith Prompt Hub","b":[0,0,0],"a":null,"m":"pe"},{"id":"2.5.17","nome":"Concluindo","b":[0,0,0],"a":null,"m":"pe"},{"id":"2.6.2","nome":"Necessidades para reformulação e enriquecimento de prompts","b":[0,0,0,0,0,0,1,0,0,0],"a":null,"m":"pe"},{"id":"2.6.3","nome":"Fluxo basico e considerações importantes","b":[0,0,0,0,0],"a":null,"m":"pe"},{"id":"2.6.4","nome":"Query2Doc","b":[0,0,0,0,0],"a":null,"m":"pe"},{"id":"2.6.5","nome":"Hyde vs Query2Doc","b":[0,1,0,0,0,0,0,0,0,0],"a":null,"m":"pe"},{"id":"2.6.6","nome":"ITER-RETGEN","b":[0,0,0,0,1],"a":null,"m":"pe"},{"id":"2.7.2","nome":"O que devemos avaliar","b":[0,0,0],"a":null,"m":"pe"},{"id":"2.7.3","nome":"Entendendo Objetivos","b":[1,0,0,0,0],"a":null,"m":"pe"},{"id":"2.7.4","nome":"Métricas e tipos de avaliação","b":[0,0,0,0,0],"a":null,"m":"pe"},{"id":"2.7.5","nome":"Evaluators","b":[0,0,0,1,0,0,0,1,0,0],"a":null,"m":"pe"},{"id":"2.7.6","nome":"Datasets","b":[0,0,0,1,0],"a":null,"m":"pe"},{"id":"2.7.7","nome":"Entendendo estrutura dos exemplos","b":[0,0,0],"a":null,"m":"pe"}];

@@ -35,7 +35,13 @@
     "2.5.13",
     "2.5.14",
     "2.5.15",
-    "2.5.16"
+    "2.5.16",
+    "2.6.1",
+    "2.6.7",
+    "2.6.8",
+    "2.6.9",
+    "2.6.10",
+    "2.7.1"
   ],
   "vistas_nota": "vistas = aulas estudadas sem quizz (conta como estudada). Só 'visto' na plataforma, sem estudo, vira 'o' (só ouvida).",
   "feitasExtra": [
@@ -257,31 +263,31 @@
       "2026-11-16",
       "2026-11-20",
       "16–20/11",
-      "Prompt Engineering, 1h por noite: 2.4.3 a 2.5.4"
+      "Prompt Engineering, 1h por noite: 2.4.3 a 2.6.10 (capítulos 5 e 6 concluídos em 20/11)"
     ],
     [
       "2026-11-21",
-      "2026-11-22",
-      "21–22/11",
-      "Desafio de ingestão e busca semântica"
+      "2026-11-24",
+      "21–24/11",
+      "Prompt Engineering: 2.7.8 a 2.8.12 (2.7.1 a 2.7.7 já feitas em 21/11). Fim do módulo em 24/11"
     ],
     [
-      "2026-11-23",
-      "2026-11-29",
-      "23–29/11",
-      "Prompt Engineering: 2.5.5 a 2.8.12. Fim do módulo"
+      "2026-11-25",
+      "2026-12-01",
+      "25/11–01/12",
+      "IA Labs · Skills (17 aulas, 4h46; base do desafio de ingestão)"
     ],
     [
-      "2026-11-30",
-      "2026-12-06",
-      "30/11–06/12",
-      "Desafio de prompts com LangChain/LangSmith"
+      "2026-12-02",
+      "2026-12-08",
+      "02–08/12",
+      "Desafio de ingestão e busca semântica com LangChain e Postgres (cerca de 8h; único entregável liberado em 2026)"
     ],
     [
-      "2026-12-07",
+      "2026-12-09",
       "2026-12-13",
-      "07–13/12",
-      "IA Labs · Skills (17 aulas, 4h46)"
+      "09–13/12",
+      "Folga. Se o desafio de prompts liberar a entrega (\"Iniciar\") ao fechar o Prompt Engineering, fazê-lo aqui"
     ],
     [
       "2026-12-14",
@@ -761,174 +767,174 @@
       1
     ],
     [
-      "2026-11-28",
+      "2026-11-21",
       "2.7.1",
       "Introdução a Prompt Evaluation",
       2
     ],
     [
-      "2026-11-28",
+      "2026-11-21",
       "2.7.2",
       "O que devemos avaliar",
       4
     ],
     [
-      "2026-11-28",
+      "2026-11-21",
       "2.7.3",
       "Entendendo Objetivos",
       10
     ],
     [
-      "2026-11-28",
+      "2026-11-21",
       "2.7.4",
       "Métricas e tipos de avaliação",
       10
     ],
     [
-      "2026-11-28",
+      "2026-11-21",
       "2.7.5",
       "Evaluators",
       10
     ],
     [
-      "2026-11-28",
+      "2026-11-21",
       "2.7.6",
       "Datasets",
       5
     ],
     [
-      "2026-11-28",
+      "2026-11-21",
       "2.7.7",
       "Entendendo estrutura dos exemplos",
       3
     ],
     [
-      "2026-11-28",
+      "2026-11-21",
       "2.7.8",
       "Executando primeira avaliação",
       14,
       1
     ],
     [
-      "2026-11-28",
+      "2026-11-21",
       "2.7.9",
       "Evaluators binarios",
       9
     ],
     [
-      "2026-11-28",
+      "2026-11-21",
       "2.7.10",
       "Score com range",
       5
     ],
     [
-      "2026-11-28",
+      "2026-11-21",
       "2.7.11",
       "Additional criteria",
       9
     ],
     [
-      "2026-11-28",
+      "2026-11-21",
       "2.7.12",
       "Embedding distance",
       5
     ],
     [
-      "2026-11-28",
+      "2026-11-21",
       "2.7.13",
       "Revisor otimista",
       4
     ],
     [
-      "2026-11-28",
+      "2026-11-21",
       "2.7.14",
       "Revisor verboso",
       4
     ],
     [
-      "2026-11-28",
+      "2026-11-21",
       "2.7.15",
       "Alucinação e sem utilidade",
       5
     ],
     [
-      "2026-11-28",
+      "2026-11-21",
       "2.7.16",
       "Cenas para os próximos capítulos",
       5
     ],
     [
-      "2026-11-28",
+      "2026-11-23",
       "2.8.1",
       "Precision",
       5
     ],
     [
-      "2026-11-29",
+      "2026-11-23",
       "2.8.2",
       "Recall",
       6
     ],
     [
-      "2026-11-29",
+      "2026-11-23",
       "2.8.3",
       "F1",
       4
     ],
     [
-      "2026-11-29",
+      "2026-11-23",
       "2.8.4",
       "Quando usar no mundo real",
       5
     ],
     [
-      "2026-11-29",
+      "2026-11-23",
       "2.8.5",
       "Entendendo 3 tipos de prompt",
       5
     ],
     [
-      "2026-11-29",
+      "2026-11-24",
       "2.8.6",
       "Calculando as métricas",
       8,
       1
     ],
     [
-      "2026-11-29",
+      "2026-11-24",
       "2.8.7",
       "Comparação na prática",
       9,
       1
     ],
     [
-      "2026-11-29",
+      "2026-11-24",
       "2.8.8",
       "Entendendo Pairwise Evaluator vs Evaluation",
       3
     ],
     [
-      "2026-11-29",
+      "2026-11-24",
       "2.8.9",
       "Contexto do nosso experimento",
       5
     ],
     [
-      "2026-11-29",
+      "2026-11-24",
       "2.8.10",
       "Executando Pairwise",
       9,
       1
     ],
     [
-      "2026-11-29",
+      "2026-11-24",
       "2.8.11",
       "Refazendo evaluation com prompt otimizado",
       5,
       1
     ],
     [
-      "2026-11-29",
+      "2026-11-24",
       "2.8.12",
       "Pairwise com justificativa do LLM-as-Judge",
       12
