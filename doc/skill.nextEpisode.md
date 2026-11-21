@@ -26,7 +26,7 @@ A skill não atravessa capítulos: processa até o fim do capítulo, avisa e per
 | Papel | Modelo | Faz |
 |---|---|---|
 | Sessão principal | qualquer um | Lista e classifica as aulas, captura todas, lança os agentes, registra os Pendentes, gera os áudios com `/audio` e consolida o relatório. Não lê transcrições nem escreve resumo ou quizz. |
-| Agente por aula conceitual | Opus | É o gerente da revisão para uma aula: resumo, quizz, lint e ciclo com o validador. |
+| Agente por aula conceitual | Opus (Sonnet se o vídeo tiver menos de 5 min, desde 2026-11-20) | É o gerente da revisão para uma aula: resumo, quizz, lint e ciclo com o validador. |
 | Agente das aulas leves | Opus | Um só agente para todas as aulas práticas e de abertura do lote (só o resumo de cada uma). |
 | Validador | Sonnet | Criado pelo agente da aula, como na `next-class`. |
 

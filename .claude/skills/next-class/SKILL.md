@@ -144,7 +144,7 @@ Abrir a aula pode marcá-la como vista na plataforma. O usuário já aceitou iss
 
 Leia a transcrição e o resumo do professor e escreva `summary/<título>.resumo.md`: um resumo próprio do conteúdo da aula, em português, que cubra todos os conceitos que o professor apresentou, na ordem dele, sem acrescentar o que a aula não disse. Tamanho de referência: a faixa da duração em "Aulas curtas", com um título `##` por conceito. É a base do quizz da aula e da leitura rápida antes do áudio.
 
-**Geração e revisão:** você (gerente, precisa ser Opus 5.5) escreve e corrige o resumo, e um agente Sonnet 5.5 validador o avalia. Não chame o validador ainda: escreva o quizz (Tarefa 3) em cima do resumo e mande os dois juntos, na mesma rodada, como define `references/revisao.md` (2 validações; a 3ª só para erro de gabarito ou de conteúdo; se não passar, fica "Pendente").
+**Geração e revisão:** você (gerente, precisa ser Opus 5.5; Sonnet 5.5 basta se o vídeo tiver menos de 5 minutos, veja `references/revisao.md`) escreve e corrige o resumo, e um agente Sonnet 5.5 validador o avalia. Não chame o validador ainda: escreva o quizz (Tarefa 3) em cima do resumo e mande os dois juntos, na mesma rodada, como define `references/revisao.md` (2 validações; a 3ª só para erro de gabarito ou de conteúdo; se não passar, fica "Pendente").
 
 ## Tarefa 3: quizz da aula
 

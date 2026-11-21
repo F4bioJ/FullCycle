@@ -32,7 +32,8 @@ Siga a seção "Aplicar o quizz" de `.claude/skills/next-class/SKILL.md`:
 - Depois de cada resposta, diga se acertou. Se errou, explique a correta e por que **cada uma** das erradas está errada (base: o gabarito). Se acertou, uma linha com o ponto-chave.
 - No fim, mostre a pontuação e grave/acrescente a tentativa em `quizz.<título>.resultado.md` no formato de `references/quiz.md` (nova seção "Tentativa N — <data>", nunca substitua as anteriores).
 - Atualize `acompanhamento.md` na hora: as células da coluna **Padrão** daquela aula, seguindo a legenda, e a data no topo.
-
+- A pergunta deve ser feita sempre em H2 (##).
+- Ao dizer se acertou ou se errou, utilizar os emojis ❌ para errada e ✅ para certa.
 ## 3.1. Refazer as erradas
 
 Se o quizz terminou com alguma questão errada, **inicie a refação logo em seguida**, sem esperar pedido: siga "Refazer as erradas" em `.claude/skills/next-class/SKILL.md` (perguntas novas sobre os mesmos conceitos, uma por vez, e `acompanhamento.md` atualizado a cada refação). Se acertou tudo, pule este passo.

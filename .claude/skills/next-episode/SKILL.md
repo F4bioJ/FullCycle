@@ -20,11 +20,11 @@ Os scripts (`login.js`, `list-lessons.js`, `capture.js`, `write-lesson.mjs`, `li
 | Papel | Modelo | Faz |
 |---|---|---|
 | **Sessão principal** (orquestrador) | qualquer um | Lista as aulas, classifica, captura todas, lança os agentes, atualiza o `acompanhamento.md` só para Pendentes, roda o áudio se houver `/audio` e consolida o relatório. **Não lê transcrição nem resumo do professor, e não escreve resumo nem quizz.** |
-| **Agente por aula conceitual** | Opus (`model: "opus"`) | É o gerente da `revisao.md` para uma aula: escreve o resumo e o quizz, roda o lint e conduz o validador Sonnet. |
+| **Agente por aula conceitual** | Opus (`model: "opus"`); Sonnet (`model: "sonnet"`) se o vídeo tiver menos de 5 min | É o gerente da `revisao.md` para uma aula: escreve o resumo e o quizz, roda o lint e conduz o validador Sonnet. |
 | **Agente das aulas leves** | Opus (`model: "opus"`) | Um único agente para todas as aulas práticas e de abertura do lote: escreve cada resumo e conduz o validador de cada um. São aulas baratas (só o resumo), por isso não ganham um agente cada. |
 | **Validador** | Sonnet | Criado pelo agente da aula, como define a `revisao.md`. |
 
-A skill exige que o gerente seja Opus, por isso os agentes rodam em Opus, mesmo que a sessão principal esteja em outro modelo.
+O gerente é Opus, por isso esses agentes rodam em Opus, mesmo que a sessão principal esteja em outro modelo. **Exceção (2026-11-20):** a aula conceitual com vídeo abaixo de 5 minutos (3 perguntas) roda com gerente Sonnet, como permite a `revisao.md`. O usuário pediu isso para poupar a cota semanal, que divide com o trabalho; são aulas com pouco conteúdo, em que o Opus faz pouca diferença.
 
 ## Qual intervalo processar
 
@@ -57,12 +57,12 @@ Se uma aula vier com contagem zero, siga a regra da `next-class` (avise; sem tra
 
 ### 3. Lançar os agentes (sessão principal)
 
-Lance, **em paralelo e em segundo plano** (`run_in_background: true`), um agente Opus por aula conceitual e um agente Opus para todas as aulas leves. Paralelo e sequencial gastam os mesmos tokens; o paralelo só ganha tempo. Se o lote tiver mais de 5 agentes, lance em ondas de até 5, por causa do limite de taxa.
+Lance, **em paralelo e em segundo plano** (`run_in_background: true`), um agente por aula conceitual (Opus, ou Sonnet abaixo de 5 min) e um agente Opus para todas as aulas leves. Paralelo e sequencial gastam os mesmos tokens; o paralelo só ganha tempo. Se o lote tiver mais de 5 agentes, lance em ondas de até 5, por causa do limite de taxa.
 
 Use o modelo de prompt abaixo, preenchendo os campos. O agente começa do zero, então o prompt precisa ser autossuficiente.
 
 ```
-Você é o gerente (Opus) da aula <id> "<título>" do MBA Full Cycle, na skill next-episode. Responda em português.
+Você é o gerente (<Opus | Sonnet>) da aula <id> "<título>" do MBA Full Cycle, na skill next-episode. Responda em português.
 
 Pasta da aula: <caminho absoluto>
 Tipo: <conceitual | prática | abertura> · Vídeo: <mm:ss> · Perguntas: <N> · Resumo: <faixa de palavras>
@@ -79,7 +79,8 @@ Faça:
 2. Escreva summary/<título>.resumo.md (Tarefa 2) e, se for conceitual, quizz/quizz.<título>.md e quizz/quizz.<título>.gabarito.md (Tarefa 3, formato de quiz.md).
 3. Rode o lint até ficar limpo: node d:/FullCycle/.claude/skills/next-class/scripts/lint-quizz.mjs "<quizz>" "<gabarito>".
 4. Conduza o validador Sonnet como define a revisao.md (Agent com model "sonnet", criado uma vez e acionado depois com SendMessage; 2 validações; a 3ª só para erro de gabarito ou de conteúdo; Pendente se não passar).
-5. Não edite acompanhamento.md, dados/ nem doc/: quem atualiza é a sessão principal.
+5. Espere a resposta de cada validação antes de seguir. Crie o validador em primeiro plano (run_in_background: false), para o veredito vir no próprio resultado. A resposta a um SendMessage chega depois, como mensagem: enquanto houver validação sem resposta, não escreva o relatório. Se precisar esperar, encerre o turno só com a linha "AGUARDANDO VALIDAÇÃO <n>" e escreva o relatório quando a resposta chegar. Nunca entregue um relatório com "resultado não recebido" ou "sem status".
+6. Não edite acompanhamento.md, dados/ nem doc/: quem atualiza é a sessão principal.
 
 Cuidados que já custaram retrabalho:
 - Escreva distratores que sejam meias-verdades desde o início, e faça perguntas de cenário. O validador recusa alternativas absurdas e perguntas que são só uma frase do professor repetida.
@@ -98,7 +99,7 @@ O que mudou por causa da revisão: <1 ou 2 linhas>
 
 Para o agente das aulas leves, use o mesmo modelo, com uma linha "Pasta, tipo e duração" por aula, e peça um bloco de relatório por aula.
 
-Enquanto os agentes rodam, não leia os arquivos deles nem os acompanhe pela saída: espere as notificações.
+Enquanto os agentes rodam, não leia os arquivos deles nem os acompanhe pela saída: espere as notificações. Uma linha "AGUARDANDO VALIDAÇÃO" não é relatório: o agente retoma sozinho quando o validador responde, então não mande mensagem a ele nem ao validador. Isso acontecia antes desta regra (2026-11-20): na 2.7.5 e na 2.7.6, o agente entregou o relatório antes da 2ª validação e precisou mandar outro quando a resposta chegou.
 
 ### 4. Depois dos agentes (sessão principal)
 

@@ -8,10 +8,12 @@ Em 2026-10-31 o usuário pediu para economizar tokens: a conta é dividida entre
 
 | Papel | Modelo | Como roda | Faz |
 |---|---|---|---|
-| **Gerente** | Opus 5.5 | A própria sessão que executa a skill | Cria e corrige os artefatos: o resumo gerado e o quizz da aula (`next-class`), o material avançado e o quizz avançado (`next-class-adv`). Decide o status de cada um. |
+| **Gerente** | Opus 5.5 (Sonnet 5.5 nas aulas com vídeo abaixo de 5 min) | A própria sessão que executa a skill | Cria e corrige os artefatos: o resumo gerado e o quizz da aula (`next-class`), o material avançado e o quizz avançado (`next-class-adv`). Decide o status de cada um. |
 | **Validador** | Sonnet 5.5 | `Agent` com `model: "sonnet"` | Só lê e avalia. Devolve "OK" ou a lista de problemas. Nunca edita. |
 
 **Verificação inicial:** o gerente precisa ser Opus. Se a sessão estiver em outro modelo, pare antes de gerar qualquer coisa e peça ao usuário para trocar com `/model` (Opus 5.5) e repetir o comando. Não use o gerente em outro modelo por conta própria.
+
+**Exceção, aulas abaixo de 5 minutos (2026-11-20):** na `next-class` e na `next-episode`, o gerente pode ser Sonnet 5.5 quando o vídeo tem menos de 5 minutos (3 perguntas, resumo de 100 a 250 palavras). O usuário pediu isso para poupar a cota semanal, que divide com o trabalho. O validador continua sendo um agente Sonnet separado, com as mesmas regras; ele lê os arquivos sem o raciocínio do gerente, então a segunda leitura continua independente. Não vale para a `next-class-adv`.
 
 ## Contexto do validador
 

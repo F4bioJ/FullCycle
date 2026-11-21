@@ -6,6 +6,27 @@ Ao alterar uma skill, acrescente uma entrada aqui com a data, o motivo e os arqu
 
 ## Pelo histórico do Git
 
+### 2026-11-20 · next-episode: agente espera o validador
+
+**`next-episode`** (`next-episode/SKILL.md`)
+
+- O modelo de prompt ganhou o passo 5: o agente cria o validador em primeiro plano, espera a resposta de cada validação e não entrega relatório com validação em aberto. Se precisar esperar uma resposta de SendMessage, encerra o turno só com "AGUARDANDO VALIDAÇÃO <n>". A sessão principal não trata essa linha como relatório.
+- **Motivo:** no lote 2.7.1 a 2.7.6, os agentes da 2.7.5 e da 2.7.6 entregaram o relatório com a 2ª validação sem resposta e mandaram outro quando o OK chegou. Isso gerou relatórios duplicados e quase levou a sessão principal a acionar o validador de novo.
+
+### 2026-11-20 · capture.js mais curto
+
+**`next-class`** (`scripts/capture.js`, novo `scripts/capture.md`)
+
+- Os comentários do `capture.js` foram para o `capture.md`, e o código ficou mais compacto (de 4,5 KB para cerca de 3 KB), sem mudar o comportamento. Testado na 2.7.6: as mesmas contagens de antes.
+- **Motivo:** o Playwright MCP devolve o arquivo inteiro na saída de cada `browser_run_code_unsafe`. Na captura em lote da `next-episode`, esse texto se repete a cada aula e é reenviado em todos os passos seguintes da sessão principal.
+
+### 2026-11-20 · Gerente Sonnet nas aulas abaixo de 5 minutos
+
+**`next-episode`, `next-class`, `revisao.md`** (e `doc/skill.nextEpisode.md`, `doc/skill.nextClass.md`)
+
+- A aula conceitual com vídeo abaixo de 5 minutos (3 perguntas) passa a ter gerente Sonnet: na `next-episode`, o agente da aula roda com `model: "sonnet"`; na `next-class`, a sessão pode estar em Sonnet. O validador continua sendo um agente Sonnet separado. As demais aulas e a `next-class-adv` seguem com gerente Opus.
+- **Motivo:** o usuário estava com 26% da cota semanal no segundo dia, e a cota é dividida com o trabalho. As aulas curtas têm pouco conteúdo, e o Opus faz pouca diferença nelas.
+
 ### 2026-11-20 · get-audio alinhada e documentação das skills
 
 **`get-audio`** (`get-audio/SKILL.md`)

@@ -67,7 +67,7 @@ Os parâmetros valem só para a execução em que foram passados.
 
 Dois papéis, detalhados em `references/revisao.md`:
 
-- **Gerente (Opus 5.5):** a própria sessão. Escreve e corrige os artefatos e decide o status de cada um. A skill exige Opus e pede `/model` se a sessão estiver em outro modelo.
+- **Gerente (Opus 5.5):** a própria sessão. Escreve e corrige os artefatos e decide o status de cada um. A skill exige Opus e pede `/model` se a sessão estiver em outro modelo. Exceção desde 2026-11-20: nas aulas com vídeo abaixo de 5 minutos, Sonnet basta.
 - **Validador (Sonnet 5.5):** só avalia; responde "OK" ou lista (artefato/questão, problema, evidência, sugestão). Um por aula, acionado com `SendMessage` nas rodadas seguintes.
 
 Fluxo (desde 2026-10-31, para economizar tokens):
