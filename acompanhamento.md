@@ -1,6 +1,6 @@
 # Acompanhamento dos quizzes
 
-Atualizado em 2026-11-21.
+Atualizado em 2026-11-22.
 
 **Legenda:**
 
@@ -712,6 +712,35 @@ O id da aula é `capítulo.aula` no Fundamentos (ex.: 2.4) e `módulo.capítulo.
 | 2.7.7 | Entendendo estrutura dos exemplos | q1 | ✅ | — |
 | 2.7.7 | Entendendo estrutura dos exemplos | q2 | ✅ | — |
 | 2.7.7 | Entendendo estrutura dos exemplos | q3 | ✅ | — |
+| 2.7.9 | Evaluators binarios | q1 | ✅ | — |
+| 2.7.9 | Evaluators binarios | q2 | ✅ | — |
+| 2.7.9 | Evaluators binarios | q3 | ✅ | — |
+| 2.7.9 | Evaluators binarios | q4 | ✅ | — |
+| 2.7.9 | Evaluators binarios | q5 | ✅ | — |
+| 2.7.10 | Score com range | q1 | ✅ | — |
+| 2.7.10 | Score com range | q2 | ✅ | — |
+| 2.7.10 | Score com range | q3 | ✅ | — |
+| 2.7.10 | Score com range | q4 | ✅ | — |
+| 2.7.10 | Score com range | q5 | ✅ | — |
+| 2.7.11 | Additional criteria | q1 | ✅ | — |
+| 2.7.11 | Additional criteria | q2 | ✅ | — |
+| 2.7.11 | Additional criteria | q3 | ✅ 1x | — |
+| 2.7.11 | Additional criteria | q4 | ✅ | — |
+| 2.7.11 | Additional criteria | q5 | ✅ | — |
+| 2.7.12 | Embedding distance | q1 | ✅ | — |
+| 2.7.12 | Embedding distance | q2 | ✅ | — |
+| 2.7.12 | Embedding distance | q3 | ✅ | — |
+| 2.7.13 | Revisor otimista | q1 | ✅ | — |
+| 2.7.13 | Revisor otimista | q2 | ✅ | — |
+| 2.7.13 | Revisor otimista | q3 | ✅ | — |
+| 2.7.14 | Revisor verboso | q1 | ✅ | — |
+| 2.7.14 | Revisor verboso | q2 | ✅ 1x | — |
+| 2.7.14 | Revisor verboso | q3 | ✅ 1x | — |
+| 2.7.15 | Alucinação e sem utilidade | q1 | ✅ | — |
+| 2.7.15 | Alucinação e sem utilidade | q2 | ✅ | — |
+| 2.7.15 | Alucinação e sem utilidade | q3 | ✅ | — |
+| 2.7.15 | Alucinação e sem utilidade | q4 | ✅ | — |
+| 2.7.15 | Alucinação e sem utilidade | q5 | ✅ | — |
 
 ## Observações
 
