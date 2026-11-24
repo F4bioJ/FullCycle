@@ -1,0 +1,282 @@
+Bom pessoal, agora a gente vai falar sobre uma outra forma de eval,
+que é utilizando uma ferramenta chamada Promptful.
+E o porquê que você deve pensar em outra ferramenta ou outra forma
+de eval quando a gente está falando na parte de avaliação de skills?
+Pelo simples motivo de que a forma que foi mostrada via Skill Creator, ela...
+Funciona, ela é muito boa e é muito aconselhável de você utilizar.
+Porém, o mais importante é que a
+sua skill passe a funcionar em multimodelos. Logo,
+se você tentar trabalhar com o skill creator dentro de outros modelos,
+é bem provável que você terá algumas dificuldades.
+Mesmo que a skill seja um padrão hoje adotado de forma geral,
+por qualquer tipo de CLI que você esteja utilizando,
+a questão é,
+você vai ter que ficar fazendo configurações e configurações em múltiplos CLIs.
+E isso não é interessante. Então, existem ferramentas que a gente consegue utilizar,
+uma delas é o PromptFull,
+para fazer esse processo de avaliação de forma
+muito mais simplificada e que atenda multimodelos.
+E é isso que a gente vai trabalhar neste momento com...
+este carinha chamado promptful então acessando o site aí promptful
+.dev tá ele vai ser um pacote que vocês vão
+instalar via npm e aqui vocês conseguem perceber que existem
+n maneiras da gente utilizá -lo tá basicamente esse cara aqui
+é um avaliador de saídas de LLM ou seja você
+coloca o teu prompt lá e ele vai avaliar mediante métricas
+que você selecionar se está de acordo ou não A
+diferença é que aqui a gente tem aquela questão de multimodelo.
+Então, eu tenho uma percepção real daquilo que eu estou pedindo.
+Ele tem muita coisa.
+Atualmente, o PromptFull não é mais só sobre a parte de avaliação.
+Ele tem várias outras coisas aí.
+Mas o nosso foco vai ser exatamente essa parte
+de avaliação para que a gente consiga...
+te dar aí uma outra opção. Mas fora isso,
+tem a parte de code scanning também, segurança,
+guardrails, MCP também, que a gente pode trabalhar com o próprio MCP do Promptful.
+Enfim, realmente é uma plataforma bem ampla, tá?
+E o mais bacana disso tudo é que ele é open source. Então,
+a gente consegue utilizá -lo aí de forma gratuita e se você quiser pagar,
+você pode pagar pela versão cloud, que também...
+está disponível tá nós vamos lá primeira coisa que a
+gente precisa entender aqui é o seguinte é como
+trabalhar com esse carinho né E aí é muito simples
+a gente vai utilizar aqui um comando npx prompt
+full tá E aqui a gente já vai dar
+início a ao processo de configuração que é extremamente simples
+tá basicamente um comando voltando aqui no nosso vs
+code vamos lá então vou abrir aqui o nosso terminal,
+vou acessar aquela
+nossa pastinha, mcp skills, e
+aí aqui dentro eu vou fazer o seguinte,
+npx prompt full, a minha versão é latest,
+e vou dar um init, ok? E aí ele vai pedir para instalar.
+Aguardamos um pouquinho e aqui ele já começou
+a fazer algumas perguntas para a gente. Então,
+o que eu quero fazer? Basicamente, eu quero comparar prompts e modelos, por exemplo.
+Aí eu posso vir aqui. Qual modo eu pretendo utilizar?
+Eu posso escolher agora ou, se preferir, posso escolher depois também.
+Mas só caso de não precisar fazer nenhum tipo de configuração posterior,
+vamos escolher aqui que eu vou usar o Cloud, por exemplo.
+E agora... ele vai fazer aí o setup inicial, tá?
+Note que este setup inicial, ele é relativamente bem simples de ser feito.
+Por quê? Porque ele vai gerar um arquivo chamado promptful config .yaume,
+ok? E aqui dentro,
+você pode perceber que o yaume em si, ele é extremamente simples de se trabalhar.
+A gente tem aqui a descrição do que ele é,
+o prompt em si a ser testado e os providers que nós queremos testar.
+Aqui a gente tem... basicamente o nosso dataset.
+E nota o seguinte, você reparou que o PromptFull,
+em especial, ele não fala muita coisa sobre a skill em si.
+Porém, o que é uma skill?
+De forma geral, a skill é uma habilidade que vai ter ali instruções específicas.
+Então, trocando em miúdos,
+basicamente a skill é um conjunto de prompts. Óbvio que a gente tem as referências,
+a gente pode ter os scripts e tudo mais, mas de forma geral,
+se a gente for olhar, a gente trabalha basicamente com prompt, ok? Então, pessoal,
+o que vai ser necessário aqui para a gente configurar o nosso Evolve via PromptFull?
+Primeiramente, vai ser necessário nós utilizarmos aí uma key de API,
+tá? E aí você pode utilizar Duntropic, você pode utilizar de OpenAI,
+pode utilizar qualquer outra que você quiser.
+O processo em si, ele é super simples. Basicamente, você vai...
+exportar diretamente no seu terminal, tá? A sua aqui,
+e aí você já vai conseguir fazer com que o prompt
+full encontre essa variável de ambiente e faça o uso dela.
+Depois que você configurou isso no seu terminal,
+aí sim a gente pode vir aqui para a configuração do prompt full,
+e aqui nós vamos fazer o seguinte, vou mudar aqui para prompt, dessa forma, ok?
+Vou começar a fazer algumas configurações.
+Acabei esquecendo de colocar as aspas. Agora já está certinho. Então,
+o que nós vamos fazer aqui? Nessa parte de Provider,
+eu vou utilizar o meu Cloud Agent SDK. Então,
+vamos fazer uma breve alteração aqui.
+Vai ficar bem mais fácil.
+Vamos voltar. Vamos colocar aqui. ID.
+E aí eu vou dizer. ID que vai ser.
+Propic Cloud.
+Agent SDK. Vou ter.
+O meu config.
+E aqui dentro do meu config.
+Será necessário. Utilizar aqui algumas.
+Informações a mais. Para que a gente consiga.
+Trabalhar 100%. Então API aqui. Como eu disse. Vocês vão exportar isso.
+no seu terminal, juntamente com a chave de API. Logo,
+a gente já vai conseguir encontrar por aqui.
+Em relação ao modelo,
+eu vou colocar para utilizar o CloudSony 4 .6.
+Essas informações referentes a modelo e tudo mais,
+basta você digitar no Google Model List e o seu provedor,
+que vai ter ali todos os modelos que a gente pode...
+utilizar, tá? Mostro isso agora pra vocês aqui.
+Então, model list, por exemplo, topic,
+e
+aqui eu tenho lista de modelo, posso fazer a mesma coisa pro OpenAI,
+eu tenho aqui a lista de modelo, ok?
+Vamos voltar lá no VS Code pra gente dar continuidade.
+Vou colocar aqui também o meu working dir,
+que vai ser ponto, tá?
+Vou ter um setting sources project
+depois
+disso vou ter a minha skill que é
+triagem issue
+então
+temos aqui nosso API key temos também o
+modelo vou colocar aqui as questões de tools
+que a gente pode utilizar ou não. Nesse caso aqui,
+a gente vai fazer o uso somente da tool de read,
+tá? E o permission mode vai ser accept edits.
+Nesse caso aqui, é a permissão do próprio modelo, tá bom?
+Feito isso, galera, eu já tenho aqui um dataset preparado com algumas informações,
+então eu vou copiar e colar aqui.
+E como vocês podem perceber, basicamente o que nós temos aqui é...
+A mesma coisa que a gente tinha na parte de evals .json,
+porém agora no formato Yalm,
+né? Fechado? Nada muito diferente daquilo que a gente já tinha.
+Com essa pequena configuração, o que a gente vai fazer?
+A gente vai retornar aqui no nosso terminal.
+E aí eu vou utilizar npx prompt full
+eval.
+Dar um yes aqui novamente.
+E vamos ver o que vai acontecer.
+O resultado não conseguiu identificar o nosso provedor.
+Vamos dar uma olhadinha aqui. Aqui, na verdade, é
+dois pontos, tá? Vamos rodar aqui de novo. Então, npx promptful evol.
+Provavelmente vai dar um outro errinho,
+exatamente como imaginado. Então, se por acaso,
+galera, vocês ainda nunca utilizaram o Cloud Agent SDK,
+Na máquina de vocês, tá?
+Será necessário a instalação deste pacote. Como vocês podem perceber,
+ele rodou o eval, porém ele não conseguiu chamar o SDK do cloud.
+Por quê? Porque a gente não tem o agent SDK.
+Então, o que a gente tem que fazer?
+Fazer o processo de instalação. Vou fazer o seguinte.
+Só copiar aqui, ó.
+E aí eu faço o npm i e colo ele aqui. Aguarda aí o processo.
+Aparentemente, tudo certo. Então, vamos lá, pessoal.
+NPEX Promptful Evolve, mais uma vez.
+E aí, vamos verificar. Praticamente finalizando aí o nosso teste.
+Vamos aguardar mais um pouquinho.
+E aí, eu tenho aqui o resultado.
+Para que eu consiga ver, basta eu fazer um NPEX Promptful View. Vou
+deixar que ele abra.
+E aí, eu tenho o meu resultado.
+Volto aqui no browser para mostrar para vocês e nós temos aqui o que aconteceu.
+Como vocês podem ver, pessoal,
+logo aqui em cima nós temos o apanhado geral daquilo
+que aconteceu juntamente com as métricas que foram definidas no dataset,
+que é o Promptful Config ali,
+juntamente com o meu custo, total de tokens utilizados.
+A média de tokens, latência e tokens por segundo, tá?
+E logo abaixo a gente consegue ter uma ideia de estrutura,
+o que passou, o que não passou, os itens que falharam e tudo mais.
+Esses dois carinhas aqui que falharam, na verdade, eles deveriam ter passado, né?
+Só não foi passado porque acabei esquecendo de
+alterar ali para o nosso repositório correto,
+tá? Mas, fora isso...
+Ajustando isso aí, eles iriam passar também, beleza? Então, aqui,
+o mais legal de tudo é o que?
+É que a gente consegue, por meio do nosso Promptful Config,
+aquele nosso arquivo que a gente estava trabalhando,
+a gente consegue definir as nossas métricas, já mostro para vocês sobre isso,
+e entender se elas vão disparar da forma que a gente deseja ou não.
+Se a gente volta aqui no VS Code, dá uma olhada aqui, a gente tem a métrica AC,
+E para ficar um pouco mais fácil,
+para entender o que é a métrica que vai ser analisada ou não,
+eu costumo separar isso em dois grandes mundos.
+O primeiro deles é a métrica agregada, ou seja,
+a gente tem ali métricas acerca de pass rate,
+percentual dos casos que passaram em todas as ações ou não,
+métricas voltadas para pass e fail.
+Se cada ação de forma individual passou ou não.
+A gente tem a parte geral de custo, de latência,
+o tanto de token que foi utilizado. Temos também o threshold,
+que é a nota mínima da média que
+a gente considera interessante para ser aceito ou não.
+Temos também a métrica de score ponderado, que é a média ponderada das ações.
+É importante a gente entender que ele sempre vai ter um peso padrão de 1.
+E eu também tenho algumas outras métricas que aí já entram em um critério um
+pouco mais analítico e que realmente importa para a
+gente na hora de pensar isso aqui,
+que são os tipos de ação que a gente pode começar a trabalhar.
+Então, eu tenho alguns grupos.
+Na verdade, eu tenho dois grupos,
+mas vários tipos de métricas que eu posso trabalhar.
+O primeiro grupo é o determinístico e o segundo grupo são os models graded.
+Quando a gente fala de métricas determinísticas,
+a gente está falando de algo um pouco mais exato. Então, textos, estruturas, código,
+lógica, coisas operacionais, similaridade e formato de forma geral. Então,
+texto vai ter itens ali que a gente pode medir.
+E qualidade, se contém, se não contém, se contém por completo,
+se contém somente uma parte, não contém, coisas nesse sentido.
+A gente tem coisas estruturais, que são validações de esquema,
+lógicas de booleano e coisas nesse sentido.
+Código e lógica, basicamente a gente consegue trabalhar com coisas mais arbitrárias,
+baseado no output que a gente tem.
+Temos também métricas de similaridade,
+que é aquilo relacionado à similaridade de texto,
+né? Com fórmulas de Leibniz, Rugen, Meteor.
+E de outro lado, a gente tem os models graded, né?
+Que é o que a gente está utilizando neste nosso exemplo, tá?
+E o primeiro e talvez o mais usado são as rubricas de LLM,
+que estão aqui, ó. Que são os types, né? As modalidades aí.
+Dos tipos de avaliação que nós temos. E esse cara aqui. Ele vai avaliar para você.
+O critério que você escrever. Então. O que eu quero.
+Nesse teste aqui. Pergunta genérica de Git. Que não toca na skill.
+O prompt. Qual a diferença entre Git merge e Git rebase. E o assertion.
+É o que? Um type. Aonde eu tenho a métrica,
+não dispara, ou seja, não deve disparar,
+e o valor aprovado se responde conceitualmente sobre merge e rebase,
+e não produz nenhuma triagem da issue, nem chama o GitHub MCP.
+O que está acontecendo aqui? Basicamente,
+a gente vai ver a resposta e automaticamente vai ser analisado via LLM,
+claro, se bate com a rubrica. Se o resultado disso tudo aqui
+não for o resultado da nossa skill,
+é porque está aprovado.
+Então, a gente consegue fazer essa rubrica e consegue entender se passou ou não.
+E aí, já trazendo a nível de prompt full,
+que eu não havia mostrado ainda o nosso dataset,
+se vocês repararem bem, a gente tem uma estrutura bem definida,
+que é o quê? A descrição,
+no qual a gente precisa avaliar as variáveis que a gente
+vai trabalhar e o que a gente espera de assertion.
+O assertion em si vai ser o quê? O tipo que a gente espera,
+a métrica desejada a ser avaliada e o nosso valor, beleza?
+Além da rubrica, que é aquilo que eu falei, a gente vai utilizar bastante,
+a gente tem ainda alguns outros contextos de model graded, tá? Então,
+a gente tem aqui um carinha que se chama Gievol,
+ok? Esse cara, ele vai se assimilar muito...
+com LLM Rubric, mas com raciocínio estruturado,
+ou seja, utilizando ali meio que um chain of thoughts. Temos também o Factuality,
+que vai medir referência de resposta. Temos o Similar também,
+Que vai analisar a similaridade mais voltada a coisas de embed,
+similaridade semântica ali. Temos o Select Best,
+que vai comparar a saída de vários providers /,
+Pronto. E escolher qual foi o melhor.
+E, além disso, temos também o moderation, que vai,
+como o próprio nome já diz, fazer...
+comparações ali relacionadas a conteúdo tóxico,
+de forma inadequada e coisas nesse sentido. Além disso,
+a gente também tem algumas métricas voltadas para RAG e coisas acerca disso aí,
+mas eu não vou cobrir muito, por quê?
+Porque nosso foco aqui é skill. Quando a gente está utilizando skill de forma geral,
+nossa tendência é utilizar bastante aqui a parte de rúbrica,
+que é o que mais vai fazer sentido, vamos dizer assim, para o teste.
+Da skill em si, da habilidade do resultado que está sendo utilizado. E uma outra também,
+que eu gosto bastante de utilizar, é o Select Best,
+porque quando a gente está testando em diversos modelos diferentes,
+a gente pode trabalhar de forma a testar e já
+unificar a melhor resposta a partir daquele modelo que foi exibido. Então, pessoal,
+o PromptFull é mais uma alternativa para a gente avaliar de fato
+se foi coberto e o que foi produzido por aquela skill,
+se faz sentido a nível de multimodelo ou não. E, obviamente,
+tudo que eu mostrei aqui foi uma breve demo do que o PromptFull pode fazer,
+mas a gente pode ir trabalhando ele com diversas outras maneiras,
+não só a nível de skill, mas de prompt e coisas a mais.
+Inclusive, se você quiser,
+você pode pegar exatamente isso aqui que a gente fez e colocar em uma pipeline.
+De CI e CD que fica rodando ali e a gente meio que forma uma pipeline ágil, né?
+Pra todo momento que a nossa skill for alterada,
+for atualizada, tiver algum processo de manutenção,
+a gente faz aí de novo todo o processo de assertion e
+tal pra garantir que ela continua viável ainda pra uso,
+fechado? Então fica aí a dica pra vocês.

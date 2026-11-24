@@ -78,8 +78,8 @@ Faça:
 1. Confirme o tipo pela transcrição. Se a aula for prática ou de abertura, gere só o resumo e diga isso no relatório.
 2. Escreva summary/<título>.resumo.md (Tarefa 2) e, se for conceitual, quizz/quizz.<título>.md e quizz/quizz.<título>.gabarito.md (Tarefa 3, formato de quiz.md).
 3. Rode o lint até ficar limpo: node d:/FullCycle/.claude/skills/next-class/scripts/lint-quizz.mjs "<quizz>" "<gabarito>".
-4. Conduza o validador Sonnet como define a revisao.md (Agent com model "sonnet", criado uma vez e acionado depois com SendMessage; 2 validações; a 3ª só para erro de gabarito ou de conteúdo; Pendente se não passar).
-5. Espere a resposta de cada validação antes de seguir. Crie o validador em primeiro plano (run_in_background: false), para o veredito vir no próprio resultado. A resposta a um SendMessage chega depois, como mensagem: enquanto houver validação sem resposta, não escreva o relatório. Se precisar esperar, encerre o turno só com a linha "AGUARDANDO VALIDAÇÃO <n>" e escreva o relatório quando a resposta chegar. Nunca entregue um relatório com "resultado não recebido" ou "sem status".
+4. Conduza o validador Sonnet como define a revisao.md (2 validações; a 3ª só para erro de gabarito ou de conteúdo; Pendente se não passar), com uma exceção: aqui cada validação é um Agent novo (model "sonnet"), e não o mesmo validador acionado por SendMessage.
+5. Crie cada validação em PRIMEIRO PLANO (run_in_background: false), para o veredito vir no próprio resultado da ferramenta. Na 2ª e na 3ª, não use SendMessage, porque a resposta chegaria depois de você ter encerrado. Crie um novo validador e passe a ele os achados das rodadas anteriores, as correções feitas e os caminhos dos arquivos. Nunca entregue um relatório com "resultado não recebido" ou "sem status".
 6. Não edite acompanhamento.md, dados/ nem doc/: quem atualiza é a sessão principal.
 
 Cuidados que já custaram retrabalho:
@@ -99,7 +99,9 @@ O que mudou por causa da revisão: <1 ou 2 linhas>
 
 Para o agente das aulas leves, use o mesmo modelo, com uma linha "Pasta, tipo e duração" por aula, e peça um bloco de relatório por aula.
 
-Enquanto os agentes rodam, não leia os arquivos deles nem os acompanhe pela saída: espere as notificações. Uma linha "AGUARDANDO VALIDAÇÃO" não é relatório: o agente retoma sozinho quando o validador responde, então não mande mensagem a ele nem ao validador. Isso acontecia antes desta regra (2026-11-20): na 2.7.5 e na 2.7.6, o agente entregou o relatório antes da 2ª validação e precisou mandar outro quando a resposta chegou.
+Enquanto os agentes rodam, não leia os arquivos deles nem os acompanhe pela saída: espere as notificações.
+
+**Por que um validador novo a cada rodada (2026-11-24):** antes, o modelo mandava acionar a 2ª validação por SendMessage e encerrar o turno com "AGUARDANDO VALIDAÇÃO". Mesmo assim, o agente entregava o relatório sem o veredito. Isso aconteceu na 2.7.5 e na 2.7.6, e depois em 5 das 7 aulas conceituais do lote 3.1.1 a 3.1.9. A resposta do validador ia parar na sessão principal, que precisava repassá-la ao agente. Nas aulas em que o agente criou um validador novo em primeiro plano para a 2ª rodada (3.1.7 a 3.1.9), o relatório já veio com o status final. Se mesmo assim chegar um relatório sem veredito, espere a resposta do validador. Quando ela vier para a sessão principal, repasse-a ao agente da aula com SendMessage, para que ele feche o relatório.
 
 ### 4. Depois dos agentes (sessão principal)
 

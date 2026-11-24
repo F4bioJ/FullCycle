@@ -19,7 +19,7 @@ Em 2026-10-31 o usuário pediu para economizar tokens: a conta é dividida entre
 
 - O validador recebe, com caminhos absolutos, só o que precisa para julgar: transcrição, resumo do professor e `references/quiz.md`. Das aulas vizinhas, só o resumo gerado (`summary/*.resumo.md`) da aula anterior, para checar os distratores que vêm de outra aula; nada de transcrições vizinhas. Na `next-class-adv`, acrescente o material avançado em avaliação.
 - Os critérios de avaliação vão no próprio pedido (copie a seção de critérios do artefato e o formato de retorno), para o validador não precisar ler este arquivo.
-- É criado uma única vez por aula (`Agent` com `name`) e depois acionado com `SendMessage` nas rodadas seguintes, para lembrar do que já apontou e aprovou. Não crie um validador novo a cada rodada.
+- É criado uma única vez por aula (`Agent` com `name`) e depois acionado com `SendMessage` nas rodadas seguintes, para lembrar do que já apontou e aprovou. Não crie um validador novo a cada rodada. Exceção: na `next-episode`, o gerente é um agente em segundo plano, e por isso cada rodada usa um validador novo em primeiro plano, que recebe os achados anteriores (veja a skill).
 - O validador não recebe a opinião do gerente sobre o próprio trabalho, só os arquivos (e, nas rodadas seguintes, o que foi corrigido).
 
 ## Artefatos

@@ -1,0 +1,205 @@
+Bom, pessoal, então, continuando aqui, vamos falar agora sobre skills,
+mas especificamente sobre como a gente deve tomar
+essa decisão de virar skill ou não virar skill.
+Creio que isso seja o próximo tema aí que pode vir na cabeça de vocês.
+Afinal de contas, a gente entendeu que é uma skill.
+A gente já entendeu como criar uma skill, o que é o tal do front matter.
+Agora que a gente já tem essa base um pouco mais sólida,
+temos que responder uma resposta que é muito chave.
+Quando eu vou criar uma skill?
+Quando eu não vou criar uma skill?
+Inclusive, eu vou mostrar uma forma muito interessante de a gente
+tomar esse tipo de decisão e a gente vai utilizar também.
+O auxílio da IA para nos ajudar. Beleza? Então, vamos lá. Bom, pessoal,
+aqui eu vou demonstrar para vocês um modelo
+mental que acho que faz muito sentido vocês,
+a partir de hoje,
+já começar a estruturar nos projetos que vocês estão trabalhando.
+A primeira coisa é muito importante dizer que, quando a gente fala de skills,
+é bem provável que você vai ou ter uma
+base de uma skill que você pode sempre reutilizar,
+mas é certo que você vai pegar
+essa base e vai fazer as customizações necessárias,
+gerando uma nova skill por projeto. Porque cada projeto tem as suas convenções,
+tem as suas configurações, tem a sua arquitetura, tem, enfim, inúmeras coisas ali.
+Que são específicas ao projeto. Então, é muito provável que,
+mesmo que a gente saiba que uma skill
+seja uma habilidade que seja totalmente reutilizável,
+dado a essa diferença de projetos que nós temos,
+formas de programar e tudo mais,
+a gente vai ter que adequar alguma coisinha ou
+outra para garantir que ela siga as nossas convenções.
+Primeiro ponto já esclarecido. Segunda coisa.
+Se eu pudesse falar para vocês como fazer essa triagem,
+seria através de uma frase.
+Então, a triagem seria igual ao quê?
+Isso é conhecimento procedural
+reutilizável? Se
+isso aqui for respondido, a gente já tem um bom ponto.
+E aí, se você quiser adicionar mais uma questão a ser analisada nessa pequena frase,
+é o seguinte, além
+desses dois pontos aqui, é
+estável ou bastante para
+valer um arquivo
+versionado? Ou seja,
+aqui eu estou falando mais a nível de análise daquilo que você quer executar.
+Aqui eu já estou falando mais a nível de design, de fato.
+Compensa a gente ter mais um arquivo dentro do nosso projeto,
+versionar mais coisas só para ter aquele ganho,
+isso aí é essa triagem que a gente tem que começar a pensar, beleza? Se
+ainda assim, depois dessa reflexão que você fez, as coisas não clarearam ainda,
+Tenta de uma outra forma. Seria assim, o
+Negócio é o seguinte, vale... 3 SIMs. Reutilização.
+Procedimento. Não óbvio. Estabilidade.
+Vou botar aqui. 2 pontinhos.
+Reutilização. É
+repetitivo? Ou
+Seja, faço isso aqui dias,
+diversos prompts iguais, diversos projetos iguais. Se sim, bom ponto.
+Procedimento não óbvio.
+Tem um como específico? Ou seja,
+a ordem de execução, padrão de time, convenções,
+PEPs específicos a serem explorados, que o Cloud Code,
+neste caso, o nosso Harness, não consegue acertar sozinho?
+Ou seja, se o modelo já faz bem,
+sem nenhum tipo de instrução a mais, provavelmente você não precisa de uma skill.
+Agora, se o modelo está pecando nisso aí,
+aí já é mais um sim. Então, o que a gente pode colocar aqui?
+Tem um como específico. Esse como pode ser ordem,
+padrão, uma convenção.
+E, por fim, estabilidade. Ou seja,
+ela é, por exemplo, uma regra que dura semana, dias, semanas,
+meses.
+Se sim, mais um ponto.
+Se não, é bem provável que você não precise de uma skill.
+Depois que você fez essa análise dos três SIMs aqui, pode
+colocar mais uma análise, tá? E essa análise pode ser feita tanto com essa pergunta,
+tanto com a técnica dos três SIMs. Que é o quê?
+Segurança. Isso aqui é válido para
+ambas as formas de pensamento.
+Segurança. Tem algum tipo de segredo?
+Algum credencial?
+Algum token?
+Algo que
+depende de estado em tempo real, por exemplo? Se
+isso aqui for
+um SIM, você não vai fazer skill. Certo?
+Por quê? Porque aqui é procedimento de segurança.
+Então, se...
+esbarra em algo voltado ao que está sendo perguntado,
+já descarta. Mesmo que a gente tenha três SIMs aqui em cima,
+mesmo que o resultado dessa triagem mental sua foi positivo para criar uma skill.
+Afinal de contas, segurança é sempre bem-vinda.
+Fechou? Só que agora a gente tem um outro ponto também a ser analisado. Por quê?
+Quando a gente está fazendo essa triagem mental,
+existem alguns itens que a gente deve ter algumas atenções.
+Por quê? Porque existe uma zona cinzenta, poderia-se dizer,
+entre as nossas skills e alternativas que a gente tem hoje. Como, por exemplo, volta MD,
+algo determinístico, linter, um formatter,
+um MCP tools, alguma busca.
+externa, via tools de web e coisas nesse sentido.
+Enfim, a gente tem algumas alternativas
+quando nós estamos comparando determinado procedimento.
+E é aí que mora uma zona cinzenta que a gente precisa analisar com muito carinho. Por quê?
+Bom, basicamente, a ideia é quando
+o procedimento, aquela
+execução, vou colocar também para ficar fácil.
+É repetível.
+E não, óbvio, é
+Skill 100%. Agora,
+vamos supor que eu preciso ter uma source of truth ali.
+Algo que sempre é verdade para aquele projeto.
+Aí você não vai precisar de uma skill. Neste caso,
+é muito melhor a gente trabalhar com um cloud.md, um agents.md.
+Porque eu tenho a garantia de que o Harness vai sempre lê-lo.
+E é como a gente já percebeu, a skill pode ou não ser lida.
+Quando eu tenho, por exemplo, uma regra mecânica,
+como eu disse, linters, formatters,
+é bem provável que eu não precise também separar isso para dentro de uma skill.
+Eu posso fazer com que a minha skill utilize o linter.
+Isso é bem interessante, inclusive.
+Agora, precisar de fato separar esse procedimento, essa execução,
+criar as instruções para gerar uma skill disso,
+é bem provável que você não precise. Da mesma forma,
+quando eu tenho a necessidade de trabalhar com acesso a dados externos,
+ou acesso a dados vivos,
+poderia fazer isso via tools, via MCP. Então,
+eu não tenho necessidade de criar uma skill para isso.
+Mesmo que uma skill possa utilizar, via linha de comando,
+um MCP Tools, por exemplo. Então,
+perceba que a gente tem essa zona cinzenta, mas mesmo tendo essa zona cinzenta,
+nós temos ali algumas definições bem claras de cada coisa.
+O que cada um tem,
+quais são as diferenças, quando eu posso utilizar ou não. Beleza?
+E agora, para a gente fechar,
+nós temos um outro assunto que é bem importante de debater. Que é o quê?
+Decisão. Qual a minha estrutura de decisão para realmente eu,
+depois que fiz essa triagem,
+vi que não está batendo na zona cinzenta, vamos colocar aqui, o
+que eu tenho que fazer? Tenho que tomar a minha decisão. Beleza. Vira uma skill. Qual nível?
+Será que eu vou... trabalhar mais com nível 1, provavelmente você não vai trabalhar.
+Mas será que eu vou trabalhar mais no nível 2 ou no nível 3?
+Então, vai virar uma skill.
+Se isso for acontecer, qual
+nível? N2 ou N3? A gente sabe que... A partir do N2,
+a gente tem o corpo ali que está sendo lido. A partir do N3,
+a gente tem as nossas referências, a gente tem os nossos arquivos externos,
+scripts e tudo mais. Então, a gente também tem que fazer essa análise,
+essa triagem para ter consciência daquilo que vai ser feito.
+Não é só sobre as instruções que estarão no corpo,
+e sim as referências e tudo mais que compõem.
+No final das contas, uma skill. E aí...
+Para ajudar vocês nessa decisão, eu tenho aqui um pequeno prompt.
+Este prompt vai ser meio que um revisor,
+onde vai te dar uma triagem do que vale a pena ser skill ou não.
+É como se fosse um quality gate.
+Então, estou aqui com a minha sessão do Cloud aberta.
+Vou colar aqui e
+vamos dar uma olhada nesse cara.
+Então, basicamente, tenho
+aqui o meu prompt de triagem,
+onde eu digo que ele é um revisor. Tenho aqui o meu candidato.
+E esse meu candidato vai ser o local no qual eu vou colocar aqui as informações que
+eu quero que faça uma análise para dizer se é viável ou não ele virar uma skill.
+E aí, após isso, o que eu faço?
+Eu pego aquela estrutura de decisão que eu mostrei aqui em cima para vocês e...
+Faço as minhas perguntinhas. Após isso,
+peço para ele formatar aqui uma resposta com um veredicto e tenho
+o meu resultado. Na prática, como
+que usa isso? Muito simples. Eu venho aqui,
+troco essa parte e simplesmente eu posso fazer a minha pergunta.
+Exemplo, candidato aplicar, por exemplo, um checklist.
+Code review no meu time.
+Utilizando, por exemplo, a parte ali de segurança, names,
+convenções, a
+partir de um diff. O que eu vou fazer?
+Copiar esse cara aqui,
+que inclusive pode virar uma skill, e vamos ver qual que é o resultado.
+Ou seja, olha só, preditivo, virar uma skill.
+Da mesma forma, inclusive, ele já até identificou, olha só que legal,
+que a gente já tem aquela skill do Team Code Review.
+Vamos fazer um new aqui. Da mesma forma que, vamos
+pensar numa situação de candidato aqui.
+Por exemplo, qual
+versão de uma biblioteca? Por exemplo, Next.js.
+Venho aqui, colo, e
+aqui eu tenho meu resultado, ou seja, não vira.
+Algo um pouco mais voltado à convenção,
+para não ser algo tão óbvio, vamos dar um new aqui, e
+vamos definir uma convenção, por exemplo, de Python.
+De Python não, de qualquer linguagem de programação, por exemplo,
+ao invés de tab, usar espaço. Usar espaço
+de indentação.
+No projeto. Vamos copiar e colar.
+Vamos ver o que vai acontecer.
+Mais um veredito. Não vira. E por que? Porque a gente tem.
+Algo que já faz isso para a gente. Que é o nosso linter.
+E aí a gente pode também testar aqui. Por exemplo,
+sempre responder em português.
+Do Brasil. Que acaba entrando.
+Naquela linha cinzenta. Porque muitas das vezes.
+a gente deve colocar essas informações, que são sempre verdade,
+no nosso cloud.md. Olha só, não vira. Então,
+destino certo acaba sendo o cloud.md,
+conforme a gente já havia esperado. Então, com este carinha aqui,
+a gente consegue já ter uma ideia do que pode e do que não pode ser uma skill. Fechado?

@@ -1,0 +1,495 @@
+Pessoal, dando continuidade aqui,
+agora a gente vai falar sobre aquela percepção de granularidade,
+sub-skills e como a gente consegue trabalhar neste sentido.
+Para facilitar,
+a gente vai pegar um caso de uso bem comum para o nosso dia a dia e a gente
+vai criar aqui em conjunto para a gente começar
+a entender como fazer essa orquestração utilizando somente as skills.
+Qual vai ser o foco aqui da nossa criação? Basicamente,
+agora a gente vai codificar um pouco e para isso a gente vai gerar
+algumas skills que vão nos dar a
+forma com que eu quero entregar aquele código.
+Seja seguindo determinadas boas práticas,
+seja criando convenções específicas sobre uma boa prática. Enfim,
+a gente vai conseguir juntar e fazer com
+que as skills se orquestrem daqui pra frente,
+tá? Então, vamos lá. A nível de código mesmo,
+de produto que a gente vai gerar aqui nessa demo,
+não é o foco, tá? A gente pode pedir qualquer coisa.
+O nosso foco aqui é, de fato,
+entender essa camada aí de orquestração e como que a gente
+vai fazer com que as skills se conversem entre si, beleza?
+Primeira coisa, então, já tem aqui mais um diretório criado, tá? Não tem nada.
+Vou gerar apenas um src aqui pra ficar fácil da gente trabalhar. Pois bem,
+agora com essa separação, a gente vai fazer o seguinte.
+Vamos implementar aqui, inicialmente, duas skills,
+tá? Uma vai chamar a outra e ela vai ser uma orquestradora, perfeito? Então,
+vamos lá. Primeira coisa que a gente tem que fazer aqui, pessoal, é o seguinte.
+Crie uma
+nova skill. Vou dar o nome aqui de implementing
+feature, por exemplo, implement feature, que
+será um orquestrador de
+implementação de uma feature por completo. Essa
+skill não vai escrever diretamente o
+código, mas
+sim delegar cada camada do
+código a uma subskill específica.
+E aqui, caso eu queira até padronizar a ordem que eu quero que isso aconteça,
+eu também posso fazer isso.
+Então, só a título de exemplo,
+vamos aplicar aqui uma ordem na
+camada do código utilizando uma subskill específica,
+aplicando ordem, por exemplo, bottom to up.
+Ou seja, vou implementar o meu domínio,
+por exemplo. Depois, adapter, se existir.
+Depois eu posso ter
+serviços. Depois eu posso ter repositório. E no final,
+eu tenho a implementação da minha rota.
+Então, se você perceber bem o que eu estou pedindo aqui,
+é basicamente uma arquitetura baseada em camadas.
+Na qual eu tenho a minha camada de domínio,
+Que vai ser responsável por toda a lógica de negócio.
+Tenho adaptadores, caso venha a existir, servir como providers ali.
+Depois eu tenho o meu serviço,
+que vai orquestrar os repositórios juntamente com o domínio.
+E por fim, eu tenho a rota sendo implementada, que vai chamar o meu serviço. Beleza?
+Nada muito fora do que geralmente a gente está acostumado.
+Ficou de bola? Então, vamos lá.
+Vamos colocar aqui também o seguinte.
+E para cada arquivo
+será necessário a execução
+do planejamento e também é a
+execução primeiro
+invocar a
+subskill correspondente em camada
+está sendo trabalhada a
+subskill vai produzir o
+arquivo garantindo testes daquele arquivo
+Aplique referências, caso
+exista, que
+estão disponíveis dentro da pasta difference. Vou
+pedir também para,
+opa,
+caso item de decisão fale, execute
+o stop e pergunte ao usuário como vou seguir.
+Easy task tool, por exemplo.
+Vamos rodar aqui e ver o que ela vai produzir.
+Depois a gente vai melhorando o resultado.
+Bom, galera, vamos dar uma olhada aqui e vamos ver o que aconteceu, tá? Então,
+nós temos aqui um mapa de camadas com a nossa subskill.
+Então, toda vez que eu tiver...
+Uma camada de domínio, temos aqui implementar domain, adapter, implementar adapter,
+service repository, e também temos aqui o nosso route.
+E por fim, também temos a parte de geração de teste, tá?
+Quando o cloud, cada subskill, ela deve ser executada,
+e o que fazer quando ela não existir?
+Então já temos aqui, e a passagem de contexto também para a nossa subskill, beleza?
+Posterior a isso, temos a nossa pipeline,
+que é basicamente a definição de como isso vai...
+funcionar na prática. Então, cada camada tem aqui o que se espera de
+cada item e qual é o fluxo que deve ser seguido ou que, pelo menos,
+deveria ser seguido. Lembrando que são itens não determinísticos.
+Então, tudo começa do nosso domínio.
+Adapter, se existir, vai para o nosso serviço,
+vai para o nosso repositório até chegar lá na route.
+Se a gente analisar isso aqui,
+está invertido com a lógica que o usuário acessa a nossa aplicação.
+Por quê? Ele vai... acessar pela minha route.
+Depois ele vai para o nosso serviço,
+baseado no controlador ou na rota que ele acessou,
+o serviço então vai chamar os meus adapters.
+Os repositórios, que vai chamar também o meu domínio quando necessário e tudo mais.
+E aqui ele apontou algumas regras de fluxo. E óbvio,
+caso tenha algum tipo de decisão a ser tomada,
+o que tem que ser feito? Tem que parar e executar algumas verificações.
+E agora, vamos ver o corpo. Da nossa skill de fato.
+Então vamos lá. Bom. Aqui. Eu já tenho.
+Uma descrição muito bem feita. Juntamente com a lowered tool.
+E aqui eu tenho um orquestrador. Já estou dizendo aqui que ele não.
+Escreve código. Primeiro ponto. Mapear a feature em camadas.
+Carregar o contrato da camada. Seguindo aqui.
+Vou fazer. Um ciclo. Por.
+Arquivo. Ou seja. Invoca uma subskill.
+Subskill. Produz o resultado, aplica as referências e executa a porta de decisão,
+que é aquele nosso gatezinho de qualidade, beleza? E o fechamento nós temos aqui.
+Show de bola. Bom, vamos dar continuidade nesse cara aqui,
+colocando agora o seguinte, pessoal.
+Primeira coisa que a gente deve fazer aqui é
+o quê? Deixa eu abrir um novo Cloud.
+Já gerei aqui o meu SRC.
+E deixa eu dar uma olhada.
+em como foi criado aqui a nossa descrição. Então, implemente a nossa feature x.
+Beleza. Então, a primeira coisa que a gente vai fazer agora é o quê?
+Com a minha skill orquestradora, eu vou
+gerar, na verdade, vou gerar numa nova sessão mesmo,
+porque daí a gente continua trabalhando na skill principal,
+que é a orquestradora, dentro dessa sessão. Então,
+a gente gera mesmo uma nova sessão, gerar uma nova skill para complementar.
+Mais que a orquestradora. Implementar a feature.
+Beleza. O
+foco está na construção. Da pipeline.
+Vou basicamente.
+Vamos gerar.
+Todas as skills. Mas o nosso foco vai ser só em uma.
+E aí posteriormente. Vocês podem pegar essa implementação. E ir trabalhando melhor.
+Em cada nível da pipeline. Mas o nosso foco aqui vai ser mais na camada de domínio.
+Perfeito? Então o foco está na construção da pipeline.
+Nas sub...
+Presente. No...
+Camadas .md Vamos
+só verificar aqui.
+Beleza. É isso mesmo. Tá? E na... Pipeline .md
+Construir... Cada sub-skill. E...
+Para... Cada item criado deve
+-se primeiramente fazer um pré-check e load de informações de
+convenções do projeto em si que
+estará dentro da pasta chamada architecture.
+Dessa forma.
+Contendo os arquivos nesse padrão. Convention,
+camada, .md.
+Ao ler o arquivo de convenção,
+aplique no processo de
+implementação como fonte da verdade.
+E aí, galera, o que eu fiz aqui? Basicamente,
+o que eu estou criando neste caso aqui são as nossas
+sub -skills que estão dentro da camada em si.
+Só que note o seguinte.
+Eu comecei a granularizar. Então eu tenho o meu orquestrador.
+E agora eu vou ter múltiplas skills.
+E o meu orquestrador vai tomar conta. E vai chamar.
+Só que dentro ainda. Dessa minha sub skills. Eu estou dizendo que.
+Antes da execução acontecer. Ele deve buscar.
+Uma pasta chamada. Architecture.
+Verificar se existe.
+Arquivos de convenção específico. Desse projeto para aquela camada. E aí sim.
+Leio isso, aplicar, caso exista, e aí produzir o código.
+Então, veja que nessa minha subskill, eu poderia já, por padrão,
+colocar critérios claros de como eu quero que ela funcione.
+Por exemplo, uma subskill de domínio,
+né? Poderia dizer, olha só, você vai utilizar domínio rico, você vai utilizar value,
+object e tudo mais. E dentro dessa minha convenção, além de...
+Toda essa questão de domínio rico, VO, como eu espero que ele seja construído,
+eu vou dizer, olha só, além disso,
+você vai seguir esse modelo aqui de convenção,
+que é para o meu projeto. Pensa que estou seguindo um framework,
+mas dentro do framework eu estou customizando a forma que eu gosto de trabalhar.
+E aí o que a gente vai fazer? Vou gerar aqui a nossa pastinha de architecture. Beleza?
+Então, executando aqui, vamos dar uma olhada no que vai acontecer.
+Bom, galera, está sendo gerado aqui.
+Vamos aguardar mais um momento aí e ainda não conseguimos terminar.
+Enquanto isso, vamos só dar uma olhadinha aqui como é que está ficando.
+Seguindo novamente aquelas mesmas convenções que a gente
+já está trabalhando e vamos aguardar aí ela terminar.
+Continuando aqui, pessoal, aparentemente tudo certo, tá? Então,
+Vamos pegar de novo aqui a nossa skill de domínio,
+que ela vai ser nosso ponto -chave de partida, tá?
+Vamos verificar o que que tá ocorrendo aqui.
+Inclusive, só a cargo aí de curiosidade, né?
+Eu poderia botar aqui no meu front matter o disable model,
+pra que eu não conseguisse chamar isso diretamente via slash command,
+via barra, alguma coisa, tá?
+E aí deixar realmente só a skill orquestradora. chamando essas sub -skills.
+Mas, não é o nosso foco agora, tá?
+Vamos focar aqui mais na parte da implementação de fato.
+Então, passo zero, faz ali o nosso pre -checkout,
+no qual eu tenho ali a pasta
+já criada e vai buscar convention domain. Inclusive,
+já até gerei esse carinha aqui pra ficar mais fácil pra gente,
+depois mostro pra vocês. Depois, vou trabalhar.
+Como fonte da verdade. A convenção que foi acabada de ler.
+Vou implementar o domínio. E aí neste caso aqui.
+Como eu disse. Não passei muitas informações.
+Do que eu quero que seja implementado. Então ele inferiu.
+Baseado no que foi colocado. Na minha feature de implementação. Lá em camadas.
+Porque aqui se você reparar. A gente tem.
+Que são entidades, value objects, regras de negócio e tudo mais. Ou seja,
+a gente conclui que nós estamos trabalhando com o domínio rico aqui, beleza?
+Então, baseado nisso, ele inferiu aqui algumas etapas chaves.
+Depois, teste e temos também um portãozinho de decisão e
+o que eu espero que aconteça após a minha finalização.
+E aí, como eu disse para vocês,
+isso aqui se repetiu em praticamente todos os itens, tá?
+Caso eu quisesse...
+E mais a fundo eu poderia colocar um checklist aqui dentro da minha própria skill,
+tá? Com uma listinha de referências.
+Fazer um script que verificaria
+esse shape que eu desejo atingir,
+né? A nível de implementação.
+E também pediria pra minha skill realizar essa minha checagem.
+Mas, nesse primeiro momento, vamos continuar da forma que tá aqui somente.
+Com informações a nível de skill. Então,
+mostrando para vocês aqui um pouco da convenção.
+Eu simplesmente pedi para gerar aqui algumas informações.
+Inclusive, coloquei também aqui algumas documentações que são a nível de biblioteca.
+Depois a gente fala sobre isso.
+E aqui eu tenho basicamente o que eu espero de convenção.
+Então, tem aqui desde a forma de estruturar a nível de conteúdo,
+de fato. Depois eu tenho como eu devo criar e
+exemplos, tá? Como vai funcionar um value object,
+repositório,
+erros, o que é legal, o que é proibido e coisas nesse sentido.
+E só pra referência aí de vocês, tá? Inclusive vou fazer uma breve alteração aqui.
+Isso aqui eu peguei de um projeto que já está em uso. Então, de fato, é algo que...
+Vocês podem utilizar aí no dia a dia, tá?
+Caso vocês tenham, por exemplo, bibliotecas, galera, como o Zod,
+ou qualquer outra biblioteca aí do dia a dia que vocês usam,
+e querem colocar informações,
+ou seja, o seu jeito de usar, as suas convenções,
+você também pode criar dentro de Architecture ou qualquer outro local,
+no caso aqui, Docs Convention, como você espera que o Zod seja utilizado, tá?
+E aí... Para facilitar para a gente, o que eu vou fazer aqui?
+Eu vou gerar uma pastinha docs e
+vou gerar uma pastinha conventions, tá? E vou copiar esse
+carinha para cá, que é o meu Zod, beleza?
+Só para bater ali com as convenções que a gente tem,
+eu já consigo chegar aqui. Show de bola?
+Bom, seguindo isso, então, o que a gente pode fazer?
+Vamos gerar mais uma seção do Cloud.
+E agora eu vou fazer o seguinte. Quero implementar uma feature
+de produto no
+qual um produto possui
+Os seguintes atributos. Name,
+Description e
+Price. O
+Nome deve ser obrigatório juntamente com o preço. E
+Não pode ser zero.
+Definindo ali. Apenas algumas regrinhas de negócio básicas, tá?
+E eu
+consigo gerar um novo produto, consigo listar os
+meus produtos existentes. Tudo
+isso feito
+em memória, utilizando array
+list.
+Vamos ver o que vai acontecer aqui.
+O ponto importante, né, foi que eu acabei...
+Não chamando a minha skill. Então vamos
+só dar
+uma nova seção aqui. Vou chamar a minha skill.
+Que é implement feature.
+E aí eu vou. Novamente passar aqui. As minhas informações.
+E vamos ver aí o que vai acontecer. Olha só.
+Ele já identificou que é um orquestrador que vai delegar alguma coisa.
+Está lendo ali os meus arquivos de convenção.
+E vamos ver o que vai sair.
+Continuando aqui. Passo 1. Mapa de camadas. Então é uma feature de produto.
+Contendo aqui as informações.
+Domínio. Adapter no caso. Não vai precisar.
+Temos aqui o meu service. Temos também o meu repository.
+Que vai ser persistido em memória.
+Exatamente da forma que eu falei para ele. Então. Ordem.
+Bottom to up. Já chamou
+a minha subskill. Conforme eu havia
+previsto que ele iria fazer, ou seja,
+iniciei pela implement feature e aqui agora ele já identificou que eu estou na
+nível de camada de domínio e já começou
+então a trabalhar na implementação do domínio.
+Então, olha só o que aconteceu,
+já bateu no meu portão de decisão.
+E aí o que ele está perguntando aqui? Qual stack você prefere utilizar? Então,
+vou usar aqui TypeScript, por exemplo, um scaffold mínimo,
+porque a gente não tem nada, veja só. Dentro do meu SRC.
+Camada de router, vamos colocar aqui o sim.
+Expor via HTTP.
+Utilize, por exemplo, o RONO, que é um framework bem simples de ser trabalhado.
+E vamos ver o que vai acontecer se ele vai continuar,
+de fato, o processo na pipeline.
+Então, aparentemente, tudo que a gente está fazendo aqui está indo de acordo com o
+que a gente imaginava que seria, né, pessoal?
+Ó, já registrou as minhas decisões e agora já começou a trabalhar,
+né? Fez ali um boilerplate muito simples de TypeScript e
+agora provavelmente ele vai começar de fato a trabalhar nos itens do projeto em si, né?
+Que é a parte de código, onde vai fazer domínio,
+repositório e coisas nesse sentido. Vamos continuar ali aguardando.
+Continuando aqui, olha só, já começou. A escrever, inclusive,
+Ponto importante, né? Seguiu ali a parte de teste.
+Vamos ver como é que está sendo feito aqui, ó. Criou o nosso erro.
+Criou o nosso erro específico de produto.
+Gerou o nosso value object, tá? Gerou o nosso produto. Gerou o nosso repositório.
+Vamos ver aqui. Gerou também os nossos testes, seguindo exatamente a nossa pipeline.
+Interessante. E olha só. Camada de domínio já passou com todos os nossos testes.
+Vamos ver aqui o que vai ocorrer.
+Já pediu a camada de serviço. Bacana.
+As convenções de serviço, repositório e route não existem.
+Bom, e aí nesse caso, pessoal, como não existe, o que eu vou fazer aqui?
+Como eu já tenho esses arquivos prontos,
+eu vou trazer isso para dentro do nosso projeto.
+E aí a gente faz de conta.
+Que nós temos tudo isso gerado. Ok. Então, vamos trazer.
+Esses carinhas para cá. Está faltando o repositório.
+Está faltando o adapter, né? Então, já tenho aqui o meu domínio, o service, route. Certinho.
+Olha. Novamente, na pasta arquitetura, coloquei.
+As convenções.
+Vamos ver aí o que ele vai fazer. Já conseguiu.
+Identificar a existência das minhas convenções, tá?
+Lembrando que o nosso foco aqui tá somente na parte do domínio em específico,
+mas vamos continuar aqui pra gente entender até onde ele
+consegue chegar com essa pequena ideia que nós tivemos até então.
+Bom, todas as convenções aqui foram carregadas, então,
+e agora é bem provável que ele já dê o próximo passo aí da pipeline,
+que é implementação dos nossos serviços, né? Vamos ver aí como é que vai ser.
+O resultado. Enquanto ele está gerando aqui, pessoal,
+vamos dar uma olhadinha aqui no nosso domínio,
+o que ele produziu. Só para a gente ter uma ideia, então, Clash Domain Error,
+os nossos Value Objects, beleza? Depois a gente passa mais a fundo.
+Temos também a nossa interface e temos também o meu produto,
+que aparentemente está bem bacana. Show! Vamos continuar lá.
+Vamos voltar para cá. Vamos dar uma olhada no que está sendo produzido.
+Ó, mais uma vez, fez o processo de teste, camada de serviço certinho.
+De novo, seguindo a pipeline, fez a camada de repositório, bacana,
+muito bom. Vamos ver aqui qual vai ser o resultado,
+né? Já temos aqui as convenções de repositório
+sendo aplicadas e o write acontecendo.
+Perfeito que agora falta somente as rotas, né? Vamos olhar aqui.
+Exatamente, falta somente os controladores ou as rotas ali.
+Mais uma vez, nossa subskill sendo utilizada aí.
+E aí o que a gente vai ver agora vai ser a criação das nossas rotas, né?
+Então, vamos lá.
+Continuando aqui, galera. Rota sendo aplicada, né?
+Inclusive, aparentemente tudo certinho.
+Vamos dar uma olhadinha aqui. Já gerou até o nosso main.ts.
+Que é o nosso entry point. Gerando as rotas também.
+E as minhas versões de teste. E agora. Trabalhando ali no script de start.
+Para que a gente consiga analisar o resultado de fato.
+Rodando nosso type check. Do TypeScript.
+E vamos ver. Como que vai se sair aí.
+Temos mais um resultado. 28 testes passando.
+E também nosso type check. Está retornando.
+Sem nenhum erro, agora está fazendo o nosso smoke test.
+Só para a gente validar se realmente está funcionando ou não.
+Fechamento, então, que é depois que acabou, devolveu essas informações,
+O orquestrador basicamente vai me reportar o que aconteceu.
+E aí a gente tem todo um resultado aqui.
+Bom, o que a gente vai fazer antes de olhar qualquer coisa?
+Aliás, nem precisamos de call out code neste caso.
+Vamos só fazer aqui um src de granularidade
+E vamos executar um npm run start.
+A gente já tem aqui nosso resultado. Beleza. Então,
+Nosso lista está totalmente funcional. Vamos voltar para cá e
+Um curl para
+Criar um produto. Só para eu ter mais facilmente como testar isso.
+Vamos ver.
+Se ele vai executar ou se vai me dar o comando de fato.
+E aparentemente deu tudo certinho. Vou fazer só esse último teste.
+Só para a gente entender aí.
+Show de bola. Então deixa eu pegar aqui o meu curl.
+Já está aqui.
+Fazer um npm start.
+E vamos
+Ver aqui o nosso resultado.
+Aparentemente tudo certo.
+Vou fazer aqui um refresh.
+Bacana, eu já tenho aqui realmente o nosso curl funcional. Vamos
+Fazer um outro teste, só para a gente checar se nosso
+Nome pode ir como nulo, algo nesse sentido.
+Só para ver se a regrinha funcionou ou não.
+E aí, como vocês puderam perceber, validation failed.
+Ou seja, é sinal que realmente aquilo que foi proposto...
+Com aquela pequena spec que a gente produziu diretamente no chat,
+Foi atingido com sucesso.
+Mas o ponto aqui, galera, nem é a aplicação em si, porque isso aqui é muito simples.
+Não tem nada de tão complexo assim em uma aplicação dessa.
+Eu quero mostrar para vocês o código produzido para a
+Gente conseguir analisar e ver realmente a qualidade disso que gerou.
+Então, vamos lá. Vamos primeiro aqui no domínio.
+Que é nossa base principal. Se vocês repararem aqui, está extremamente bem feito,
+Tá, galera? Ó, temos aqui nosso domínio. Temos aqui o create.
+From row, beleza.
+Perfeito. A única coisa que eu acrescentaria aqui,
+Tá, é a autovalidação do meu domínio.
+Que realmente não foi feito.
+Provavelmente isso aqui deve estar em algum outro local.
+Provavelmente dentro dos próprios Value Objects ou dentro do serviço.
+Vamos dar uma olhada aqui para a gente entender se está aqui ou não.
+Exatamente como eu imaginei.
+O name e a autovalidação estão dentro do nosso
+Value Objects porque a gente acabou trabalhando ali com dois Value Objects.
+Então, neste caso, seguiu a implementação conforme eu faria também.
+Vamos ver o price.
+Mesma coisa também.
+Se auto validando. Perfeito.
+Agora aqui eu tenho no meu domínio somente a camada de interface do meu repositório.
+E se eu for lá no meu serviço,
+eu tenho aqui os meus casos de uso. Que aqui eu chamei de serviço.
+Mas basicamente são casos de uso. Onde eu tenho aqui o meu execute.
+E aí eu primeiro faço
+a criação lá no meu domínio. E se der tudo certo, eu jogo para o meu repositório.
+Inclusive já está logando aqui. Legal.
+Temos o teste. Deixa eu pegar aqui o teste de create.
+Trabalhando já da
+forma que tem que ser. Ok.
+Persiste. Description. Testando a ausência de dados.
+Inclusive, já gerou evento também.
+Vamos verificar aqui o nosso list.
+Perfeito. Aqui não tem muita questão a ser analisada.
+Poderíamos, caso...
+Quiséssemos trabalhar também com o mock. Até para facilitar ainda mais.
+Vamos olhar agora. A nossa rota.
+Temos aqui o nosso esquema. Que é o DTO.
+Temos aqui o nosso build.
+Faço a minha rota.
+Valido lá. Os inputs.
+Baseado no meu DTO que eu estou recebendo do usuário.
+Se der tudo certo, eu simplesmente devolvo que está inválido.
+E aí, dando certo, eu chamo o meu.
+Use case ali que é o meu serviço. E aí, sim, eu respondo.
+Da mesma forma, a parte de listagem. Show de bola.
+E aí, vamos ver o nosso repositório. Que é um repositório somente em memória.
+Então, implementei lá aquela interface.
+E criei aqui basicamente o novo array.
+Contendo as informações ali.
+Ótima implementação também.
+Vamos ver o shared.
+Um erro de aplicação.
+Uma respostinha. E um logger.
+Só para facilitar. Temos aqui o nosso resultado, se foi de ok ou erro.
+E agora, vamos ver aqui no nosso entry point,
+que é onde eu começo a empilhar as informações.
+Então, tenho aqui a minha API sendo criada,
+beleza. E o meu servidor, basicamente, é onde eu inicio o servidor Rono.
+Show de bola. Bom, a implementação em si,
+poderia dizer que está bem coerente com a realidade do dia a dia.
+Muito boa se comparado com implementações
+de projetos que rodam na atualidade.
+Mas o ponto principal aqui é o entendimento
+de como a gente conseguiu fazer essa pipeline acontecer.
+E uma outra questão é como que a gente conseguiu fazer
+com que ele gerasse um código que não é aquele macarrão.
+E de fato,
+código que pode ser utilizado em produção e tudo mais.
+Isso tudo se deve, pessoal, primeiro,
+à forma que a gente construiu as nossas skills, tá? E o tamanho de contexto, né?
+As informações importantes de contexto que a gente
+passou para a LLM para que ela conseguisse entender,
+espelhar e trazer o resultado esperado.
+E tudo isso a gente fez utilizando apenas arquivos MD,
+apenas com inferência, tá? Não validamos nada de scripts e tudo mais.
+Se a gente quisesse adicionar mais uma camada ainda de script,
+que é determinístico para validar efetivamente aquilo que está sendo feito,
+ficaria melhor ainda a nossa implementação.
+Por quê? Caso acontecesse qualquer tipo de coisa que saísse daquele molde,
+basicamente o que iria acontecer, o script iria falar, opa, saiu. Então,
+automaticamente haveria... uma autocorreção, né?
+Aquilo que a gente chama de self-healing.
+E se vocês repararem bem, olha só.
+É basicamente informações acerca de arquitetura,
+padrões de projeto, design de código. Isso tudo aqui, galera, são fundamentos.
+Fundamentos que você, enquanto engenheiro de software,
+deve obrigatoriamente saber. E não só saber,
+mas como utilizar, quando utilizar. É isso que diferencia, de fato,
+uma pessoa que está aí acima da média, vamos dizer.
+Então, se você reparar bem, a ideia da orquestração não é tão complexa assim.
+Basta dar o devido contexto,
+saber e entender dos fundamentos, como aplicar esses fundamentos e,
+baseado nisso, a gente trabalhar no processo de orquestração. Fechado?
+E, obviamente, uma informação que vale sempre relembrar é que...
+O que a gente construiu aqui é só o início.
+Vocês podem pegar isso aqui como base e a partir dela ir aprimorando cada vez mais.
+Mas aqui está o ponto de partida. Por quê? Aplicamos os fundamentos,
+aplicamos as documentações dos frameworks e aplicamos em cima
+disso todas as convenções que
+o desenvolvedor gostaria que tivesse.
+E aí eu posso fazer isso por projeto, por time. E assim por diante.
+Então, veja que a gente tem três camadas ali de customização.
+Isso que é o mais interessante e o mais legal.
+A gente consegue ir segregando e dando essa granularidade quando é necessário.
+Fechado, pessoal? Então, é isso aí.

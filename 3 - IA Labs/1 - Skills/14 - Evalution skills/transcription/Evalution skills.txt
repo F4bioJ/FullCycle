@@ -1,0 +1,413 @@
+Bom pessoal, então vamos dar continuidade aqui e agora a gente vai falar sobre um tema que
+é bem legal também e que acaba aí fechando a parte de skill de forma geral,
+que é o processo de evaluation, de avaliação,
+se a nossa skill está performando da forma que deveria,
+pontos aí que a gente pode melhorar e principalmente
+se ela está trigando na hora.
+que ela deve ser trigada, ou seja,
+está executando quando realmente deveria ser executada.
+Então, vocês podem reparar que,
+assim como o código que eu falei lá no começo,
+que a skill passou a ser código a partir de agora,
+a gente vai precisar, de tempos em tempos, retornar a skill e dar manutenção nela,
+fazer testes, entender se realmente...
+A skill que a gente criou no passado ainda é válida,
+está funcional da forma que deveria ser, tá? E pensando nisso,
+foi criado um carinha que se chama Skill Creator,
+tá? Esse Skill Creator é da própria Anthropic, ok? Ela é padrão aberto,
+então roda em qualquer tipo ali de skill, né? Basicamente,
+é uma skill que foi feita para avaliação da skill,
+então envolve ali processos determinísticos também,
+e a gente vai utilizar essa ferramenta.
+para que a gente consiga realizar esse processo de avaliação. Antes disso, galera,
+queria só mostrar para vocês aqui como é que faz o processo de instalação,
+caso você nunca tenha realizado esse processo. Então,
+estou aqui no meu skills .sh, ok? É o nosso site,
+inclusive, vai estar disponível aí para vocês.
+E também tem o GitHub, que é da própria Anthropic.
+Lá na pastinha Skills, temos o Skill Creator, tá?
+Como é que faz para utilizar esse carinha? Você pode fazer de duas formas.
+O primeiro é através do próprio Cloud Code,
+que eu já mostro para vocês como vocês conseguem colocar dentro do
+projeto de vocês ou instalar de forma global também via plugins.
+Ou se você preferir, você pode vir aqui, clicar no Skill Creator.
+Obviamente, vai ter que fazer uma pesquisa aqui, né? E copiar e colar.
+E aí a gente já tem o nosso processo de instalação rolando, tá? Vou voltar.
+Lá no nosso Visual Studio Code, eu vou mostrar aqui também via plugins.
+Então, barra plugins, a gente consegue fazer um search aqui,
+skill creator, e a gente tem aí a possibilidade de instalação por aqui também.
+Se você preferir, da forma que eu apresentei, abra um novo terminal,
+vá até a sua pasta do projeto
+e cole o que a gente copiou lá.
+Basicamente, o que vai acontecer é,
+vou selecionar qual tipo de CLI que eu estou trabalhando, vou pressionar um Enter,
+vou dizer que eu quero instalar no meu projeto, tá?
+E vou dizer que eu quero copiar para o meu Agents.
+Então, o que aconteceu aqui?
+Ele gerou o meu Skill Creator e gerou também um
+link simbólico para o uso dentro do Cloud Code,
+perfeito? Como vocês podem perceber aqui,
+como eu disse, ele... É uma skill que tem diversas coisas dentro dela, né?
+Então, a gente tem presença de agents, a gente tem presença de assets, eval viewer,
+referências, scripts. É, de fato, uma camada,
+uma skill, né? De nível 3 aí.
+E, claro, né? A gente vai ter o nosso skill.md,
+que vocês também podem dar uma olhada aí, entender como é que foi feito e tudo mais.
+Recomendo bastante, inclusive. Ok? Bom, partindo desse pressuposto,
+Agora, vou só reiniciar aqui o meu Cloud Code. E vamos nessa.
+Para esse exemplo nosso ser extremamente didático, o que eu vou fazer aqui?
+Eu vou criar o seguinte: Query Optimizer.
+Vamos colocar aqui um badge.
+Vou gerar um skill.md. Ok?
+Basicamente, eu tenho aqui um conteúdo. Ok?
+Eu vou copiar. E aí a gente conversa sobre isso.
+Mas é para ser realmente muito ruim.
+Bad Query Optimizer.
+E aqui eu vou ter basicamente como usar.
+E como vocês podem analisar aqui. Não tem nada de muito diferente.
+Basicamente eu gerei uma skill aqui. Super simplificada.
+Para que a gente rode o nosso eval. E a gente consiga reparar ali.
+O que vai dar de resultado.
+E aí um outro ponto. Que é interessante. E agora já executando de fato.
+Iniciando a parte da execução. Do nosso processo.
+De avaliação de testes. Poderia dizer.
+É que quando a gente vai trabalhar com o eval.
+A gente precisa adicionar. Um arquivo aqui dentro.
+Que é o que? A parte de evals.
+Então. Vou gerar aqui.
+eval.json.
+Sua cargo aí de curiosidade, né? Isso também faz parte,
+tá? De boas práticas de skill. Então,
+esses nomes aqui devem permanecer da forma que foi escrito aqui. E aí, eu tenho
+basicamente alguns dados aqui que a gente vai utilizar de teste. Então,
+qual é o princípio base para que a gente
+consiga trabalhar com esse processo de benchmark,
+de teste de... avaliação, da forma que você achar melhor o nome.
+Primeiro, eu tenho que ter uma skill. Segundo,
+eu tenho que ter um dataset e esse dataset vai conter itens, entre aspas,
+bons e itens, entre aspas, ruins,
+para que a gente consiga realizar a nossa avaliação.
+E baseado nisso,
+a gente vai rodar o skill creator que vai fazer esse
+processo de avaliação e então vai identificar o que deveria acontecer.
+e o que não aconteceu. Além disso,
+a gente também tem algumas formas de trabalhar esse processo de avaliação,
+que é verificando a nível de trigger,
+ou seja, se a skill foi chamada quando ela deveria ser chamada,
+e também verificando a qualidade do resultado,
+se o resultado produzido era aquilo que foi esperado ou não.
+Nesse nosso caso, a gente está iniciando aqui, primeiramente,
+pela parte de trigger.
+Como vocês conseguem reparar aqui no nosso pequeno dataset.
+Temos aqui nove itens apenas,
+É claro que isso em uma skill real,
+E no dia a dia a gente vai ter muitos datasets com vários dados
+Para que a gente garanta que realmente o
+Negócio está funcionando do jeito que deveria. Então,
+Aqui a gente vai avaliar o nosso Shoot Trigger. Como vocês podem perceber,
+Temos alguns aqui que são true e outros que são false,
+Beleza? Feito isso, feito esse setup breve aí,
+O que vai acontecer a partir de agora?
+Bom, deixa
+Eu navegar para
+Dentro do nosso Eval Specs e aí iniciar meu Cloud Code.
+E agora o que a gente vai fazer é chamar o Skill Creator e pedir...
+Para que ele rode o processo aqui de avaliação. E baseado nisso,
+A gente vai entender qual vai ser o resultado.
+Bom, e aqui eu posso, desde chamar via slash command,
+Eu também posso pedir a descrição, né? Como, por exemplo,
+Gere o teste de disparo ou de trigger da nossa skill Bad Query Optimizer,
+Tá? Mas no meu caso aqui,
+Como a gente está trabalhando com foco em mostrar isso, né?
+Eu vou literalmente digitar este cara aqui e vou pedir para testar a
+Nível de Trigger, Skill,
+Bad, Query, Optimizer.
+Vamos rodar aí e vamos entender o que vai acontecer.
+Quando eu faço isso aqui, entre os panos, o que está acontecendo aqui?
+Ele está indo até o nosso QCreator e aqui vocês podem perceber
+Que ele vai começar a rodar vários itens que pertencem aqui ao script.
+Então, basicamente, esse carinha aqui, como que a gente pode ver,
+É um monte de scripts Python que
+Vai avaliar esse processo de trigger ou não, tá?
+Por meio aqui de determinados algoritmos, tá?
+Não vou entrar exatamente como tudo funciona e tudo mais,
+Mas basicamente ele vai utilizar os scripts e ao
+Final de tudo vai conseguir produzir o nosso resultado.
+Vamos ver aqui o que está acontecendo. Ok. Vamos
+Continuar aguardando e vamos ver o que vai acontecer. Bom,
+Já está rodando. Agora a gente tem que entender qual vai ser o resultado. Vamos
+Dar uma olhada aqui no
+Nosso baseline. Beleza.
+Aqui, já começou a aparecer. Então, o que a gente tem aqui?
+Veja bem que a gente tem o nosso
+Skill, que nós montamos, tá? E aí, o que ele fez? Ele fez uma cópia, vamos dizer assim,
+Basicamente criou um workspace e aqui ele está rodando todas as informações.
+Então, ele pega os dados que estão aqui, faz a leitura,
+Gera essa minha pasta e começa a trazer as informações para um workspace específico, tá?
+E se a gente reparar, já temos aqui o próximo passo, né?
+Mas antes do próximo passo, vamos dar uma olhada aqui.
+Do que ocorreu. Bom, baseline foi finalizado e o resultado é bem revelador. Então, vamos lá.
+Seu query Talenta. Otimize para mim. Seu query Talenta. Otimize para mim. Sim. Ok.
+Falhou. Melhore a performance desse select.
+Falhou. Essa consulta demora alguns segundos. Deixe mais rápida.
+Falhou. Sugere índice para acelerar
+a query. Também falhou. Explique. Passou.
+Então, aqui nos casos que não deveriam passar. Beleza. Aparentemente,
+nos casos que não deveriam travar, está tudo certo.
+O problema está sendo mais aqui no que não deveria disparar. Então,
+a gente tem aqui um score de 4 para 8.
+Inclusive, ele faz aqui um diagnóstico que ele previa,
+over-trigging, mas na verdade é under-trigging.
+Então, ele me oferece alguns próximos passos. Isso que é o mais interessante.
+O que está acontecendo aqui? Depois que ele percebe que algo está errado,
+através desses logs que eu havia falado com vocês,
+o que ele vai fazer? Ele vai já te dar algumas opções de otimização e tudo mais.
+Então, eu vou fazer o seguinte.
+Até para a gente não estender muito, vamos parar por aqui. Vou colocar aqui no item 5,
+parar por aqui e me dar o relatório com o diagnóstico.
+Vamos ver aí qual vai ser o relatório produzido.
+De bola, temos aqui o
+resultado. Então, basicamente,
+ele fez aqui um pequeno levantamento de tudo o que aconteceu.
+E aí eu já tenho um relatório.
+Poderia ter pedido também para ele gerar HTML, não tem nenhum tipo de problema.
+Quando acontece da nossa skill ser extremamente ruim,
+como foi o que aconteceu agora,
+geralmente ele nem vai te dar a opção do HTML,
+mas por padrão ele vai utilizar o HTML para demonstrar os resultados.
+Então, o que a gente vai fazer?
+Eu vou dar um novo comando e a gente vai rodar de novo a mesma coisa,
+porém agora a gente vai entender o processo de otimização. Por quê?
+Porque isso aqui é muito interessante e é isso que o processo de manutenção
+de uma skill vai prever daqui para frente nos seus projetos e tudo mais.
+Vamos aguardar aí e a gente vai entender um pouquinho melhor. E olha aí, pessoal.
+Eu já fui aqui pedido para selecionar qual é
+o meu próximo passo baseado na baseline já existente.
+Então, o que eu quero aqui? Como eu disse para vocês,
+o Skill Creator tem essa facilidade.
+Facilidade no sentido de que ela te dá as opções do que você precisa fazer.
+Então, nesse caso aqui em específico,
+no qual a nossa skill nem chegou a disparar quando ela deveria disparar,
+o que ele já está me ofertando aqui?
+Tem duas opções basicamente. Ou eu expando e meço novamente,
+ou eu já começo um processo de loop contínuo
+para que a gente consiga melhorar a nossa skill.
+E essa é a questão que é muito bacana.
+Basicamente, isso aqui a gente consegue fazer
+aquele conceito de autocorreção de forma automática.
+O próprio Skill Creator traz esse processo,
+esse looping acontecendo. Então, vamos explorar aqui o item 2 e,
+se necessário, a gente roda de novo.
+Bom, temos aqui o nosso resultado. O que ele fez aqui,
+galera? Basicamente, ele gerou um novo dataset.
+E também, se a gente reparar no browser, ele abriu aqui para mim,
+no qual ele está me pedindo para fazer uma revisão,
+se faz sentido ou não. Não vou me atentar a isso aqui,
+mas óbvio, no caso da realidade,
+é muito importante que a gente dê uma olhada e
+consiga saber se faz sentido aquilo que foi proposto ou não.
+Com isso, o que a gente vai fazer aqui? A gente vai dar continuidade dizendo...
+E pode rodar. E aí, o que vai acontecer? Agora,
+ele vai pegar esse nosso eval de trigger criado
+por ele e vai começar o processo de otimização.
+Vamos lá ver o que vai acontecer a partir de agora, tá?
+Bom, enquanto ele está rodando aqui, como ele mesmo avisou,
+já está rodando em background. Então, se a gente aperta para baixo aqui,
+a gente consegue ver o que está acontecendo, né? E aí,
+a gente... Só aguarda e depois ele vai compilar todo o resultado.
+E aí a gente tem aqui o resultado. Então, veja bem,
+galera. Vamos dar uma analisada aqui no que ocorreu.
+Bola, criou ali a atualização do meu resultado.
+E o resultado ainda permanece em 0%,
+mesmo com o eval, com o dataset que ele mesmo criou.
+E aí a gente tem a causa raiz. Olha só,
+já conseguiu identificar a causa raiz. E, obviamente,
+quando identificou a causa raiz, o que foi pedido?
+Pedido para que a gente reescreva a nossa description.
+Então, a gente tem duas formas aqui de se trabalhar. Ou peço para ele já fazer isso,
+ou posso vir aqui de novo, mais uma vez, simplesmente
+rodar novamente.
+Vamos ver aí qual vai ser. O resultado. Então,
+eu estou explorando aqui junto com vocês,
+né? E a gente vai fazer esse processo de otimização.
+Primeiramente, a gente vai trabalhar ali a nível de description, tá?
+Que é o que a gente está fazendo neste momento.
+Novamente, paramos ali no processo de escolha, né?
+No qual ele tentou mais uma vez e,
+de novo, caiu no mesmo problema. Descrição genérica. Agora, o que a gente vai fazer?
+De melhoria dessa skill, tá bom? Então,
+qual que é o escopo real que o Bad Query deve cobrir, né? Primeiro ponto.
+Só otimização, performance, leitura, tudo para banco de dados.
+E aí, neste caso, o que a gente tem que parar e analisar,
+galera? Lembra lá das aulas iniciais.
+Skill, o que é uma skill, como eu crio uma skill, isso deve ser uma skill ou não.
+Então, agora a gente vai... Utilizar tudo aquilo. Porém de uma outra forma.
+Para a gente otimizar isso aqui. Com a ajuda da Skill Creator.
+Neste caso. Vamos focar aqui só no processo de otimização.
+Para a nossa demo. Então, vamos lá. Vamos aguardar aí.
+Escolheu. E agora vamos entender o que ele vai fazer.
+Temos aqui o resultado. E aí o que ele falou para a gente. Foi o seguinte.
+Montou. O dataset expandido. Manteve os outros originais.
+Temos aqui o que deve disparar. E o que não deve disparar. E aí.
+Vamos rodar. Vamos disparar o loop de otimização.
+E aí vamos ver o que vai acontecer.
+Então o que está acontecendo aqui? Ele novamente gerou.
+O nosso dataset ali. Agora expandido.
+E agora começamos o loop de
+atualização ali para acompanhar como é que tá sendo. Otimização.
+E aí a gente vai entender aí como é que vai ser o resultado.
+Estamos aguardando finalizar. Tudo está rodando em subagentes, tá?
+A gente pode dar uma olhadinha aqui,
+clicando um pouquinho abaixo, né? Na verdade, setinha para baixo.
+Basta aguardar aí o resultado.
+Voltando aqui, pessoal, enquanto tá executando, olha só que interessante,
+né? Como eu disse, é um looping. Então, ele
+iniciou, conseguiu algumas confirmações a partir da primeira iteração,
+foi para a segunda,
+está na terceira e vamos chegar provavelmente até na quinta.
+Então, vamos aguardar para a gente conseguir saber até
+que ponto a gente vai conseguir otimizar isso aqui.
+Bom, galera, voltamos aqui e olha só,
+vamos encontrar aqui os nossos achados, né? Então,
+rodou cinco interações e a gente tem aqui
+os resultados do teste de trigger especificamente,
+tá? Vamos lá. Vamos
+analisar aqui qual foi a melhor descrição.
+E a melhor descrição pelo loop foi a original.
+E olha só que interessante, né? E por que disso?
+Porque nenhuma candidatura bateu o baseline no teste. Todas empataram,
+basicamente, 50% de acurácia, né? Então, olha só,
+com base na decisão acima, o que ele nos deu.
+O gargalo não é a descrição.
+Pelo menos, não por enquanto, né?
+E ele achava que era. Então, o que é o gargalo? É a skill.
+Depois que ele investiu aqui 5 itens, ou melhor, 5 iterações,
+refinando o texto da descrição, basicamente ficou no mesmo local. E aí,
+o que ele está me pedindo para fazer
+com base no processo que ele fez acima de looping?
+Vamos fazer aqui. Escreva o
+conteúdo
+da skill de acordo com
+os achados na
+investigação dos
+testes.
+Vamos ver aí o que vai acontecer. Então,
+temos aqui o resultado. Ele falou que já sobrescreveu a skill,
+aplicando ali as alterações. E agora a gente tem um corpo com uma metodologia,
+um catálogo de antepadrões. E agora temos um próximo passo,
+que é rodar novamente o teste. Então, vamos pedir.
+Para ele rodar o teste. Enquanto ele roda,
+a gente vai dar uma olhadinha aqui no que ele fez.
+Então, a nível de skill, olha só. A gente saiu daquela skill simplista.
+Na verdade, uma skill péssima. Que foi criada com essa intenção.
+E agora a gente tem algo muito mais concreto.
+Fluxo de trabalho muito mais definido. Então, tendo a query.
+Leia o plano de execução.
+Diagnostic O, baseado no checklist de antepadrões.
+Proponha a correção.
+Confirme, medindo novamente.
+E siga determinados princípios. Caso você precise de referência de antepadrões, o que ele fez?
+Ele adicionou um template de referências.
+E aqui a gente tem todo um template indicando o que é bom,
+o que é ruim. E aí, galera,
+o que a gente vai fazer agora? Vamos fazer o seguinte, então.
+Eu vou pegar esse carinha aqui. E vou deletar,
+tá? E aí, vamos abrir um novo terminal. Vamos
+para dentro de eval specs. Agora com a nossa skill reescrita,
+né? E vamos rodar a nossa skill creator.
+E vamos fazer aqui nosso
+bad query optimizer. Esse é o nome, não é isso? Exatamente.
+Prontinho. Agora... Repare que eu só chamei dessa vez,
+não passei nenhum tipo de descrição e tudo mais. O que vai acontecer aqui?
+Vai gerar alguns datasets para mim e após isso ela
+vai começar a fazer o processo de eval.
+Vamos pedir agora para rodar aqui o eval e iterar.
+Não precisamos mais mexer na parte de descrição porque
+a skill foi refeita e vamos acompanhar aí o resultado.
+Então mais uma vez está sendo criado aqui. O nosso workspace. Está gerando.
+Basicamente. Algumas iterações. Que ela vai testar. Agora já está testando. A
+skill em si. A gente pode. Dar
+uma olhada aqui. Foi gerado alguns itens.
+Inclusive. De eval. Está fazendo agora. Teste.
+Vamos deixar. Os agentes rolando aí.
+Sete agentes. Finalizados. Com sucesso.
+Vamos esperar aí agora o resultado final para a gente entender como
+que a gente se saiu aí com a nova skill.
+Bom, após seis minutos, temos aqui o resultado. Então, vamos dar uma olhada, né?
+O que aconteceu aqui, galera? Então,
+ele fez algumas escritas dentro do nosso workspace,
+tá? E finalmente conseguiu gerar o resultado agora final,
+baseado naquilo que a gente reescreveu, tá? E aí, se a gente...
+Dá uma olhada. Ele até gera um HTML, conforme eu havia dito para vocês,
+né? E já deixa disponível aqui neste endereço na porta 31.17.
+Logo mais a gente vai dar uma olhada nele. Mas,
+basicamente, ele também fala aqui o que aconteceu,
+né? Então, baseado nos evals aqui que ele criou de input e tudo mais,
+ele teve esses resultados de baseline, né?
+Então... Temos aqui o relatório, paginação,
+subquery e o pass rate em cada um dos itens. E por fim,
+ele dá aqui um overview geral, além do relatório em HTML.
+Mas tem um ponto que eu acho que é bem importante aqui,
+Que é que ele também te deixa livre
+para você discorrer sobre aquilo que você quer saber.
+Então, ele até fala aqui, se você quer saber se...
+A skill está realmente funcionando como deveria e tudo mais.
+Só você me perguntar. Então, vamos fazer essa pergunta para ele. Em resumo,
+A skill está funcionando conforme deveria funcionar.
+Faz sentido ter essa skill?
+O que mais a gente pode perguntar aqui?
+Ah, uma coisa, né? Dado os
+inputs e
+a baseline,
+O resultado foi ruim.
+Médio, bom, excelente.
+E podemos fazer para melhorar. Vamos ver aí o que vai acontecer.
+Enquanto ele está processando, o que a gente vai fazer? Vamos lá no browser.
+Vamos dar uma olhadinha aqui. E aqui a gente tem o nosso resultado.
+Então, nós temos aqui o output.
+Acessando nosso localhost. Vocês podem...
+acessando aqui o localhost 3117, vocês podem dar uma olhada, tá? Vamos aqui no output,
+basicamente eu consigo passar item a item daquilo que foi testado,
+tá? Dou meu feedback se necessário,
+tenho aqui o next que eu vou passando as interações e entendendo
+aquilo que foi feito e qual o resultado daquilo que foi feito,
+né? Aqui tem o prompt e aqui é o answer. Então sempre vai ser primeiro,
+com a skill e
+depois sem skill.
+Obviamente, as mesmas perguntas para a gente fazer essa comparação.
+Da mesma forma que a gente tem o benchmark e faz
+o breakdown ali do número de evals que aconteceu.
+E aqui a gente consegue ver o pass rate e tudo mais, consegue ver o delta,
+que é a diferença ali entre os dois e entender o que foi feito,
+como foi feito, o que passou, o que não passou.
+E baseado nisso, a gente consegue tomar as ações. Bom,
+vamos voltar lá no nosso Visual Studio Code e
+vamos ver aqui o que ele nos deu de resultado.
+Então, resumo. A skill está funcionando como deveria. Sim,
+ela faz exatamente o que o MD promete, conduz o diagnóstico por evidência.
+Nenhum dos runs com a skill alucinou,
+ignorou o explain ou chutou índice no escuro.
+Então, tecnicamente, está funcionando aqui.
+Faz sentido ter essa skill? E aí, como eu já esperava,
+aqui ele vai falar que o benefício é menor do que parece.
+O ops por sozinho, o próprio modelo que eu estou utilizando aqui,
+já seria capaz de executar aquilo que foi executado pela skill.
+Então, ele fez até uma comparação. Acertou 88% aqui,
+se comparado com o acerto de 100% da skill. Então,
+ou seja... Não ensina exatamente o modelo a otimizar,
+porque ele já está treinado para isso.
+Mas serve para garantir a consistência do nosso troubleshooting,
+do método passo a passo.
+Em relação à qualidade de resultado, bom, não excelente.
+Bom porque cumpre o objetivo e é confiável.
+E não é excelente porque o delta sobre a baseline é estreito.
+Conforme a gente pode ver, 88 para 100 não é uma diferença tão grande.
+Problema fundo dos testes, três inputs são fáceis demais,
+cada um tem um X-Play limpo,
+com gargalo escrito quase na cara. Enfim,
+aqui ele faz a próxima etapa da otimização.
+E aí, novamente, aqui é o momento em que a gente tem que parar,
+analisar o que de fato a gente está construindo, como a gente está construindo,
+fazer todo aquele trabalho mental que a gente já comentou e começar a analisar.
+Se a gente está indo para a direção que a gente quer ou não.
+Beleza, pessoal? Mas isso a gente vai continuando aí na nossa próxima aula.

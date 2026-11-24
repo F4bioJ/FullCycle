@@ -17,10 +17,12 @@ Esta skill cobre só o conteúdo **básico**, o que a aula ensina. Desde 2026-10
 |---|---|
 | Curso | MBA em Engenharia de Software com IA |
 | Página do curso | `https://plataforma.fullcycle.com.br/courses/a091b0fe-a5c6-4287-a3d3-1ec61defcfd3/463/224` |
-| Módulo em estudo | Prompt Engineering |
-| Pasta do módulo | `2 - Prompt Engineering` |
-| Conteúdos do módulo | `https://plataforma.fullcycle.com.br/courses/a091b0fe-a5c6-4287-a3d3-1ec61defcfd3/463/224/267/conteudos` |
-| Módulo concluído | Fundamentos de IA Generativa, em 2026-11-05, na pasta `1 - Fundamentos de IA Generativa` (`.../463/224/263/conteudos`) |
+| Módulo em estudo | IA Labs (um capítulo só, Skills) |
+| Pasta do módulo | `3 - IA Labs` |
+| Conteúdos do módulo | `https://plataforma.fullcycle.com.br/courses/a091b0fe-a5c6-4287-a3d3-1ec61defcfd3/463/224/294/conteudos` |
+| Módulos concluídos | Fundamentos de IA Generativa, em 2026-11-05, na pasta `1 - Fundamentos de IA Generativa` (`.../463/224/263/conteudos`); Prompt Engineering, em 2026-11-24, na pasta `2 - Prompt Engineering` (`.../463/224/267/conteudos`) |
+
+**IA Labs:** o 1º item do capítulo Skills é "Código-fonte" (repositório, não vídeo). Em 2026-11-24 o usuário decidiu pulá-lo na numeração: "O que é uma skill" é a aula 1 (`3.1.1`), ou seja, nº da aula = posição na plataforma − 1.
 
 A hierarquia da plataforma é curso → módulo → capítulo → aula. As pastas locais começam no módulo.
 
@@ -125,7 +127,7 @@ Usa as ferramentas do plugin Playwright (`mcp__plugin_playwright_playwright__*`)
 
 1. **Login:** `browser_run_code_unsafe` com `filename: .claude/skills/next-class/scripts/login.js`. Devolve `logado` ou `ja-logado`. O script lê `USR` e `PWD` do `.env` por dentro do navegador. Não leia o `.env` com outras ferramentas: a senha não precisa aparecer na conversa.
 2. **Listar aulas:** `browser_navigate` para a URL de conteúdos do módulo, depois `browser_run_code_unsafe` com `filename: .claude/skills/next-class/scripts/list-lessons.js`. Devolve os capítulos e as aulas com `posicao`, `id` e `titulo`. Decida a aula-alvo com isso e com as pastas locais.
-3. **Abrir a aula:** `browser_navigate` para `<URL de conteúdos>?capitulo=<N>&conteudo=<id da aula>`, em que `<N>` é o último número do caminho da URL (hoje `267`). Se a URL direta não abrir a aula certa, clique em `#list-content-<id>`.
+3. **Abrir a aula:** `browser_navigate` para `<URL de conteúdos>?capitulo=<N>&conteudo=<id da aula>`, em que `<N>` é o último número do caminho da URL (hoje `294`). Se a URL direta não abrir a aula certa, clique em `#list-content-<id>`.
 4. **Capturar:** `browser_run_code_unsafe` com `filename: .claude/skills/next-class/scripts/capture.js`. Devolve o título e a contagem de caracteres da transcrição e do resumo. Confira se o título é o da aula-alvo.
 5. **Salvar a captura:** `browser_evaluate` com `function: () => window.__fcCapture` e `filename: .playwright-mcp/capture.json`. O texto vai direto para o disco, sem passar pela conversa.
 6. **Gravar na estrutura:**

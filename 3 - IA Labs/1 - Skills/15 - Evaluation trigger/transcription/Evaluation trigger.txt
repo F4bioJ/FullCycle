@@ -1,0 +1,175 @@
+Bom pessoal, então, continuando aqui a nossa trilha sobre avaliações,
+o que a gente fez até o presente momento?
+Nós começamos com uma skill que era super simples, muito mal feita,
+e baseado na percepção da avaliação,
+a gente conseguiu reescrevê-la, nós iniciamos ali.
+trabalhando a nível de description,
+foi identificado que ela não estava rodando e
+que necessitaria de uma reescrita total.
+Então, a gente utilizou o artifício da
+avaliação para fazer esse processo de reescrita e,
+baseado nisso, a gente chegou no seguinte resultado. Então,
+agora a gente já tem uma skill mais bem feita ali,
+se comparado com o que a gente havia feito.
+Temos aqui as referências de antepartners e tudo mais. E aí,
+o que a gente vai fazer a partir de agora?
+Como nós rodamos a nossa avaliação e foi identificado que a nossa skill, na verdade,
+precisaria ser reescrita,
+acabou que o processo de avaliação da nossa descrição aconteceu,
+mas acabou tendo que ser pausado pelo fato de que a gente precisou reescrever.
+E quando a gente reescreveu, ela rodou. Só que rodou baseando-se...
+na avaliação de qualidade. E, inclusive, se a gente der uma olhada aqui,
+foi gerado alguns inputs com eventos SQL para fazer essa avaliação de qualidade.
+E agora o que a gente vai fazer?
+Vamos voltar agora rapidamente no
+processo de avaliação para a descrição,
+ou o trigger, como também é chamado,
+e a gente vai verificar qual vai ser o resultado.
+Somente para vocês saberem.
+Eu excluí aquele workspace que a gente estava trabalhando,
+só para a gente gerar um novo e
+a gente conseguir trabalhar em cima da trigger.
+Vamos rodar aqui o nosso Skill Creator.
+Já temos aqui a Tool Ask User perguntando o que a gente deseja fazer.
+Então, eu vou falar que eu quero otimizar agora a descrição. E aí,
+ela vai começar o processo de avaliação
+para especificamente otimizar o processo de trigger.
+E aí, se a gente der uma olhada aqui, nós já temos algum resultado. O que aconteceu?
+Ele abriu uma página da web com os itens aqui
+para a gente escolher o que nós queremos testar ou não.
+Voltamos aqui no browser para vocês darem uma olhada
+e a gente tem aqui as possibilidades.
+Posso incluir,
+excluir da forma que eu achar que deve ser feito. Basta clicarmos aqui no Add.
+Query, e aí a gente tem a possibilidade de fazer essas inclusões.
+Voltando aqui, então, no nosso VS Code,
+vamos ver o que a gente tem que fazer a partir de agora.
+Então, nesse primeiro momento,
+eu não vou mexer em exatamente nada relacionado às queries.
+Vou permanecer aquilo com o que já tem lá e vou pedir para ele continuar.
+Então, continue o
+Processo e vamos ver o que vai acontecer.
+Já temos aqui uma pequena resposta. Bom, o loop está rodando aqui em background.
+Se a gente botar uma setinha abaixo aqui,
+a gente consegue verificar o que está acontecendo.
+Já está rodando há praticamente dois minutos. Vamos aguardar até o resultado final.
+Bom, pessoal, temos aqui o resultado. Então, ele conseguiu rodar o loop.
+Inclusive, identificou aqui que na versão que eu
+estou utilizando aqui do Cloud Code,
+aconteceu um erro.
+No qual, ao gerar esse teste,
+ele acabava acrescentando o hash dentro do
+nome da skill e aí impossibilitava de encontrar.
+Então, automaticamente, ele já se autocorreu e aí ele conseguiu medir aqui.
+E aí a gente tem o accuracy aqui de 100%,
+recall também 100%, precision também 100%.
+Ou seja, isso quer dizer que a nossa descrição está muito boa.
+E logo mais abaixo, a gente tem aqui a nossa decisão. A descrição já está ótima,
+não alterei nada e tudo mais. E aí, ao final disso, o que ele gera para a gente?
+Ele gera um HTML também, assim como eu mostrei anteriormente para vocês,
+da parte de dados.
+Ele também vai gerar um HTML focado
+no processo de trigger e otimização da descrição.
+Eu vou mostrar para vocês.
+Inclusive, eu pedi para ele gerar duas versões para mim,
+para ficar um pouco mais fácil de mostrar para vocês.
+Então, essa aqui é a versão padrão que ele vai gerar para você,
+no qual ele mostra para a gente a versão
+original que está na nossa skill atualmente.
+E ele também já faz aquele processo de auto
+-otimização que eu havia falado para vocês.
+Então, em tese, se vocês lerem aqui...
+A descrição em si é praticamente a mesma coisa, tá?
+E aqui embaixo a gente tem os dados de teste e tudo mais.
+Depois eu falo um pouco mais sobre essa parte do treino e do teste.
+E aí eu pedi, como eu disse,
+para gerar uma versão um pouco melhor de visualizar a parte dos testes em si,
+que já está aqui. Então,
+a gente tem aqui a medição. Temos a descrição, de fato.
+E aqui a gente tem toda a legenda do que aconteceu,
+tá? Então, o verdinho que é o shoot trigger.
+O vermelho, should not trigger.
+Temos aqui a parte de treino e temos a parte de teste.
+E aí, nós temos o resultado esperado aqui, baseando-se nos itens do dataset.
+Conforme a gente pode ver, nós temos aqui o que foi executado,
+como foi executado e qual foi o resultado. Assim,
+a gente consegue visualizar muito melhor. Porque se você reparar aqui,
+não fica tão legal o processo de visualização.
+Então, eu só pedi para ele remodelar,
+com um layout diferente. Para ficar mais fácil para vocês.
+Analisarem junto comigo. Então, dessa forma.
+O que a gente consegue notar. Que a gente consegue.
+Fazer bastante coisa com o Skill Creator. Desde.
+Usar ela como realmente.
+Algo que eu vou.
+Testar. E viabilizar versões novas. Da minha Skill.
+Baseando -se naquilo que eu já. Havia produzido. Ou.
+Por meio desse processo de evaluation, a gente consegue, como eu mostrei para vocês,
+entender os pontos de melhoria ou até mesmo utilizar isso
+como uma bússola para saber aonde a gente quer melhorar.
+Então, se vocês pararem para analisar,
+a gente meio que pode seguir ali um caminho um pouco mais padrão,
+que é o uso da skill para, de fato, aquilo que ela foi feito,
+que é avaliar, ou um caminho... tipo uma bússola,
+onde olha, tem essa skill,
+não sei se realmente está indo de acordo com o que eu quero,
+olha aí, baseado nisso, vamos corrigindo junto,
+em conjunto ali com os comandos que você vai passando para o CLI,
+beleza? E agora, para finalizar,
+eu queria só falar como vai funcionar esse processo de avaliação que é feito.
+Então, vamos lá pessoal, deixa eu voltar aqui no browser rapidão, que a gente vai...
+utilizar ele aqui só para dar um contexto de como tudo isso funciona.
+Bom, basicamente, quando a gente vai fazer esses testes,
+a gente vai fazer primeiro o dataset,
+que eu havia mostrado para vocês,
+e aí ele vai fazer a
+separação desse dataset em grupos diferentes.
+Vai ser um grupo de treinamento e um grupo de teste.
+E aí é provável que em dado momento você deve ter visto...
+Um cara chamado Redout,
+que está logo aqui. Vamos procurar onde ele está.
+Deixa eu ver se ele aparece aqui.
+Aqui, Redout. E aí deve ter se perguntado o que é isso.
+Basicamente, é um termo de metodologia de validação técnica.
+Usado no desenvolvimento e validação das skills e tudo mais. Na prática, o que...
+acontece de fato, como que a gente utiliza isso? Bom,
+nós vamos ter a separação daquele nosso dataset,
+conforme eu havia falado para vocês, em dois itens. O conjunto de treinamento,
+cerca de 60 % dos dados, e a gente vai ter também o conjunto de teste separado,
+que é o nosso head -out, que são... os outros 40%. E aí,
+esses caras meio que vão ficar guardados ali,
+de forma totalmente separada. Então, num primeiro momento,
+não serão utilizados, tá? E não vão ser vistos, conforme já foi falado.
+E eles vão ser utilizados em um segundo momento, para testar se, efetivamente,
+as alterações que estão sendo aplicadas ali no looping,
+que está acontecendo, de avaliação, estão fazendo sentido ou não. Garantindo o quê?
+Que o agente realmente compreendeu a
+habilidade que está sendo testada e, claro,
+se consegue lidar com as situações novas que
+estão sendo demandadas com a devida precisão. Então,
+repare que é um sistema bem inteligente, porque ele consegue,
+Primeiro, baseado naquilo que já existe,
+Fazer o teste, depois ele roda um processo de otimização,
+Pega o restante do dataset,
+E faz novamente uma nova rodada de teste. E assim sucessivamente,
+Até a gente conseguir concluir que nós
+Temos um match melhor de trigger / description,
+E aí a gente tem o resultado. Obviamente,
+Nós poderíamos ficar nesse looping eternamente.
+Então, a ideia é que a
+Gente consiga manter algumas métricas básicas ali,
+E a gente consiga atingir essas métricas básicas.
+Pontos importantes que a gente tem que analisar é que
+Tudo que eu estou mostrando aqui para vocês,
+Como eu disse, estou utilizando um CLI, um Harness,
+Que é o Cloud Code, e o modelo também da Anthropic.
+Vocês têm que fazer isso.
+Me refiro aos testes e tudo mais de acordo com o CLI que
+Você está utilizando e também com o modelo que você está utilizando. Por quê?
+Modelos diferentes vão ter respostas diferentes e atuações diferentes também.
+Então, quando a gente entra nessa parte de...
+Na avaliação, a gente percebe que é um mundo totalmente novo,
+Porque vai mudar muito de acordo com o modelo, de acordo com a versão,
+De acordo com o Harness que está sendo executado.
+E tudo isso a gente deve levar em
+Consideração quando nós estamos criando as nossas habilidades. Fechado?

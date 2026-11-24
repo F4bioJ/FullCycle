@@ -1,0 +1,90 @@
+Bora lá então pessoal, entendemos aí o que é de fato uma skill,
+entendemos um pouco também de como ela funciona por trás dos planos,
+quais são as fases,
+os ciclos de fases que a gente vai ver e pode ver,
+na verdade, quando nós estamos executando e chamando uma skill.
+Agora eu quero trazer para vocês a nossa
+execução da criação da nossa primeira skill, tá?
+E a primeira skill eu vou fazer de forma totalmente manual,
+para a gente bater um papo sobre isso.
+E as posteriores a gente vai começar a utilizar
+o auxílio da IA para nos ajudar em algumas questões,
+beleza? Então vamos lá. Como eu disse para vocês,
+uma skill se dá início a partir da criação
+de uma pasta juntamente com o seu arquivo skill.md.
+Então, para esse nosso arquivo...
+Para esse nosso primeiro exemplo, melhor dizendo,
+vou colocar aqui uma skill chamada Simple Logger.
+E aí eu vou gerar o meu skill.md.
+Primeira coisa que nós temos que ter é o que?
+É o nosso Front Matter, nosso nível 1 ali.
+Então, vou pegar esse carinha e vou
+colocar aqui e já vou alterar o nome. Seguindo disso,
+vou retirar Allow It Tools e por enquanto vou trabalhar somente com
+essas duas propriedades do Front Matter para a gente bater um papo sobre
+essa questão do Front Matter e depois a gente dá início de
+fato às instruções do Markdown que vão ser o corpo da nossa skill.
+Então para a gente começar aqui,
+vou fazer um zoom a mais, vou retirar a minha description.
+E essa primeira skill que a gente vai trabalhar, ela é bem simples,
+só para a gente entender realmente o nosso processo de criação.
+Primeira coisa, essa skill vai ser um logger. Então,
+o que eu vou pedir aqui na minha description? Vai ser um log message file
+para
+debugging purposes,
+por exemplo. Ou seja, vai logar uma mensagem dentro de um arquivo apenas para...
+propósito de debug. Primeira coisa que é muito importante esclarecer.
+Leonão, precisa ser em inglês ou eu posso escrever em português?
+Pode escrever em português, não tem nenhum tipo de problema, tá?
+O único ponto que eu acho que é importante vocês saberem é geralmente o padrão,
+assim como o código, é a escrita em inglês.
+Se porventura você não souber, não tem nenhum tipo de problema.
+O que você vai fazer? Você vai escrever tudo em inglês.
+ou melhor, tudo em português,
+e depois pedir o próprio Cloud ou qualquer outro
+tipo de IA para fazer essa tradução,
+beleza? Não tem nenhum tipo de problema.
+Eu, particularmente, algumas coisas escrevo em inglês,
+outras, quando são coisas mais complexas,
+me comunico totalmente em português e peço a tradução, tá?
+Bom, agora eu tenho aqui o meu pequeno front matter.
+E aí, o que vai ser necessário a partir de agora?
+O corpo da minha.
+Skill. Então. Simple Logger.
+Nome da minha skill. E agora começa de fato o corpo com as instruções.
+Da minha skill. O que vai fazer aqui. Eu vou escrever.
+Aquilo que eu quero que a LLM interprete e execute para mim.
+A minha habilidade reutilizável. Então. Use.
+Python to write a log message.
+E aí, como que ele vai fazer isso?
+Vou colocar aqui um simples comando do Python, tá?
+Então, vai ser um if open, ó, já até me deu aqui, as log file, log file write,
+this is a log message. Simples, bem fácil de ser entendido,
+creio que todos vocês que estão assistindo aí conseguem entender.
+Crio meu arquivo, abro ele, faço a minha escrita, e pronto. Com isso, pessoal,
+nós já temos a nossa skill pronta para ser utilizada.
+Abrindo o nosso Cloud, vou colocar ele para cá.
+A primeira coisa que a gente tem que ver é se eu
+tenho o meu Cloud já aberto e estou criando uma skill,
+vai ser muito necessário que eu faça um reload skills, para ele reindexar, certo?
+Agora, se eu criei e abri, não preciso, porque já rodou a fase 0.
+Então, eu já sei que ele já está com tudo certo. Beleza?
+Para a gente saber se realmente a nossa skill está aqui ou não, coloco uma barrinha.
+Simple Logger.
+Só executo ele e vamos ver o que vai acontecer.
+Vai fazer, então, a leitura. Vai acontecer todos aqueles ciclos.
+E olha só o que está acontecendo aqui. Já está executando a nossa... E obviamente,
+ao executar o nosso skill, o que aconteceu?
+Ele executou este trecho de código. Como vocês podem perceber,
+aqui ao lado eu já tenho o nosso resultado.
+Até aqui, nada muito diferente, nada muito difícil.
+É de fato, somente um pequeno exemplo,
+aquele famoso hello world para a gente já começar.
+Com chave de ouro. Beleza, pessoal? Então,
+temos aqui a nossa primeira skill realmente criada do zero.
+Próximo passo vai ser avançarmos aqui para o nosso front matter,
+a fim de entendermos quais são os parâmetros que nós podemos colocar.
+Falar bastante desse carinha aqui de description, porque ele,
+lembre-se, ele é o classificador. Então,
+a gente vai precisar bastante deste cara daqui para frente.
+Fechado? Então... Nos vemos na próxima aula!

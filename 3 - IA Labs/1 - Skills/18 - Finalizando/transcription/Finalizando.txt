@@ -1,0 +1,30 @@
+Bom, pessoal, então chegamos aqui à nossa conclusão. Um vídeo bem rápido,
+só para recapitular tudo o que a gente fez.
+Entendemos desde o princípio básico do que é uma skill, como funciona,
+quais são... os itens que a gente deve colocar dentro de uma skill,
+passamos também um pouco acerca da arquitetura, de como ela vai funcionar,
+entendemos o que é front matter,
+entendemos o que é o progressive disclosure,
+e a partir daí a gente começou a desenvolver as nossas primeiras skills,
+criamos um modelo mental de decisão,
+entendemos o processo de melhoria das nossas descrições,
+entendemos como que a gente pode criar skills, entre aspas, nível 3, utilizando
+referências, scripts e tudo mais,
+falamos também de como a gente pode capturar dados do mundo externo,
+como que a gente pode trabalhar com skills de orquestração,
+sub-skills, como a gente pode utilizar scripts determinísticos,
+como, através da skill, podemos também trabalhar com sub-agentes e, por fim,
+a gente entra ali naquela parte de avaliação de skill,
+no qual a gente vai entendendo todo um processo.
+De avaliação desde a descrição, a nível de trigger,
+como também da qualidade do resultado em si.
+Utiliza-se disso para melhorar cada vez mais a nossa skill,
+tá? Passamos também pela parte de MCP,
+como que a gente consegue plugar dentro de uma skill o uso do MCP, né?
+E falamos também como possibilidade aí o PromptFull,
+como uma evolução do seu processo de avaliação,
+para que você consiga trabalhar com avaliação multimodelo, beleza? De forma geral...
+Foi um apanhado do que a gente viu neste laboratório.
+Espero muito que vocês tenham gostado e que vocês comecem a utilizar no dia
+a dia e que realmente traga algo positivo nas operações do dia a dia.
+Beleza? Eu vou ficando por aqui e até a próxima.

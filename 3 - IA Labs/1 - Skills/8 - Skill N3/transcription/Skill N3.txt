@@ -1,0 +1,156 @@
+Bom pessoal, agora dando continuidade aqui, o que a gente vai fazer é o seguinte,
+a gente vai partir para a criação de uma skill de nível 3,
+tá? E só para relembrar,
+skill de nível 3 é aquela que utiliza referências e scripts,
+um ou outro, ou os dois em conjunto, tá? E para demonstrar isso para vocês,
+a gente vai fazer uma skill com scripts, perfeito?
+E como é que vai ser? Bom, basicamente nós temos aqui...
+Uma nova necessidade, tá? E a necessidade que surgiu foi o seguinte.
+O projeto, ele tem diversos comentários ali de to do,
+fixe, coisas nesse sentido. Então, a gente precisa varrer este projeto,
+entender onde estão localizados esses comentários.
+Baseado nisso, a gente produz ali um pequeno relatório,
+faz uma espécie de mapeamento e coisas nesse sentido, tá?
+Algo relativamente fácil de ser produzido.
+Mas que cabe bastante para uma skill porque
+a gente consegue trazer isso como algo repetitivo,
+dia a dia e totalmente executável. Então,
+para simplificar a nossa ideia aqui,
+o que a gente vai fazer? Vamos fazer um pequeno projeto.
+Eu vou pedir à própria AI para gerar este projeto e
+a partir da geração deste projeto a gente vai dando continuidade.
+Então, vamos lá. Vou pedir aqui para criar um projeto,
+por exemplo, chamado store
+-auth
+com src -auth .js
+e src -report .js.
+Dentro desses arquivos, algumas funções
+referentes.
+rotina de um e
+-commerce padrão.
+Dentro dos arquivos e das funções,
+adicione marcadores de
+tendências espalhados pelo código.
+Utilize, por exemplo, to do para
+itens a fazer, fix para
+necessidade de refactor, por exemplo.
+Gere isso e me dê um relatório no chat.
+Vamos ver aí qual vai ser o resultado.
+Prontinho, pessoal. Então, temos aqui nosso src, temos o package.json,
+vamos dar uma olhada bem rápido aqui. Temos o fixme, temos
+o nosso to do, vamos
+dar uma olhada aqui no nosso report.
+Também temos a presença aqui.
+Claro, projeto fake, só para a gente conseguir trabalhar baseando-se.
+naquilo que nós queremos fazer. Bom, dado isso,
+vou iniciar novamente uma nova sessão. E agora,
+o que eu vou fazer? Criar uma nova skill que
+seja responsável por
+criar um relatório, ou
+melhor, por realizar uma
+Triagem dos marcadores de pendência,
+Por exemplo, do FixMe. De um projeto. Antes de.
+Realizar a criação.
+Confirme o seu entendimento.
+Vamos ver qual que vai ser o resultado.
+De bola. Então, mostrando aqui o.
+Entendimento. Então, eu quero uma nova skill dentro de Cloud Skills.
+Que faça a triagem dos nossos marcadores, que são To Do e Fix. Barreiro projeto.
+Buscando os marcadores.
+Coletar dados de ocorrência.
+Classificar e triagem. Cada um reportar de forma agrupada e acionável. Show de bola.
+Segundo padrão do RAP, eu criaria o meu skill .cmd
+E opcionalmente um script de scan para fazer o graph.
+Beleza. Então, ele está me perguntando aqui o que eu quero criar.
+Quero criar To Do e Fix Me.
+Relatório no chat por enquanto.
+Só catalogar.
+Priorizar e sugerir. E a estrutura, inclusive,
+Ele já até me deu um script para fazer scan ou só skill.
+Como ele já me deu, eu vou já trabalhar junto ao script.
+Mas caso ele não tivesse dado,
+Quero passar aqui uma visão de como e o porquê
+Que a gente está utilizando essa escolha de scripts neste momento.
+Enquanto ele vai fazendo aí, vamos bater um papo sobre isso.
+Galera, o que acontece é o seguinte.
+Existem algumas tarefas, como já falamos anteriormente,
+Que são de cunho determinístico.
+E a gente sabe que inteligência artificial é não determinística. O que isso quer dizer?
+Quer dizer que não determinístico é eu perguntar alguma
+Coisa e vou receber diversas respostas contendo o mesmo contexto.
+Então, um exemplo fácil. Se eu perguntar agora...
+Vamos abrir aqui uma
+Nova seção. Se eu perguntar aqui um oi, temos aqui um resultado.
+Pergunto de novo.
+Olha só, é um outro resultado. Isso é não determinístico. Ou seja,
+Ele segue o mesmo padrão de inferência dentro de um mesmo contexto,
+Porém, a resposta vem de forma diferente.
+Quando eu estou falando de algo determinístico,
+Que é o nosso script, ou...
+Linters, formatadores e outras coisas existentes dentro do mundo da engenharia,
+Eu estou falando de algo que eu tenho a certeza
+Que vai ser executado e sempre vai devolver a mesma resposta.
+E por que isso é importante?
+Pelo simples motivo de que quando eu atrelo a algo determinístico,
+Eu faço algo muito importante para a AI.
+Eu dou o resultado que eu... Então,
+Eu tenho a garantia de que a busca vai acontecer.
+Por quê? Se depender só da AI, ela pode buscar,
+Ela pode falar que buscou, ou ela pode buscar só 20%, 30%,
+50%, porque quem decide é ela. A inferência é dela.
+Quando eu tenho um script, isso não acontece, por quê? Olha só.
+Eu estou pedindo para você executar e o script,
+como é algo determinístico, vai me trazer 100% de tudo.
+Isso, no final das contas, o que a gente ganha?
+A gente ganha maior confiança. É basicamente, de novo,
+o quality gate que nós estamos aqui colocando dentro da nossa
+skill para garantir que ela execute aquilo que tem que ser executado. Beleza?
+Mas voltando aqui, a gente tem então a nossa skill criada junto com o script.
+Vamos dar uma olhadinha aqui.
+Primeiro na nossa skill.
+Então, veja bem que ele fez primeiro tudo em português,
+conforme a gente já vinha trabalhando.
+Agora, nosso foco não vai ser analisar de fato
+o processo que ele está fazendo na skill. E aqui...
+Ele veio e me trouxe o meu script determinístico,
+que é muito simples de ser entendido.
+Basicamente, é um script bash. Ele tem aqui o meu partner a ser analisado,
+excluir alguns diretórios e alguns tipos de arquivo.
+Feito isso, o que ele vai fazer?
+Ele vai simplesmente ler todos os
+meus diretórios em busca deste partner aqui.
+Se ele encontrar alguma coisa...
+ele salva e depois me mostra, tá? Quando eu digo diretórios,
+eu me refiro também aos arquivos que estão inclusos dentro do diretório.
+Se a gente volta aqui na skill, olha só,
+a gente tem o primeiro passo, que é o quê?
+Executar esse meu arquivo, arquivo determinístico.
+Vai ser executado 100%, depois, baseado na resposta dele,
+aí sim eu tenho a classificação ocorrendo.
+E aí, galera, para finalizar, eu tenho aqui um critério de prioridade.
+No qual. O alto. Eu vou corrigir o comportamento. Médio. São melhorias. Relativamente.
+Importantes aqui. De performance. Validação. E coisas. Neste sentido.
+E também. Tenho. Itens de. Baixa.
+Prioridade. Que é. Nice to have. Alguns tipos de polimento. E coisas.
+Neste sentido. Para finalizar. Produzo então. Um pequeno relatório. Fechado? Bom.
+O que eu posso fazer? Agora eu posso executar, então, a minha
+pendence triage. E aí a gente vai dar uma olhada no que vai acontecer.
+Bom, pessoal, já temos aqui o retorno e olha só o resultado.
+A gente tem exatamente aquilo que nós gostaríamos.
+Temos aqui o relatório,
+o médio, o baixo e as minhas recomendações. E note o seguinte,
+vamos aqui no run shell. Olha só o que ele rodou aqui.
+o nosso Bash com userScan. Ou seja,
+agora a gente tem a nossa skill que a gente acabou de criar,
+nível 3, utilizando como exemplo um script.
+Poderia também ser uma referência ou referência e script. Nesse caso,
+eu poderia ter aqui dentro referências para classificar listas de classificação,
+o que realmente é.
+o que realmente é médio, o que realmente é baixo,
+e assim por diante. Fechado? Então, dessa forma aqui, se a gente quiser,
+A gente pode ir evoluindo essa skill, abrir isso aí dentro do GitHub,
+centralizar isso aqui para, de fato,
+ser corrigido posteriormente, coisas nesse sentido, beleza?
+A intenção maior neste momento é, primeiro, a lógica por trás do...
+como e o porquê que a gente está gerando uma skill,
+tá? E principalmente essa questão do determinismo ou não determinismo. Beleza, pessoal?

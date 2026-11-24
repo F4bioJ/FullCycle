@@ -1,0 +1,229 @@
+Bom galera, show de bola aí. Continuando a nossa ideia aqui de skills,
+o que a gente vai falar agora?
+Agora a gente vai falar sobre a parte de como uma skill pode executar um sub-agent, tá?
+E pra isso, o que eu fiz? Preparei mais uma demo aqui pra vocês, tá?
+No qual a gente tem um pequeno projeto,
+ele é um pouquinho maior dessa vez, mas é basicamente um projetinho JavaScript.
+Contém testes, tem aqui uma migration, tem uma conexão junto ao banco de dados,
+tem também uma pipeline, bem simples,
+mas que vai dar para a gente fazer uma coisa muito interessante e começar
+a entender um pouco mais sobre essa parte do uso de skills com subagent.
+Primeira coisa que é muito importante da gente esclarecer.
+Que esta aula em específico e o assunto em questão
+vai depender muito do tipo de CLI que você está utilizando,
+do tipo de harness que você está utilizando.
+E por que eu falo isso?
+Porque existem harness que têm agentes que fazem exatamente
+a mesma coisa que eu vou falar aqui,
+porém com nomes diferentes.
+Existem CLIs, harnesses, que não têm nenhum tipo de agente. Então,
+vai depender de fato de qual você está utilizando,
+se é o Cloud Code, se é o Codex,
+ou se é qualquer um que existe aí no mercado, tá? Em especial,
+falando do Cloud Code, e aí, agora é exclusivo do Cloud Code, tá? Porém,
+tudo que eu explicar aqui vai servir de forma geral para qualquer outro harness,
+ele trabalha com esses tipos de agentes. Então,
+a gente tem um carinha chamado de Explorer.
+Uma parte de plan e outra de general purpose, beleza?
+Conforme eu disse para vocês,
+esses nomes podem ser alterados aí de acordo com o CLI que você está utilizando,
+perfeito? Então, como que a gente faz para usar esses carinhas?
+Antes da gente trabalhar na skill, de fato,
+eu queria mostrar para vocês o que cada um desses carinhas fazem.
+Primeiro, temos aqui o agente de exploração. Ou seja,
+ele é um agente super rápido.
+Geralmente vai utilizar sempre o modelo mais barato
+e o mais rápido para realmente ser eficiente.
+E ele trabalha bastante com ferramentas de leitura. Por quê?
+Porque ele tem o propósito de basicamente fazer o mapping
+ou a busca de forma muito rápida para o usuário.
+Temos também um carinha chamado Plan.
+Este cara. Ele tem acesso a itens externos, então ele vai ser um agente de pesquisa.
+Diferente do carinha de cima, que é o Explorer,
+ele vai sempre herdar o modelo no qual a gente está utilizando.
+No meu caso aqui, todo esse tempo,
+estou utilizando o Opus 4.8. Então, caso eu entre em planejamento,
+ele vai herdar por padrão. E ele tem as ferramentas somente leitura também.
+E edit são negados por padrão, tá?
+E quando eu vou utilizar esse carinha aqui, como por exemplo,
+eu vou planejar alguma coisa, né? Inclusive, o modo plan do Cloud Code,
+a gente faz o uso desse cara.
+E para finalizar, a gente tem um carinha de general purpose.
+E esse cara aqui, ele vai fazer o quê?
+Ele é um agente generalista, ou seja,
+ele é capaz de executar N tipos de tarefas diferentes com múltiplas etapas.
+Isso geralmente envolve exploração, alguma ação,
+seja de edição, seja de write.
+Ele é inteligente o suficiente, vamos dizer assim,
+para que ele consiga iniciar uma tarefa que tem múltiplas etapas
+e consiga concluir isso sem problema algum ou com poucos problemas.
+que nós estamos utilizando na conversa, tá?
+Esse cara aqui é basicamente o que a gente utiliza no dia a dia,
+tá? E o propósito dele, como eu disse,
+vai ser para trabalhar com tarefas de múltiplas etapas, ok?
+Entendido essa parte dos tipos de agente que nós temos hoje disponível,
+agora o ponto é, ok,
+o que eu faço com isso, né? E é exatamente isso que eu vou mostrar para vocês.
+O Cloud Code, em especial, se a gente quiser,
+a gente pode disparar subagentes por padrão.
+Mas o nosso foco aqui não está em entender
+como utilizar subagentes e coisas nesse sentido.
+Nosso foco aqui é mais voltado,
+a nossa ótica vai ser mais voltada para o uso da skill. Porque dentro da skill,
+a gente também pode fazer o uso desses subagentes e disparar
+subagentes específicos para colher determinadas informações e
+trabalhar dentro da nossa skill.
+Bom, pessoal, então vamos fazer o seguinte aqui.
+Eu vou gerar uma nova skill. Essa skill,
+ela vai ser uma skill que, inclusive, bem útil aí também pra vocês, que vai ser...
+Imagine quando você tem aqui um onboarding de um novo projeto ou até,
+eventualmente, você quer fazer documentações e coisas nesse sentido,
+atualizar documentações, manter atualizada,
+você vai poder utilizar essa skill aqui também,
+claro, com as devidas atualizações e
+customizações aí de acordo com o teu projeto, tá?
+Ele vai basicamente mapear todo o nosso diretório ali e vai me
+dizer o que tem em cada layer e coisas nesse sentido, tá?
+Então, abrindo o Cloud Code, já estou aqui com ele aberto, o que eu vou fazer?
+Vou pedir pra ele criar uma
+skill dentro do projeto, subagentes criados,
+Cloud
+Skills, o
+nome da skill
+Será mapping project.
+E aí, nós vamos fazer o seguinte.
+O passo 1 dessa skill vai ser o quê?
+Quebrar o projeto em questão.
+Diretório / projeto em
+questão em frentes independentes. Vou
+colocar aqui, que é importante, que é obrigatório.
+Depois iremos utilizar subagentes.
+E aí eu já explico um pouco melhor do porquê que isso é importante a gente entender,
+porque subagents basicamente não vão compartilhar o mesmo contexto.
+E aí eu vou dar, por exemplo, um exemplo de como poderia
+ser essa quebra.
+Vamos colocar aqui, por exemplo, uma quebra a nível de
+A arquitetura, então ele poderia pegar ali entry point,
+as camadas, módulos,
+como o fluxo dos dados funciona,
+camada
+de dados, né? Vamos pegar ali a camada específica de dados,
+models, esquemas, conexão de dados,
+onde
+o estado mora, por exemplo.
+Alguma coisa relacionada. A testes também. Então. Dizer aí. Qual que é o framework.
+Onde. Se localizam.
+Qual a cobertura.
+Atual. E. O que. Está coberto. Ou não.
+O que mais que a gente pode colocar aqui. Ah. Vamos falar do build.
+Build. E CI. Que a gente tem ali. O nosso GitHub. Scripts. De build. Pipeline.
+Deploys. Enviar.
+Se existir.
+Segurança. Botar alguma coisa de segurança também. Notificação. Autorização. Segredos. Middlewares. Específicos.
+Permissão. Segurança.
+Show. Bom.
+Mas o que a gente pode fazer aqui de quebra?
+Creio que somente isso. E o passo 2 aqui. O que a gente vai fazer?
+Galera. A gente vai ter aqui.
+Comece lançando. Lance. Subagents.
+Por cada frente disponível. Para. Curação.
+Pode até colocar aqui. Utilize. Agents. Type. Explorer. E aí.
+O que eu vou fazer. Todas as
+mensagens, ou
+seja, várias
+chamadas que rodam
+de forma concorrente.
+E para cada
+agente,
+adicione um prompt.
+E aí a gente vai pedir e capturar a conclusão. Vou botar aqui o prompt.
+Subagent é o que? Explore.
+O diretório. Mais.
+Diretório. Da frente.
+Subagent.
+E mapeei. A frente.
+List. Os arquivos. Como.
+Caminho. E a linha.
+Escreva. De forma.
+Enxuta. O
+que faz. E como funciona.
+E aponte. Um.
+Botar somente um ou dois riscos ou pontos de atenção.
+Fique somente nessa frente de análise.
+Devolva apenas o resumo. E, obviamente,
+aqui eu poderia definir algo um pouco mais estruturado a nível de resultado. Mas,
+no nosso caso aqui, só para a gente entender... Como que a gente pode fazer isso.
+Já é o suficiente. Então vou botar aqui mais um passo.
+Que é o passo 3. Que vai ser basicamente o wrapper disso tudo aqui.
+Então junte.
+Todos os resumos.
+Das frentes que foram analisadas. E baseado nisso.
+Gere um mapa do projeto repositório. Visão geral.
+Uma seção por frente. Por onde começar,
+riscos, prioridades. Aí, óbvio,
+poderia descrever também para entender de fato o que
+eu gostaria em cada parte aqui do meu relatório,
+mas para agora não tem tanta necessidade.
+Vamos rodar e vamos verificar o que vai acontecer.
+Bom, galera, vamos lá.
+Finalizamos aqui após 50 segundos praticamente.
+Vamos dar uma olhada aqui no nosso resultado, né? Então, mapping project.
+Inclusive, deixa eu já fazer um reload aqui nas minhas skills.
+Vamos ver o que vai acontecer aqui.
+Mapear o nosso repositório com o nosso SubAgent Explorer.
+Ou seja, eu vou utilizar o modelo mais tranquilo ali,
+que é o Raico. Vou abrir aqui no preview para ficar mais fácil.
+Ok, quebrou a frente.
+Lança. O nosso SubAgent.
+Em paralelo. E
+sintetiza. Perfeito.
+Vamos testar. E vamos ver aqui qual vai ser o resultado.
+Bom. Já trouxe aqui.
+Alguma pequena amostra. Fez aqui.
+Basicamente a ideia.
+Das minhas frentes. E agora. Olha só. Os meus.
+Sub-agents aqui já sendo disparados, todos ao mesmo tempo,
+e explorando cada etapa aqui. E, obviamente,
+o que vai acontecer aqui? Se eu quiser, por exemplo,
+dar uma olhada nesse cara aqui, eu posso vir.
+Volto para o main, posso vir para cá, volto para o main, posso vir no de segurança,
+volto para o main e assim a gente vai brincando aqui.
+Vamos ver o que vai acontecer como resultado final.
+Bom, vamos lá. Todas as frentes foram lidas.
+Vamos ver aí o que o modelo Raico nos trouxe, né? Então,
+agora a gente tem o mapa do projeto e agora
+sintetizado da forma que a gente havia pedido,
+né? Então, nossa API de loja, temos aqui uma versão,
+é uma API REST com Node e Express, utilizando Postgres.
+O fluxo de requisição acontece no HTTP.
+Temos um middleware, depois ele vai para pedido, entra no serviço,
+o serviço consome a minha conexão e busca os dados lá no Postgres.
+Depois, obviamente, para responder o usuário,
+é só inverter isso aí que a gente tem o resultado,
+né? Agora, por frente, a gente tem aqui a nível de arquitetura, o entry point,
+a gente tem aqui as camadas HTTP, né?
+Dois endpoints aqui específicos e temos também o nosso serviço.
+Dado... Temos aqui somente a connection e a migration sobre testes.
+Temos apenas um teste. Exatamente isso. E o build.
+Temos ali o nosso workflow que eu havia mostrado para vocês.
+E segurança. Por onde começar vamos ver a que
+ponta que ele mostra. Então aqui a gente consegue entender stack.
+Aqui é o nosso entry point. Aqui é como tudo funciona a nível de autoindicação.
+Aqui é o caminho da requisição até a regra de negócio. Bacana.
+Aqui é onde o estado mora. O banco de dados. E aqui.
+É onde vivem os testes. Em relação a risco e prioridade. Prioridade. Crítica.
+Alta ou média. Ele também conseguiu. Fazer uma pré-classificação.
+Show de bola. E aí no final.
+Ele me deu aqui uma ordem de ataque. Build quebrado.
+Trabalhar com segredos. Hope Stays da API. E também qualidade da pipeline.
+Ou seja. A gente tem aqui um resultado.
+Bacana aí que, obviamente, com toda a customização necessária,
+tanto da sua parte para exibir os dados que você precisa,
+como também do projeto,
+a gente consegue criar algo que dá para a gente aplicar em vários locais,
+como, por exemplo, permanecer com a nossa documentação sempre atualizada,
+fazer o onboarding de novas pessoas,
+ou você fazer o seu próprio onboarding em novos
+projetos que você for buscar e tudo mais.
+Beleza? Então fica aí a dica de como que a gente
+pode trabalhar com os subagents dentro das nossas skills.

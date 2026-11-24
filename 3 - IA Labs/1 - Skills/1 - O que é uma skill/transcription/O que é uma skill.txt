@@ -1,0 +1,218 @@
+Bom, galera, e para começar, então,
+vamos entender aqui o que é uma skill de verdade, tá?
+E a gente vai falar um pouco também sobre o padrão de agent skills que
+vai nos guiar a partir de todas as aulas aqui, daqui para frente e que,
+com base neste padrão,
+a gente vai começar a construir diversas skills ao
+longo do nosso percurso aqui em conjunto,
+tá? Então, para a gente começar, vamos já falar o... que é, de fato, uma skill.
+Primeira coisa que é muito importante da gente entender
+é que a skill não é um código,
+ela é apenas um conhecimento que o Cloud ou
+qualquer outro CLI que você esteja utilizando,
+a gente pode utilizar a nomenclatura CLI ou Harness, vai ler sobre a demanda.
+E o mais importante de entender o que é uma skill é entender o que não é uma skill.
+Isso é super interessante da gente falar,
+porque existem N fatores que fazem, principalmente nós,
+desenvolvedores, criar algumas associações relacionadas ao que de fato é uma skill.
+Mas, entendendo o que não é,
+eu acabo dizendo que fica até mais fácil da gente entender o que ela é.
+Se eu fosse pontuar para vocês o que não é uma skill. A skill não é um código,
+porém, ela pode executar um código. A skill não é uma função,
+mas pode executar algo repetidas vezes, exatamente como uma função faz.
+E a skill não é um endpoint,
+por exemplo, só que ela pode consumir uma via ferramentas bash,
+inclusive ela pode consumir coisas externas.
+No final das contas, pessoal,
+a skill nada mais é que uma pasta com instruções Markdown,
+no qual o seu CLI que você escolheu utilizar vai conseguir
+ler sob demanda e executar aquilo que está nas instruções do Markdown.
+Mais para frente, a gente vai entender também que, baseado neste Markdown,
+a gente consegue trabalhar com níveis diferentes.
+de construções de skill e a gente consegue
+ir cada vez mais agregando habilidades dentro
+dela para que a gente consiga realmente criar algo
+que seja útil a nível de desenvolvimento,
+tá? Mas antes disso, acho que é importante também...
+falarmos a respeito do padrão aberto que foi gerado a partir das criações da skill. Então,
+existe um carinha que se chama agent skills,
+que ele basicamente não é um recurso proprietário,
+é uma convenção de arquivos, conforme eu havia falado para vocês,
+a gente tem ali a nossa instrução,
+o Markdown, e dentro de uma determinada pasta,
+com uma determinada estrutura que a gente deve,
+por obrigação, segui-la. A gente consegue utilizar este padrão aberto. Então,
+podemos dizer que ela é uma convenção de arquivo e ela é totalmente portátil, ou seja,
+a mesma skill pode rodar em vários locais,
+porque todos leem de um mesmo jeito, de um mesmo formato,
+obedecendo aquelas convenções de arquivo que nós havíamos falado.
+E aí você deve se perguntar, ok,
+eu entendi o que é uma skill, porém...
+Eu não entendi o que de fato eu posso fazer com isso.
+E agora eu vou mostrar para vocês o porquê e quando vocês devem utilizar uma skill,
+Perfeito? Então, começando aqui do porquê a gente deve utilizar.
+Vamos pegar alguns cenários sem skill e com skills,
+Só para ficar fácil aqui o nosso exemplo,
+Tá? Imagine então que você tem que
+Ter um determinado padrão dentro do seu time, tá?
+Foi desenvolvido um prompt que vai resolver este problema,
+Aplicando o padrão toda vez que necessário.
+Sem a skill, o que você deveria fazer?
+Você vai reaplicar este padrão a nível de time em
+Todo prompt que você pedir para a LLM resolver.
+Já com a nossa skill, a gente pode criar este padrão, ou seja, criar um wrapper ali,
+A instrução deste padrão, e este arquivo vai ser... lido sozinho na hora certa.
+Um outro ponto que é interessante é que quando você tem
+Um determinado conhecimento que vive na cabeça ali de um desenvolvedor específico,
+De um tech lead específico,
+Ele só vive no momento em que essa pessoa está disponível na empresa.
+Já com a skill, a gente consegue reverter isso,
+Fazendo com que a gente consiga versionar aquele determinado conhecimento,
+Aquela determinada habilidade dentro do Git,
+Ou até mesmo ser revisado em uma determinada PR.
+Outra coisa que veio também para ajudar bastante é aquela
+Questão do cada dev faz do seu jeito.
+Sem a skill, isso aqui acaba sendo bem claro. Porém,
+Quando nós temos uma skill que visa padronizar alguma coisa,
+Nós tendemos a ter resultados consistentes entre os processos,
+Pessoas e sessões.
+Porque a gente bem sabe... que o uso de uma LLM é algo não determinístico. Então,
+Mesmo que eu peça exatamente com o mesmo prompt,
+O meu resultado vai sempre ter um contexto diferente.
+Mesmo que a essência da resposta seja muito parecida,
+Exatamente aquilo que eu quero ver, mas a forma de resposta,
+O contexto da resposta vai ser... Sempre diferente.
+E aí com isso que a gente meio que consegue padronizar isso também, tá?
+Outra coisa que é importante é na parte
+Ali do modelo vai conseguir improvisar em passos determinísticos.
+Existem alguns momentos dentro do processo de desenvolvimento
+Que a gente utiliza diversas ferramentas determinísticas,
+Né? Como formatters, linters, pra gente atestar se determinada...
+Arquivo ou algo nesse sentido está seguindo o padrão ou não.
+Isso acaba sendo uma imposição determinística, porque ele deve,
+Obrigatoriamente, seguir um passo a passo determinístico.
+Já com a skill, o que acontece? O passo exato, ou seja,
+O padrão que você colocou, ele deve virar um script. E aí,
+Quando ele vira um script, a gente tem o quê?
+A gente tem a padronização, de fato, daquilo que está sendo verificado. E aí,
+A gente tem uma saída idêntica que a gente pode colocar dentro de
+Uma skill a partir do nível que nós estamos trabalhando de uma skill.
+A gente vai entender isso em breve. E a gente consegue,
+A partir deste resultado de script, resolver várias...
+Ações a serem tomadas.
+Outra coisa que é muito importante é que quando nós trabalhamos sem skill,
+o onboard acaba sendo uma pergunta para um companheiro de time,
+o que é interessante, porém, a todo momento acaba dificultando o processo.
+Quando a gente está utilizando uma skill,
+a gente pode basicamente fazer com que ela nos ajude neste processo.
+De onboarding. Por quê?
+Porque a gente pode criar diversas skills que vão resolver
+problemas específicos sob demanda e orientar a pessoa que está chegando,
+seja uma pessoa nova na empresa ou uma pessoa nova naquele projeto,
+para utilizar aquelas skills que vão ensinar,
+entre aspas, o Cloud a responder da forma...
+que você deseja. E quando eu digo o Cloud,
+eu estou me referindo ao CLI / Harness que você está utilizando.
+Um outro ponto que é importante também da gente entender é
+o fato de quando nós precisamos utilizar uma skill ou não.
+A primeira coisa que eu diria é a nível de reutilização. Ou seja,
+se você repete isso em vários prompts, dias, projetos,
+é muito provável que você vai precisar...
+trazer esse conhecimento para uma skill. Mas depois, durante as aulas,
+a gente vai fazer alguns modelos mentais para ajudá-los nesse processo de decisão.
+Outra coisa que é bem importante também é em relação a procedimentos não óbvios. Ou seja,
+tem como um objetivo muito específico? E aí a gente tem exemplos aqui como,
+por exemplo, uma ordem, um padrão de time, convenções a serem seguidas. E o Cloud,
+por padrão, está tendendo a não acertar isso sozinho,
+não está reconhecendo este padrão,
+então é bem provável que você precisa criar essa skill para embutir
+este conhecimento dentro do Cloud ou qualquer outro
+CLI / Harness que você está utilizando.
+E uma outra questão que é muito importante é a nível de estabilidade,
+porque se a regra muda diariamente,
+muito provavelmente você não vai precisar de uma skill. Porém,
+se é algo que foi definido ali e já dura semanas, meses e até anos,
+é bem provável que a gente vai precisar
+também padronizar isso dentro de uma skill.
+Coisa importante, tá? Este carinha aqui, que é voltado à segurança,
+sempre que a gente está fazendo o processo de criação de uma skill,
+nós temos que levar em consideração um padrão chave de segurança, que é o quê?
+Credenciais, dados sensíveis e segredos.
+Ou seja, se isso estiver tendo
+a necessidade de virar uma skill, você vai vetar na hora.
+Por quê? Porque a gente não deve, de modo algum,
+criar skills aí que envolvem esse tipo de situação, segredo,
+credenciais ou coisas neste sentido, tá bom? Então,
+já veta aí do seu to-do list coisas que envolvem esse tipo de coisa. Bom,
+outra coisa que é interessante também é a gente fazer uma pequena analogia
+do que pode virar uma skill e do que pode não virar uma skill.
+Porque acaba sendo, como eu disse, um conceito...
+um pouco difícil de abstrair no primeiro momento.
+porque existem já outras ferramentas que podem ser utilizadas,
+mas pelo fato de que skills estão em grande evidência,
+é algo novo,
+existe a tendência da gente sempre querer utilizar a
+skill sempre para resolver determinados problemas e,
+às vezes, não tem necessidade. Então, por exemplo,
+quando eu tenho aqui um procedimento repetitivo e não óbvio,
+é bem provável que eu vá precisar de uma skill para que a gente consiga...
+fazer o wrapper desta habilidade e então se tornar
+um modelo a ser utilizado a todo momento. Agora,
+quando nós temos algo que o fato é sempre verdadeiro do projeto,
+ou seja, eu preciso me assegurar que aquilo ali seja executado sempre,
+é um padrão imposto,
+é bem provável que eu vou utilizar o CloudMD
+ou até mesmo o Agents .MD para garantir...
+que isso acontecerá. Por quê?
+Porque tanto o cloud .md quanto o agents
+.md são garantia de leitura sempre durante a execução.
+Outra coisa que é importante também é acerca de regras mecânicas,
+como, por exemplo, estilo,
+formatação, linters, coisas nesse sentido.
+Você não precisa colocar isso dentro de uma skill.
+Você pode criar um script que está dentro da sua skill e a skill vai utilizar.
+Ou ainda você pode utilizar as ferramentas tradicionais que nós temos hoje,
+como, por exemplo, o ESLint, para quem é do ambiente Node.
+e fazer com que o ESLint seja executado dentro de uma skill,
+através de um bash command.
+Outra questão que é bem importante é em relação
+a acessos de sistema ou a um dado vivo.
+A gente tem já protocolos prontos para isso.
+Nós temos MCP e nós temos tools também, que inclusive,
+assim como os linters, nós podemos fazer com que a skill...
+Chame determinadas tools, chame determinados MCPs.
+Outra coisa acerca de fatos que são voláteis. Exemplo,
+versões de bibliotecas e coisas nesse sentido.
+Prefiro utilizar buscas via tool ou até mesmo a própria web. A gente tem aqui,
+novamente, padrões já estabelecidos. Obviamente,
+a skill pode utilizar tool de web search para que a gente faça um processo de...
+busca acerca de uma documentação e tudo mais,
+e elabore um guia técnico, uma documentação, um plano de implementação.
+Mas tudo isso a skill faz o uso, ela não cria de fato. E por fim,
+ação explícita com efeito colateral. E aí eu dei o exemplo aqui de deploy.
+Aí nós temos a skill como uso principal,
+porém, utilizando aqui uma annotation.
+ou uma propriedade dentro do seu front matter,
+que a gente vai entender o que é isso,
+que é o DisableModelInvocation. Aqui é o ato de fazer deploy, o passo a passo.
+Claro, existem coisas mecânicas aqui dentro que
+a gente pode utilizar outras ferramentas,
+mas a gente tem um passo a passo de
+Instruções que a gente pode automatizar via skill.
+Então, pessoal, até o presente momento,
+a gente falou um pouco sobre o que é uma skill de fato,
+para que a gente deve utilizar e tudo mais. Agora,
+a gente vai entrar em alguns aspectos mais técnicos que envolvem o uso da skill,
+que é um carinha que se chama Front Matter,
+e um outro carinha que se chama Progressive Disclosure.
+Entendendo esses dois caras aqui,
+as coisas passam a fazer sentido. Na hora,
+porque são itens muito importantes para que a
+gente consiga desenvolver uma skill de fato,
+uma skill boa, tá?
+Só que antes da gente começar a falar sobre eles,
+eu gostaria de mostrar para vocês uma pequena skill, bem rápida,
+só para a gente associar a tudo que foi falado aqui a uma prática.
+Vai ser meio que o nosso Hello World ali da skill. Fechado? Então,
+vamos dar uma olhada na nossa próxima aula sobre isso aí.
+E a gente dá continuidade depois no Front Matter e no Progressive Disclosure.

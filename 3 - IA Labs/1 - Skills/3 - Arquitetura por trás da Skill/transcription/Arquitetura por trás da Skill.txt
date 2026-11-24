@@ -1,0 +1,200 @@
+Bom pessoal, então dando continuidade aqui,
+dessa vez eu decidi trazer para vocês uma skill já pronta, tá?
+Para que a gente consiga associar com uma realidade de fato,
+beleza? Então como vocês podem perceber,
+neste momento nós temos aqui uma skill de chamada Team Code Review.
+E aí eu tenho o meu arquivo skill.md e
+também tenho aquelas outras pastas que eu havia citado para vocês,
+que são... A parte de scripts,
+a parte de referências e também eu tenho aqui a parte de avaliação,
+para saber se realmente minha skill está funcionando da forma que eu quero ou não,
+perfeito? Mas abrindo aqui o nosso skill.md,
+eu queria mostrar alguns itens que são importantes
+para a gente entender também sobre...
+como funciona internamente a arquitetura dessa execução,
+da leitura da skill, perfeito?
+Primeira coisa que eu queria mostrar para vocês é em relação ao front matter.
+Lembra que eu falei que é o nosso YAML ali,
+no qual eu tenho alguns metadados, como, por exemplo,
+o nome da minha skill, description e allowed tools, perfeito?
+Posso também ter algumas outras informações aqui, como path,
+que eu vou dizer... aonde essa skill deve ou não rodar,
+dentre outras informações, tá?
+Mas o ponto que eu quero tocar aqui neste momento é falar
+um pouco de como é que vai funcionar essa questão da leitura,
+execução, decisão dessa execução por meio do Cloud Code, tá?
+Vou utilizar aqui o Cloud Code porque acaba sendo mais utilizado aí como base,
+perfeito? Então, a gente pode, galera, é...
+definir isso em três fases principais. Então,
+a gente tem aqui fase 0, fase 1,
+posteriormente vou colocar a fase 2 e a fase 3.
+Na verdade, acaba sendo quatro fases. Vou botar aqui logo.
+E o que acontece?
+Cada uma dessas fases vai ser responsável por uma coisa específica.
+É sobre isso que eu vou falar neste momento.
+Primeira parte. Fase zero. Aqui é a fase de startup.
+Ou seja, quando eu venho aqui e inicio o meu cloud.
+O que vai acontecer aqui?
+Ele vai fazer o processo de startup e vai executar um processo de indexação.
+Ou seja, isso vai acontecer uma vez todas as vezes que eu inicio uma nova sessão.
+Perfeito? Então, se... eu abro uma nova sessão,
+automaticamente ele já vem aqui e faz o processo de indexação e vê que,
+opa, eu tenho ali a presença de skills. Tanto que, se eu vim aqui nessa sessão,
+colocar uma barra Team Code Review,
+eu já consigo utilizar a minha skill, perfeito? Então, fase 0,
+fase da startup e fase da indexação, perfeito? Show!
+Agora, nós temos também a fase 1.
+E essa fase 1 é uma fase interessantíssima,
+que é a fase de roteamento e decisão. Aqui, o que vai acontecer?
+Lembrando o nosso front matter, que eu havia falado para vocês neste momento.
+Pois é, aqui eu tenho o name, eu tenho o description,
+E eu tenho diversos outros parâmetros que eu posso utilizar aqui,
+que logo mais a gente entra em aprofundamento acerca disso.
+Mas, neste momento... Na fase de roteamento barra decisão, vamos colocar assim,
+é o momento em que eu peço que o
+meu agente, no caso o Cloud Code, que aqui a gente vai chamar de Harness,
+que é o cara que vai encapsular toda a LLM,
+vai fazer o quê? Ao pedir alguma coisa, como por exemplo, revise...
+as minhas mudanças que estão em staged, ele vai fazer o quê?
+Ele vai pegar esse carinha aqui e vai começar a olhar a minha skill
+para ver se a descrição desta minha
+skill vai classificar para uma execução ou não.
+E o ponto que é importante
+aqui dizer que a decisão acaba sendo... do próprio modelo,
+a decisão de execução ou não.
+Por isso que é tão importante a gente ter esse processo, por exemplo, de EVOL,
+no qual a gente consegue fazer uma garantia de que, de fato,
+aquilo ali vai disparar na hora certa ou não vai disparar em horas erradas,
+tanto para um quanto para o outro.
+Então, por isso que a descrição aqui, ela literalmente é a feature classificadora.
+É ela que vai nos proporcionar o roteamento e essa decisão de,
+opa, vai ou não vai ser executado.
+E um ponto que é importante ser analisado é
+que aqui embaixo nós temos o nosso corpo,
+veja só. E quando isso acontece,
+automaticamente nós ainda não lemos o corpo,
+porque eu só fiz um pedido. Então, o que está acontecendo aqui no primeiro momento?
+Eu tenho a minha fase de startup e indexação, na qual eu tenho ali,
+O Harness Cloud Code varrendo toda a minha estrutura de projeto.
+Neste caso em específico, nessa primeira fase,
+ele vai varrer a parte das pastas .cloud e as informações aqui dentro.
+Posterior a isso, eu vou para a fase 1,
+que é a fase de roteamento e decisão.
+Neste momento, baseado na minha description, no meu front matter,
+ele vai fazer a decisão se executa ou não executa.
+E a partir disso,
+o que vai acontecer? Eu entro na minha fase 2.
+E essa minha fase 2 é a fase de carregar o corpo.
+Ou seja, carregar de fato as instruções da minha skill.
+Então, quando foi decidido...
+acionar aquela skill, o modelo vai emitir uma tool call.
+E esta tool call é uma tool call de leitura.
+E como que eu sei que ele vai emitir isso? Simples,
+pessoal. Lembrando o nosso front matter, voltando nele de novo,
+olha só, nós temos aqui o nosso allow tools.
+E aqui eu estou dizendo o seguinte, eu tenho read, eu tenho rep,
+eu tenho bash. Da mesma forma que na skill eu digo
+o que ela pode usar e quais são as tools que ela internamente vai poder usar,
+o meu Harness consegue utilizar essas tools para fazer a minha leitura do corpo e,
+de fato, fazer essa carga das instruções para, então,
+começar o processo de execução. E aí, quando acontece o meu processo de execução,
+Nós entramos na fase 3. Na verdade,
+Aqui acaba sendo... a fase 4, que é a parte da leitura, de fato,
+Só que é uma leitura de forma condicional.
+E essa leitura de forma condicional vai
+vir de encontro com o que nós escrevemos,
+com as instruções que foram passadas. Então, o que acontece?
+A cada read, uma tool é chamada e note...
+Que aqui eu tenho steps, por exemplo, nesta skill em específico,
+Eu tenho steps. Não que toda skill eu precise ter esse step,
+mas aqui o modelo vai ter essa decisão.
+Então, ele vai interpretar isso aqui,
+vai fazer o load do meu contexto, vai interpretar isso aqui,
+vai pegar as minhas chains que estão no staging. Nesse caso,
+Nesse projeto ainda nós não temos nada de staging.
+Depois, ele vai ler o step 2, o step 3, assim.
+E tem um ponto aqui que é muito importante,
+que o modelo, neste caso, ele está apto a decidir se ele vai, de fato,
+seguir tudo isso aqui ou não. E aí, novamente,
+nós entramos com o teste para garantir se realmente
+o resultado está sendo esperado ou não.
+Da mesma forma que a nossa skill aqui de referência, que é o...
+CodeReview, eu posso passar também links nos quais
+eu pego os meus arquivos de referência.
+E aí, o modelo vai decidir ou não se ele vai fazer o download no contexto,
+se ele vai ler e tudo mais.
+Então, step zero aqui, o que está acontecendo?
+Eu já deixo uma instrução que é requerido que ele faça a
+leitura e acesse a linha de referência, tema, convenção e leia esse arquivo também.
+E aí, depois, ele tem que vir aqui,
+desde que nós temos aqui algum
+tipo de alteração que afete input,
+autenticação, consultas ao banco de dados ou requests externas. Se isso acontecer,
+então eu tenho que vir aqui e ler. E o que tem aqui dentro?
+Basicamente, nós temos o quê? Convenções, neste caso, convenções de WASP e...
+Aqui, convenções do nosso time, como por exemplo, arquitetura, naming, errors, teste,
+como tudo vai funcionar a nível de projetos, convenções do nosso projeto.
+Então, veja bem que se a gente voltar aqui,
+a gente meio que consegue gerar um modelo mental,
+ou seja, eu indexo, eu tomo a decisão,
+eu carrego as informações como necessárias e a
+partir disso, eu capturo os resultados,
+faço as leituras e... crio as minhas condições. Se você reparar bem,
+bate muito com aquilo que nós estávamos falando lá das questões dos níveis,
+né? Ou seja, se a gente retorna aqui no nosso guia,
+deixa eu fechar esse cara rapidinho, a gente percebe que o nível 1,
+ele vai fazer o quê? Ele vai ler só a parte de front matter.
+Aqui, lá no nível 2, a gente tem o carregamento do corpo,
+né? Onde ele vai ler, ou seja...
+associando às fases. E, por fim,
+o nível 3, onde a gente consegue atingir referências.
+Scripts e tudo mais que pode acontecer aqui dentro. Só que,
+Até aqui, eu acho que está super claro, mas temos
+ainda a fase 4 e a fase 5.
+Eu dividi elas em situações um pouco diferentes.
+Na verdade, a gente pode até colocar a fase 3 aqui embaixo também.
+E aí eu vou completar com algumas informações que são bem importantes,
+Beleza? Por quê? Porque como eu disse,
+Na fase 3 nós temos ali uma leitura de forma condicional, ou seja,
+Ele vai buscar se existem referências e tudo mais
+e vai me trazer quando for necessário.
+Já quando nós estamos falando da fase 4,
+Basicamente, nós estamos nos referindo a scripts / execução. E aí,
+Retornando aqui na nossa skill, você pode perceber que já no step 1,
+Isso aqui é a nossa instrução,
+É o nosso corpo, tá? Na nossa instrução, então,
+A gente já tem primeiro as referências,
+Depois a gente pede para executar os scripts que estão
+aqui dentro da nossa skill de code review. Para quê?
+Para que eu colete as diferenças em stage, beleza? Então,
+Nesta fase aqui, ele vai fazer a execução desse meu script.
+E por fim, qual vai ser a fase 5? A execução de
+Fato da tarefa. Ou seja,
+Ele vai passar por todas essas etapas para me devolver lá
+Na fase 5 o resultado da tarefa que a skill está resolvendo.
+Então, para a gente finalizar, o que nós teríamos aqui em relação a ciclos?
+Para ficar fácil de ser entendido. Eu poderia ter, por exemplo,
+Uma skill que é muito mais simplificada, no caso,
+A minha pasta e o meu arquivo skill.md,
+Que funcionaria no seguinte ciclo. Quando eu digo ciclo aqui,
+São ciclos de fase. Então, vai lá na fase 0,
+Depois vai para a fase 1,
+Depois vai para a fase 2 e automaticamente eu teria a minha fase 5.
+Seria um dos ciclos. Poderia ter.
+Um outro tipo de skill. Que vai, fase 1,
+Fase 2,
+Faz a leitura. E vai para a fase 5. Poderia ter.
+Mais um aqui no meio,
+Que é o que está acontecendo nesta skill que nós estamos utilizando.
+De exemplo. Então, você repare que,
+A gente consegue,
+Criar diversas formas,
+Cenários e, consequentemente, habilidades para a gente
+tratar quando nós estamos falando de skill.
+É importante que a gente entenda essa arquitetura por trás
+para que a gente consiga entender realmente como ela vai funcionar.
+E, obviamente, estou usando aqui o harness do Cloud Code como referência,
+mas... O processo é muito similar em todos os outros.
+Entendido essa parte mais técnica, mais arquitetural,
+agora a gente vai partir para uma outra etapa que
+já é mais voltada para a criação de fato da skill.

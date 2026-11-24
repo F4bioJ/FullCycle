@@ -1,0 +1,247 @@
+Bom pessoal, então vamos dar continuidade aqui e dessa vez a gente vai falar um
+pouco sobre boas práticas quando nós estamos trabalhando
+aí na criação das nossas skills,
+tá? Até então a gente falou um pouco sobre boas práticas,
+porém foi bem específico ali em algumas partes do Front Matter, tá?
+E nessa aula eu queria focar exatamente a nível da skill de forma geral,
+porque também existem alguns pontos que a gente precisa ter atenção
+no momento que a gente vai trabalhar neste processo de criação. Então, vamos nessa.
+Primeira coisa que é importante a gente entender é que existem aqui seis itens. Inclusive,
+já criei aqui um novo arquivo.
+Vou abrir ali na preview para ficar mais fácil
+a gente conversar sobre cada item desse.
+Alguns vão acabar sendo repetitivos. Por quê?
+Porque a gente já começou a falar sobre isso,
+mas é válido para a gente revisar e dar mais ênfase.
+Então, a primeira coisa é em relação à nossa description.
+que tem a necessidade de ser específica e ter os nossos gatilhos concretos, como,
+por exemplo, o do not use e também o must use e coisas relacionadas.
+E, obviamente, se algo for vago,
+ele vai ou não disparar ou disparar demais sem a necessidade.
+A partir disso, nós temos o ponto 2, que é uma skill é igual a uma responsabilidade.
+E aqui é um ponto que eu gostaria de tocar.
+E entrar um pouco mais dentro disso aqui,
+porque essa questão pode causar algumas dúvidas.
+Aqui nós estamos falando de responsabilidade.
+Existem projetos que uma responsabilidade pode ser mais de uma habilidade.
+E por que eu estou falando isso? Porque skills é habilidade. Então,
+muitas vezes nós pensamos que eu tenho que tratar isso aqui de forma muito granular.
+E aí, a gente tem que ter esse discernimento que, às vezes,
+o meu granular é diferente em um projeto que é diferente do outro projeto,
+ou que é diferente da granularidade lá do seu amiguinho,
+do seu companheiro de trabalho. Então,
+como é algo muito particular essa questão de granularidade,
+a gente deve primeiro fazer a nossa triagem mental.
+E entender o que de fato é uma responsabilidade.
+Mesmo que envolva duas habilidades.
+Porque a partir disso a gente consegue trabalhar com skills,
+sub -skills e coisas nesse sentido.
+Inclusive é algo que a gente vai falar daqui a pouco sobre isso.
+Item 3. De boas práticas.
+A gente precisa já tentar ao máximo que nós
+conseguirmos empurrar o peso de toda a nossa skill.
+para dentro dos itens de nível 3,
+que seria a parte de referências e scripts. Ou seja,
+com isso a gente garante que o nosso corpo da skill fique curto,
+fique imperativo, tenha um checklist ali, critérios de aceite,
+né? E caso a gente tenha algum tipo de convenção,
+spec, coisas nesse sentido, a gente vai...
+acabar colocando dentro dos itens de nível 3,
+como referência, scripts e coisas nesse sentido.
+O item 4 aqui é muito importante também,
+que é acerca de quando priorizar
+o uso de scripts e prosa,
+que é basicamente a nossa instrução markdown.
+E a análise que a gente deve tomar é o seguinte,
+se por acaso eu tenho algo que precisa ser determinístico,
+é muito provável que ele vai virar um
+script dentro daquele bundle que nós estamos criando.
+Por quê? Porque isso garante um resultado consistente. Então,
+toda vez que a gente for criar uma skill,
+ponto importante são esses dois itens. Primeiro,
+eu faço a minha skill da forma que eu acho que ela deve ser. testo ela,
+mas depois eu já vou tentando jogá -la para o nível 3,
+separando ali as minhas referências,
+aquilo que pode virar referência,
+vou verificando se existe a necessidade da inclusão de scripts internados locais,
+se sim, já aparto também e tento sempre visar o meu corpo o menor possível, tá?
+Finalizando, nós temos os itens de segurança, ou seja,
+se você estiver executando ou utilizando qualquer tipo de skill,
+Alheia, isso serve tanto para skills que você baixa e acha na internet,
+como também scripts de terceiro que você vai utilizar dentro da sua skill.
+É muito importante que a gente inspecione antes de
+trabalhar a instalação ou qualquer coisa nesse sentido.
+E, óbvio, em questões de segurança,
+a gente tenta sempre trabalhar com allowed tools, porque dessa forma,
+mesmo que existam determinados scripts que sejam maliciosos,
+a gente consegue, através do allowed tool,
+Dizer somente aquelas ferramentas estarão permitidas nessa skill. Logo,
+é uma camada a mais de segurança.
+Para finalizar, a parte de versionamento dentro do nosso projeto.
+Por padrão, assim como o nosso código,
+a gente tende a versionar a nossa skill via Git. E toda vez que existe uma mudança,
+o que acontece? A gente faz essa mudança via PR.
+E tentamos sempre manter essa consistência
+exatamente como nós trabalhamos no código.
+Vida e regra, pessoal. O negócio aqui é o seguinte.
+Trate as suas skills como código. E aí vai funcionar muito bem.
+E agora, para a gente finalizar aqui,
+eu queria passar na prática com vocês alguns itens
+desse aqui para que a gente consiga entender melhor.
+O primeiro deles a gente vai aqui dentro do nosso exemplo,
+que é uma skill chamada Dev Helper.
+Já fiz isso aqui pensando
+no fato de trazer más práticas,
+mas isso aqui inclusive é bem comum de se acontecer no dia a dia.
+Vou fechar aqui a minha barrinha de
+navegação e vamos abrir no nosso editor. Então veja só.
+Dev Helper, qual que é a minha descrição? Muito vaga, né? Ou seja,
+ajuda com código, ajuda com revisão, testes e outras coisas do dia a dia.
+Eu acho que está mais do que claro que basicamente o que foi pedido aqui,
+Se eu peço o Cloud para revisar, se eu peço o Cloud para implementar algo,
+para testar alguma coisa,
+a possibilidade dessa skill aqui ser triggada é muito grande, né?
+E aí o que vai acontecer? Basicamente, eu tenho aqui o corpo da minha skill.
+Repare que ela nem é tão grande assim, certo?
+Só que o primeiro ponto é que
+tem muitas coisas dentro de apenas um local,
+ou seja, ela tem que revisar código, ela tem que gerar teste,
+ela tem que gerar scaffolding, é muita coisa.
+O ideal neste caso aqui é o que?
+A gente começar a fazer essa separação de tal forma que...
+A parte de geração de scaffolding seja uma coisa,
+a parte de geração de teste seja outra coisa,
+a parte da revisão de código seja um outro local.
+E aí a gente começa a navegar em mares um pouquinho mais escuros,
+no qual a gente pode fazer que dentro dessa nossa skill,
+por exemplo, de revisão de código,
+a gente tenha a partir dela várias outras sub-skills.
+No qual existem as convenções específicas de cada camada.
+E aí eu faço uma skill chamar uma outra skill
+que verifica as convenções para então conseguir gerar o nosso resultado.
+Testes, as mesmas coisas. A gente tem muita convenção de teste.
+Eu poderia ter skills,
+a depender da granularidade que a gente está trabalhando,
+específicas para Unity Test, Integration Test,
+end-to-end test,
+vai depender muito de como realmente eu quero trabalhar e abordar isso aqui.
+Da mesma forma que o meu scaffold trabalha-se da mesma forma.
+Veja bem, eu tenho novos serviços,
+mas eu posso ter novos repositórios, novos serviços, novos controladores,
+novos testes, novos adapters e coisas nesse sentido.
+Só que, para cada um desses carinhas aqui, eu tenho as minhas próprias convenções.
+Eu tenho as convenções do meu framework que
+estão ainda acima das minhas próprias convenções.
+Então, repare que neste caso aqui,
+a gente acaba agrupando
+uma responsabilidade que não
+faz nem sentido estar em somente uma skill.
+Inclusive, se você quiser fazer um teste,
+a gente pode fazer algo mais ou menos nesse sentido aqui.
+Deixa eu só pegar o nome dela aqui.
+Vamos neste Cloud aqui. E vamos fazer o seguinte. Vá dentro da skill.
+Dev Helper. Após isso.
+Verifique em quais pedidos. Do dia a dia. Por exemplo.
+Essa skill. Dispararia. indevidamente.
+Me fale o motivo. E ao final. Exiba uma tabela.
+Vamos ver o que vai acontecer aqui.
+Bom, continuando. Vamos dar uma olhada aqui o que aquela me trouxe.
+Temos um problema central.
+Então, o que está faltando aqui? Está faltando os nossos 'do not use'.
+Acaba indo para sobreposições de skills um pouco mais especializadas,
+que é aquilo que a gente havia falado sobre
+a granularidade que a gente quer trabalhar.
+E aí, a gente tem aqui alguns pedidos. Então, me ajude a debugar esse erro.
+Provavelmente daria ali um falso positivo, refatorar uma função,
+escrever mensagem, olha só, fazer revisão.
+Tudo isso ele poderia disparar. Inclusive, ele faz um resumo dos 12 itens pedidos aqui,
+somente dois que realmente fazem parte ali do que ela deveria fazer.
+E aqui eu pedi o porquê de cada coisa, né?
+Conforme a gente já havia dito ali nas nossas best practices,
+descrição, muito abrangente.
+Skill faz um monte de coisa e não faz nenhuma muito bem.
+E tem aqui um item coringa, que é outras coisas do dia a dia de dev.
+Então, repare que até o próprio Cloud basicamente
+consegue entender aquilo que foi feito errado.
+E claro, você,
+enquanto desenvolvedor que está ali trabalhando com as suas skills,
+pode utilizar a ferramenta para ajudar no processo de criação.
+Voltando aqui, agora a gente vai falar da parte boa.
+Da coisa, né? Afinal de contas, mostrei a parte ruim,
+temos que mostrar também a parte boa. E aí aqui, galera, basicamente,
+eu compartilhei essa ideia de testes, tá?
+E criei um test generation.
+Então, na nossa skill aqui, veja bem,
+que eu já tenho uma descrição muito mais desenvolvida,
+tenho aqui os meus allowed tools, tá? E baseado nisso,
+eu tenho de novo,
+a presença dos meus passos a passo. Tenho a execução de
+um script. Vamos ver o que esse carinha aqui vai fazer. Então, test generator,
+primeiro passo: temos que achar os itens que estão sem testes. Para isso,
+temos aqui o script, que é um bash, que vai
+fazer uma busca determinística por itens relacionados a .test e
+.spec. Depois que ele tem essa lista, tenho a minha
+pequena convenção de time. Nota que ainda são itens bem pequenos,
+então, por isso, isso está dentro do corpo da skill. Conforme isso aqui cresce,
+obviamente, o que vai acontecer? Vai a todo momento gerar novos itens,
+novos dados e há a necessidade de jogar dentro
+de uma referência específica e linkar aqui dentro.
+E passo 3,
+baseando-se nos critérios que ele encontrou aqui,
+mais os critérios de boas práticas da convenção do time, eu vou, então,
+começar a criar o código-fonte do arquivo de fato, tá? Então,
+vamos lá. Vamos fazer aqui o seguinte. Vou navegar para o good.
+Vou executar aqui a minha skill, né? Mas, inclusive,
+deixa eu alterar aqui na aula também, porque está incorreto, né?
+Aí, eu vou fazer um reload das skills.
+Vamos ver se ela aparece aqui. Show de bola.
+Então, vamos testar dessa forma aqui mesmo, tá?
+Já vou invocar de forma direta. Óbvio,
+poderia também disparar ali pela minha descrição,
+Mas neste caso, apenas para demo,
+Fica mais simples a gente fazer desse jeito. Então, aguardando.
+E olha só, já temos testes aqui sendo produzidos, tá? Então, ela já conseguiu rodar.
+O script, identificar que esses carinhas aqui estavam sem
+itens de teste.
+Baseado nisso, ele
+já conseguiu escrever os nossos testes.
+Vamos dar uma olhada como é que ficou? Então,
+a gente tem aqui total carrinho e aplicar cupom.
+Se a gente der uma olhada aqui, temos o total carrinho, temos
+o item aqui de teste zero, quando o carrinho está vazio,
+quando os itens forem nulos,
+somar o preço, muito bom, e também somar as quantidades.
+E se a gente vem agora no aplicar cupom, aqui,
+quando a gente tem nenhum tipo de alteração,
+nesse caso aqui, o total 100, alteração de percentual,
+aplicar de fato o percentual e zerar quando é 100%. Então,
+batendo exatamente com aquilo que nós criamos de código.
+Usuário, temos buscar, salvar e o render.
+Então, vamos dar uma olhada aqui.
+Consultou. Olha só que interessante.
+Como aqui eu estou trabalhando com o banco de dados,
+ele já fez o meu mock, né? Então,
+ele já está utilizando, de certa forma, boas práticas, óbvio.
+E dentro da skill,
+eu poderia desenvolver essas boas práticas de forma muito mais assertiva,
+mas só para a gente conseguir entender o nível de boa prática,
+Aqui já está bem bacana.
+Depois, montou
+a query. Vamos ver aqui no salvar usuário.
+Mais uma vez, trabalhando com mock. Muito bacana.
+Aqui também, trabalhando com mock a nível de erro. E o render card,
+também trabalhando com mock. Ou seja,
+tudo bem legal e bem funcional. E a questão principal.
+Estamos utilizando aqui exatamente aquilo.
+que foi convenção dentro da nossa skill. Então,
+o contraste daquilo que eu havia passado para vocês é,
+de um lado, a gente tem uma skill totalmente desorganizada,
+que não segue nenhum nível que a gente havia conversado, e de outro,
+a gente tem um resultado já alinhado com as nossas expectativas.
+Parece, num primeiro momento, algo muito simplista, mas...
+Seguir esse passo a passo mental que a gente vem
+criando desde o início do nosso bate-papo,
+vai te trazer isso com o tempo,
+né? Uma facilidade enorme de criação,
+de exploração dessas ideias que podem virar skills,
+beleza? Então, é isso aí, galera.

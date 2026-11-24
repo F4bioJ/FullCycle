@@ -1,0 +1,97 @@
+Bom, pessoal, uma outra ferramenta que é muito interessante da
+gente trabalhar é a utilização de prompts, né?
+E como eu mostrei em uma das aulas,
+a gente tem ali o nosso prompt, por exemplo, de triagem de skills.
+Mas a gente não consegue, não existe só ele, na verdade.
+A gente pode construir vários outros prompts que vão nos
+ajudar a trabalhar com a criação das nossas skills.
+Isso de forma bem isolada, né?
+do uso do Cloud de fato. E para demonstrar isso para vocês, o que eu preparei?
+Preparei mais dois prompts,
+no qual vai nos ajudar a trabalhar ali com a parte de descrição.
+Então, a primeira peça aqui que nós temos é o nosso prompt para gerar uma descrição.
+Description, gerador de description.
+Já tenho esse carinha aqui.
+Basicamente, a ideia é que eu falo que ele é
+um cara responsável por escrever a descrição de uma skill,
+digo que é um classificador, e aqui tenho as minhas entradas.
+Gero a minha description utilizando a fórmula das
+quatro partes que eu já havia citado para vocês.
+Beleza? Essa seria a nossa primeira forma de se trabalhar.
+Vamos pegar aqui um exemplo das skills que nós temos, tá?
+E vamos aplicar esse mesmo prompt dentro das nossas skills aqui,
+tá? Lembrando que isso aqui basicamente é só para nos auxiliar,
+tá, pessoal? Você pode vir aqui na própria AI e pedir para que ele gere a sua skill,
+pedir para que ele gere a sua descrição.
+E assim por diante. Logo, inclusive, a gente já chega nesta etapa.
+Então, para nos auxiliar aqui, vamos fazer o seguinte.
+Vamos pegar aqui a nossa skill de message commit. E eu vou fazer o seguinte.
+Leia a skill message
+commit e me responda o
+que a skill faz e o que a skill produz.
+Esse cara aqui não precisa neste primeiro momento. Vamos
+aguardar aqui. O resultado.
+E entender. O
+que vai ser apresentado para nós.
+Prontinho. Temos aqui o resultado.
+Show. Então o que a skill faz. E o que ela produz. Eu já tenho aqui.
+Vou basicamente copiar e colar. Esse
+aqui. Vou retirar por enquanto.
+Vou pegar isso aqui.
+E vamos ver. qual que vai ser o resultado.
+E aí, olha só que legal,
+ele já me traz novamente uma skill aqui, na verdade uma descrição, né?
+Já muito mais evoluída, vamos dizer assim.
+E aí, o que eu posso fazer?
+Aplique essa
+descrição na
+skill message commits, porém, traduza para inglês.
+Que é aquilo que eu havia conversado com vocês. A gente trabalha em português.
+Onde a gente se sente mais confortável. E pede para aplicar. Em inglês. E aqui.
+Prontinho. Já temos. O nosso. Description.
+Aplicado. Agora imagina o seguinte. Imagina que eu quero. Realizar. Uma.
+Batalha. Para entender. Como que eu posso melhorar ainda mais. essa minha descrição,
+tá? Pra isso, eu tenho um outro prompt, ok?
+Que é este carinha aqui, que vocês também podem utilizar.
+E aí, ele tem como principal objetivo o quê? Melhorar a nossa description.
+E aí, através disso,
+ele vai fazer três passos essenciais,
+tá? E no final,
+mais dois apenas pra pontuar. Então,
+o primeiro passo vai montar um conjunto de teste,
+depois ele vai pontuar as restrições atuais,
+depois ele vai reestruturar mirando nos erros baseados na pontuação feita acima.
+E no passo 4 e 5,
+basicamente, vai pontuar de acordo com as novas versões e me dar a vencedora.
+Então, eu posso pegar esse cara aqui, voltar aqui e agora...
+que eu estou naquele contexto ainda de mudança da minha description,
+eu posso vir aqui e pedir para que ele faça esse processo de pontuação.
+Olha só que legal. Temos aqui já o resultado. Vamos ver qual
+foi o resultado.
+Então, passo 1, criei aqui meu dataset.
+Dá uma olhada aqui.
+Criei as minhas negativas.
+Passo 2, fiz o processo de scoring.
+Passo 3, reestruturei, baseado no meu scoring.
+E passo 5, tenho aqui as minhas versões.
+Neste caso, olha só o que aconteceu.
+Ele foi já lá no meu arquivo e já fez o meu update.
+E repare o seguinte, que ele só tirou um pedaço.
+Então, através desse prompt, eu consegui reclassificar isso,
+de tal forma que...
+A RLM analisou e falou, opa, tem coisas boas,
+mas podemos melhorar dessa forma aqui,
+retirando esse pedaço e adicionando isso aqui. Se a gente for na GIF,
+vamos dar uma olhada aqui na nossa GIF, na verdade não vai ter a GIF em si,
+pelo fato de que a gente ainda não tem nenhum comentário, né?
+Mas se a gente comparar com o nosso estado inicial,
+a gente percebe que já temos aqui uma descrição muito...
+mais assertiva, seguindo aquele formato mental que nós havíamos passado. Então,
+apenas aí uma forma também de vocês aprimorarem a
+descrição de vocês de uma forma um pouco mais automatizada.
+Lembrando que tudo que eu estou passando aqui nessas questões de prompt e tudo mais,
+a gente consegue fazer em conjunto com a LLM também.
+Inclusive pedir para que a LLM gere esses prompts para a gente.
+Mas é ideal que a gente crie essas triagens dentro da nossa cabeça,
+para a gente tomar decisão correta e pedir para que as skills,
+a forma de criação seja feita da melhor maneira possível. Beleza?

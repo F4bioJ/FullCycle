@@ -1,0 +1,174 @@
+Bom, pessoal. Então, dando continuidade aqui, vamos imaginar o seguinte.
+Agora que a gente tem nosso Pendency Create aqui com um script,
+vamos imaginar que eu quero agora adicionar a minha questão de referências, tá?
+E fazer com que eu extraia aquela política e
+faça com que aquela política seja jogada em uma referência.
+O que eu tenho que fazer? Eu vou pedir,
+então, para alterar a minha esquina. Na prática,
+Vai ser dessa forma.
+Analise passo a passo a
+skill existente chamada Tenancy Page.
+Atualmente a política, vou
+dar uma olhada aqui, como está sendo o nome de classificação. Está
+dentro do skill .md.
+Seguindo as práticas,
+faça
+referência, crie diretório.
+reference que
+gere um arquivo específico de referência. Após isso,
+atualize skill .md contendo essa referência e
+vamos ver o que vai acontecer.
+Então, a partir de agora, o que nós estamos fazendo aqui? Nós estamos usando
+e abusando o lado progressive disclosure.
+Então, vamos ver o que vai ser aqui. O resultado.
+Vou mover as minhas classificações lá para dentro de reference.
+Aparentemente, vai dar certinho. Já está criando aqui.
+Perfeito. Vamos só verificar se ele vai fazer a referência dentro do nosso skill.
+Porque, afinal de contas, se eu tiro daqui,
+eu tenho que fazer o update do meu skill .md linkando com a minha referência.
+Vamos dar uma olhada aqui.
+Show de bola.
+E vamos ver.
+Qual foi o resultado? Temos aqui. Reference. Perfeito.
+E aqui. Deixa eu ver. Se a gente tem.
+O nosso link. E temos sim. Está aqui. Reference.
+Classification. Policy. Perfeito.
+O que a gente vai fazer? Vamos rodar.
+E ver. A nossa skill rodando. Para a gente ver. Qual vai ser. O resultado atual.
+Está aí. Nosso resultado. E conforme a gente pode perceber,
+Está bem coerente com aquilo que já havíamos visto, né?
+Vamos só ver o que vai ter aqui de baixo e também das nossas recomendações.
+Tô de bola. Perfeito, pessoal. Então, até aqui, tudo certo.
+O que a gente vai fazer a partir de agora?
+Agora que nós temos aqui uma skill N3 com referência,
+script e o nosso skill .md, nós vamos adicionar algo um pouco a mais, tá?
+Bom, como agora... Eu já tenho o processo de classificação acontecendo.
+Eu tenho que jogar isso aqui para algum lugar.
+Afinal de contas, só classificar não faz muito sentido.
+Preciso ter, de fato, uma ação para isso depois ser ajustado e tudo mais.
+Então, o que a gente vai fazer? Eu vou vir aqui no Git.
+Gerei este repositório.
+Para esta demo, vou utilizar o GitHub CLI.
+Podemos utilizar GitHub CLI,
+podemos utilizar API do GitHub via Personal Token,
+ou se você preferir também, podemos utilizar o próprio MCP do GitHub,
+que através de Docker ou da própria instalação a gente consegue fazer o uso.
+No meu caso, vou utilizar o CLI,
+que acaba sendo algo que todo mundo já tem na
+sua máquina e acaba sendo mais fácil de demonstrar para vocês.
+Mas fiquem à vontade para escolher aquilo que... melhor,
+com vocês. Então, o que eu vou fazer?
+Como eu disse, criei um repositório,
+vou agora botar essas informações dentro do meu repositório,
+aquele projetinho e tudo mais, junto, inclusive, com o Cloud Skills,
+e vamos rodar. Após isso, pego o relatório,
+abro uma nova issue.
+E, obviamente, quem vai fazer tudo isso vai ser a nossa skill.
+Beleza? Então,
+Vamos lá. Voltando aqui para o nosso VS Code, a gente vai fazer o seguinte.
+Agora, faça a
+seguinte alteração na skill.
+Após o processo de classificação e
+recomendação, utilize a
+ferramenta GH GitHub CLI para...
+Criar uma nova ficha contendo
+todas as informações e recomendações.
+O ponto importante aqui é que eu já estou logado no meu GitHub.
+Então, a única coisa que eu preciso fazer aqui é, primeiro,
+garantir que eu esteja logado, já com tudo certinho, e depois,
+obviamente, jogar o meu projeto para o meu repositório remoto.
+Que ainda não aconteceu. E a gente vai fazer isso logo mais. Então
+dando continuidade aqui.
+Pontos de atenção.
+Relacionado a.
+Idpotência. Ou dedup. Se a issue. Já existir.
+Apenas atualize -a. E
+se não existir. Será necessário. A criação.
+Adicione isso como.
+um novo passo da nossa skill.
+Vamos ver o que vai acontecer.
+Retornando aqui, pessoal, vamos dar uma olhada no que aconteceu.
+Como vocês podem perceber, novamente, foi gerado aqui o
+nosso skills.md, na verdade, atualizado.
+E a gente pode ver que foi surgido mais um passo,
+que é o passo 4.
+E aí o que acontece? Primeiro ele faz aqui o processo de pré-checagem,
+depois verifica se existe a issue, monta o corpo,
+cria ou atualiza e confirma no chat.
+Note que como eu não pedi nada referente à criação de scripts e tudo mais,
+o que aconteceu? Ele veio para dentro da skill.
+E aqui a gente já começa a falar um pouco de boas práticas, né?
+E uma dessas boas práticas é tentar manter...
+no skill .md o mais clean possível, o mais linear possível.
+Quando eu digo linear, estou me referindo a, por exemplo,
+aqui já tem a presença de bash, de gh
+-cli, enfim, tem bastante coisa.
+Tinha a parte de classificação, que agora a gente removeu,
+jogou para as nossas referências. Então, com o tempo,
+a gente vai vendo a necessidade também de refatorar as nossas skills mediante
+o projeto que está evoluindo a todo momento, beleza?
+Então, vamos lá. Primeira coisa, vamos dar um reload na
+skill aqui bem rapidamente e vamos fazer um dependence create,
+tá? Em contrapartida, no momento em que ele estava rodando aqui,
+eu vou mostrar para vocês o meu browser,
+que eu já fiz o meu commit lá para dentro do repositório, tá?
+Retornando aqui no VS Code, vamos dar uma olhada de como que está indo.
+Bom, temos aqui o resultado, tá? E aí tivemos de novo o mesmo resultado,
+porém no momento da issue falou que não foi publicado. Isso porque, olha só,
+temos aqui um programinha com o GitHub. E o que eu vou fazer?
+Peguei lá a minha URL e já coloquei aqui
+para que a gente consiga passar a nossa origem remota.
+E aí, olha só, Já entramos, inclusive, na parte ali do dia a dia,
+do processo de debugging, né? Então,
+vimos que a skill foi feita, foi elaborada, porém,
+caímos num pequeno erro.
+Temos que corrigir e aí a gente vai utilizando os nossos artifícios,
+tá? Nesse caso, apenas de demo,
+vou passar o meu URL, beleza?
+Criei o repositório,
+já coloquei as informações lá e agora ele automaticamente...
+Vai fazer a criação da minha issue. Vamos lá. Aguardando.
+Bom, retornando aqui. E agora a issue foi criada com sucesso.
+Só que se vocês repararem. Logo aqui em cima.
+Vamos ver onde que está. Olha só.
+Ela foi criada via std. Não foi via skills.
+Mas apenas a cargo de demonstração. Se a gente vir aqui na issue.
+A gente tem aqui a nossa triagem de acordo com aquilo que a gente viu ali no chat.
+Para ser resolvido isso de uma vez por todas,
+o que a gente tem que fazer? A gente tem que adicionar o seguinte.
+Adicione na
+skill uma
+verificação. Deixa eu colocar qual o nome da skill.
+Se não
+existir a
+origem remota, qual é a URL do GitHub?
+Pergunte ao usuário. Utilize.
+Ask tool. Antes
+de. Realizar. O processo.
+De criação. Da issue.
+Garantindo sempre. Que. O repositório remoto. Exista.
+Vamos ver. Qual que vai ser o resultado.
+Show de bola. Aparentemente. Tudo certo. Para a gente fazer. O teste.
+Vamos fazer o seguinte. Pessoal. Vou voltar aqui no meu browser. Vou.
+Fechar. Esse carinha aqui.
+E após isso, a gente vai voltar no VS Code e vamos rodar novamente. Só que,
+para rodar novamente, eu vou aqui no outro Cloud meu,
+no qual eu fiz o seguinte.
+Eu peguei somente a minha skill, juntamente com o projeto,
+e separei em um novo diretório,
+naveguei até ele e agora abri a minha sessão de Cloud.
+Com isso feito, vou gerar novamente.
+E aí, como vocês podem perceber agora,
+ele já me deu o resultado e já está publicando lá no GitHub.
+Então, ele verificou, fez aquela verificação que a gente pediu,
+viu que realmente existe,
+viu que não tem nenhuma I.S.,
+porque a gente deletou e agora vai publicar. Dessa forma, o que a gente fez?
+A gente conseguiu incluir mais uma questão dentro
+daquela própria skill que nós começamos.
+Inicialmente, fazia muita coisa, depois... Passamos a fazer o script,
+agora temos a referência e agora a gente tem o nosso contato aí com o mundo externo, né?
+Para mostrar para vocês que também a gente consegue fazer desta forma, tá? Então,
+voltando aqui, só para vocês darem uma olhada,
+temos aqui novamente a nossa publicação, beleza?
+Show de bola então, pessoal!

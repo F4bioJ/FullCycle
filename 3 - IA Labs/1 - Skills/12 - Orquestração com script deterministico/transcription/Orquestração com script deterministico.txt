@@ -1,0 +1,272 @@
+Bom, pessoal, então, dando continuidade aqui, o que a gente vai fazer agora?
+Vamos mexer um pouquinho mais nessa parte aqui da granularidade e
+a gente vai adicionar agora um script determinístico dentro das nossas skills.
+Para quê? Para que ela consiga executar uma autocorreção.
+Então, a ideia aqui é o seguinte,
+galera. Deixa eu fazer aqui um new. Vou fechar esse carinha,
+porque a gente não vai utilizar. E, por enquanto,
+vamos deixar... somente um único Cloud aberto.
+Qual vai ser aqui a ideia principal do nosso script determinístico?
+Vai ser limitar as nossas camadas, camadas essas, a nível de arquitetura,
+do qual, se você reparar bem,
+vamos iniciar desde aqui, da construção da nossa rota,
+o que acontece? Nós temos a rota sendo definida,
+então a gente acessa a rota da rota. A gente vai chamar o que?
+Nós vamos chamar o nosso caso de uso, que é o nosso CreateService.
+Então, se a gente vem aqui, nós vamos para dentro do serviço.
+E dentro do serviço, a gente vai ter, por sua vez,
+o domínio, bem como o produto repository e as minhas dependências. Então,
+se você reparar bem, existe uma sequência e um padrão muito claro.
+de como está sendo organizado a entrada e a saída desse dado.
+Então, chegando aqui, ele vai acessar o domínio, criar
+o que tiver que criar, neste caso aqui, criar um novo produto,
+vai pegar este carinha aqui e vai mandar para dentro do repositório.
+Então, como a gente bem sabe,
+o serviço vai orquestrar tanto a camada de
+domínio como também a camada de repositório.
+E, como eu disse, existe um flow das nossas informações rolando. O ponto é,
+quando a gente está trabalhando a nível de inteligência artificial,
+a gente acaba tendo alguns problemas porque ela não é determinística. Então,
+a gente vai adicionar essa trava determinística via
+script a nível arquitetural para manter este flow corretamente.
+No caso,
+na prática, o que vai acontecer?
+Como eu passei aqui para vocês, e da mesma forma que
+Nós temos este caminho que eu acabei de percorrer,
+ele também é o mesmo caminho de volta. Isso quer dizer que o
+nosso domínio, você nunca vai vê-lo, por exemplo, dentro de uma rota.
+Você nunca vai vê-lo dentro da construção das nossas rotas.
+Por quê? Porque isso é uma quebra arquitetural que nós temos.
+Então, a ideia é garantir através...
+deste determinismo via script que isso nunca aconteça.
+E se caso acontecer,
+a gente vai meio que fazer aqui uma proposta de self-correction,
+beleza? Então, vamos nessa.
+Vou fazer o seguinte, vamos fechar todos esses itens,
+voltar aqui no meu Cloud Code e vamos iniciar então uma nova sessão,
+tá? Bom, eu vou pedir para que a gente consiga criar um script.
+Vou colocar aqui script barra
+check layers, por exemplo. Vou falar que esse aqui é um script.
+Esse é um script. Será
+Utilizado via ESLint.
+Verifique se o projeto já conta com o ESLint.
+Caso não, instale
+e configure para receber.
+Regras customizadas e também configure
+comando em scripts no package.json do projeto, show
+de bola, continuando aqui vou
+falar que esse script
+vai resolver a camada em cada
+arquivo pelo path.
+Vamos especificar aqui os paths existentes, repository, temos o adapter,
+temos o shareage.
+Também resolve os imports relativos
+também e
+barra as fronteiras proibidas.
+Essas fronteiras serão definidas
+dentro do script em questão. E aqui, galera,
+obviamente não vou fazer um prompt muito grande que
+vai ter todas as regras e tudo mais.
+Eu vou apenas demonstrar uma das regras e aí vocês
+fiquem à vontade para adicionar quando se sentirem à vontade.
+Então, vou colocar aqui uma regra, por exemplo. Regra
+principal.
+Uma rota não pode
+importar nada de src/domain.
+Um domínio não
+importa nada para fora,
+exceto a dependência Zod que faz
+parte. Uma
+rota não importa repositório. Vou
+botar aqui também. Vou
+encolher um pouco as regras e vamos colocar assim, de forma geral, as
+dependências.
+Sempre apontam para dentro,
+seguindo ali uma ideia de clean architecture. Então,
+caso
+exista alguma violação, por exemplo,
+execute exit 2 mais
+o erro em questão, um
+bloco por violação com
+a regra exposta e claro,
+arquivo e a linha. O import.
+Ofensor. O porquê.
+Mais o que a gente pode colocar aqui. O porquê que viola. Neste caso. E como
+consertar.
+Mais o que eu vou fazer aqui. Isso.
+Servirá para.
+Um agente. Se auto. Corrigir.
+Vou definir também. Adicione. Na verdade.
+Já havia colocado aqui em cima, certo?
+Só dar uma olhada. Sim, já está ali para adicionar.
+Então, não preciso colocar aqui.
+E tenho que colocar agora onde
+vai ser feita a nossa edição.
+Então, o que vai acontecer aqui?
+A gente vai pedir para editar a nossa skill. Deixa eu abrir aqui.
+De feature.
+Tá? Então, editar skill
+.md adicionando uma
+nova etapa, passo 5 ou 6,
+deixa eu ver, passo
+5, efetivamente, que é o gate de arquitetura, tá?
+Deve ser rodado sempre, deve ser rodado sempre
+ao final da pipeline,
+Tá? Vou colocar aqui
+Com autocorreção. Também. Uma
+coisa que eu notei aqui. É que eu coloquei para editar a skill.
+Mas eu não disse qual que é a skill. Que é implement feature. Agora sim.
+E aí. O que a gente pode colocar aqui. Em relação a esse passo.
+Vamos deixar. O seguinte.
+Depois que.
+Essas camadas. Passarem.
+Depois que todas as camadas forem implementadas e passarem
+no teste, pode ir ao Bash,
+npm run check layers, por exemplo.
+Posso colocar aqui, se
+houver algum erro, layer, std, error,
+autocorrija, cada... violação,
+delegando para a sub-skill correta,
+referente à camada ofensora.
+Repita o processo. Vamos colocar aqui meio que um max retry. Na
+verdade, para esse exemplo,
+eu vou colocar que ele repita o processo até que o exit seja zero. E aí,
+eu posso colocar o seguinte, se as
+tentativas passarem de 10, conforme ao
+usuário, e utilize a tool ask
+user question.
+Defina que a tool, que a feature na verdade,
+só está pronta com o gate verde. Vou
+rodar aqui e ver.
+Qual que vai ser o resultado, galera?
+Bom, pessoal. Vamos ver aqui, então, como é que foi o resultado,
+né? Foi mais ou menos aí quase oito minutos.
+Vamos ver o que aconteceu.
+Então, temos aqui o script criado. Beleza. Vamos
+analisar aqui o que ele fez em relação às telhas. Beleza. Conseguiu gerar. Bacana.
+Inclusive, já até gerou aqui um belo resumo.
+Então, já está sendo resolvido. As camadas via path.
+ESLint foi curado. E também temos regras customizadas.
+Que é aquela regra que a gente fez. E a skill foi adicionada.
+Deixa eu dar uma olhada. Na skill.
+Para a gente entender o que aconteceu.
+Passo 5. Vamos fazer aqui um Open Preview.
+Para a gente ver. Passo 5.
+Loop de autocorreção. Show de bola.
+Muito bacana.
+Para a gente dar continuidade, até antes de testar, o que eu vou fazer?
+Ele recomendou aqui que a gente faça um audit fix.
+Existem algumas vulnerabilidades,
+mas isso neste momento para a gente não importa tanto.
+A gente vai fazer o seguinte.
+Adicione o projeto
+granularidade ao
+arquivo.
+Cloud.md e Agents.md.
+O que vai rolar aqui, pessoal? Como eu disse para vocês,
+o Cloud MD é específico do Cloud Code, mas vocês podem utilizar o Agents.md.
+Inclusive, se você quiser utilizar o Agents só fazendo uma referência ao Cloud MD,
+não tem nenhum tipo de problema.
+Ele consegue ler sem problema. E como eu também havia falado para vocês,
+esses arquivos em questão, o que eles fazem? Eles são lidos.
+a todo momento. São obrigatoriamente lidos. Então,
+o que eu vou pedir aqui para criar neste momento?
+Criar este arquivo e vou adicionar uma regrinha.
+Algo nesse sentido.
+Ao concluir qualquer feature
+ou ao terminar de
+editar. Qualquer tipo de arquivo está dentro da pasta.
+src, o
+último passo
+obrigatório de
+dizer se a tarefa foi realmente finalizada ou não,
+é rodar o page determinístico.
+Vamos pegar aqui qual foi o nome do package.json que ele colocou,
+check layers, e
+a gente vai pedir para ele rodar o nosso check layers. Via Bash.
+Vamos ver. Como é que vai ser a saída.
+Bom. Já está aqui.
+Criando o nosso CloudMD. De bola.
+Vamos ver se ele cria o Agents.md.
+Ok. O
+Agents.md. É apenas. Um link. Para. O Cloud.md.
+Além disso. Adicione também. Os comandos. No
+Cloud.md.
+para trabalhar com a aplicação e
+também uma
+breve informação sobre a arquitetura.
+Vamos até adicionar aqui um pouquinho mais de informação no nosso arquivo,
+até para nos ajudar a gastar menos tokens, perfeito?
+Fica, inclusive, a dica para vocês, né? É ideal sempre ter esses arquivos.
+No nosso caso aqui, como a gente está em um ambiente super controlado,
+não precisa, tá?
+Já que já estamos trabalhando,
+é importante que a gente faça assim. Então, aí, gente,
+isso agora está apenas referenciando. Inclusive,
+posso até tirar tudo aqui e deixar realmente só o link,
+tá? E aí, como vocês podem perceber, eu tenho aqui agora algumas informações.
+Deixa eu abrir no preview para vocês.
+E tem exatamente aquilo que a gente havia pedido, né? Então,
+os comandos aqui de como funciona,
+um pouquinho da arquitetura, as camadas e tudo mais,
+e o nosso gate de arquitetura, tá?
+Vou fazer apenas uma alteração para reforçar mais ainda.
+Na verdade, nem vai precisar, né? Que já está aqui como obrigatório, né? Bom, vamos lá.
+Uma última coisinha que talvez tenha ficado um pouco de dúvida e eu
+vou esclarecer neste momento em relação ao exit 0 e ao exit 2,
+né? Então, basicamente, o exit 0 é quando deu tudo certo e podemos classificar aí.
+Como algo pronto.
+E o exit 2 é o gate vermelho. Ou seja, algo deu errado.
+Então, a gente precisa trabalhar ali na autocorreção. Bom,
+e agora a gente precisa testar isso. Então, vou fazer o seguinte.
+Vou até pedir para o próprio Cloud aqui testar isso para mim.
+Vamos testar a pipeline.
+Aliás, não vou testar a pipeline por completo.
+Vamos testar somente a nível de edição.
+Verificar se
+o gate
+está funcional ou não a partir de agora.
+Faça uma edição na
+SRC em algum arquivo que
+esteja fora das barreiras arquiteturais
+impostas e vamos ver o comportamento.
+Vamos ver aí o que vai acontecer. Acontecer a partir de agora.
+Bom, estamos aí. Vamos ver o que vai acontecer. Já está introduzindo.
+E olha só, o gate está funcional. Detectou as duas violações.
+Tivemos ali nosso exit 2, ou seja, gate vermelho.
+E o comportamento observado foi: temos um bloco aqui.
+Já mostrou exatamente as camadas, exatamente como eu havia pedido. O local.
+E isso ocorreu. Então,
+cada bloco ali trouxe exatamente aquilo que desejava — e
+automaticamente já passou — para uma alta correção.
+E agora nós temos aqui o teste concluído.
+E somente se, caso, tenha ficado algum tipo de
+dúvida se a LLM rodou ou não os nossos scripts,
+a gente pode ver aqui.
+No nosso shell command.
+Que o check layer.
+Agora está certinho. Então, exit zero.
+E se a gente for um pouco mais acima,
+nós temos aqui. Olha só. Após o processo de edição. O que aconteceu.
+Rodou automaticamente o nosso Check Layer.
+E aí, olha só.
+O prompt que foi passado para o processo de autocorreção no princípio.
+As dependências apontam para dentro, e aí eu dou aqui as camadas,
+como que é o flow dos nossos dados.
+Temos aqui o erro que ocorreu, tipo de erro,
+a regra, o arquivo, o import, a direção, o
+por que disso, como consertar,
+e a camada que foi afetada juntamente com a subskill. Aqui, neste caso,
+Foi tudo dentro da rota, porque foi algo programado.
+E aí, com isso aqui, o que aconteceu?
+A própria LLM já disparou o processo de self-correction,
+de autocorreção, melhor dizendo.
+É claro que este exemplo que a gente fez agora é algo muito sucinto.
+O ideal é que a gente permaneça utilizando,
+gere novas features e tudo mais,
+para validar integralmente se tudo está ocorrendo como deveria ser.
+A nível de demonstração. Para que vocês consigam expandir a mente de vocês.
+E entender até onde a gente consegue chegar.
+E a gente consegue ir muito mais longe do que isso.
+Eu acho que é um excelente começo. Para que vocês consigam despertar o imaginário.
+E começar a criar coisas novas. Beleza? Então é isso aí.

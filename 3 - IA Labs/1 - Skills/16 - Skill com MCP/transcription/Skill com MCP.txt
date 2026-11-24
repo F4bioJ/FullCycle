@@ -1,0 +1,253 @@
+Bom pessoal, então vamos lá. Dando continuidade aqui,
+agora a gente vai falar sobre como que a gente
+pode criar uma skill que vai consumir um MCP. E aí,
+a gente fazer com que as duas coisas se integrem para que a
+gente consiga atingir um resultado esperado dentro
+da skill que nós estamos trabalhando,
+tá? E para exemplificar isso,
+o que a gente vai fazer? A gente vai fazer o uso do MCP, do GitHub,
+e vamos criar uma skill.
+que vai fazer a triagem de issue que estão abertas ali em determinado repositório,
+tá bom? Obviamente,
+vou gerar aqui alguns dados fakes com o próprio MCP e a
+partir desses dados aí a gente consegue ir trabalhando e tudo mais.
+Acho que o primeiro ponto que tem que ficar muito
+claro é em relação à diferença entre MCP e skill,
+tá? E aí eu gosto sempre de falar o seguinte.
+Quando nós falamos de skill,
+eu estou me referindo a uma habilidade que eu
+quero apartar e reutilizar sempre que necessário.
+Quando eu falo de MCP,
+a ideia do MCP é te dar uma porta para entrar em alguma coisa. Então, no nosso caso,
+aqui é a porta do GitHub para que a gente consiga acessar os nossos dados,
+fazer iterações externas com algum tipo de ferramenta. No nosso caso, o...
+Mas pode ser um banco de dados ou qualquer outra ferramenta que dê o suporte ao MCP,
+que a gente tenha acesso ao MCP. Então, basicamente,
+a skill seria o como e o MCP seria a porta, o nosso acesso.
+Se a gente olhar na ótica desse desafio que a gente está propondo,
+a issue está aberta e pode mudar a toda hora.
+Então, ela nunca...
+vai entrar dentro de uma skill. Ela vai entrar via MCP,
+em tempo de execução. Ou seja,
+ao gerar uma nova issue ou fazer o update de uma nova issue,
+tudo em tempo de execução,
+a skill só irá carregar o procedimento necessário para te dar o resultado esperado.
+No nosso caso aqui, como é uma triagem de issue,
+ela vai carregar o procedimento de triagem e vai me
+dar um relatório do que nós temos em aberto atualmente.
+E para a gente conseguir fazer isso, eu vou utilizar o Docker. Então,
+é muito importante que você tenha o Docker instalado aí na sua máquina, tá?
+Caso você não tenha, super tranquilo de instalar.
+Você pode acessar o próprio site do Docker, docker .com,
+procurar aqui por download e realizar aqui o download
+de acordo com o sistema que você está utilizando.
+Pode também fazer a instalação via linha de comando, enfim,
+da forma que ficar mais viável aí para você, tá?
+Eu já tenho aqui o meu Docker, ok?
+A primeira coisa que eu queria falar com vocês é que o próprio Docker,
+ele já tem um catálogo de MCP Service, tá? Então,
+ele age ali como um gateway que a gente pode utilizar,
+mas para este exemplo em especial,
+A gente não vai fazer o uso desse catálogo de MCP, ok?
+A gente vai fazer a configuração passo a passo ali
+Para vocês entenderem de fato como que utiliza-se um MCP, ok?
+Mas apenas... A cargo aí de curiosidade. Para vocês saberem onde que fica.
+Como é que vocês fazem também para utilizar.
+Vocês podem vir aqui na parte de Settings.
+E buscar por MCP. E aí você vai fazer o Enable.
+Caso não esteja ativado. E vai aplicar. Com isso pronto.
+O que a gente pode fazer? A gente pode vir aqui no MCP Toolkit.
+E aí eu posso vir na parte de Catálogo.
+E entender quais são os itens que eu posso utilizar.
+Basta eu selecionar, colocar as minhas chaves quando há necessidade,
+aí eu já tenho o MCP pronto para utilização diretamente no Docker.
+Mas voltando lá no nosso VS Code, conforme eu disse,
+a nossa ideia aqui é fazer algo um pouco mais passo a passo,
+até para ficar mais claro aí com vocês como é
+que vai funcionar todo esse processo de configuração.
+Vamos lá, então. Primeira coisa que nós temos que fazer é gerar o seguinte,
+gerar o nosso Docker Compose.
+Bom, para gerar o nosso Docker Compose, eu posso pegar isso da internet pronto.
+Tem um monte de exemplo na internet. Eu posso utilizar a LLM. No meu caso aqui,
+eu vou utilizar a LLM.
+E depois também mostro para vocês como é que ficou o resultado.
+Então, gere um arquivo Docker
+Compose com o MCP do GitHub.
+Nomeei como gh-mcp.
+Vou pedir para ele usar aqui o stdin open como true.
+E vou também utilizar o Personal
+Token na Zenv.
+Vamos ver aqui como é que vai ser o
+resultado deste nosso arquivo de Docker-Compose.
+Provavelmente ele vai escrever bem rápido.
+Exatamente como eu imaginei. Então a gente tem aqui o nosso docker-mcp.
+Ok. Vou adicionar também.
+Essa opção aqui. Porque a gente não está utilizando terminal.
+Então vai vir um formato de pipeline. Temos aqui,
+O nosso Personal Access. Que a gente vai,
+Utilizar aí via Enviar.
+Eu posso colocar também um comando. É. Definir aqui Stdio.
+Colocar. Dessa forma. Aqui.
+Show de bola. Depois a gente vai mexer um pouquinho mais nisso aqui. Mas por hora,
+Creio que já vai funcionar. Vamos fazer aqui um teste.
+Um Docker-Compose. Vamos fazer um up.
+Opa, faltou a gente acessar aqui.
+Vou nem colocar "-d". Eu quero ver realmente o que vai acontecer.
+Beleza. Erro esperado, que foi a falta do nosso GitHub Token. Bom,
+para gerar esse nosso GitHub Token é bem simples.
+Vamos voltar aqui no nosso browser.
+Primeiro ponto, você vai precisar ter uma conta no GitHub.
+E aí você vai acessar o seguinte. Vai vir aqui no seu usuário,
+Vai vir em Settings. E aí, quando você vir em Settings,
+você vai descer lá embaixo em Developer Settings.
+E aí você vai acessar o local onde você consegue realizar a criação.
+No meu caso, vou utilizar aqui o Personal Access Token,
+tá? Então já estou com ele aberto aqui,
+vamos utilizar um find granted e aqui eu vou preencher. Então,
+vou colocar aqui Docker, GitHub, MCP, expiration, vamos colocar sete dias só,
+acesso a quais tipos de repositório,
+vamos colocar acesso a todos os repositórios ou se
+eu preferir também posso selecionar somente um repositório, tá?
+E baseado nisso eu vou adicionar as minhas permissões.
+Bom, permissionamento aqui é muito simples,
+né? No nosso caso, a gente vai precisar somente da parte de issue.
+E aí eu escolho se vai ser read only ou read e write.
+Também vou só dar uma olhada aqui na parte do
+repositório.
+Não existe mais.
+Antigamente a gente também tinha que dar acesso ao repositório em si.
+Mas agora já está aqui em cima.
+E eu já consigo ter acesso ao repositório em questão. Beleza.
+Vou gerar esse token. E o que vai acontecer?
+Vou lá no meu VS Code e vou criar aqui um arquivo .env.
+Então, um .env com essa
+informação. Vou jogar o meu token aqui e
+aí a gente provavelmente vai conseguir conectar ao MCP.
+Não vou mostrar essa parte para vocês porque o nosso token é de uso pessoal.
+Então, façam aí e depois retornem na aula.
+Bom, tudo configurado? Vamos fazer o seguinte.
+Vou dar novamente. Vamos ver o que vai acontecer.
+Foi recriado. E olha só. Tudo certo.
+Aparentemente, nós temos aí o nosso container já funcional.
+Se eu retorno aqui no Docker,
+só para vocês darem uma olhada, eu já tenho aqui o meu MCP do GitHub funcionando.
+Beleza? Configuração feita. O que a gente vai fazer agora, galera?
+Vamos fazer com que o Cloud
+Code consiga ler a existência desse MCP. Para isso,
+a primeira coisa que eu vou fazer vai ser retornar no VS Code.
+Já limpei aqui a minha sessão. Inclusive,
+vou precisar sair dela para que a gente consiga adicionar um novo MCP.
+Por quê? Se eu acesso o Cloud Code de novo,
+tomei o MCP,
+você vai perceber que a gente não tem o uso de nenhum tipo de MCP do GitHub.
+Temos aqui alguns que eu já estava utilizando. Então,
+o que nós temos que fazer? Adicionar um novo MCP. Para isso,
+eu vou utilizar o comando chamado Cloud MCP, tá? Então, se eu der um list aqui,
+o que ele vai fazer?
+Ele vai listar todos os itens existentes aqui no MCP,
+que foi adicionado na nossa lista de MCP. Se porventura eu quero adicionar um novo,
+vai ser Cloud MCP Edge. Vou colocar GitHub. Vou definir o meu escopo, tá?
+Vai ser escopo de projeto. E vou colocar aqui um Docker Compose Run.
+que é o formato onde eu quero executar esse MCP server, beleza? Então,
+deixa eu só colocar aqui algumas tags e temos o nome,
+lembrar qual é o nome, GH
+MCP, GH MCP. Então,
+já tenho aqui esse cara adicionado. O que gerou?
+Gerou um MCP.json. Então, se você reparar bem,
+deixa eu até... listar novamente.
+Agora eu tenho o meu GitHub, que foi nomeado ali por mim.
+Temos aqui o tipo, temos o comando e temos a nossa environment.
+Inclusive, aqui eu posso retirar.
+Não tem tanta utilidade neste momento para a gente.
+Bom, eu
+volto para cá, dentro do Cloud Code, numa nova seção.
+Agora eu tenho aqui o meu GitHub MCP.
+A nível de projeto, tá? Scope sempre a nível de projeto.
+Nós temos alguns outros MCPs que são níveis globais também.
+E ele já está conectado juntamente com 41 tools aí que a gente pode utilizar.
+A partir disso, o que a gente precisa fazer?
+A gente precisa apenas trabalhar aí com a geração da skill.
+No nosso caso aqui, o que eu vou fazer? Eu vou criar um ponto Cloud e Skills.
+E eu já vou trazer essa minha skill.
+Pronta para a gente. Issue. Category.
+Deixa eu copiar ela aqui.
+Ela é bem simples. Não tem nada de muito complexo. E aí eu explico ela para vocês.
+Inclusive deixa eu até usar esse mesmo nome aqui.
+Daí a gente já fica todo mundo na mesma página.
+Deixa eu fazer o rename.
+Perfeito. Bom, já tinha gerado. Essa é a skill.
+Anteriormente. Diferenças que nós temos aqui. Nada muito diferente.
+Daquilo que a gente já fez.
+Diversas vezes aqui. O que a gente tem que notar. Primeira coisa.
+Relacionado ao nosso front matter.
+Continuamos utilizando ali. Aquela mesma metodologia.
+Porém em allow tools. Note o seguinte.
+Eu não estou utilizando ali os comandos bash. E sim os comandos de MCP.
+E o que são esses comandos de MCP? Se você.
+Relembrar que junto comigo nós temos 41 tools que estão disponíveis para uso. O
+comando MCP são nada mais, nada menos que tools.
+Então, list, issue, get, issue e search issue, ok? Então,
+eu estou dizendo que a press skill deve utilizar somente essas tools, ok?
+Faço, então, a minha instrução.
+Ponto importantíssimo é...
+Citar o uso do MCP para garantir que ele vai usar o MCP.
+Por quê? Porque assim como a existência de um CLI do GitHub, a existência de API,
+ele pode simplesmente escolher outras formas de acesso.
+Mas com essa configuração que a gente já faz,
+ele vai tender sempre a procurar o MCP de forma primária,
+tendo em vista que é a nossa skill.
+está pedindo isso e não está fazendo referência nenhuma
+à API ou qualquer outro tipo de acesso.
+Em relação a como fazer o uso de um MCP dentro da skill,
+vocês podem perceber que é basicamente instrução. Use o GitHub MCP.
+Não tem nada muito diferente daquilo que a gente já viu.
+Instrução também para eu já subir agentes e coisas relacionadas ali.
+Aos outros exemplos nos quais já trabalhamos, tá? E aí,
+o passo 2 vai ser classificação da issue. Então, P1, P0, P2 e P3.
+Quebra, produção, bug sério, bug de impacto e P3 simplesmente cosmético.
+Depois eu vou fazer,
+detectar aqui coisas que sejam em duplicidade e depois eu tenho um relatório.
+Super simples, nada muito complexo, tá?
+Com isso, o que a gente vai fazer? Primeira coisa, eu vou pedir para
+ele gerar algumas issues para a gente e depois eu
+vou pedir para usar a nossa skill para realizar essa triagem.
+Então, gere algumas
+issues
+no repositório GitHub. Já vou passar aqui qual o repositório, que
+é aquele que a gente estava já trabalhando para
+gerar cada issue layer. A skill.
+Como é o nome da skill.
+Viagem. Issue. Do projeto.
+Analise. As categorias. E baseando-se nelas. Gere.
+Total. De 10. Issues.
+Aí um ponto importante, né? Utilize. O.
+MCP. Do GitHub.
+Então. Estamos vendo aí também como. Trabalhar com o MCP. Dentro.
+Do CLI. Vamos esperar. Entender o que vai acontecer.
+Ele já conseguiu ler ali. A ideia da skill.
+E agora já está utilizando. O MCP. Já estou aqui.
+Utilizando as tools do MCP. Primeiro viu meu perfil. Depois listou ali.
+Assiste. E vamos ver o que ele vai.
+Gerar para a gente.
+Aparentemente. Tudo gerado. Utilizando o MCP. Do GitHub.
+Vamos dar uma olhada aqui
+no nosso browser. Clicar aqui em issue.
+E agora eu tenho diversos pontos aqui a serem analisados pela nossa skill.
+Como eu não pedi para usar a skill, ele só gerou de fato.
+Vamos retornar aqui. E agora o que eu vou fazer? Eu vou utilizar a
+triagem de issues e vou passar...
+o repositório aqui,
+só para a gente ver qual vai ser o processo de triagem. Obviamente,
+como a gente já pode perceber, ele está fazendo o que?
+Utilizando o GitHub. E olha só que bacana.
+Temos aqui o nosso resultado. Então, as prioridades já foram pré-definidas,
+não temos nenhum tipo de label.
+Eu tenho aí os próximos passos,
+que é o meu relatório que foi pedido com os próximos passos.
+Poderia, enfim, pedir aqui para ele já adicionar label,
+definir essas prioridades e colocar descrição, label, autores e tudo mais.
+Inclusive, poderia criar skills para automatizar todo esse processo,
+juntamente com outros MCPs e tudo mais.
+Mas, por ora, a ideia era mais mostrar para vocês como que a gente pode,
+de uma skill, chamar um MCP, como que a gente pode configurar um MCP também.
+E como que a gente faz essa interação aí de forma geral, beleza?

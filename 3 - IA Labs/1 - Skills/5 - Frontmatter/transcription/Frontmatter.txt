@@ -1,0 +1,223 @@
+Bom pessoal, vamos nessa então,
+continuando aqui a nossa aula e agora a gente
+vai falar sobre a parte de front matter,
+que é aquilo que nós havíamos comentado na nossa última aula. Bom,
+a primeira coisa que nós temos que entender é o fato
+de que existem muitos parâmetros no front matter que nós podemos utilizar,
+principalmente quando nós estamos utilizando o Harness Cloud Code, certo?
+Mas... existem alguns dentro do padrão front matter,
+se é que a gente pode chamar isso de padrão, que são de padrão aberto, ou seja,
+estão presentes e devem ser
+interpretados por qualquer outro harness,
+seja o Codex, Open Code e coisas nesse sentido.
+E existem outras propriedades que são basicamente específicas do Cloud Code. Então,
+a gente vai focar, basicamente, nas que são padrão aberto,
+certo? E, em especial, vamos focar na parte de description,
+porque ela é muito importante, beleza?
+Primeiro ponto, name. Assim como o próprio nome já diz,
+tem que ser o nome da minha skill.
+E, obviamente, vou seguir esse padrãozinho aqui, ó. Minha pasta, mesmo nome, tá?
+Description. Esse cara aqui é o nosso... classificador de disparo, tá? Então,
+ele é o mais importante. Por enquanto, vamos deixar ele aqui, bem quietinho,
+que logo mais a gente vai falar sobre ele.
+Temos também um carinha que vocês já até viram,
+que é o Allowed Tools,
+tá? Esse cara vai fazer o quê? Ele vai, basicamente,
+permitir com que a sua skill utilize tools sem pedir permissão, tá bom?
+Temos também... um carinha que se chama metadata, temos
+também um outro carinha que é o license e para finalizar o compatibility,
+ok? Então, todos esses itens aqui são os itens conforme eu disse,
+de padrão aberto, ou seja,
+aquele que diversos runners conseguem ler sem problema nenhum,
+fechado? O que esperar?
+de cada itemzinho desse. Bom, compatibilidade,
+licença e metadados são coisas já conhecidas no nosso mundo, né? Então,
+metadados, vou colocar informações adicionais aqui. Licença,
+vou definir o tipo de licença que eu quero.
+E compatibilidade é muito a nível de requisito do ambiente, né?
+Será que ele é compatível ou não? Quando você vai utilizar isso,
+vai utilizar. Quando você precisa sinalizar algum tipo de pré-requisito.
+Ou seja, quando a skill depende,
+por exemplo, de um runtime ou de uma versão específica de alguma biblioteca, de runtime,
+coisas neste sentido. Beleza?
+O nosso Aloe Tool já havia falado com vocês.
+No nosso caso aqui, não vou precisar utilizar neste caso.
+Vou deixar ele aqui só por enquanto, mas a gente não vai precisar utilizar.
+Metadata também não. E o License também não. Então,
+por enquanto, vamos permanecer com eles aqui. Agora,
+o nosso foco é este carinha aqui. Por quê? Porque o Description, assim como já dito,
+ele é o nosso classificador.
+É ele que vai dizer se o negócio vai executar ou não.
+Se a nossa skill vai executar ou não. E isso é muito importante, tá, galera?
+Isso é tão importante que mais pra frente a
+gente vai entender que a gente consegue até...
+Testar se isso realmente vai fazer a função que deve ser feita ou não.
+Então, quando eu devo utilizar? Como eu já disse, sempre. E aí,
+existe um pequeno padrãozinho que
+eu recomendo bastante o uso,
+que é o quê? O
+formato de quatro itens, vamos dizer assim.
+Primeiro item, ele é o quando utilizar.
+Segundo item, é o gatilho.
+Ou seja, qual o gatilho que eu posso acionar isso aqui? Geralmente,
+a gente coloca sempre entre aspas. Então, log,
+no nosso caso aqui, seria um dos gatilhos.
+Terceiro ponto, quando não usar.
+E o quarto formato é o que produz. Então,
+nota que a gente meio que montou uma metodologia acerca do processo de descrição.
+Só que, dentro ainda desta metodologia,
+existem diversas outras questões que nós devemos estar atentos.
+E é isso que a gente vai falar a partir de agora.
+Então, entendemos aqui os nossos parâmetros,
+entendemos que esse carinha aqui é muito importante. O que eu vou fazer?
+Eu vou, basicamente, fazer uma cópia desse cara, jogar para cá,
+voltar à minha descrição e
+vou retirar. Fechado?
+Então, temos aqui a nossa primeira skill da forma que a gente criou.
+E agora o nosso foco maior vai ser no nosso cara chamado description.
+Como eu mostrei para vocês, existe ali aquele formato dividido em quatro partes,
+que é bem importante de vocês saberem,
+mas dentro daquele formato ainda existem boas práticas.
+E para isso a gente vai fazer aqui novamente algumas anotações.
+São bem importantes de vocês entenderem, tá?
+Então, o que nós temos que ter como boa
+prática quando a gente vai trabalhar com descrições?
+Primeiro, sempre escreva em terceira pessoa.
+Isso aqui é muito importante, tá,
+pessoal? Ou seja, na prática, o que é isso? Bom,
+Processa arquivos...
+Excel e gera
+relatório. Tendo
+a evitar, posso
+ajudar a processar arquivos do Excel.
+Ou algo mais descritivo, de fato.
+Você pode usar isso para processar Excel.
+Foque sempre na terceira pessoa. Além de focar na terceira pessoa, mais
+uma outra regrinha super importante.
+Seja específico e
+inclua termos-chave.
+Ou seja,
+lembra que eu colocava gatilhos entre aspas duplas?
+Pois é, aqui é basicamente aquela regrinha,
+porém aplicada no formato de texto corrido, junto à sua descrição.
+Seguindo aqui, temos também...
+O que a gente pode evitar como boa prática?
+Precisamos, primeiro ponto, evitar coisas muito vagas.
+Então, vamos colocar aqui, evite coisas
+muito vagas. E também,
+junto ali do nosso texto,
+que vai formatar a descrição,
+Só que neste caso aqui,
+a ideia por trás disso é
+basicamente falar sobre as capacidades para
+funcionalidades específicas. Então, entenda que quanto
+mais específico, mais gatilhos de execução em
+terceira pessoa, evitar
+coisas vagas, a gente vai conseguir.
+E garantir. Que o Cloud. Ou qualquer outro. Harness.
+Dentro. De uma pool ali. De 100. 200 skills. Supondo. Consiga.
+Executar. E trigar aquela. Que realmente. Faz sentido. Para aquele momento.
+Na prática. Para ficar claro. Para vocês. Vamos criar.
+Mais uma outra skill aqui. Que vai ser. Message. Commits. Esse carinha.
+Vou criar aqui uma skill .md, vou
+copiar a minha skill Simple Logger, tá? E vou fazer
+aqui um message commits. Bom, a ideia aqui é o quê?
+A ideia é gerar uma skill que seja capaz de gerar as nossas
+mensagens ali para os commits que nós vamos fazer para um determinado repositório,
+tá? Então... Vamos pensar aqui na nossa descrição,
+seguindo ali o formato, seguindo essas boas práticas e tudo mais,
+beleza? Eu já tenho isso pronto, tá, pessoal? Então, basicamente,
+vou pegar minha colinha aqui e vou escrevendo junto com vocês, tá?
+A ideia é o quê? Gerar a minha mensagem. Então, generate a
+descriptive message.
+E agora
+vou começar a colocar quando
+nós devemos utilizar isso aqui,
+quando nós devemos chamar. Message. Reviewing. Message. Or. Change.
+Prontinho. Algo mais simplificado.
+Mas já é o suficiente.
+Para a gente já ter. Um resultado.
+Bacana. E aí. O que eu vou ter que fazer. Vou ter que agora.
+Começar a atacar aqui o corpo. Da minha. Skill. Então.
+Vamos colocar aqui.
+Commit. Message. Format.
+E também vou dar um exemplo. Para ele.
+Então o
+que eu espero aqui. Da minha mensagem.
+Quando eu for comitar alguma coisa. Então eu vou.
+Gerar. A mensagem de commit.
+E vou pedir. Para que ele siga. O formato abaixo.
+Exemplo, input.
+Added user authentication
+With JWT tokens, por exemplo.
+Qual vai ser o meu output que eu espero disso aqui?
+Output vai ser, por exemplo, pitch off.
+E eu já tenho aqui o meu resultado.
+Posso colocar também alguns outros exemplos. Por exemplo, exemplos de fix.
+Sure. E assim por diante. Então vamos fazer aqui.
+Um exemplo. Dois.
+Pode ser esse carinha aqui. E aí eu tenho. O meu output.
+Vamos fazer mais um. De sure.
+E eu tenho aqui.
+Um update de docs.
+E daí. Agora. Eu já tenho mais uma vez. A nossa. Skill.
+Pronta para ser utilizada.
+O que eu vou fazer aqui é, primeira coisa, cloud aberto,
+Reload skills e já aparece aqui para mim.
+Obviamente, eu não tenho nenhum tipo de repositório, tá?
+Vou rodar aqui só para vocês verem aí que ela vai rodar.
+E aí, como a gente já suspeitava,
+Obviamente não existe nenhum tipo de repositório ativo. Então, vou fazer aqui um git init.
+Rodar novamente. E vamos ver o que vai acontecer.
+Agora tivemos aqui. Um outro.
+Resultado. Mas nesse caso aqui. O resultado foi que.
+Eu ainda preciso trabalhar nela. Porque não existe nenhum tipo de repositório.
+Inicializado. Como eu abri um novo Bash. E inicializei.
+O que eu vou fazer? Vou fechar esse cara aqui.
+E vou abrir de novo. Só para a gente ter o contexto correto.
+E vou usar de novo. A nossa skill.
+Entender de fato. Qual vai ser o resultado agora. E aí.
+Agora sim. Fez o load. E está analisando. Os meus. Chains.
+Ainda não temos nada. Em stage.
+Mas basicamente. Ele já consegue.
+Produzir. Algumas coisas para a gente. Então o que ele fez. Se você reparar bem.
+Foi lá. Viu. Que não existe nada. Mas notou que existe. Coisas a serem comitadas.
+Para ficar em stage, viu quais são os arquivos, deu uma lida, e baseado nisso,
+a gente conseguiu criar aqui as nossas mensagens de sugestão, tá?
+Da forma que eu mostrei aqui, pessoal, basicamente,
+O que tá acontecendo é, eu estou indo lá e
+Invocando a minha skill.
+Eu ainda não testei se através da minha description está sendo chamado ou não,
+Tá? Então,
+Vamos fazer aqui uma nova seção.
+E vamos testar. Baseado na description que a gente tem aqui.
+Vamos fazer o seguinte. Init. Create.
+Commit. Message. For. Changes.
+Vamos ver o que vai acontecer. Olha só.
+Já deu o load.
+E agora sim.
+Através da minha description.
+Foi feito o processo de classificação.
+E aí agora ele vai executar a minha skill,
+vai ler os meus arquivos e vai
+me dar de novo
+as minhas mensagens desejadas.
+Olha só, já tenho aqui novamente o resultado.
+Fiz uma limpeza aqui e vamos executar novamente o seguinte.
+commit para as alterações feitas no projeto,
+separe cada alteração e gere
+a mensagem de commit baseada
+nas mudanças. Vamos
+ver o que vai acontecer agora.
+Novamente, temos o load da nossa skill e
+agora é bem provável que ao invés dele agrupar,
+todas as skills que foram criadas em uma única mensagem,
+ele vai fazer
+um agrupamento diferente.
+Então, olha só. Temos aqui a nossa mensagem. 1, 2, 3, até a 6.
+Então, repare que a gente conseguiu fazer uma
+habilidade, que é, no caso, gerar as mensagens de commit.
+ser replicada de tal forma que, a partir do prompt que eu desejo,
+que eu faço, eu consigo ter N resultados.
+Mas aquele resultado, aquela ação a ser executada,
+ela permanece sendo exatamente a mesma coisa.
