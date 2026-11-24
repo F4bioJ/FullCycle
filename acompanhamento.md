@@ -1,6 +1,6 @@
 # Acompanhamento dos quizzes
 
-Atualizado em 2026-11-22.
+Atualizado em 2026-11-23.
 
 **Legenda:**
 
@@ -741,8 +741,46 @@ O id da aula é `capítulo.aula` no Fundamentos (ex.: 2.4) e `módulo.capítulo.
 | 2.7.15 | Alucinação e sem utilidade | q3 | ✅ | — |
 | 2.7.15 | Alucinação e sem utilidade | q4 | ✅ | — |
 | 2.7.15 | Alucinação e sem utilidade | q5 | ✅ | — |
+| 2.8.1 | Precision | q1 | ✅ | — |
+| 2.8.1 | Precision | q2 | ✅ | — |
+| 2.8.1 | Precision | q3 | ✅ | — |
+| 2.8.1 | Precision | q4 | ✅ | — |
+| 2.8.1 | Precision | q5 | ✅ | — |
+| 2.8.2 | Recall | q1 | ✅ | — |
+| 2.8.2 | Recall | q2 | ✅ | — |
+| 2.8.2 | Recall | q3 | ✅ | — |
+| 2.8.2 | Recall | q4 | ✅ | — |
+| 2.8.2 | Recall | q5 | ✅ 1x | — |
+| 2.8.3 | F1 | q1 | ✅ | — |
+| 2.8.3 | F1 | q2 | ✅ | — |
+| 2.8.3 | F1 | q3 | ✅ | — |
+| 2.8.4 | Quando usar no mundo real | q1 | ✅ | — |
+| 2.8.4 | Quando usar no mundo real | q2 | ✅ | — |
+| 2.8.4 | Quando usar no mundo real | q3 | ✅ | — |
+| 2.8.5 | Entendendo 3 tipos de prompt | q1 | ✅ | — |
+| 2.8.5 | Entendendo 3 tipos de prompt | q2 | ✅ 1x | — |
+| 2.8.5 | Entendendo 3 tipos de prompt | q3 | ✅ | — |
+| 2.8.5 | Entendendo 3 tipos de prompt | q4 | ✅ | — |
+| 2.8.5 | Entendendo 3 tipos de prompt | q5 | ✅ | — |
+| 2.8.6 | Calculando as métricas | q1 | ✅ | — |
+| 2.8.6 | Calculando as métricas | q2 | ✅ | — |
+| 2.8.6 | Calculando as métricas | q3 | ✅ | — |
+| 2.8.6 | Calculando as métricas | q4 | ✅ | — |
+| 2.8.6 | Calculando as métricas | q5 | ✅ 1x | — |
+| 2.8.8 | Entendendo Pairwise Evaluator vs Evaluation | q1 | ✅ | — |
+| 2.8.8 | Entendendo Pairwise Evaluator vs Evaluation | q2 | ✅ 1x | — |
+| 2.8.8 | Entendendo Pairwise Evaluator vs Evaluation | q3 | ✅ | — |
+| 2.8.9 | Contexto do nosso experimento | q1 | ✅ 1x | — |
+| 2.8.9 | Contexto do nosso experimento | q2 | ✅ | — |
+| 2.8.9 | Contexto do nosso experimento | q3 | ✅ | — |
+| 2.8.9 | Contexto do nosso experimento | q4 | ✅ | — |
+| 2.8.9 | Contexto do nosso experimento | q5 | ✅ | — |
 
 ## Observações
+
+- 2026-11-23: 2.8.9 (Contexto do nosso experimento) padrão aplicado pela primeira vez: 4/5 (aula curta, 5 questões). Só a q1 errada: achou que, sem resposta esperada no dataset, a vitória de B não valia como evidência; o pairwise compara sem ground truth, e o que o resultado não sustenta é o impacto em produção (prompt A/B não é teste A/B). Passou na 1ª refação (✅ 1x), com o cenário do relatório que chamava a rodada pairwise de "teste A/B": é uma comparação offline decidida por um juiz, e o teste A/B mede o efeito com usuários em produção. Sem pendências na aula 2.8.9. Sem quizz avançado (pausado desde 2026-10-26).
+
+- 2026-11-23: 2.8.6 (Calculando as métricas) padrão aplicado pela primeira vez: 4/5. Antes de aplicar, o enunciado da q3 perdeu o "sem extração", que entregava a resposta. Só a q5 errada: marcou devolver só o F1 para o LangSmith derivar as outras duas; o LangSmith não calcula nada, e a função devolve as três métricas prontas, com score e comment. Passou na 1ª refação (✅ 1x), com o cenário de print sem return. Sem pendências na aula 2.8.6.
 
 - 2026-11-21: 2.7.3 (Entendendo Objetivos) padrão aplicado pela primeira vez: 4/5. Só a q1 errada: tratou um valor desatualizado vindo do documento recuperado como alucinação; alucinar é trazer o que não está no contexto. Passou na 1ª refação (✅ 1x) com cenário novo (RH, férias de 20 x 30 dias): fiel e com base no documento, mas errada diante da referência. Sem pendências na aula 2.7.3.
 
@@ -875,3 +913,11 @@ O id da aula é `capítulo.aula` no Fundamentos (ex.: 2.4) e `módulo.capítulo.
 - 2026-11-20: 2.6.6 (ITER-RETGEN) padrão q5 passou na 1ª refação (✅ 1x). Cenário novo (chatbot de suporte com respostas completas porém lentas): entendeu que cada rodada soma chamadas ao modelo e buscas, e que as lacunas são preenchidas pelos trechos recuperados. Sem pendências na aula 2.6.6.
 - 2026-11-21: 2.7.6 (Datasets) padrão aplicado pela primeira vez: 4/5 (aula curta, 5 questões). Só a q4 errada: marcou que o campo `output` do exemplo guarda o score do evaluator; é a resposta esperada (ground truth), a referência da comparação, e o score só existe depois que o evaluator roda. Sem quizz avançado (pausado desde 2026-10-26).
 - 2026-11-21: 2.7.6 (Datasets) padrão q4 passou na 1ª refação (✅ 1x). Cenário novo (prompt novo devolve severidade diferente da registrada no exemplo): entendeu que o `output` é a resposta esperada e que a diferença aparece ao comparar a saída gerada com ela. Sem pendências na aula 2.7.6.
+- 2026-11-23: 2.8.1 (Precision) padrão aplicado pela primeira vez: 5/5 (aula curta, 5 questões). Sem pendências na aula 2.8.1. Sem quizz avançado (pausado desde 2026-10-26).
+- 2026-11-23: 2.8.2 (Recall) padrão aplicado pela primeira vez: 4/5 (aula curta, 5 questões). Só a q5 errada: marcou que, com recall de 100%, ainda faltava checar falsos negativos; recall 100% já é FN = 0, e o que falta olhar é a precision (falsos positivos). Sem quizz avançado (pausado desde 2026-10-26).
+- 2026-11-23: 2.8.2 (Recall) padrão q5 passou na 1ª refação (✅ 1x). Cenário novo (200 logs, 15 bugs reais, 120 marcados, recall 100%): entendeu que o recall garante que os bugs estão entre os marcados e deixa em aberto os alarmes falsos (precision de 12,5%). Sem pendências na aula 2.8.2.
+- 2026-11-23: 2.8.4 (Quando usar no mundo real) padrão aplicado pela primeira vez: 3/3 (aula curta, 3 questões). Sem pendências na aula 2.8.4. Sem quizz avançado (pausado desde 2026-10-26).
+- 2026-11-23: 2.8.5 (Entendendo 3 tipos de prompt) padrão aplicado pela primeira vez: 4/5 (aula curta, 5 questões). Só a q2 errada: escolheu o balanceado num cenário que pede priorizar evitar alerta indevido; o conservador (só reporta com 100% de certeza) é o que favorece precision. Sem quizz avançado (pausado desde 2026-10-26).
+- 2026-11-23: 2.8.5 (Entendendo 3 tipos de prompt) padrão q2 passou na 1ª refação (✅ 1x). Cenário novo (poucos findings, quase todos confirmados, vários bugs de fora): reconheceu o conservador, com precision alta e recall baixo. Sem pendências na aula 2.8.5.
+- 2026-11-23: 2.8.8 (Entendendo Pairwise Evaluator vs Evaluation) padrão aplicado pela primeira vez: 2/3 (aula curta, 3 questões). Só a q2 errada: achou que o evaluator roda três vezes (opção 1, opção 2 e repetir a melhor); são três requisições, mas o evaluator roda uma vez, na terceira, com as duas respostas juntas. A q2 foi apontada como fraca antes da aplicação (enunciado entrega a resposta) e o usuário preferiu aplicar como está. Sem quizz avançado (pausado desde 2026-10-26).
+- 2026-11-23: 2.8.8 (Entendendo Pairwise Evaluator vs Evaluation) padrão q2 passou na 1ª refação (✅ 1x). Cenário novo (respostas das opções 1 e 2 já guardadas): entendeu que o evaluator recebe as duas juntas, com o critério, e devolve qual venceu. Sem pendências na aula 2.8.8.

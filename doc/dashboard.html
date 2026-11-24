@@ -1144,9 +1144,9 @@
     const inicioPE = new Date(Math.min(...PE_AULAS.map(a => +parse(a[0]))));
     const fimPE = new Date(Math.max(...PE_AULAS.map(a => +parse(a[0]))));
 
-    // Status: teoria do Prompt Engineering com quizz feito × o que a agenda pedia até hoje. As práticas não têm quizz para medir.
+    // Status: teoria do Prompt Engineering feita (quizz registrado ou, sem quizz, aula em `vistas`) × o que a agenda pedia até hoje. As práticas ficam de fora.
     const ritmoPlano = somaMin(teoriaPE) / ((fimPE - inicioPE) / DAY + 1);
-    const ultTeoria = teoriaPE.reduce((u, a, i) => QUIZ.some(q => q.id === a[1] && q.b.some(c => c !== null)) ? i : u, -1);
+    const ultTeoria = teoriaPE.reduce((u, a, i) => feitaPE.has(a[1]) ? i : u, -1);
     const estudadoPE = somaMin(teoriaPE.slice(0, ultTeoria + 1));
     const esperado = somaMin(teoriaPE.filter(a => parse(a[0]) <= HOJE));
     const deltaDias = (estudadoPE - esperado) / ritmoPlano;
@@ -1167,7 +1167,7 @@
     const diasTxt = absd < 0.5 ? "no ponto" : `${dec(absd)} ${absd < 1.5 ? "dia" : "dias"} ${deltaDias > 0 ? "à frente" : "atrás"}`;
     $("why").innerHTML = `Você está <b>${diasTxt}</b> da agenda que termina o Prompt Engineering em ${fmtc(fimPE)}. Estudou <b>${hm(estudadoPE)}</b> de ${hm(somaMin(teoriaPE))} de teoria; a agenda pedia ${hm(esperado)} até hoje.`;
     $("scale").innerHTML = NIVEIS.map(n => `<li ${n === nivel ? 'aria-current="true"' : ''}><span class="e" aria-hidden="true">${n.e}</span><span class="l">${n.n}${n === nivel ? " (você agora)" : ""}</span><span class="r">${n.r}</span></li>`).join("");
-    $("scalenote").textContent = "A régua compara a teoria do Prompt Engineering já feita, medida pelos quizzes, com o que a agenda pedia até hoje. As aulas práticas ficam de fora porque não têm quizz.";
+    $("scalenote").textContent = "A régua compara a teoria do Prompt Engineering já feita (pelos quizzes ou, na aula sem quizz, pelo vídeo assistido) com o que a agenda pedia até hoje. As aulas práticas ficam de fora.";
 
     /* janela da legenda: abre na carinha; fecha no ×, no Esc ou clicando fora */
     {
