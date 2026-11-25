@@ -16,9 +16,14 @@ Sincroniza o dashboard com o que o usuário já estudou. Converse sempre em port
 | `acompanhamento.md` | `next-class` / sessões de quizz | notas por questão (`QUIZ`) e a data "Atualizado em AAAA-MM-DD" (`ATUALIZADO`) |
 | `dados/plataforma.json` | snapshot da plataforma (passo 2) | por conteúdo: id, título, duração real em segundos, visto; daí saem durações, `PLATAFORMA` (feitos ÷ itens) e aula só ouvida (`o`) |
 | `dados/plataforma-pe.json` (opcional) | snapshot da página de conteúdos do Prompt Engineering | `visto` das aulas práticas (sem quizz), casado pelo título com `peAulas` |
-| `dados/plano.json` | o usuário (decisões do plano) | datas, `liberacoes`, `novembro`, agenda, `peAulas`, grupos de `BLOCOS`, `vistas`, `plataforma`, `passos` |
+| `dados/plataforma-labs.json` (opcional) | snapshot da página de conteúdos do IA Labs (módulo 294) | o mesmo para `labAulas` |
+| `dados/plano.json` | o usuário (decisões do plano) | datas, `liberacoes`, `novembro`, agenda, `peAulas`, `labAulas`, grupos de `BLOCOS`, `vistas`, `plataforma`, `passos` |
 
-Derivado, nunca digitado: `BLOCOS` (aula com quizz registrado, ou em `vistas`/`feitasExtra` = estudada `e`; só vista na plataforma = `o`; senão `n`), `PLATAFORMA`, `FUND_TOTAL_MIN` (soma dos blocos, durações reais), `RITMO_MEDIDO` (min estudados ÷ dias do `inicio` até `ATUALIZADO`), `AGENDA`, o feito/não feito de cada passo (condição em `plano.json`), o módulo de cada quizz (`m`: `pe` se o id está em `peAulas`, senão `fund`) e `PE_FEITAS` (aulas do Prompt Engineering feitas: quizz registrado; sem quizz, `visto` em `plataforma-pe.json` ou id em `vistas`; sem snapshot que ache a prática, ela conta como feita se uma aula posterior tem quizz, e o relatório avisa). `PE_FEITAS` alimenta o card "Hoje no plano" (aulas feitas × planejadas até hoje, última feita, próxima), o % estudado do módulo atual e os blocos do Prompt Engineering.
+Derivado, nunca digitado: `BLOCOS` (aula com quizz registrado, ou em `vistas`/`feitasExtra` = estudada `e`; só vista na plataforma = `o`; senão `n`), `PLATAFORMA`, `FUND_TOTAL_MIN` (soma dos blocos, durações reais), `RITMO_MEDIDO` (min estudados ÷ dias do `inicio` até `ATUALIZADO`), `AGENDA`, o feito/não feito de cada passo (condição em `plano.json`), o módulo de cada quizz (`m`: `pe` se o id está em `peAulas`, `lab` se está em `labAulas`, senão `fund`) e `PE_FEITAS`/`LAB_FEITAS` (aulas feitas: quizz registrado; sem quizz, `visto` no snapshot do módulo ou id em `vistas`; sem snapshot que ache a prática, ela conta como feita se uma aula posterior tem quizz, e o relatório avisa).
+
+`peAulas` e `labAulas` têm o formato `[data planejada, id, título, minutos, 1 se prática/sem quizz]`; os blocos saem por capítulo (`peCapitulos`, `labCapitulos`). O **módulo atual** é `ATUAL` em `doc/dashboard.html` (hoje o IA Labs): ele alimenta a carinha de status, o card "Hoje no plano" e a aba aberta por padrão. Ao trocar de módulo, crie a lista do novo módulo em `plano.json`, gere `XXX_AULAS/XXX_FEITAS/XXX_BLOCOS` no `update.mjs`, acrescente-o a `AGENDAS` e a `MODULOS` no HTML e aponte `ATUAL` e `inicial` para ele.
+
+Prática do IA Labs (3.1.4, 3.1.9 e 3.1.18 não têm quizz) só conta como feita com o snapshot `plataforma-labs.json` atualizado (passo 2) ou com o id em `vistas`.
 
 Mesma entrada, mesmo `dados.js`, byte a byte. Rodar duas vezes não muda nada.
 

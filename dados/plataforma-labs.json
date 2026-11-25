@@ -1,0 +1,158 @@
+{
+  "modulo": "IA Labs",
+  "capturadoEm": "2026-11-24",
+  "itens": [
+    {
+      "id": "18495",
+      "titulo": "Código-fonte",
+      "tipo": "link",
+      "seg": 12000,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "18267",
+      "titulo": "O que é uma skill",
+      "tipo": "video",
+      "seg": 866,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "18268",
+      "titulo": "Frontmatter e progressive discloure",
+      "tipo": "video",
+      "seg": 897,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "18269",
+      "titulo": "Arquitetura por trás da Skill",
+      "tipo": "video",
+      "seg": 866,
+      "visto": true,
+      "iniciado": false
+    },
+    {
+      "id": "18270",
+      "titulo": "Primeira skill",
+      "tipo": "video",
+      "seg": 370,
+      "visto": false,
+      "iniciado": true
+    },
+    {
+      "id": "18271",
+      "titulo": "Frontmatter",
+      "tipo": "video",
+      "seg": 1080,
+      "visto": false,
+      "iniciado": true
+    },
+    {
+      "id": "18272",
+      "titulo": "Framework de decisão - vira ou não skill",
+      "tipo": "video",
+      "seg": 971,
+      "visto": false,
+      "iniciado": true
+    },
+    {
+      "id": "18273",
+      "titulo": "Melhorando description",
+      "tipo": "video",
+      "seg": 469,
+      "visto": false,
+      "iniciado": true
+    },
+    {
+      "id": "18274",
+      "titulo": "Skill N3",
+      "tipo": "video",
+      "seg": 686,
+      "visto": false,
+      "iniciado": true
+    },
+    {
+      "id": "18275",
+      "titulo": "Conectando skill ao mundo externo",
+      "tipo": "video",
+      "seg": 777,
+      "visto": false,
+      "iniciado": true
+    },
+    {
+      "id": "18276",
+      "titulo": "Best practice - skills",
+      "tipo": "video",
+      "seg": 1006,
+      "visto": false,
+      "iniciado": true
+    },
+    {
+      "id": "18277",
+      "titulo": "Orquestração de Skills e subskills",
+      "tipo": "video",
+      "seg": 2111,
+      "visto": false,
+      "iniciado": true
+    },
+    {
+      "id": "18278",
+      "titulo": "Orquestração com script deterministico",
+      "tipo": "video",
+      "seg": 1261,
+      "visto": false,
+      "iniciado": true
+    },
+    {
+      "id": "18279",
+      "titulo": "Skills e subagents",
+      "tipo": "video",
+      "seg": 1015,
+      "visto": false,
+      "iniciado": true
+    },
+    {
+      "id": "18280",
+      "titulo": "Evalution skills",
+      "tipo": "video",
+      "seg": 1774,
+      "visto": false,
+      "iniciado": true
+    },
+    {
+      "id": "18281",
+      "titulo": "Evaluation trigger",
+      "tipo": "video",
+      "seg": 671,
+      "visto": false,
+      "iniciado": true
+    },
+    {
+      "id": "18282",
+      "titulo": "Skill com MCP",
+      "tipo": "video",
+      "seg": 1060,
+      "visto": false,
+      "iniciado": true
+    },
+    {
+      "id": "18283",
+      "titulo": "Evalution com promptfoo",
+      "tipo": "video",
+      "seg": 1185,
+      "visto": false,
+      "iniciado": true
+    },
+    {
+      "id": "18284",
+      "titulo": "Finalizando",
+      "tipo": "video",
+      "seg": 116,
+      "visto": false,
+      "iniciado": true
+    }
+  ]
+}

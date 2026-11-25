@@ -1103,8 +1103,8 @@
         <div class="panel">
           <h3>Plano até 04/01</h3>
           <table class="nov" id="nov"></table>
-          <p class="sub" style="margin-top:10px">Meta: chegar a 04/01/2027 com Fundamentos, Prompt Engineering (103 aulas, 13h06)
-            e os 2 desafios de 09/11 concluídos.</p>
+          <p class="sub" style="margin-top:10px">Meta: chegar a 04/01/2027 com Fundamentos, Prompt Engineering (103 aulas, 13h06),
+            IA Labs · Skills (18 aulas, 4h46) e os 2 desafios de 09/11 concluídos.</p>
         </div>
         <div class="panel">
           <h3>Próximos passos</h3>
@@ -1137,19 +1137,27 @@
     const q = new URLSearchParams(location.search).get("hoje");
     if (q && /^\d{4}-\d{2}-\d{2}$/.test(q)) HOJE = parse(q);
 
-    /* ---- módulo atual (Prompt Engineering) e status ---- */
+    /* ---- módulos com agenda por aula (Prompt Engineering, IA Labs); o atual alimenta o status ---- */
     const somaMin = l => l.reduce((s, a) => s + a[3], 0);
-    const feitaPE = new Set(PE_FEITAS);   // quizz feito ou, nas práticas, vídeo assistido (ver upd-dashboard)
-    const teoriaPE = PE_AULAS.filter(a => !a[4]);
-    const inicioPE = new Date(Math.min(...PE_AULAS.map(a => +parse(a[0]))));
-    const fimPE = new Date(Math.max(...PE_AULAS.map(a => +parse(a[0]))));
+    const agendaMod = (nome, lista, feitas, blocos) => ({
+      nome, aulas: lista, blocos,
+      feita: new Set(feitas),   // quizz feito ou, nas práticas, vídeo assistido (ver upd-dashboard)
+      inicio: new Date(Math.min(...lista.map(a => +parse(a[0])))),
+      fim: new Date(Math.max(...lista.map(a => +parse(a[0])))),
+    });
+    const AGENDAS = {
+      pe: agendaMod("Prompt Engineering", PE_AULAS, PE_FEITAS, PE_BLOCOS),
+      lab: agendaMod("IA Labs", LAB_AULAS, LAB_FEITAS, LAB_BLOCOS),
+    };
+    const ATUAL = AGENDAS.lab;   // módulo atual
+    const teoria = ATUAL.aulas.filter(a => !a[4]);
 
-    // Status: teoria do Prompt Engineering feita (quizz registrado ou, sem quizz, aula em `vistas`) × o que a agenda pedia até hoje. As práticas ficam de fora.
-    const ritmoPlano = somaMin(teoriaPE) / ((fimPE - inicioPE) / DAY + 1);
-    const ultTeoria = teoriaPE.reduce((u, a, i) => feitaPE.has(a[1]) ? i : u, -1);
-    const estudadoPE = somaMin(teoriaPE.slice(0, ultTeoria + 1));
-    const esperado = somaMin(teoriaPE.filter(a => parse(a[0]) <= HOJE));
-    const deltaDias = (estudadoPE - esperado) / ritmoPlano;
+    // Status: teoria do módulo atual feita (quizz registrado ou, sem quizz, aula em `vistas`) × o que a agenda pedia até hoje. As práticas ficam de fora.
+    const ritmoPlano = somaMin(teoria) / ((ATUAL.fim - ATUAL.inicio) / DAY + 1);
+    const ultTeoria = teoria.reduce((u, a, i) => ATUAL.feita.has(a[1]) ? i : u, -1);
+    const estudado = somaMin(teoria.slice(0, ultTeoria + 1));
+    const esperado = somaMin(teoria.filter(a => parse(a[0]) <= HOJE));
+    const deltaDias = (estudado - esperado) / ritmoPlano;
 
     const NIVEIS = [
       { min: 7, e: "😎", n: "Muito adiantado", r: "7 dias ou mais à frente" },
@@ -1165,9 +1173,9 @@
     $("status").textContent = nivel.n;
     const absd = Math.abs(deltaDias);
     const diasTxt = absd < 0.5 ? "no ponto" : `${dec(absd)} ${absd < 1.5 ? "dia" : "dias"} ${deltaDias > 0 ? "à frente" : "atrás"}`;
-    $("why").innerHTML = `Você está <b>${diasTxt}</b> da agenda que termina o Prompt Engineering em ${fmtc(fimPE)}. Estudou <b>${hm(estudadoPE)}</b> de ${hm(somaMin(teoriaPE))} de teoria; a agenda pedia ${hm(esperado)} até hoje.`;
+    $("why").innerHTML = `Você está <b>${diasTxt}</b> da agenda que termina o ${ATUAL.nome} em ${fmtc(ATUAL.fim)}. Estudou <b>${hm(estudado)}</b> de ${hm(somaMin(teoria))} de teoria; a agenda pedia ${hm(esperado)} até hoje.`;
     $("scale").innerHTML = NIVEIS.map(n => `<li ${n === nivel ? 'aria-current="true"' : ''}><span class="e" aria-hidden="true">${n.e}</span><span class="l">${n.n}${n === nivel ? " (você agora)" : ""}</span><span class="r">${n.r}</span></li>`).join("");
-    $("scalenote").textContent = "A régua compara a teoria do Prompt Engineering já feita (pelos quizzes ou, na aula sem quizz, pelo vídeo assistido) com o que a agenda pedia até hoje. As aulas práticas ficam de fora.";
+    $("scalenote").textContent = `A régua compara a teoria do ${ATUAL.nome} já feita (pelos quizzes ou, na aula sem quizz, pelo vídeo assistido) com o que a agenda pedia até hoje. As aulas práticas ficam de fora.`;
 
     /* janela da legenda: abre na carinha; fecha no ×, no Esc ou clicando fora */
     {
@@ -1193,20 +1201,21 @@
       const nome = a => `${a[1]} · ${a[2]}`;
       const pl = (n, um, varios) => `${n} ${n === 1 ? um : varios}`;
       const el = $("aulahoje");
-      const hoje = PE_AULAS.filter(a => a[0] === iso(HOJE));
-      const planejadas = PE_AULAS.filter(a => parse(a[0]) <= HOJE).length;
-      const feitas = PE_AULAS.filter(a => feitaPE.has(a[1])).length;
+      const L = ATUAL.aulas, feitaA = ATUAL.feita;
+      const hoje = L.filter(a => a[0] === iso(HOJE));
+      const planejadas = L.filter(a => parse(a[0]) <= HOJE).length;
+      const feitas = L.filter(a => feitaA.has(a[1])).length;
       const diff = feitas - planejadas;
-      const ult = [...PE_AULAS].reverse().find(a => feitaPE.has(a[1]));
-      const prox = PE_AULAS.find(a => !feitaPE.has(a[1]));
+      const ult = [...L].reverse().find(a => feitaA.has(a[1]));
+      const prox = L.find(a => !feitaA.has(a[1]));
 
       let big, how;
       if (!hoje.length) {
         big = "Nenhuma aula planejada";
-        how = "O plano não tem aula do Prompt Engineering para hoje.";
+        how = `O plano não tem aula do ${ATUAL.nome} para hoje.`;
       } else {
         big = hoje.length === 1 ? `Aula ${hoje[0][1]}` : `Aulas ${hoje[0][1]} a ${hoje[hoje.length - 1][1]}`;
-        const ok = hoje.filter(a => feitaPE.has(a[1])).length;
+        const ok = hoje.filter(a => feitaA.has(a[1])).length;
         how = `${pl(hoje.length, "aula", "aulas")}, ${hm(somaMin(hoje))} de vídeo previstos` +
           (ok === hoje.length ? " · todas já feitas" : ok ? ` · ${ok} já ${ok === 1 ? "feita" : "feitas"}` : "");
       }
@@ -1235,10 +1244,12 @@
     // Cards do módulo escolhido: % estudado e as métricas do quizz básico só das aulas dele.
     function kpis(mid) {
       let pct, tit, nota;
-      if (mid === "pe") {
-        pct = PE_FEITAS.length / PE_AULAS.length * 100;
-        tit = "Prompt Engineering, o módulo atual";
-        nota = `${PE_FEITAS.length} de ${PE_AULAS.length} aulas · módulos anteriores: 100%`;
+      const ag = AGENDAS[mid];
+      if (ag) {
+        const nf = ag.aulas.filter(a => ag.feita.has(a[1])).length;
+        pct = nf / ag.aulas.length * 100;
+        tit = ag === ATUAL ? `${ag.nome}, o módulo atual` : `${ag.nome}, ${nf === ag.aulas.length ? "concluído" : "em andamento"}`;
+        nota = `${nf} de ${ag.aulas.length} aulas${ag === ATUAL ? " · módulos anteriores: 100%" : ""}`;
       } else {
         const nEst = BLOCOS.filter(b => b.s === "e").reduce((a, b) => a + b.aulas, 0), nTot = BLOCOS.reduce((a, b) => a + b.aulas, 0);
         pct = nEst / nTot * 100;
@@ -1313,24 +1324,32 @@
         info(nEst === nTot ? "Módulo concluído em" : "Estudado até agora", nEst === nTot ? fmt(fim) : `${nEst} de ${nTot} aulas`, `${nEst} de ${nTot} aulas estudadas.`);
     }
 
-    function moduloPE() {
-      $("modblocks").innerHTML = PE_BLOCOS.map(b => blk(b.n, `${aulasTxt(b.aulas)} · ${hm(b.min)}`,
+    function moduloAgenda(mid) {
+      const ag = AGENDAS[mid];
+      $("modblocks").innerHTML = ag.blocos.map(b => blk(b.n, `${aulasTxt(b.aulas)} · ${hm(b.min)}`,
         `${b.n}: ${b.feitas} de ${b.aulas} aulas estudadas`, "s-estudada", b.feitas / b.aulas * 100, `${b.feitas} de ${b.aulas}`)).join("");
       $("modlegend").innerHTML = leg([["--basic", "Aulas estudadas (resumo, áudio e quizz)"], ["--track", "Ainda não estudadas"]]);
-      const minFeitas = somaMin(PE_AULAS.filter(a => feitaPE.has(a[1])));
-      const restante = somaMin(PE_AULAS) - minFeitas;
-      const medido = minFeitas / diasIncl(inicioPE, ATUALIZADO);
+      const minFeitas = somaMin(ag.aulas.filter(a => ag.feita.has(a[1])));
+      const restante = somaMin(ag.aulas) - minFeitas;
+      if (!restante && ag !== ATUAL) {   // concluído: resumo fixo, sem projeções
+        const d = diasIncl(ag.inicio, ag.fim);
+        $("pace").innerHTML =
+          info(`Ritmo médio no módulo (${fmtc(ag.inicio)} a ${fmtc(ag.fim)})`, `${Math.round(minFeitas / d)} min/dia`, `${hm(minFeitas)} de vídeo em ${d} dias.`) +
+          info("Módulo concluído em", fmt(ag.fim), `${ag.aulas.length} de ${ag.aulas.length} aulas estudadas.`);
+        return;
+      }
+      const medido = minFeitas / diasIncl(ag.inicio, ATUALIZADO);
       const diasAteMeta = Math.max((META_DESIGN - HOJE) / DAY, 0);
       const ritmoMeta = diasAteMeta > 0 ? restante / diasAteMeta : Infinity;
-      const diasAteFim = Math.max((fimPE - HOJE) / DAY + 1, 0);
+      const diasAteFim = Math.max((ag.fim - HOJE) / DAY + 1, 0);
       const ritmoAgenda = diasAteFim > 0 ? restante / diasAteFim : Infinity;
       const proj = new Date(HOJE.getTime() + (medido > 0 ? restante / medido : 0) * DAY);
       const rmax = Math.max(medido, isFinite(ritmoAgenda) ? ritmoAgenda : 0, isFinite(ritmoMeta) ? ritmoMeta : 0, 1) * 1.15;
       $("pace").innerHTML =
-        bar(`Ritmo medido no módulo (${fmtc(inicioPE)} a ${fmtc(ATUALIZADO)})`, medido, rmax, "var(--adv)", `${Math.round(medido)} min/dia`) +
-        bar(`Ritmo para fechar o Prompt Engineering em ${fmtc(fimPE)}, como na agenda`, isFinite(ritmoAgenda) ? ritmoAgenda : rmax, rmax, "var(--basic)", isFinite(ritmoAgenda) ? `${Math.round(ritmoAgenda)} min/dia` : "prazo vencido") +
-        bar(`Ritmo mínimo para fechar o Prompt Engineering até ${fmtc(META_DESIGN)}`, isFinite(ritmoMeta) ? ritmoMeta : rmax, rmax, "var(--basic)", isFinite(ritmoMeta) ? `${Math.round(ritmoMeta)} min/dia` : "prazo vencido") +
-        info("Se mantiver o ritmo medido: Prompt Engineering", restante ? fmt(proj) : "concluído", `Faltam ${hm(restante)} de vídeo, sem contar os desafios.`);
+        bar(`Ritmo medido no módulo (${fmtc(ag.inicio)} a ${fmtc(ATUALIZADO)})`, medido, rmax, "var(--adv)", `${Math.round(medido)} min/dia`) +
+        bar(`Ritmo para fechar o ${ag.nome} em ${fmtc(ag.fim)}, como na agenda`, isFinite(ritmoAgenda) ? ritmoAgenda : rmax, rmax, "var(--basic)", isFinite(ritmoAgenda) ? `${Math.round(ritmoAgenda)} min/dia` : "prazo vencido") +
+        bar(`Ritmo mínimo para fechar o ${ag.nome} até ${fmtc(META_DESIGN)}`, isFinite(ritmoMeta) ? ritmoMeta : rmax, rmax, "var(--basic)", isFinite(ritmoMeta) ? `${Math.round(ritmoMeta)} min/dia` : "prazo vencido") +
+        info(`Se mantiver o ritmo medido: ${ag.nome}`, restante ? fmt(proj) : "concluído", `Faltam ${hm(restante)} de vídeo, sem contar os desafios.`);
     }
 
     function quizzes(mid, nomeMod) {
@@ -1384,7 +1403,8 @@
     {
       const MODULOS = [
         { id: "fund", nome: "Fundamentos de IA Generativa", estado: "concluído", render: moduloFund },
-        { id: "pe", nome: "Prompt Engineering", estado: "atual", render: moduloPE },
+        { id: "pe", nome: "Prompt Engineering", estado: "concluído", render: () => moduloAgenda("pe") },
+        { id: "lab", nome: "IA Labs", estado: "atual", render: () => moduloAgenda("lab") },
       ];
       const tabs = $("modtabs");
       tabs.innerHTML = MODULOS.map(m => `<button type="button" role="tab" id="tab-${m.id}" aria-controls="modpanel" data-mod="${m.id}">${m.nome}<small>${m.estado}</small></button>`).join("");
@@ -1405,7 +1425,7 @@
         e.preventDefault();
         escolher(botoes[(i + (e.key === "ArrowRight" ? 1 : botoes.length - 1)) % botoes.length].dataset.mod, true);
       });
-      let inicial = "pe";   // módulo atual
+      let inicial = "lab";   // módulo atual
       try { const s = localStorage.getItem("mba-modulo"); if (MODULOS.some(m => m.id === s)) inicial = s; } catch (e) { }
       escolher(inicial);
     }

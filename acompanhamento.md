@@ -1,6 +1,6 @@
 # Acompanhamento dos quizzes
 
-Atualizado em 2026-11-23.
+Atualizado em 2026-11-25.
 
 **Legenda:**
 
@@ -775,8 +775,62 @@ O id da aula é `capítulo.aula` no Fundamentos (ex.: 2.4) e `módulo.capítulo.
 | 2.8.9 | Contexto do nosso experimento | q3 | ✅ | — |
 | 2.8.9 | Contexto do nosso experimento | q4 | ✅ | — |
 | 2.8.9 | Contexto do nosso experimento | q5 | ✅ | — |
+| 3.1.1 | O que é uma skill | q1 | ✅ | — |
+| 3.1.1 | O que é uma skill | q2 | ✅ | — |
+| 3.1.1 | O que é uma skill | q3 | ✅ | — |
+| 3.1.1 | O que é uma skill | q4 | ✅ | — |
+| 3.1.1 | O que é uma skill | q5 | ✅ | — |
+| 3.1.1 | O que é uma skill | q6 | ✅ | — |
+| 3.1.1 | O que é uma skill | q7 | ✅ | — |
+| 3.1.1 | O que é uma skill | q8 | ✅ | — |
+| 3.1.1 | O que é uma skill | q9 | ✅ | — |
+| 3.1.1 | O que é uma skill | q10 | ✅ 2x | — |
+| 3.1.2 | Frontmatter e progressive discloure | q1 | ✅ | — |
+| 3.1.2 | Frontmatter e progressive discloure | q2 | ✅ | — |
+| 3.1.2 | Frontmatter e progressive discloure | q3 | ✅ | — |
+| 3.1.2 | Frontmatter e progressive discloure | q4 | ✅ | — |
+| 3.1.2 | Frontmatter e progressive discloure | q5 | ✅ | — |
+| 3.1.2 | Frontmatter e progressive discloure | q6 | ✅ | — |
+| 3.1.2 | Frontmatter e progressive discloure | q7 | ✅ | — |
+| 3.1.2 | Frontmatter e progressive discloure | q8 | ✅ | — |
+| 3.1.2 | Frontmatter e progressive discloure | q9 | ✅ | — |
+| 3.1.2 | Frontmatter e progressive discloure | q10 | ✅ | — |
+| 3.1.3 | Arquitetura por trás da Skill | q1 | ✅ | — |
+| 3.1.3 | Arquitetura por trás da Skill | q2 | ✅ | — |
+| 3.1.3 | Arquitetura por trás da Skill | q3 | ✅ | — |
+| 3.1.3 | Arquitetura por trás da Skill | q4 | ✅ | — |
+| 3.1.3 | Arquitetura por trás da Skill | q5 | ✅ | — |
+| 3.1.3 | Arquitetura por trás da Skill | q6 | ✅ | — |
+| 3.1.3 | Arquitetura por trás da Skill | q7 | ✅ | — |
+| 3.1.3 | Arquitetura por trás da Skill | q8 | ✅ | — |
+| 3.1.3 | Arquitetura por trás da Skill | q9 | ✅ | — |
+| 3.1.3 | Arquitetura por trás da Skill | q10 | ✅ | — |
+| 3.1.5 | Frontmatter | q1 | ✅ | — |
+| 3.1.5 | Frontmatter | q2 | ✅ | — |
+| 3.1.5 | Frontmatter | q3 | ✅ | — |
+| 3.1.5 | Frontmatter | q4 | ✅ | — |
+| 3.1.5 | Frontmatter | q5 | ✅ | — |
+| 3.1.5 | Frontmatter | q6 | ✅ | — |
+| 3.1.5 | Frontmatter | q7 | ✅ | — |
+| 3.1.5 | Frontmatter | q8 | ✅ | — |
+| 3.1.5 | Frontmatter | q9 | ✅ | — |
+| 3.1.5 | Frontmatter | q10 | ✅ | — |
+| 3.1.6 | Framework de decisão - vira ou não skill | q1 | ✅ | — |
+| 3.1.6 | Framework de decisão - vira ou não skill | q2 | ✅ | — |
+| 3.1.6 | Framework de decisão - vira ou não skill | q3 | ✅ | — |
+| 3.1.6 | Framework de decisão - vira ou não skill | q4 | ✅ | — |
+| 3.1.6 | Framework de decisão - vira ou não skill | q5 | ✅ | — |
+| 3.1.6 | Framework de decisão - vira ou não skill | q6 | ✅ | — |
+| 3.1.6 | Framework de decisão - vira ou não skill | q7 | ✅ | — |
+| 3.1.6 | Framework de decisão - vira ou não skill | q8 | ✅ 1x | — |
+| 3.1.6 | Framework de decisão - vira ou não skill | q9 | ✅ | — |
+| 3.1.6 | Framework de decisão - vira ou não skill | q10 | ✅ | — |
 
 ## Observações
+
+- 2026-11-25: 3.1.6 (Framework de decisão - vira ou não skill) padrão aplicado pela primeira vez: 9/10. Só a q8 errada: mandou o status atual dos pedidos em produção para o CLAUDE.md; o CLAUDE.md guarda o que é sempre verdade no projeto, e dado vivo se busca na hora com tools ou MCP. Passou na 1ª refação (✅ 1x), com o cenário de tickets abertos no Jira e plantão do dia. Sem pendências na aula 3.1.6. Sem quizz avançado (pausado desde 2026-10-26).
+
+- 2026-11-25: 3.1.5 (Frontmatter) padrão aplicado pela primeira vez: 10/10. Sem pendências na aula 3.1.5. Sem quizz avançado (pausado desde 2026-10-26).
 
 - 2026-11-23: 2.8.9 (Contexto do nosso experimento) padrão aplicado pela primeira vez: 4/5 (aula curta, 5 questões). Só a q1 errada: achou que, sem resposta esperada no dataset, a vitória de B não valia como evidência; o pairwise compara sem ground truth, e o que o resultado não sustenta é o impacto em produção (prompt A/B não é teste A/B). Passou na 1ª refação (✅ 1x), com o cenário do relatório que chamava a rodada pairwise de "teste A/B": é uma comparação offline decidida por um juiz, e o teste A/B mede o efeito com usuários em produção. Sem pendências na aula 2.8.9. Sem quizz avançado (pausado desde 2026-10-26).
 
@@ -921,3 +975,8 @@ O id da aula é `capítulo.aula` no Fundamentos (ex.: 2.4) e `módulo.capítulo.
 - 2026-11-23: 2.8.5 (Entendendo 3 tipos de prompt) padrão q2 passou na 1ª refação (✅ 1x). Cenário novo (poucos findings, quase todos confirmados, vários bugs de fora): reconheceu o conservador, com precision alta e recall baixo. Sem pendências na aula 2.8.5.
 - 2026-11-23: 2.8.8 (Entendendo Pairwise Evaluator vs Evaluation) padrão aplicado pela primeira vez: 2/3 (aula curta, 3 questões). Só a q2 errada: achou que o evaluator roda três vezes (opção 1, opção 2 e repetir a melhor); são três requisições, mas o evaluator roda uma vez, na terceira, com as duas respostas juntas. A q2 foi apontada como fraca antes da aplicação (enunciado entrega a resposta) e o usuário preferiu aplicar como está. Sem quizz avançado (pausado desde 2026-10-26).
 - 2026-11-23: 2.8.8 (Entendendo Pairwise Evaluator vs Evaluation) padrão q2 passou na 1ª refação (✅ 1x). Cenário novo (respostas das opções 1 e 2 já guardadas): entendeu que o evaluator recebe as duas juntas, com o critério, e devolve qual venceu. Sem pendências na aula 2.8.8.
+- 2026-11-24: 3.1.1 (O que é uma skill) padrão aplicado pela primeira vez: 9/10. Só a q10 errada: marcou MCP no lugar da skill para o deploy, por acessar sistemas; a aula põe a skill como uso principal (com DisableModelInvocation), e o MCP é uma ferramenta que ela chama. Sem quizz avançado (pausado desde 2026-10-26).
+- 2026-11-24: 3.1.1 (O que é uma skill) padrão q10 errada na 1ª refação (❌ 1x). Cenário novo (rollback em produção com script e MCP de monitoramento): marcou a skill sem DisableModelInvocation, para o modelo disparar sozinho; ação com efeito colateral pede DisableModelInvocation, justamente para só rodar por pedido explícito.
+- 2026-11-24: 3.1.1 (O que é uma skill) padrão q10 passou na 2ª refação (✅ 2x). Cenário novo (migrações no banco de produção com MCP existente): entendeu que a skill só roda por pedido explícito (DisableModelInvocation) e que o MCP é uma ferramenta que ela chama. Sem pendências na aula 3.1.1.
+- 2026-11-24: 3.1.2 (Frontmatter e progressive discloure) padrão aplicado pela primeira vez: 10/10. Sem pendências na aula 3.1.2. Sem quizz avançado (pausado desde 2026-10-26).
+- 2026-11-24: 3.1.3 (Arquitetura por trás da Skill) padrão aplicado pela primeira vez: 10/10. Sem pendências na aula 3.1.3. Sem quizz avançado (pausado desde 2026-10-26).

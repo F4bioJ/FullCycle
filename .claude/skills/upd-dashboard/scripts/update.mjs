@@ -12,6 +12,7 @@ const ACOMP = "acompanhamento.md";
 const PLANO = "dados/plano.json";
 const PLAT = "dados/plataforma.json";
 const PLAT_PE = "dados/plataforma-pe.json";   // opcional: snapshot da página de conteúdos do Prompt Engineering
+const PLAT_LAB = "dados/plataforma-labs.json"; // opcional: snapshot da página de conteúdos do IA Labs
 const OUT = "doc/dados.js";
 
 const txt = f => readFileSync(f, "utf8");
@@ -127,48 +128,57 @@ const estAul = bl.filter(b => b.s === "e").reduce((a, b) => a + b.aulas, 0);
 const totAul = bl.reduce((a, b) => a + b.aulas, 0);
 const nDias = dias(plano.inicio, atual);
 if (nDias <= 0) falha(`Data de atualização (${atual}) não é posterior ao início (${plano.inicio})`);
-// Módulo de cada quizz: aula de peAulas = Prompt Engineering; o resto é Fundamentos.
+// Módulo de cada quizz: aula de peAulas = Prompt Engineering; de labAulas = IA Labs; o resto é Fundamentos.
+const labAulas = plano.labAulas || [];
 const idsPE = new Set(plano.peAulas.map(a => a[1]));
-quiz.forEach(a => { a.m = idsPE.has(a.id) ? "pe" : "fund"; });
+const idsLab = new Set(labAulas.map(a => a[1]));
+quiz.forEach(a => { a.m = idsPE.has(a.id) ? "pe" : idsLab.has(a.id) ? "lab" : "fund"; });
 
-// Aula do Prompt Engineering feita = quizz registrado. Sem quizz (práticas), vale o "visto" da plataforma
-// (dados/plataforma-pe.json, casando pelo título) ou o id em `vistas`. Sem snapshot que ache a aula,
-// a prática conta como feita se uma aula posterior já tem quizz.
+// Módulos com agenda por aula (Prompt Engineering, IA Labs). Aula feita = quizz registrado.
+// Sem quizz (práticas, marcadas com 1 na 5ª posição), vale o "visto" do snapshot da plataforma
+// (casando pelo título) ou o id em `vistas`. Sem snapshot que ache a aula, a prática conta como
+// feita se uma aula posterior já tem quizz.
 const comQuizId = id => quiz.some(q => q.id === id && q.b.some(c => c !== null));
-const ultPE = plano.peAulas.reduce((u, a, i) => comQuizId(a[1]) ? i : u, -1);
-const norm = t => String(t || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
-const snapPE = existsSync(PLAT_PE) ? JSON.parse(txt(PLAT_PE)) : null;
-const vistoPE = new Map((snapPE ? snapPE.itens : []).filter(i => i.tipo === "video").map(i => [norm(i.titulo), i.visto]));
+const norm = t => String(t || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
 const semSnap = [];
-const peFeitas = plano.peAulas.filter((a, i) => {
-  if (comQuizId(a[1]) || plano.vistas.includes(a[1])) return true;
-  if (!a[4]) return false;
-  const v = vistoPE.get(norm(a[2]));
-  if (v !== undefined) return v;
-  if (i < ultPE) semSnap.push(a[1]);
-  return i < ultPE;
-}).map(a => a[1]);
-const feitaPE = new Set(peFeitas);
-const peMin = plano.peAulas.filter(a => feitaPE.has(a[1])).reduce((s, a) => s + a[3], 0);
-const ritmo = Math.round((estMin + peMin) / nDias * 10) / 10;
+function moduloAgenda(lista, snapPath, capitulos) {
+  const ult = lista.reduce((u, a, i) => comQuizId(a[1]) ? i : u, -1);
+  const snapM = existsSync(snapPath) ? JSON.parse(txt(snapPath)) : null;
+  const visto = new Map((snapM ? snapM.itens : []).filter(i => i.tipo === "video").map(i => [norm(i.titulo), i.visto]));
+  const feitas = lista.filter((a, i) => {
+    if (comQuizId(a[1]) || plano.vistas.includes(a[1])) return true;
+    if (!a[4]) return false;
+    const v = visto.get(norm(a[2]));
+    if (v !== undefined) return v;
+    if (i < ult) semSnap.push(a[1]);
+    return i < ult;
+  }).map(a => a[1]);
+  const feita = new Set(feitas);
+  const min = lista.filter(a => feita.has(a[1])).reduce((s, a) => s + a[3], 0);
+  // Blocos: um por capítulo (prefixo "M.N" do id).
+  const blocos = [];
+  lista.forEach(a => {
+    const cap = a[1].split(".").slice(0, 2).join(".");
+    let b = blocos.find(x => x.cap === cap);
+    if (!b) blocos.push(b = { cap, n: (capitulos || {})[cap] || `Cap. ${cap}`, aulas: 0, min: 0, feitas: 0, minFeitas: 0 });
+    b.aulas++; b.min += a[3];
+    if (feita.has(a[1])) { b.feitas++; b.minFeitas += a[3]; }
+  });
+  return { feitas, min, blocos };
+}
+const PE = moduloAgenda(plano.peAulas, PLAT_PE, plano.peCapitulos);
+const LAB = moduloAgenda(labAulas, PLAT_LAB, plano.labCapitulos);
+const peFeitas = PE.feitas, peMin = PE.min;
+const ritmo = Math.round((estMin + peMin + LAB.min) / nDias * 10) / 10;
+const semBlocos = b => b.map(({ n, aulas, min, feitas, minFeitas }) => ({ n, aulas, min, feitas, minFeitas }));
 
-// Blocos do Prompt Engineering: um por capítulo (prefixo "2.N" do id).
-const peBlocos = [];
-plano.peAulas.forEach((a, i) => {
-  const cap = a[1].split(".").slice(0, 2).join(".");
-  let b = peBlocos.find(x => x.cap === cap);
-  if (!b) peBlocos.push(b = { cap, n: (plano.peCapitulos || {})[cap] || `Cap. ${cap}`, aulas: 0, min: 0, feitas: 0, minFeitas: 0 });
-  b.aulas++; b.min += a[3];
-  if (feitaPE.has(a[1])) { b.feitas++; b.minFeitas += a[3]; }
-});
-
-const agenda = [...plano.agendaBase, ...plano.peAulas.filter(a => !a[4])];
+const agenda = [...plano.agendaBase, ...plano.peAulas.filter(a => !a[4]), ...labAulas.filter(a => !a[4])];
 const passos = plano.passos.map(([t, c]) => [t, passoFeito(c, quiz, plano)]);
 const feitos = snap.itens.filter(i => i.visto).length, videos = snap.itens.filter(i => i.tipo === "video");
 const pl = { pct: Math.round(feitos / snap.itens.length * 100), feitos, itens: snap.itens.length, aulasVistas: videos.filter(i => i.visto).length, aulas: videos.length, _em: snap.capturadoEm };
 
 const linhas = a => "[\n" + a.map(x => "  " + JSON.stringify(x)).join(",\n") + "\n]";
-const js = `/* GERADO por .claude/skills/upd-dashboard/scripts/update.mjs a partir de acompanhamento.md + dados/plano.json + dados/plataforma.json. Não edite. */
+const js = `/* GERADO por .claude/skills/upd-dashboard/scripts/update.mjs a partir de acompanhamento.md + dados/plano.json + dados/plataforma*.json. Não edite. */
 const ATUALIZADO = ${dt(atual)};
 const INICIO = ${dt(plano.inicio)}, FIM = ${dt(plano.fim)}, META_DESIGN = ${dt(plano.metaDesign)};
 const REFERENCIA_FUND = ${dt(plano.referenciaFund)};
@@ -182,7 +192,10 @@ const LIBERACOES = ${linhas(plano.liberacoes)};
 const NOVEMBRO = ${linhas(plano.novembro)};
 const PE_AULAS = ${linhas(plano.peAulas)};
 const PE_FEITAS = ${JSON.stringify(peFeitas)};
-const PE_BLOCOS = ${linhas(peBlocos.map(({ n, aulas, min, feitas, minFeitas }) => ({ n, aulas, min, feitas, minFeitas })))};
+const PE_BLOCOS = ${linhas(semBlocos(PE.blocos))};
+const LAB_AULAS = ${linhas(labAulas)};
+const LAB_FEITAS = ${JSON.stringify(LAB.feitas)};
+const LAB_BLOCOS = ${linhas(semBlocos(LAB.blocos))};
 const AGENDA = ${linhas(agenda)};
 const FEITAS_EXTRA = ${JSON.stringify([...plano.vistas, ...plano.feitasExtra])};
 const PASSOS = ${linhas(passos)};
@@ -197,8 +210,8 @@ const pend = quiz.flatMap(a => [
 const nq = quiz.flatMap(a => [...a.b, ...(a.a || [])]).filter(c => c !== null).length;
 console.log(`Aulas no acompanhamento: ${quiz.length} (última: ${quiz[quiz.length - 1].id} ${quiz[quiz.length - 1].nome})`);
 console.log(`Questões registradas: ${nq} · pendentes: ${pend.length}${pend.length ? " → " + pend.map(p => `${p[1]} ${p[2]} q${p[3]}`).join(", ") : ""}`);
-console.log(`Estudado: Fundamentos ${estAul} de ${totAul} aulas, ${estMin} de ${totalMin} min · Prompt Engineering ${peFeitas.length} de ${plano.peAulas.length} aulas, ${peMin} min · ritmo ${ritmo} min/dia (${nDias} dias)`);
-if (semSnap.length) console.log(`Práticas do Prompt Engineering sem snapshot da plataforma, contadas como feitas por haver quizz depois: ${semSnap.join(", ")}`);
+console.log(`Estudado: Fundamentos ${estAul} de ${totAul} aulas, ${estMin} de ${totalMin} min · Prompt Engineering ${peFeitas.length} de ${plano.peAulas.length} aulas, ${peMin} min · IA Labs ${LAB.feitas.length} de ${labAulas.length} aulas, ${LAB.min} min · ritmo ${ritmo} min/dia (${nDias} dias)`);
+if (semSnap.length) console.log(`Práticas sem snapshot da plataforma, contadas como feitas por haver quizz depois: ${semSnap.join(", ")}`);
 console.log("Blocos: " + bl.map(b => `${b.n}=${b.s}`).join(" · "));
 console.log(`Passos feitos: ${passos.filter(p => p[1]).length}/${passos.length} · próximo: ${(passos.find(p => !p[1]) || ["—"])[0]}`);
 console.log(`Data de atualização: ${atual}`);
