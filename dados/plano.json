@@ -48,7 +48,9 @@
     "2.8.10",
     "2.8.11",
     "2.8.12",
-    "3.1.4"
+    "3.1.4",
+    "3.1.7",
+    "3.1.8"
   ],
   "vistas_nota": "vistas = aulas estudadas sem quizz (conta como estudada). Só 'visto' na plataforma, sem estudo, vira 'o' (só ouvida).",
   "feitasExtra": [

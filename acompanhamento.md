@@ -1,6 +1,6 @@
 # Acompanhamento dos quizzes
 
-Atualizado em 2026-11-25.
+Atualizado em 2026-11-26.
 
 **Legenda:**
 
@@ -825,8 +825,25 @@ O id da aula é `capítulo.aula` no Fundamentos (ex.: 2.4) e `módulo.capítulo.
 | 3.1.6 | Framework de decisão - vira ou não skill | q8 | ✅ 1x | — |
 | 3.1.6 | Framework de decisão - vira ou não skill | q9 | ✅ | — |
 | 3.1.6 | Framework de decisão - vira ou não skill | q10 | ✅ | — |
+| 3.1.7 | Melhorando description | q1 | ✅ | — |
+| 3.1.7 | Melhorando description | q2 | ✅ | — |
+| 3.1.7 | Melhorando description | q3 | ✅ | — |
+| 3.1.7 | Melhorando description | q4 | ✅ | — |
+| 3.1.7 | Melhorando description | q5 | ✅ | — |
+| 3.1.8 | Skill N3 | q1 | ✅ | — |
+| 3.1.8 | Skill N3 | q2 | ✅ | — |
+| 3.1.8 | Skill N3 | q3 | ✅ 1x | — |
+| 3.1.8 | Skill N3 | q4 | ✅ | — |
+| 3.1.8 | Skill N3 | q5 | ✅ 1x | — |
+| 3.1.8 | Skill N3 | q6 | ✅ | — |
+| 3.1.8 | Skill N3 | q7 | ✅ | — |
+| 3.1.8 | Skill N3 | q8 | ✅ | — |
+| 3.1.8 | Skill N3 | q9 | ✅ | — |
+| 3.1.8 | Skill N3 | q10 | ✅ 1x | — |
 
 ## Observações
+
+- 2026-11-26: 3.1.8 (Skill N3) padrão aplicado pela primeira vez: 7/10. Erradas: q3 (achou que script e modelo variam do mesmo jeito; só o modelo é não determinístico), q5 (na INCORRETA, não viu que a classificação continua variando mesmo com o script) e q10 (achou que N3 exige script; referências sozinhas já são N3). As três passaram na 1ª refação (✅ 1x). Sem pendências na aula 3.1.8. Sem quizz avançado (pausado desde 2026-10-26).
 
 - 2026-11-25: 3.1.6 (Framework de decisão - vira ou não skill) padrão aplicado pela primeira vez: 9/10. Só a q8 errada: mandou o status atual dos pedidos em produção para o CLAUDE.md; o CLAUDE.md guarda o que é sempre verdade no projeto, e dado vivo se busca na hora com tools ou MCP. Passou na 1ª refação (✅ 1x), com o cenário de tickets abertos no Jira e plantão do dia. Sem pendências na aula 3.1.6. Sem quizz avançado (pausado desde 2026-10-26).
 
