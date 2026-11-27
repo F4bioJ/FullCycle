@@ -1,6 +1,6 @@
 # Acompanhamento dos quizzes
 
-Atualizado em 2026-11-26.
+Atualizado em 2026-11-27.
 
 **Legenda:**
 
@@ -840,8 +840,20 @@ O id da aula é `capítulo.aula` no Fundamentos (ex.: 2.4) e `módulo.capítulo.
 | 3.1.8 | Skill N3 | q8 | ✅ | — |
 | 3.1.8 | Skill N3 | q9 | ✅ | — |
 | 3.1.8 | Skill N3 | q10 | ✅ 1x | — |
+| 3.1.10 | Best practice - skills | q1 | ✅ | — |
+| 3.1.10 | Best practice - skills | q2 | ✅ | — |
+| 3.1.10 | Best practice - skills | q3 | ✅ | — |
+| 3.1.10 | Best practice - skills | q4 | ✅ | — |
+| 3.1.10 | Best practice - skills | q5 | ✅ | — |
+| 3.1.10 | Best practice - skills | q6 | ✅ | — |
+| 3.1.10 | Best practice - skills | q7 | ✅ | — |
+| 3.1.10 | Best practice - skills | q8 | ✅ | — |
+| 3.1.10 | Best practice - skills | q9 | ✅ | — |
+| 3.1.10 | Best practice - skills | q10 | ✅ | — |
 
 ## Observações
+
+- 2026-11-27: 3.1.10 (Best practice - skills) padrão aplicado pela primeira vez: 10/10. Sem pendências na aula 3.1.10. Sem quizz avançado (pausado desde 2026-10-26).
 
 - 2026-11-26: 3.1.8 (Skill N3) padrão aplicado pela primeira vez: 7/10. Erradas: q3 (achou que script e modelo variam do mesmo jeito; só o modelo é não determinístico), q5 (na INCORRETA, não viu que a classificação continua variando mesmo com o script) e q10 (achou que N3 exige script; referências sozinhas já são N3). As três passaram na 1ª refação (✅ 1x). Sem pendências na aula 3.1.8. Sem quizz avançado (pausado desde 2026-10-26).
 
