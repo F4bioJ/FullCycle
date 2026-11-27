@@ -850,8 +850,15 @@ O id da aula é `capítulo.aula` no Fundamentos (ex.: 2.4) e `módulo.capítulo.
 | 3.1.10 | Best practice - skills | q8 | ✅ | — |
 | 3.1.10 | Best practice - skills | q9 | ✅ | — |
 | 3.1.10 | Best practice - skills | q10 | ✅ | — |
+| 3.1.11 | Orquestração de Skills e subskills | q1 | ✅ | — |
+| 3.1.11 | Orquestração de Skills e subskills | q2 | ✅ | — |
+| 3.1.11 | Orquestração de Skills e subskills | q3 | ✅ | — |
+| 3.1.11 | Orquestração de Skills e subskills | q4 | ✅ | — |
+| 3.1.11 | Orquestração de Skills e subskills | q5 | ✅ | — |
 
 ## Observações
+
+- 2026-11-27: 3.1.11 (Orquestração de Skills e subskills) padrão: o quizz original de 10 questões foi interrompido na q4 (1/3: errou q1 e q3) porque o usuário apontou que as perguntas cobravam a demonstração e TypeScript, não os conceitos. Reescrito com 5 questões conceituais (orquestrador × subskill, convenções no projeto, porta de decisão, script determinístico e granularidade) e aplicado do início: 5/5. A tentativa interrompida não conta. Sem pendências na aula 3.1.11. Sem quizz avançado (pausado desde 2026-10-26).
 
 - 2026-11-27: 3.1.10 (Best practice - skills) padrão aplicado pela primeira vez: 10/10. Sem pendências na aula 3.1.10. Sem quizz avançado (pausado desde 2026-10-26).
 

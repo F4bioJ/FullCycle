@@ -5,62 +5,32 @@
 
 ---
 
-## 1. Um time copia a `implement-feature` da aula, mas, para poupar passos, deixa o orquestrador escrever o código de domínio direto e delega às subskills só as outras camadas. Pelo desenho do professor, o que esse atalho quebra?
-- A) A ordem bottom-up: com o domínio escrito pelo orquestrador, ele passaria a ser gerado por último, depois da rota.
-- B) O mapa de camadas, que deixaria de listar o domínio, e as camadas de cima ficariam sem a interface do repositório.
-- C) O papel do orquestrador, que só coordena: o domínio sairia sem a subskill que carrega a convenção da camada.
-- D) A passagem de contexto, porque a subskill de domínio é a que recebe o pedido do usuário direto, sem o orquestrador.
+## 1. Uma empresa monta uma skill `gerar-relatorio-mensal` como orquestradora, com subskills para coleta de dados, gráficos e texto. Qual divisão de papéis segue o desenho da aula?
+- A) O orquestrador escreve o texto final e as subskills buscam os dados, porque o texto é a parte mais importante.
+- B) O orquestrador define as etapas, a ordem e o que passar a cada subskill; cada subskill produz a sua parte.
+- C) Cada subskill decide por conta própria quando rodar, e o orquestrador junta os resultados no fim da execução.
+- D) O orquestrador produz um rascunho de tudo, e as subskills revisam cada parte seguindo as convenções.
 
-## 2. Lendo o pipeline gerado na aula, um colega estranha a ordem: "o usuário entra pela rota, então a geração deveria começar pela rota". Qual descrição corresponde ao que a aula mostra?
-- A) A geração começa pela rota, que chama o serviço, e termina no domínio, na mesma ordem em que a requisição percorre a aplicação.
-- B) A geração vai do domínio até a rota (bottom-up), o inverso do caminho da requisição, que começa na rota e desce até o domínio.
-- C) A geração segue o caminho da requisição, mas o adapter vem antes do domínio, para que o domínio já nasça usando os providers.
-- D) A ordem fica a cargo do modelo em cada execução, porque o pipeline lista as camadas sem sequência, já que é não determinístico.
+## 2. Uma consultoria atende três clientes com a mesma skill de documentação, e cada cliente tem um padrão próprio de escrita. Seguindo a aula, como organizar?
+- A) Uma skill só, e o padrão de cada cliente num arquivo de convenção no projeto dele, lido antes de gerar.
+- B) Uma cópia da skill para cada cliente, com o padrão dele escrito no corpo, para o modelo não misturar.
+- C) Uma skill só, com uma seção por cliente no corpo, e a porta de decisão pergunta qual seção usar.
+- D) Uma skill só, sem padrões, e o usuário cola o padrão do cliente no pedido a cada execução.
 
-## 3. Uma empresa quer usar a mesma subskill de domínio em vários projetos, e cada projeto tem seu jeito de nomear erros e de montar value objects. Pelo desenho da aula, onde fica cada coisa?
-- A) Na subskill, os critérios da camada (ex.: domínio rico); em `architecture/convention-domain.md`, o jeito de cada projeto.
-- B) Tudo no corpo da subskill de domínio, numa seção por projeto, porque o pré-check lê a convenção do próprio `skill.md`.
-- C) Na subskill, o jeito de cada projeto; em `architecture/`, os critérios gerais do domínio, que valem igual entre os projetos.
-- D) No mapa de camadas do orquestrador, que faz a passagem de contexto e entrega à subskill de domínio o jeito do projeto.
+## 3. Uma skill orquestradora de onboarding cria as contas de um novo funcionário, mas o pedido não diz em qual equipe ele entra, e isso muda os acessos. Pelo desenho da aula, o que se espera?
+- A) Escolher a equipe mais comum, seguir a pipeline e listar a suposição no relatório de fechamento.
+- B) Encerrar a execução e pedir que o usuário refaça o pedido já informando a equipe do funcionário.
+- C) Criar as contas sem os acessos da equipe e deixar essa decisão para uma execução posterior.
+- D) Parar na porta de decisão, perguntar a equipe ao usuário, registrar a resposta e seguir a pipeline.
 
-## 4. Num projeto com o `src` vazio, alguém invoca a `implement-feature` com: "produto com name, description e price; criar e listar, em memória". O pedido não diz a stack. Pelo que a aula mostra, o que acontece nesse ponto?
-- A) A subskill de domínio escolhe a stack mais comum para o tipo de projeto e registra a escolha no fechamento, sem interromper a pipeline.
-- B) O orquestrador encerra a execução com erro, porque o pedido não traz tudo o que o mapa de camadas exige para começar.
-- C) A porta de decisão para a execução e pergunta ao usuário (na aula, a stack e a exposição via HTTP), registra as respostas e segue.
-- D) A falta de stack aparece no fechamento, quando o type check falha, e então o orquestrador pede para rodar a feature de novo.
+## 4. O professor ressalta que toda a orquestração foi feita só com arquivos `.md`, por inferência. Se uma etapa um dia gerar algo fora do padrão, o que ele propõe para pegar isso?
+- A) Uma porta de decisão a mais no fim, para o usuário revisar cada arquivo antes de a pipeline terminar.
+- B) Uma convenção mais longa e detalhada, porque o desvio indica que o modelo teve pouco contexto.
+- C) Um script determinístico que confira o formato e aponte o desvio, permitindo a autocorreção.
+- D) Um orquestrador que escreva ele mesmo as partes críticas, sem delegar essas etapas às subskills.
 
-## 5. Na demonstração, ao chegar à camada de serviço, o agente avisou que não havia convenções de serviço, repositório e rota. O professor copiou esses arquivos para `architecture/`, e as convenções foram carregadas. O que esse episódio mostra sobre o desenho?
-- A) Que convenções novas passam antes pela porta de decisão, onde o usuário confirma se a subskill deve aplicá-las à camada.
-- B) Que, sem convenção, a subskill não tem como gerar a camada, e por isso cada camada exige um arquivo próprio em `architecture/`.
-- C) Que as convenções ficam no corpo das subskills, e copiar os arquivos para a pasta serviu para que o agente as atualizasse.
-- D) Que as convenções moram no projeto, fora da skill: a subskill as procura no pré-check, sem precisar ser editada para cada projeto.
-
-## 6. Um tech lead quer explicar ao time o que o professor chama, no fim da aula, de "três camadas de customização". Qual lista corresponde a elas?
-- A) O orquestrador, as subskills de cada camada e os scripts determinísticos que validam o formato de cada arquivo gerado.
-- B) Os fundamentos de engenharia, a documentação dos frameworks e, por cima, as convenções do desenvolvedor, por projeto ou time.
-- C) O nível 1 (frontmatter), o nível 2 (corpo da skill) e o nível 3 (referências e scripts) da progressive disclosure.
-- D) As convenções do time, as convenções do projeto e as convenções de cada camada, guardadas juntas em `architecture/`.
-
-## 7. Numa execução futura, a subskill de domínio gera uma entidade fora do molde da convenção. Com a pipeline como a aula a deixou, o que se pode esperar e o que, segundo o professor, mudaria isso?
-- A) Pode passar despercebido, porque a pipeline é só `.md` e inferência; um script que checasse o formato apontaria o desvio e levaria à autocorreção.
-- B) A porta de decisão compara o arquivo com a convenção e barra o desvio; por isso o professor considera o script uma camada redundante.
-- C) O type check do fechamento barra o desvio, porque fugir da convenção quebra a compilação; o script serviria para acelerar a checagem.
-- D) O orquestrador refaz a camada por conta própria, porque o self-healing já vem do ciclo por arquivo descrito no pipeline da skill.
-
-## 8. No fim da aula, o professor explica por que o código gerado não saiu "macarrão". Qual afirmação NÃO corresponde à explicação dele?
-- A) Pesou a forma como as skills foram construídas, com um orquestrador e uma subskill para cada camada da feature.
-- B) Pesaram as informações de contexto passadas ao modelo, como as convenções lidas antes de cada camada ser gerada.
-- C) Pesaram os scripts que validaram o formato de cada arquivo antes de a pipeline seguir para a próxima camada.
-- D) Pesaram os fundamentos de arquitetura e de design de código que estão por trás das convenções usadas.
-
-## 9. Depois da aula, um dev propõe quebrar a subskill de domínio em várias: uma para entidades, uma para value objects e uma para erros. Pelo que esta aula e a anterior ensinam sobre granularidade, qual é a melhor leitura?
-- A) Deve quebrar, porque quanto maior a granularidade, mais curto fica o corpo, e o corpo curto foi a regra principal da aula anterior.
-- B) Não deve quebrar, porque uma subskill não pode chamar outra, e quem invoca as subskills da pipeline é o orquestrador.
-- C) Deve quebrar até chegar a uma subskill por arquivo, porque o ciclo do orquestrador na aula roda uma vez para cada arquivo.
-- D) Depende do projeto: a granularidade é particular e vem quando é necessária; parte-se da responsabilidade, e na aula foi uma por camada.
-
-## 10. Na demonstração, os testes da camada de domínio já tinham passado antes de a camada de serviço começar. O que, no desenho da `implement-feature`, explica esse comportamento?
-- A) A instrução de que, a cada arquivo, a subskill da camada produz o arquivo garantindo os testes dele, dentro do ciclo por arquivo.
-- B) A parte de geração de testes do mapa de camadas, que roda uma vez ao fim da pipeline, depois que a rota fica pronta.
-- C) O type check do TypeScript, que o orquestrador roda ao fim de cada camada e que executa os testes junto da checagem de tipos.
-- D) A convenção de domínio em `architecture/`, que já trazia os testes prontos para a subskill copiar ao gerar a entidade.
+## 5. Um dev quer dividir cada subskill em várias menores, uma para cada tipo de arquivo, "para ficar mais organizado". Pelo que esta aula e a anterior dizem sobre granularidade, qual é a melhor resposta?
+- A) Quanto mais subskills, melhor, porque cada uma fica mais curta, e corpo curto é a regra da aula anterior.
+- B) A divisão é particular e entra quando é necessária; parte-se da responsabilidade, não do tamanho.
+- C) Não vale dividir, porque o orquestrador fica limitado a chamar uma subskill por etapa da pipeline.
+- D) Vale dividir até ter uma subskill por arquivo, já que o orquestrador trabalha num ciclo por arquivo.

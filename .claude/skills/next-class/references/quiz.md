@@ -10,6 +10,15 @@ Em 2026-10-15 o usuário disse que estava gastando tempo demais com os quizzes e
 - São 10 perguntas por quizz, padrão e avançado (o usuário pediu em 2026-10-16, depois de um dia com 5 a 6). As 10 passam pelo filtro acima: para chegar a 10, explore outros mecanismos, limites, sintomas e conexões entre aulas, nunca enchimento.
 - **Exceção:** aulas com vídeo abaixo de 10 minutos têm 5 ou 3 perguntas, conforme "Aulas curtas" na `SKILL.md` da `next-class` (pedido do usuário em 2026-11-02). Numa aula assim, menos perguntas é melhor do que enchimento.
 
+## Conceito, não a demonstração
+
+Em 2026-11-27, na `3.1.11` (Orquestração de Skills e subskills), o usuário parou o quizz: as perguntas cobravam o que aconteceu na demonstração (o código gerado, a stack escolhida, qual arquivo o professor copiou) e pressupunham TypeScript. Ele entendia os conceitos, mas não a demonstração. Reescrito com 5 perguntas conceituais, fez 5/5. Regra: **o quizz cobra os conceitos da aula, não o código nem os passos mostrados nela.**
+
+- A demonstração serve de fonte para extrair o conceito (o que ela mostra sobre como funciona, onde quebra, quando usar), nunca de pergunta em si.
+- Não pergunte sobre o código da aula: nomes de arquivos, classes, funções, pastas, comandos, linguagem, framework, número de testes, ordem em que as coisas apareceram na tela.
+- Prefira cenários novos e fora do código da aula (outro domínio, outra equipe, outro tipo de tarefa) em que o mesmo conceito decide a resposta. Não pressuponha que o aluno conheça a linguagem usada na demonstração.
+- Aula com poucos conceitos fica com menos perguntas (o N de "Aulas curtas" é teto): não complete com detalhes da demonstração.
+
 ## Escopo: só a aula e as anteriores
 
 Em 2026-11-08 o usuário apontou que uma pergunta da `2.2.5` (Truncamento) comparava truncamento com sumarização, tema da aula seguinte, ainda não estudada. Regra: a pergunta e **todas** as alternativas só podem usar o que a aula ensina e o que as **aulas anteriores** (do mesmo módulo ou de módulos já estudados) ensinaram. Aula vizinha posterior não entra, nem como comparação, contraste, "próxima aula" ou "veremos a seguir".
