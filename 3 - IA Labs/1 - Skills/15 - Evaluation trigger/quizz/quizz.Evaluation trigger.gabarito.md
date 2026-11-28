@@ -2,10 +2,10 @@
 
 ## 1. Por que voltar à avaliação de trigger depois da reescrita?
 **Correta: C**
-**Por quê:** o professor recapitula que a avaliação da description chegou a acontecer, mas foi pausada porque a skill precisou ser reescrita por inteiro. A versão nova rodou só na avaliação de qualidade, então ainda não se sabia se ela dispara nos pedidos certos. Por isso ele retoma o processo de avaliação da description (o trigger) para ver o resultado.
-- **A:** a avaliação de qualidade olha a saída da skill nos inputs gerados (as queries SQL), não se a description aciona a skill nos pedidos certos. O disparo da versão nova ainda não tinha sido medido.
-- **B:** o professor apagou o workspace por escolha própria, "só para gerar um novo" e trabalhar em cima do trigger. A aula não diz que o Skill Creator exige isso, e esse não é o motivo de voltar ao trigger.
-- **D:** o delta estreito (88% contra 100%) foi atribuído a testes fáceis demais, não à description. A "descrição genérica" foi a causa raiz apontada antes da reescrita, na skill original.
+**Por quê:** é o que o professor faz na aula: a avaliação da description chegou a acontecer, mas foi pausada porque a skill precisou ser reescrita por inteiro. A versão nova rodou só na avaliação de qualidade, então ainda não se sabia se ela dispara nos pedidos certos. Por isso ele retoma a avaliação da description (o trigger).
+- **A:** a avaliação de qualidade olha a saída da skill nos inputs gerados, não se a description aciona a skill nos pedidos certos. São as duas formas de avaliar que a aula anterior separou.
+- **B:** na aula, o professor apagou o workspace por escolha própria, "só para gerar um novo". A aula não diz que o Skill Creator exige isso, e esse não é o motivo de voltar ao trigger.
+- **D:** a qualidade e o disparo são medidos à parte; um bom resultado na qualidade não diz nada sobre a description. Na aula, a description genérica foi a causa raiz apontada antes da reescrita.
 **Conceito:** retomada da avaliação de trigger após a reescrita da skill
 
 ## 2. Precision 100% e recall 50% no teste de trigger: qual diagnóstico?
@@ -27,7 +27,7 @@
 ## 4. Loop de description sem alvo definido: o que a aula recomenda?
 **Correta: B**
 **Por quê:** o professor diz que daria para ficar nesse loop eternamente, e por isso a ideia é manter algumas métricas básicas e atingi-las. O patamar definido antes é o que diz quando parar.
-- **A:** as cinco iterações foram as daquela rodada da aula anterior, não uma regra de parada. Um número fixo de rodadas não diz se o disparo ficou bom.
+- **A:** um número de rodadas não diz se o disparo ficou bom, e a última candidata não é a melhor por ser a última (na aula anterior, nenhuma candidata bateu a original). O critério da aula é atingir as métricas.
 - **C:** o holdout não é consumido a cada rodada; ele fica guardado à parte e é usado para testar se as alterações fazem sentido.
 - **D:** voltar à original não é critério de convergência que a aula ensine. Na aula anterior, aliás, a original venceu e o problema era a skill, não a description.
 **Conceito:** métricas básicas como critério de parada do loop
@@ -42,8 +42,8 @@
 
 ## 6. Treino e holdout: qual afirmação está INCORRETA?
 **Correta: D**
-**Por quê:** a divisão entre treino e holdout é uma separação do dataset em dois grupos, cerca de 60% e 40%. Ela não corresponde a "deve disparar" e "não deve disparar": essa é a legenda verde e vermelha do relatório, que a aula apresenta como uma marcação à parte da divisão entre treino e teste.
-- **A:** correta. São os números que o professor dá: cerca de 60% para treinamento e os outros 40% para o teste.
+**Por quê:** a divisão entre treino e holdout é uma separação do dataset em dois grupos. Ela não corresponde a "deve disparar" e "não deve disparar": essa é a legenda verde e vermelha do relatório, que a aula apresenta como uma marcação à parte da divisão entre treino e teste.
+- **A:** correta. O Skill Creator separa o dataset em dois grupos: o de treinamento (cerca de 60%) e o de teste, o holdout (os outros 40%).
 - **B:** correta. O professor diz que esses itens ficam guardados de forma totalmente separada e, num primeiro momento, não são usados nem vistos.
 - **C:** correta. O holdout entra num segundo momento para testar se as alterações do loop fazem sentido e se o agente lida com situações novas.
 **Conceito:** separação do dataset em treino e holdout
@@ -56,23 +56,15 @@
 - **D:** passar os itens do holdout para o treino acaba com a separação: o loop otimizaria sobre eles e não sobraria um conjunto guardado para testar casos novos.
 **Conceito:** papel do holdout na otimização da description
 
-## 8. Hash no nome da skill durante o teste: por que importa?
+## 8. Skill que o teste não encontra: o que vale o placar?
 **Correta: C**
-**Por quê:** o Skill Creator relatou que, naquela versão do Claude Code, o teste acrescentava um hash ao nome da skill e impossibilitava encontrá-la. Uma skill que não é encontrada não tem como ser acionada, então a medição refletiria o defeito do teste, e não a qualidade da description. Por isso ele se autocorrigiu antes de medir.
-- **A:** a aula não diz que o hash identifica versões de description. A comparação entre original e otimizada aparece no relatório HTML.
-- **B:** o problema relatado foi o contrário: com o hash, a skill não era encontrada. Isso tiraria disparos, não criaria disparos indevidos.
-- **D:** o defeito estava no teste gerado naquela versão do harness, que alterava o nome da skill. A aula não tira daí nenhuma regra para o texto da description.
+**Por quê:** na aula, o Skill Creator percebeu que, naquela versão do Claude Code, o teste acrescentava um hash ao nome da skill e a impedia de ser encontrada; ele se autocorrigiu antes de medir. Uma skill que não é encontrada não tem como ser acionada, então o placar refletiria o defeito do teste, e não a qualidade da description.
+- **A:** o sintoma tem outra causa: sem achar a skill, nenhuma description dispararia. Reescrevê-la ataca o lugar errado.
+- **B:** under-trigger é a description deixar de acionar a skill quando deveria; aqui a skill nem estava visível para o teste. Otimizar a description mediria de novo a mesma falha.
+- **D:** o defeito estava no teste gerado naquela versão do harness. A aula não tira daí nenhuma regra para o texto da description.
 **Conceito:** falha do teste x falha da description
 
-## 9. Item do teste em vermelho e disparado no HTML: o que significa?
-**Correta: A**
-**Por quê:** na legenda do HTML remodelado, vermelho é "should not trigger" e verde é "should trigger". Um item vermelho que disparou é um disparo indevido; como está no conjunto de teste (o holdout), é um caso que o loop não usou na otimização, e o erro aparece justamente em situação nova.
-- **B:** a cor não vem do que foi executado; ela marca o tipo de item (vermelho = não deve disparar). O que foi executado e o resultado aparecem à parte, comparados com o esperado de cada item do dataset.
-- **C:** o pedido que devia acionar a skill é o verde. A cor indica o tipo de item, não o conjunto (treino ou teste).
-- **D:** o item está no conjunto de teste, não no de treino, e a aula não descreve vermelho como registro de histórico.
-**Conceito:** legenda should trigger / should not trigger e conjunto de teste no relatório
-
-## 10. Skill em construção, sem saber se vai na direção certa: como usar o Skill Creator?
+## 9. Skill em construção, sem saber se vai na direção certa: como usar o Skill Creator?
 **Correta: D**
 **Por quê:** o professor descreve dois caminhos. Além do mais padrão (avaliar, testar e viabilizar versões novas), dá para usar a evaluation como bússola: "tenho essa skill, não sei se está indo de acordo com o que eu quero", e, com base nos pontos de melhoria que ela mostra, ir corrigindo junto, pelos comandos passados à CLI. É o caso da dev com o rascunho.
 - **A:** o uso como bússola serve justamente para quem ainda não sabe se a skill está no caminho certo, durante a construção; esperar a versão final desperdiça a orientação. Além disso, o loop de description cuida do disparo, não da direção do conteúdo.

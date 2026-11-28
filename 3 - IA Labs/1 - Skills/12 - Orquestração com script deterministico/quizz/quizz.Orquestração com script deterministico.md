@@ -5,62 +5,56 @@
 
 ---
 
-## 1. Na aula 3.1.11, a pipeline da implement feature gerou um código limpo, com 28 testes passando, usando só arquivos Markdown. Por que, mesmo assim, o professor acrescenta o script check-layers?
-- A) Porque as subskills só leem as convenções da pasta architecture quando um script as obriga a fazer o pré-check.
-- B) Porque o script passa a escrever o código de cada camada, e com isso a geração do código fica determinística.
-- C) Porque a pipeline depende só da inferência e pode fugir do fluxo; o script confere o fluxo igual em toda execução.
-- D) Porque os testes de cada camada só rodam no fim da pipeline se houver um script que os chame pelo Bash.
+## 1. Uma skill orquestradora gera, por inferência, a documentação de cada serviço seguindo um padrão de seções. Na maioria das execuções o padrão sai certo, mas, de vez em quando, falta uma seção obrigatória. Pela ideia da aula, qual reforço ataca a causa do problema?
+- A) Reescrever as instruções em Markdown com mais exemplos, para o modelo deixar de errar o padrão nas próximas execuções.
+- B) Um script que confere as seções do mesmo jeito em toda execução e, se faltar alguma, devolve o erro para a autocorreção.
+- C) Trocar o modelo por um mais capaz, porque o desvio vem de um modelo fraco, e um mais forte segue o padrão a cada vez.
+- D) Pedir ao próprio agente, ao fim da pipeline, que releia o documento e confirme que as seções obrigatórias estão lá.
 
-## 2. O gate devolve exit 2: um código de src/domain importa uma função de src/services. Pelo passo 5 que o professor escreveu na implement feature, quem deve fazer a correção?
-- A) A subskill de domínio, porque a violação está no arquivo de domínio, a camada ofensora que fez o import proibido.
-- B) A subskill de serviço, porque é a camada que foi importada, e a correção começa pela origem da dependência.
-- C) A própria implement feature, porque é ela que roda o gate no passo 5 e por isso recebe o bloco de erro inteiro.
-- D) A subskill de rota, porque o gate roda no fim da pipeline bottom to up, e a rota é a última camada implementada.
+## 2. Um app de agendamento tem as camadas de controlador (a entrada HTTP), caso de uso, domínio e repositório, e segue as regras da aula: o controlador fala com o caso de uso, que orquestra o domínio e o repositório, e o domínio não depende de nada de fora. Qual destas dependências passaria pelo gate?
+- A) O controlador que importa a entidade de agendamento do domínio para montar a resposta HTTP da listagem.
+- B) O controlador que importa o repositório para listar os horários livres sem passar pelo caso de uso.
+- C) A entidade de domínio que importa um utilitário de fora do domínio para formatar a data do agendamento.
+- D) O caso de uso que importa a entidade do domínio para criar o agendamento e depois mandá-lo ao repositório.
 
-## 3. Pelas regras que o professor ditou ao pedir o check-layers, qual destes imports passaria pelo gate?
-- A) Um arquivo de domínio que importa um helper de src/shared para formatar o preço do produto na entidade.
-- B) Uma rota que importa o repositório em memória para listar os produtos sem precisar passar pelo serviço.
-- C) Uma rota que importa a entidade de produto de src/domain para tipar a resposta da listagem de produtos.
-- D) Um serviço que importa a entidade de produto do domínio para criá-la e depois mandá-la ao repositório.
+## 3. Um time escreve um script de checagem que, ao achar um problema, só imprime "FALHOU" e sai com erro. Ele roda ao fim de uma pipeline de agente com autocorreção. Pelo desenho da aula, o que se perde?
+- A) O agente sabe que há erro, mas não sabe o que corrigir, em que arquivo, por quê nem a quem delegar, e passa a adivinhar.
+- B) Nada de essencial: o código de saída diferente de zero já basta para o agente localizar e corrigir a violação.
+- C) A garantia determinística, porque o script passa a ser determinístico quando descreve cada violação em detalhe.
+- D) O registro para o usuário, que precisa ler cada violação e aprovar a correção antes de o agente seguir em frente.
 
-## 4. Ao fim da pipeline, o check-layers devolve exit 0. Qual destas conclusões o gate NÃO sustenta?
-- A) Os imports do código respeitam as fronteiras proibidas que estão definidas dentro do script check-layers.
-- B) As regras de negócio do produto estão corretas, como o nome obrigatório e o preço que não pode ser zero.
-- C) O loop de autocorreção do passo 5 pode parar, porque o exit que ele esperava para encerrar já veio.
-- D) Pela definição da skill, a feature pode ser dada como pronta, já que o gate de arquitetura está verde.
+## 4. Uma pipeline tem uma subskill por camada (controlador, caso de uso, domínio, repositório) e um orquestrador que só delega. O gate acusa que um arquivo do domínio importa algo do repositório. Pelo passo de autocorreção da aula, quem corrige?
+- A) A subskill de repositório, porque é a camada que o domínio importou, e a correção começa pela origem da dependência.
+- B) O orquestrador, porque é ele que roda o gate e recebe o arquivo e a linha do erro, e por isso já tem tudo para corrigir.
+- C) A subskill de domínio, porque o import proibido está no arquivo dela, e a correção vai para a camada ofensora.
+- D) A subskill da última camada implementada, porque o gate roda no fim e a correção segue a ordem da pipeline.
 
-## 5. Uma violação volta a aparecer depois de cada correção, e o gate continua vermelho. Pelo passo 5 que o professor escreveu, o que deve acontecer?
-- A) Depois de 10 tentativas, a feature é entregue como pronta, com as violações restantes listadas no relatório.
-- B) O loop repete sem limite, porque o professor trocou o max retry pela regra de repetir até o exit ser zero.
-- C) O loop repete até o exit ser zero, mas, se passar de 10 tentativas, o agente consulta o usuário pela AskUserQuestion.
-- D) Depois de algumas falhas, o agente corrige a violação por conta própria, sem a subskill, que já não resolveu.
+## 5. Num loop de autocorreção como o da aula, uma violação volta a aparecer a cada tentativa, e o gate segue vermelho. Qual desenho o professor escreveu para esse caso?
+- A) Depois de um número fixo de tentativas, a tarefa é entregue como pronta, com as violações restantes no relatório.
+- B) O loop repete sem limite até o gate ficar verde, porque o critério de pronto é o código de saída zero.
+- C) Depois de algumas falhas, o orquestrador corrige a violação por conta própria, sem a subskill, que não resolveu.
+- D) O loop repete até o gate ficar verde, mas, passado um limite de tentativas, o agente consulta o usuário.
 
-## 6. Um dev pede ao Claude Code só para renomear uma variável num arquivo de src/routes, sem chamar a implement feature. Mesmo assim, o check-layers roda no fim. Por quê?
-- A) Porque o passo 5 da implement feature vale para qualquer edição, já que a skill inteira é carregada no startup.
-- B) Porque o ESLint, configurado com as regras customizadas, dispara o gate sozinho a cada arquivo que é salvo.
-- C) Porque o AGENTS.md traz uma cópia própria da regra, e o Claude Code lê esse arquivo antes do CLAUDE.md.
-- D) Porque a regra está no CLAUDE.md, lido sempre, e manda rodar o gate ao terminar de editar qualquer arquivo de src.
+## 6. Ao fim de uma pipeline com gate de arquitetura, os testes de todas as camadas passam, mas o gate acusa uma violação. Pela regra da aula, a tarefa está pronta?
+- A) Não: o critério de pronto é o gate verde; os testes conferem o comportamento, e o gate confere as fronteiras.
+- B) Sim: os testes passando mostram que o código funciona, e a violação pode ficar para uma próxima tarefa.
+- C) Sim, se a violação estiver na camada mais externa, porque é ela que pode depender das outras camadas.
+- D) Não, e a pipeline deve ser refeita desde a primeira camada, porque a violação invalida as que vieram depois.
 
-## 7. Um time usa o Claude Code e outra ferramenta de agente que lê o AGENTS.md. Quer que a regra do gate valha nas duas, sem manter duas cópias. Qual saída segue o que foi feito na aula?
-- A) Escrever a regra no CLAUDE.md e deixar o AGENTS.md só como um link para ele, o que, segundo o professor, funciona.
-- B) Escrever a regra no passo 5 da implement feature, porque skills seguem um padrão aberto e são portáteis.
-- C) Escrever a regra na description da implement feature, porque o nível 1 fica no contexto e garante o gate.
-- D) Copiar a regra inteira nos dois arquivos, porque um AGENTS.md que só aponta para o CLAUDE.md não é lido.
+## 7. Ao fim de uma pipeline, o gate de arquitetura devolve exit 0. Qual destas conclusões ele NÃO sustenta?
+- A) As dependências entre as camadas respeitam as fronteiras que o script define como proibidas.
+- B) O loop de autocorreção pode parar, porque o código de saída que ele esperava para encerrar já veio.
+- C) As regras de negócio estão certas, como a de que um agendamento não pode ser marcado no passado.
+- D) Com os testes já verdes, a tarefa pode ser dada como pronta, porque o gate de arquitetura passou.
 
-## 8. Por que o professor pede que cada violação saia num bloco com a regra, o arquivo e a linha, o import ofensor, o porquê e como consertar?
-- A) Para que o usuário revise cada bloco e aprove a correção antes de o agente seguir para a próxima violação.
-- B) Para que o agente, ao ler a saída, saiba o que corrigir e a qual subskill delegar, sem ter de adivinhar.
-- C) Para que o ESLint aplique sozinho a correção sugerida em cada bloco, sem precisar passar pelo agente.
-- D) Para que o script escolha a subskill da camada ofensora e a chame direto, sem depender da inferência.
+## 8. Uma equipe quer que o gate rode também quando um dev pede ao agente só uma edição pequena num arquivo do código, sem acionar a skill orquestradora. Onde a aula põe essa regra, e por quê?
+- A) No corpo da skill orquestradora, porque a skill inteira é carregada no início da sessão e vale para qualquer edição.
+- B) No CLAUDE.md, porque ele é lido a todo momento, enquanto o corpo da skill só entra quando ela é acionada.
+- C) Na description da skill orquestradora, porque o nível 1 fica no contexto e faz o gate rodar a cada edição.
+- D) Num script que o próprio gate dispara ao salvar cada arquivo, para que a regra deixe de depender do agente.
 
-## 9. Ao fim da pipeline, os 28 testes passam e o type check não acusa erro, mas o check-layers devolve exit 2. Pela skill, a feature está pronta?
-- A) Sim, porque cada subskill já produz os testes do seu arquivo, e os testes passando são o critério de pronto.
-- B) Sim, se as violações estiverem na rota, porque ela é a camada mais externa e pode depender das outras.
-- C) Não, porque o critério de conclusão é o gate verde; os testes conferem o comportamento, não as fronteiras.
-- D) Não, e a pipeline deve ser refeita desde o domínio, porque um exit 2 invalida as camadas já implementadas.
-
-## 10. No teste, o professor pede ao próprio Claude uma edição em src que fure as barreiras, sem rodar a pipeline completa. O que esse teste mostra e o que fica faltando?
-- A) Mostra a pipeline completa funcionando, porque o gate do passo 5 é o mesmo que roda após uma edição avulsa.
-- B) Não mostra o gate funcionando, porque quem plantou a violação foi o mesmo agente que leu a saída do script.
-- C) Mostra o limite de 10 tentativas em ação, mas falta conferir se cada violação sai num bloco separado.
-- D) Mostra o gate pegando as violações e disparando a autocorreção; validar tudo pede usar novas features.
+## 9. Um time quer ter no projeto tanto o CLAUDE.md quanto o AGENTS.md com a regra do gate, sem manter duas cópias dela. Qual saída segue o que foi feito na aula?
+- A) Escrever a regra no CLAUDE.md e deixar o AGENTS.md como uma referência a ele, o que, segundo o professor, funciona.
+- B) Escrever a regra no AGENTS.md e apagar o CLAUDE.md, porque o Claude Code passa a ler o AGENTS.md no lugar dele.
+- C) Escrever a regra na description da skill orquestradora, porque o nível 1 fica no contexto desde o início da sessão.
+- D) Copiar a regra nos dois arquivos, porque um AGENTS.md que aponta para o CLAUDE.md não é lido pelo agente.

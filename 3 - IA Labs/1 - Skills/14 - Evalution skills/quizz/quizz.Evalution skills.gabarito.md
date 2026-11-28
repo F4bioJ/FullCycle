@@ -19,9 +19,9 @@
 ## 3. Loop de description sem ganho e a original como melhor: e agora?
 **Correta: D**
 **Por quê:** na aula, nenhuma candidata bateu o baseline (todas empataram) e a melhor descrição foi a original. A conclusão do Skill Creator foi que o gargalo não era a descrição, e sim a skill; o passo seguinte foi reescrever o conteúdo dela com base nos achados.
-- **A:** as cinco iterações deixaram tudo no mesmo lugar porque o problema não estava no texto da description. Mais rodadas do mesmo loop atacam o lugar errado.
+- **A:** se várias iterações deixam tudo no mesmo lugar, o problema não está no texto da description. Mais rodadas do mesmo loop atacam o lugar errado.
 - **B:** a original venceu só porque ninguém a superou; a skill continuava falhando. "Melhor do loop" não quer dizer que a skill está pronta.
-- **C:** o empate não foi atribuído ao dataset. O diagnóstico apontou a skill como gargalo, e o dataset expandido até manteve os itens originais.
+- **C:** na aula, o empate não foi atribuído ao dataset. O diagnóstico apontou a skill como gargalo, e o dataset expandido até manteve os itens originais.
 **Conceito:** quando o gargalo não é a description
 
 ## 4. Com skill e sem skill nas mesmas perguntas: o que se mede?
@@ -32,37 +32,37 @@
 - **D:** a aula compara pass rate e delta entre as rodadas, e não custo de tokens.
 **Conceito:** baseline com e sem skill e o delta
 
-## 5. 88% sem skill e 100% com skill: qual leitura?
+## 5. Delta estreito com respostas sempre no mesmo roteiro: qual leitura?
 **Correta: C**
-**Por quê:** o Skill Creator concluiu que a skill funciona (nenhum run com ela alucinou, ignorou o EXPLAIN ou chutou índice), mas que o benefício é menor do que parece: a skill não ensina o modelo a otimizar, porque ele já é treinado para isso, e sim garante a consistência do troubleshooting, o método passo a passo.
-- **A:** a análise diz o contrário: o modelo já é treinado para otimizar e acertava 88% sozinho. O que a skill acrescenta é o método, não o conhecimento.
-- **B:** a análise não recomenda descartar a skill: ela a classificou como boa e confiável, e útil para a consistência. O professor pede para parar e analisar, não para apagar.
-- **D:** o resultado foi classificado como bom, e não excelente, justamente porque o delta é estreito e os inputs eram fáceis demais.
+**Por quê:** é a leitura que a aula faz da Bad Query Optimizer (88% sem a skill, 100% com ela): a skill funciona, mas o benefício é menor do que parece. Ela não ensina o modelo, que já é treinado para a tarefa; o que garante é a consistência, o método passo a passo seguido em todos os casos.
+- **A:** o modelo sozinho já acertava a grande maioria; se ele não soubesse diagnosticar, o pass rate sem a skill seria baixo. O que a skill acrescenta é o método, não o conhecimento.
+- **B:** na aula, a análise não recomenda descartar a skill: classifica-a como boa e confiável, útil pela consistência. O professor pede para parar e analisar a direção, não para apagar.
+- **D:** na aula, um resultado assim foi classificado como bom, e não excelente, justamente porque o delta sobre o baseline é estreito.
 **Conceito:** interpretar o delta: ganho real x consistência
 
-## 6. Delta estreito: que ponto do relatório enfraquece a conclusão de que a skill não agrega?
+## 6. Delta estreito: qual achado enfraquece a conclusão de que a skill não agrega?
 **Correta: A**
-**Por quê:** o relatório apontou como problema de fundo dos testes que os três inputs eram fáceis demais, cada um com um EXPLAIN limpo e o gargalo quase na cara. Com casos assim, o modelo sozinho já acerta, e o delta sai estreito mesmo que a skill ajude; o teste não separa bem as duas rodadas.
-- **B:** o under-trigger foi o problema do baseline de trigger, antes da reescrita. Na avaliação de qualidade, as respostas com a skill seguiram o método dela (diagnóstico por evidência, sem chutar índice).
-- **C:** a rodada sem skill foi o próprio modelo em uso (o Opus) sozinho. E um modelo mais fraco aumentaria o delta, não o diminuiria.
-- **D:** depois da reescrita, o professor disse que não era preciso mexer mais na description; a avaliação de qualidade olhou a saída, não o disparo.
-**Conceito:** inputs fáceis demais deixam o delta estreito
+**Por quê:** na aula, o relatório apontou como problema de fundo que os inputs eram fáceis demais, com o gargalo quase na cara. Com casos assim, o modelo sozinho já acerta, e o delta sai estreito mesmo que a skill ajude: o teste não separa bem as duas rodadas. Casos mais difíceis poderiam mostrar o ganho.
+- **B:** mais tempo e tokens são um custo da skill; reforçam a dúvida sobre o valor dela, não a enfraquecem.
+- **C:** um baseline com modelo mais fraco aumentaria o delta artificialmente. Se, mesmo assim, o delta saiu estreito, a conclusão do colega fica mais forte, não mais fraca.
+- **D:** a proporção do dataset de trigger diz respeito ao disparo; a avaliação de qualidade olha a saída, e o delta vem dela.
+**Conceito:** casos fáceis demais deixam o delta estreito
 
 ## 7. Por que revisar o dataset que o Skill Creator gerou?
 **Correta: D**
 **Por quê:** o loop pega o eval de trigger criado pelo Skill Creator e otimiza contra ele. O professor diz que, na realidade, é muito importante conferir se o que foi proposto faz sentido: se os casos estiverem errados, o resultado do loop mede a coisa errada.
 - **A:** na demo, o professor pulou a revisão e o loop rodou mesmo assim. A revisão é recomendada, não um bloqueio.
 - **B:** a revisão confere os casos de teste; ela não substitui a avaliação de qualidade, que a aula faz depois, em separado.
-- **C:** o dataset expandido manteve os itens originais e acrescentou outros. Não houve perda a recuperar.
+- **C:** na aula, o dataset expandido manteve os itens originais e acrescentou outros. Não houve perda a recuperar.
 **Conceito:** revisão humana do dataset gerado
 
 ## 8. Qual afirmação sobre o Skill Creator está INCORRETA?
 **Correta: B**
 **Por quê:** é a incorreta. O Skill Creator envolve processos determinísticos: por baixo, roda vários scripts Python que avaliam se a skill disparou ou não. Não depende só da inferência do modelo.
 - **A:** correta. O professor diz que ele segue o padrão aberto e roda com qualquer skill.
-- **C:** correta. A pasta tem agents, assets, eval viewer, referências e scripts, e o professor a chama de skill de nível 3.
-- **D:** correta. Ele faz uma cópia da skill para um workspace próprio e roda ali o baseline.
-**Conceito:** o Skill Creator como skill N3 com scripts
+- **C:** correta. A aula mostra as duas formas de avaliação: o nível de trigger e a qualidade do resultado.
+- **D:** correta. Ele é uma skill (feita para avaliar skills), e a aula o chama por slash command ou em linguagem natural ("gere o teste de disparo da skill...").
+**Conceito:** o Skill Creator como skill que também roda scripts
 
 ## 9. Por que deixar o template de exemplos de antipadrões fora do corpo?
 **Correta: C**

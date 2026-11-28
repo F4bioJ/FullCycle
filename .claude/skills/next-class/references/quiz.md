@@ -19,6 +19,14 @@ Em 2026-11-27, na `3.1.11` (Orquestração de Skills e subskills), o usuário pa
 - Prefira cenários novos e fora do código da aula (outro domínio, outra equipe, outro tipo de tarefa) em que o mesmo conceito decide a resposta. Não pressuponha que o aluno conheça a linguagem usada na demonstração.
 - Aula com poucos conceitos fica com menos perguntas (o N de "Aulas curtas" é teto): não complete com detalhes da demonstração.
 
+## Refação: outro ângulo, não só outro cenário
+
+Em 2026-11-28, na `3.1.12`, o usuário apontou que a refação da Q8 era "extremamente parecida" com a original: mudava só a situação e a letra do gabarito. Trocar o cenário mantendo a mesma estrutura mede reconhecimento de padrão, não entendimento. Regra: **a pergunta nova de uma refação cobra o mesmo conceito por outro ângulo**, não a mesma pergunta com roupa nova.
+
+- Mude o tipo de pergunta: se a original perguntava "onde pôr a regra", pergunte "o que acontece se a regra estiver no lugar errado", "qual sintoma indica o erro" ou "qual afirmação está INCORRETA".
+- Mude o que distingue a correta das erradas: não reaproveite os mesmos distratores com outras palavras.
+- Antes de aplicar, compare com a pergunta original: se alguém que errou a original acertaria só por reconhecer a estrutura, reescreva.
+
 ## Escopo: só a aula e as anteriores
 
 Em 2026-11-08 o usuário apontou que uma pergunta da `2.2.5` (Truncamento) comparava truncamento com sumarização, tema da aula seguinte, ainda não estudada. Regra: a pergunta e **todas** as alternativas só podem usar o que a aula ensina e o que as **aulas anteriores** (do mesmo módulo ou de módulos já estudados) ensinaram. Aula vizinha posterior não entra, nem como comparação, contraste, "próxima aula" ou "veremos a seguir".

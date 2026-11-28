@@ -1,6 +1,6 @@
 # Acompanhamento dos quizzes
 
-Atualizado em 2026-11-27.
+Atualizado em 2026-11-28.
 
 **Legenda:**
 
@@ -855,8 +855,54 @@ O id da aula é `capítulo.aula` no Fundamentos (ex.: 2.4) e `módulo.capítulo.
 | 3.1.11 | Orquestração de Skills e subskills | q3 | ✅ | — |
 | 3.1.11 | Orquestração de Skills e subskills | q4 | ✅ | — |
 | 3.1.11 | Orquestração de Skills e subskills | q5 | ✅ | — |
+| 3.1.12 | Orquestração com script deterministico | q1 | ✅ | — |
+| 3.1.12 | Orquestração com script deterministico | q2 | ✅ | — |
+| 3.1.12 | Orquestração com script deterministico | q3 | ✅ 1x | — |
+| 3.1.12 | Orquestração com script deterministico | q4 | ✅ | — |
+| 3.1.12 | Orquestração com script deterministico | q5 | ✅ | — |
+| 3.1.12 | Orquestração com script deterministico | q6 | ✅ | — |
+| 3.1.12 | Orquestração com script deterministico | q7 | ✅ 1x | — |
+| 3.1.12 | Orquestração com script deterministico | q8 | ✅ 1x | — |
+| 3.1.12 | Orquestração com script deterministico | q9 | ✅ | — |
+| 3.1.13 | Skills e subagents | q1 | ✅ | — |
+| 3.1.13 | Skills e subagents | q2 | ✅ | — |
+| 3.1.13 | Skills e subagents | q3 | ✅ 1x | — |
+| 3.1.13 | Skills e subagents | q4 | ✅ | — |
+| 3.1.13 | Skills e subagents | q5 | ✅ | — |
+| 3.1.13 | Skills e subagents | q6 | ✅ | — |
+| 3.1.13 | Skills e subagents | q7 | ✅ | — |
+| 3.1.13 | Skills e subagents | q8 | ✅ | — |
+| 3.1.13 | Skills e subagents | q9 | ✅ | — |
+| 3.1.13 | Skills e subagents | q10 | ✅ | — |
+| 3.1.14 | Evalution skills | q1 | ✅ | — |
+| 3.1.14 | Evalution skills | q2 | ✅ | — |
+| 3.1.14 | Evalution skills | q3 | ✅ | — |
+| 3.1.14 | Evalution skills | q4 | ✅ | — |
+| 3.1.14 | Evalution skills | q5 | ✅ | — |
+| 3.1.14 | Evalution skills | q6 | ✅ | — |
+| 3.1.14 | Evalution skills | q7 | ✅ | — |
+| 3.1.14 | Evalution skills | q8 | ✅ | — |
+| 3.1.14 | Evalution skills | q9 | ✅ | — |
+| 3.1.14 | Evalution skills | q10 | ✅ | — |
+| 3.1.15 | Evaluation trigger | q1 | ✅ | — |
+| 3.1.15 | Evaluation trigger | q2 | ✅ 1x | — |
+| 3.1.15 | Evaluation trigger | q3 | ✅ 1x | — |
+| 3.1.15 | Evaluation trigger | q4 | ✅ | — |
+| 3.1.15 | Evaluation trigger | q5 | ✅ | — |
+| 3.1.15 | Evaluation trigger | q6 | ✅ | — |
+| 3.1.15 | Evaluation trigger | q7 | ✅ 1x | — |
+| 3.1.15 | Evaluation trigger | q8 | ✅ | — |
+| 3.1.15 | Evaluation trigger | q9 | ✅ | — |
 
 ## Observações
+
+- 2026-11-28: 3.1.15 (Evaluation trigger) padrão aplicado pela primeira vez: 6/9. Erradas: q2 (precision 100% e recall 50% = under-trigger; leu como problema de qualidade), q3 (métricas em 100% e candidata igual à original: manter a description; achou que a saída do loop é mais robusta) e q7 (treino ok e holdout ruim = a description não generaliza; atribuiu ao corpo da skill). As três passaram na 1ª refação (✅ 1x), com outro ângulo: q2 pelo sintoma (disparo em pedidos alheios derruba a precision), q3 por quando vale trocar a description (só se a candidata corrige erro de disparo, inclusive no holdout) e q7 pelo que se perde sem holdout (a medida em casos não vistos). Sem pendências na aula 3.1.15. Sem quizz avançado (pausado desde 2026-10-26).
+
+- 2026-11-28: 3.1.14 (Evalution skills) padrão aplicado pela primeira vez: 10/10. Sem pendências na aula 3.1.14. Sem quizz avançado (pausado desde 2026-10-26).
+
+- 2026-11-28: 3.1.13 (Skills e subagents) padrão aplicado pela primeira vez: 9/10. Só a q3 errada: achou que herdar o modelo (Opus) dava ao agente Plan também a permissão de editar; ele herda o modelo, mas só pesquisa (edição negada). Passou na 1ª refação (✅ 1x). Sem pendências na aula 3.1.13. Sem quizz avançado (pausado desde 2026-10-26).
+
+- 2026-11-28: 3.1.12 (Orquestração com script deterministico) padrão: o quizz original de 10 questões cobrava a demonstração (paths, números, regras ditadas); reescrito com 9 questões conceituais e aplicado do início: 6/9. Erradas: q3 (script que só diz FALHOU: o bloco detalhado é o que dá ao agente o que corrigir e a quem delegar), q7 (exit 0 atesta fronteiras, não regra de negócio) e q8 (regra que vale fora da skill vai no CLAUDE.md, lido sempre; a description só decide o acionamento). As três passaram na 1ª refação (✅ 1x); o usuário notou que a refação da q8 ficou parecida demais com a original (mesma estrutura, outro cenário). Sem pendências na aula 3.1.12. Sem quizz avançado (pausado desde 2026-10-26).
 
 - 2026-11-27: 3.1.11 (Orquestração de Skills e subskills) padrão: o quizz original de 10 questões foi interrompido na q4 (1/3: errou q1 e q3) porque o usuário apontou que as perguntas cobravam a demonstração e TypeScript, não os conceitos. Reescrito com 5 questões conceituais (orquestrador × subskill, convenções no projeto, porta de decisão, script determinístico e granularidade) e aplicado do início: 5/5. A tentativa interrompida não conta. Sem pendências na aula 3.1.11. Sem quizz avançado (pausado desde 2026-10-26).
 
